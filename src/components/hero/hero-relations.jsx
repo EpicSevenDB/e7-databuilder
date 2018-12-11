@@ -2,12 +2,34 @@ import React, { Component } from "react";
 import { Col, Form, FormGroup, Button, Input, Label } from "reactstrap";
 
 class HeroRelations extends Component {
+  handleChange = (i, type, value) => {
+    const relations = [...this.props.relations];
+    relations[i][type] = value;
+    this.props.onChange("relations", relations);
+  };
+
+  handleDelete = i => {
+    const relations = [
+      ...this.props.relations.slice(0, i),
+      ...this.props.relations.slice(i + 1)
+    ];
+    this.props.onChange("relations", relations);
+  };
+
+  handleAdd = () => {
+    const newRelation = {
+      hero: "",
+      relationType: ""
+    };
+    const relations = [...this.props.relations, newRelation];
+    this.props.onChange("relations", relations);
+  };
   render() {
-    const { relations, relationType, onDelete, onChange, onNew } = this.props;
+    const { relations, relationType } = this.props;
 
     return (
-      <Col>
-        <Label>Hero Relation</Label>
+      <Col md="12">
+        <Label>relations</Label>
 
         {relations.map((relation, i) => (
           <Form key={i} inline>
@@ -17,14 +39,16 @@ class HeroRelations extends Component {
                 placeholder="Hero Name"
                 bsSize="sm"
                 value={relation.hero}
-                onChange={e => onChange(i, "hero", e.currentTarget.value)}
+                onChange={e =>
+                  this.handleChange(i, "hero", e.currentTarget.value)
+                }
               />
               <Input
                 type="select"
                 bsSize="sm"
                 value={relation.relationType}
                 onChange={e =>
-                  onChange(i, "relationType", e.currentTarget.value)
+                  this.handleChange(i, "relationType", e.currentTarget.value)
                 }
               >
                 <option value="" disabled>
@@ -36,13 +60,17 @@ class HeroRelations extends Component {
                   </option>
                 ))}
               </Input>
-              <Button size="sm" color="danger" onClick={e => onDelete(i)}>
+              <Button
+                size="sm"
+                color="danger"
+                onClick={e => this.handleDelete(i)}
+              >
                 X
               </Button>
             </FormGroup>
           </Form>
         ))}
-        <Button onClick={onNew} color="secondary" outline block>
+        <Button onClick={this.handleAdd} color="secondary" outline block>
           Add new relation
         </Button>
       </Col>

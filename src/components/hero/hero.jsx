@@ -1,32 +1,60 @@
 import React, { Component } from "react";
 
-import HeroInput from "./hero-input";
+import HeroForm from "./hero-form";
 
 import { Row, Col } from "reactstrap";
 
 class Hero extends Component {
   state = {
     hero: {
-      name: "",
-      rarity: "5",
+      name: "Cidd",
+      rarity: 5,
       classType: "thief",
-      element: "ice",
-      zodiac: "libra",
-      specialtyChangeName: "Challenger",
-      selfSkillBarName: "Rage",
-      background: "Here to save the world.",
+      element: "earth",
+      zodiac: "aries",
+      specialtyChangeName: "",
+      selfSkillBarName: "",
+      background: [
+        "Cidd is the youngest member and mascot of the Wild Dog Company, a group of mercenaries headquartered in an old ruined fortress in Wetheric Moor. Contrary to his cheerful and carefree appearance, he will complete any task assigned to him. He cares for the Wild Dog Company as if they were family."
+      ],
       relations: [
-        { hero: "Ras", relationType: "longing" },
-        { hero: "Mercedes", relationType: "rival" },
-        { hero: "Akry", relationType: "trust" }
-      ]
+        { hero: "dingo", relationType: "trust" },
+        { hero: "otillie", relationType: "trust" },
+        { hero: "armin", relationType: "rival" }
+      ],
+      stats: {
+        base: {
+          cp: 2434,
+          atk: 228,
+          hp: 675,
+          spd: 126,
+          def: 54,
+          chc: 21,
+          chd: 150,
+          eff: 0,
+          efr: 0,
+          dac: 5
+        },
+        max: {
+          cp: 14727,
+          atk: 990,
+          hp: 4936,
+          spd: 126,
+          def: 466,
+          chc: 21,
+          chd: 150,
+          eff: 0,
+          efr: 0,
+          dac: 5
+        }
+      }
     },
     defaults: {
       rarity: [
-        { label: "2 ★★", value: "2" },
-        { label: "3 ★★★", value: "3" },
-        { label: "4 ★★★★", value: "4" },
-        { label: "5 ★★★★★", value: "5" }
+        { label: "2 ★★", value: 2 },
+        { label: "3 ★★★", value: 3 },
+        { label: "4 ★★★★", value: 4 },
+        { label: "5 ★★★★★", value: 5 }
       ],
       classType: [
         { label: "Knight", value: "knight" },
@@ -67,39 +95,11 @@ class Hero extends Component {
     }
   };
 
-  handleChange = ({ currentTarget: input }) => {
+  handleChange = (name, value) => {
     const hero = { ...this.state.hero };
-    hero[input.name] = input.value;
+    hero[name] = value;
     this.setState({ hero });
     console.info("Changed: ", hero);
-  };
-
-  handleRelationDelete = i => {
-    const hero = { ...this.state.hero };
-    hero.relations = [
-      ...hero.relations.slice(0, i),
-      ...hero.relations.slice(i + 1)
-    ];
-    this.setState({ hero });
-    console.info("Relation Deleted:", hero.relations);
-  };
-
-  //Handles finding the right index and placing the new values
-  handleRelationChange = (i, type, value) => {
-    const relations = [...this.state.hero.relations];
-    relations[i][type] = value;
-    this.setState({ relations });
-    console.info("Relation Changed:", relations);
-  };
-  handleNewRelation = () => {
-    const hero = { ...this.state.hero };
-    const newRelation = {
-      hero: "",
-      relationType: ""
-    };
-    hero.relations = [...hero.relations, newRelation];
-    this.setState({ hero });
-    console.info("Relation Added:", hero.relations);
   };
 
   render() {
@@ -107,14 +107,11 @@ class Hero extends Component {
       <React.Fragment>
         <h1>Heroes</h1>
         <Row>
-          <Col>
-            <HeroInput
+          <Col md="9">
+            <HeroForm
               hero={this.state.hero}
-              onChange={this.handleChange}
-              onRelationChange={this.handleRelationChange}
-              onRelationDelete={this.handleRelationDelete}
-              onNewRelation={this.handleNewRelation}
               defaults={this.state.defaults}
+              onChange={this.handleChange}
             />
           </Col>
         </Row>

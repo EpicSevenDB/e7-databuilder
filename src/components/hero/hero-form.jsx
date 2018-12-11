@@ -1,19 +1,13 @@
 import React, { Component } from "react";
 
 import HeroRelations from "./hero-relations";
-import { Col, FormGroup, Label, Input, Button } from "reactstrap";
+import HeroStats from "./hero-stats";
+import { FormGroup } from "reactstrap";
 import EpicInput from "../common/epic-input";
 
-class HeroInput extends Component {
+class HeroForm extends Component {
   render() {
-    const {
-      hero,
-      onChange,
-      defaults,
-      onRelationDelete,
-      onNewRelation,
-      onRelationChange
-    } = this.props;
+    const { hero, onChange, defaults } = this.props;
     return (
       <React.Fragment>
         <h3>Input</h3>
@@ -81,14 +75,13 @@ class HeroInput extends Component {
           <HeroRelations
             relations={hero.relations}
             relationType={defaults.relationType}
-            onDelete={onRelationDelete}
-            onChange={onRelationChange}
-            onNew={onNewRelation}
+            onChange={onChange}
           />
+          <HeroStats stats={hero.stats} onChange={onChange} />
         </FormGroup>
       </React.Fragment>
     );
   }
 }
 
-export default HeroInput;
+export default HeroForm;

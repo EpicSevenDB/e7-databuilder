@@ -20,7 +20,7 @@ class EpicInput extends Component {
           bsSize="sm"
           value={value}
           name={name}
-          onChange={onChange}
+          onChange={e => onChange(e.currentTarget.name, e.currentTarget.value)}
         >
           <option disabled value="">
             Select {name}
@@ -39,7 +39,7 @@ class EpicInput extends Component {
         bsSize="sm"
         value={value}
         name={name}
-        onChange={onChange}
+        onChange={e => onChange(e.currentTarget.name, e.currentTarget.value)}
       />
     );
   }
