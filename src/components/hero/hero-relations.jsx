@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Col, Form, FormGroup, Button, Input, Label } from "reactstrap";
 
 class HeroRelations extends Component {
-  handleChange = (i, type, value) => {
+  handleChange = (type, value, i) => {
     const relations = [...this.props.relations];
     relations[i][type] = value;
     this.props.onChange("relations", relations);
@@ -40,7 +40,7 @@ class HeroRelations extends Component {
                 bsSize="sm"
                 value={relation.hero}
                 onChange={e =>
-                  this.handleChange(i, "hero", e.currentTarget.value)
+                  this.handleChange("hero", e.currentTarget.value, i)
                 }
               />
               <Input
@@ -48,7 +48,7 @@ class HeroRelations extends Component {
                 bsSize="sm"
                 value={relation.relationType}
                 onChange={e =>
-                  this.handleChange(i, "relationType", e.currentTarget.value)
+                  this.handleChange("relationType", e.currentTarget.value, i)
                 }
               >
                 <option value="" disabled>

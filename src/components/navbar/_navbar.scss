@@ -1,4 +1,4 @@
-.nav {
+.nav.global-nav {
   max-width: 75px;
   background: $black;
   position: fixed;
@@ -8,7 +8,7 @@
   font-size: 0.7rem;
   text-align: center;
   .nav-link {
-    padding: 20px 8px;
+    padding: 15px 8px;
     border-radius: 0;
     position: relative;
     color: lighten($black, 30);
@@ -20,9 +20,34 @@
     &:hover,
     &.active {
       color: #fff;
-      background: $black;
+      background: darken($black, 5);
     }
   }
+}
+
+.nav-tabs {
+  cursor: pointer;
+  margin-top: 15px;
+  border-bottom: none;
+  position: relative;
+  z-index: 99;
+  .nav-link {
+    opacity: 0.35;
+    font-size: 0.8em;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+.tab-pane {
+  background: #fff;
+  border: 1px solid $border;
+  border-radius: 5px;
+  margin-top: -1px;
+  padding: 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
 }
 
 .relation-wrapper {

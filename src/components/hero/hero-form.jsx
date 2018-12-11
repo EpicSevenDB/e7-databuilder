@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import { FormGroup } from "reactstrap";
 
+//Components
+import EpicInput from "../common/epic-input";
 import HeroRelations from "./hero-relations";
 import HeroStats from "./hero-stats";
-import { FormGroup } from "reactstrap";
-import EpicInput from "../common/epic-input";
+import HeroSkills from "./hero-skills";
 
 class HeroForm extends Component {
   render() {
@@ -78,6 +80,7 @@ class HeroForm extends Component {
             onChange={onChange}
           />
           <HeroStats stats={hero.stats} onChange={onChange} />
+          <HeroSkills skills={hero.skills} onChange={onChange} />
         </FormGroup>
       </React.Fragment>
     );

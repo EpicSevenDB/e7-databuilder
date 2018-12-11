@@ -1,5 +1,6 @@
 $black: #2d3741;
 $bg: #f3f4f7;
+$border: #dee2e6;
 $grey: #888b8e;
 $blue: #2a4c80;
 
@@ -18,7 +19,24 @@ label {
 .form-group {
   margin-bottom: 2px;
 }
-
+textarea {
+  min-height: 100px;
+}
+.custom-checkbox {
+  top: 45%;
+}
+.custom-control-label::before,
+.custom-control-label::after {
+  top: 0;
+}
 .hidden {
   display: none;
+}
+
+.btn.btn-danger {
+  float: right;
+}
+
+.resource-wrapper {
+  margin-top: 6px;
 }

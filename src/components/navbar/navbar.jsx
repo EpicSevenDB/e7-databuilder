@@ -17,7 +17,7 @@ library.add(faUser, faAddressBook, faBolt, faPaw);
 //Stateless Functional Component. Note the props when wanting to use data from its parent
 const NavBar = props => {
   return (
-    <Nav vertical pills>
+    <Nav className="global-nav" vertical pills>
       {props.links.map(link => (
         <NavLink
           key={link.id}

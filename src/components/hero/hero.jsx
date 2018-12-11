@@ -47,7 +47,169 @@ class Hero extends Component {
           efr: 0,
           dac: 5
         }
-      }
+      },
+      skills: [
+        {
+          isPassive: false,
+          soulBurn: 0,
+          selfSkillBarValue: 0,
+          soulBurnEffect: "",
+          awakenUpgrade: false,
+          cooldown: 0,
+          name: "Relentless Strike",
+          soulAcquire: 1,
+          description:
+            "Attacks with a dagger. A critical hit will increase speed of the caster for 2 turns. Damage dealt increases proportional to the caster's speed",
+          enhancement: [
+            {
+              description: "+5% damage dealt",
+              resources: [
+                { item: "gold", qty: 4000 },
+                { item: "molagora", qty: 1 }
+              ]
+            },
+            {
+              description: "+5% damage dealt",
+              resources: [
+                { item: "gold", qty: 8000 },
+                { item: "molagora", qty: 2 }
+              ]
+            },
+            {
+              description: "+5% damage dealt",
+              resources: [
+                { item: "gold", qty: 21000 },
+                { item: "path power loop", qty: 1 },
+                { item: "molagora", qty: 4 }
+              ]
+            },
+            {
+              description: "+10% damage dealt",
+              resources: [
+                { item: "gold", qty: 35000 },
+                { item: "path power loop", qty: 3 },
+                { item: "molagorago", qty: 1 }
+              ]
+            },
+            {
+              description: "+10% damage dealt",
+              resources: [
+                { item: "gold", qty: 160000 },
+                { item: "nightmare mask", qty: 2 },
+                { item: "molagoragora", qty: 1 }
+              ]
+            }
+          ],
+          buffs: ["stic_spd_up"],
+          debuffs: []
+        },
+        {
+          isPassive: true,
+          soulBurn: 0,
+          soulBurnEffect: "",
+          awakenUpgrade: false,
+          cooldown: 0,
+          name: "Wind's Resolve",
+          soulAcquire: 0,
+          description:
+            "Enhances Relentless Strike, increasing Damage dealt, when the caster is granted increased speed, and decreases defense of the enemy for 1 turn.",
+          enhancement: [
+            {
+              description: "+5% damage dealt by Relentless Strike",
+              resources: [
+                { item: "gold", qty: 4000 },
+                { item: "molagora", qty: 1 }
+              ]
+            },
+            {
+              description: "+5% damage dealt by Relentless Strike",
+              resources: [
+                { item: "gold", qty: 8000 },
+                { item: "molagora", qty: 2 }
+              ]
+            },
+            {
+              description: "+5% damage dealt by Relentless Strike",
+              resources: [
+                { item: "gold", qty: 21000 },
+                { item: "path power loop", qty: 1 },
+                { item: "molagora", qty: 4 }
+              ]
+            },
+            {
+              description: "+10% damage dealt by Relentless Strike",
+              resources: [
+                { item: "gold", qty: 35000 },
+                { item: "path power loop", qty: 3 },
+                { item: "molagorago", qty: 1 }
+              ]
+            },
+            {
+              description: "+15% damage dealt by Relentless Strike",
+              resources: [
+                { item: "gold", qty: 160000 },
+                { item: "nightmare mask", qty: 2 },
+                { item: "molagoragora", qty: 1 }
+              ]
+            }
+          ],
+          buffs: ["stic_spd_up"],
+          debuffs: []
+        },
+        {
+          isPassive: false,
+          soulBurn: 10,
+          soulBurnEffect: "Increases damage dealt",
+          awakenUpgrade: true,
+          cooldown: 4,
+          name: "Hack",
+          soulAcquire: 2,
+          description:
+            "Cuts with a dagger, granting an extra turn if they enemy is defeated. Attacks with a more powerful skill when the caster is granted increased Speed.",
+          enhancement: [
+            {
+              description: "+5% damage dealt",
+              resources: [
+                { item: "gold", qty: 4000 },
+                { item: "molagora", qty: 1 }
+              ]
+            },
+            {
+              description: "+5% damage dealt",
+              resources: [
+                { item: "gold", qty: 8000 },
+                { item: "molagora", qty: 2 }
+              ]
+            },
+            {
+              description: "-1 turn cooldown",
+              resources: [
+                { item: "gold", qty: 21000 },
+                { item: "path power loop", qty: 1 },
+                { item: "molagora", qty: 4 }
+              ]
+            },
+            {
+              description: "+10% damage dealt",
+              resources: [
+                { item: "gold", qty: 35000 },
+                { item: "path power loop", qty: 3 },
+                { item: "molagorago", qty: 1 }
+              ]
+            },
+            {
+              description: "+10% damage dealt",
+              resources: [
+                { item: "gold", qty: 160000 },
+                { item: "nightmare mask", qty: 2 },
+                { item: "molagoragora", qty: 1 }
+              ]
+            }
+          ],
+          buffs: ["stic_spd_up"],
+          debuffs: []
+        }
+      ]
     },
     defaults: {
       rarity: [
@@ -107,7 +269,7 @@ class Hero extends Component {
       <React.Fragment>
         <h1>Heroes</h1>
         <Row>
-          <Col md="9">
+          <Col md="10">
             <HeroForm
               hero={this.state.hero}
               defaults={this.state.defaults}
