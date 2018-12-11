@@ -18,63 +18,72 @@ class HeroStats extends Component {
           <FormGroup row>
             <EpicInput
               type="number"
+              size="20"
               name="base.cp"
+              size="20"
               value={stats.base.cp}
               onChange={this.handleChange}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="base.atk"
               value={stats.base.atk}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="base.hp"
               value={stats.base.hp}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="base.spd"
               value={stats.base.spd}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="base.def"
               value={stats.base.def}
             />
-          </FormGroup>
-          <FormGroup row>
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="base.chc"
               value={stats.base.chc}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="base.chd"
               value={stats.base.chd}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="base.eff"
               value={stats.base.eff}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="base.efr"
               value={stats.base.efr}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="base.dac"
               value={stats.base.dac}
             />
@@ -86,62 +95,70 @@ class HeroStats extends Component {
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="max.cp"
               value={stats.max.cp}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="max.atk"
               value={stats.max.atk}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="max.hp"
               value={stats.max.hp}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="max.spd"
               value={stats.max.spd}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="max.def"
               value={stats.max.def}
             />
-          </FormGroup>
-          <FormGroup row>
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="max.chc"
               value={stats.max.chc}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="max.chd"
               value={stats.max.chd}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="max.eff"
               value={stats.max.eff}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="max.efr"
               value={stats.max.efr}
             />
             <EpicInput
               type="number"
               onChange={this.handleChange}
+              size="20"
               name="max.dac"
               value={stats.max.dac}
             />

@@ -3,9 +3,9 @@ import { Col, Label, Input } from "reactstrap";
 
 class EpicInput extends Component {
   render() {
-    const { name, size, noLabel } = this.props;
+    const { name, size, noLabel, offset } = this.props;
     return (
-      <Col md={size}>
+      <Col md={{ size: size, offset: offset }} sm="6">
         <Label className={noLabel ? "hidden" : ""} for={name}>
           {name}
         </Label>

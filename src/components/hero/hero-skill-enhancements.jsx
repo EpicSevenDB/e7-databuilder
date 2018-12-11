@@ -10,7 +10,8 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Label
+  Label,
+  Input
 } from "reactstrap";
 
 class HeroSkillEnhancements extends Component {
@@ -29,7 +30,6 @@ class HeroSkillEnhancements extends Component {
         ...enhancements[i]["resources"],
         newResource
       ];
-      console.info("ADDING NEW RESOURCE: ", enhancements[i]);
       this.props.onAdd("enhancement", enhancements, this.props.index);
     } else {
       const newEnhancement = {
@@ -42,6 +42,7 @@ class HeroSkillEnhancements extends Component {
       };
       const enhancements = [...this.props.enhancements, newEnhancement];
       this.props.onAdd("enhancement", enhancements, this.props.index);
+      this.toggle(enhancements.length - 1);
     }
   };
   handleChange = (type, value, i, j) => {
@@ -66,8 +67,12 @@ class HeroSkillEnhancements extends Component {
         ...this.props.enhancements.slice(0, i),
         ...this.props.enhancements.slice(i + 1)
       ];
-      this.toggle(0);
       this.props.onChange("enhancement", enhancements, this.props.index);
+      if (i === enhancements.length) {
+        this.toggle(enhancements.length - 1);
+      } else {
+        this.toggle(i);
+      }
     }
   };
   toggle(tab) {
@@ -84,6 +89,14 @@ class HeroSkillEnhancements extends Component {
         <Col md="12">
           <Label>enhancements</Label>
           <Nav tabs>
+            <NavItem>
+              <NavLink
+                className="add-link"
+                onClick={e => this.handleAdd("enhancements", index)}
+              >
+                Add
+              </NavLink>
+            </NavItem>
             {enhancements.map((enhancement, i) => (
               <NavItem key={i}>
                 <NavLink
@@ -98,14 +111,6 @@ class HeroSkillEnhancements extends Component {
                 </NavLink>
               </NavItem>
             ))}
-            <NavItem>
-              <NavLink
-                className="add-link"
-                onClick={e => this.handleAdd("enhancements", index)}
-              >
-                Add
-              </NavLink>
-            </NavItem>
           </Nav>
         </Col>
         <Col md="12">
@@ -139,37 +144,48 @@ class HeroSkillEnhancements extends Component {
                       md="12"
                       className="resource-wrapper"
                     >
-                      <FormGroup row>
-                        <EpicInput
+                      <FormGroup className="inline-wrapper">
+                        <Input
                           type="text"
-                          size="8"
+                          bsSize="sm"
                           name="item"
                           placeholder="resource item"
                           index={i}
                           index2={j}
-                          noLabel="true"
                           value={resource.item}
-                          onChange={this.handleChange}
+                          onChange={e =>
+                            this.handleChange(
+                              "item",
+                              e.currentTarget.value,
+                              i,
+                              j
+                            )
+                          }
                         />
-                        <EpicInput
-                          size="3"
+                        <Input
                           type="number"
+                          bsSize="sm"
                           name="qty"
                           index={i}
                           index2={j}
-                          noLabel="true"
                           value={resource.qty}
-                          onChange={this.handleChange}
+                          onChange={e =>
+                            this.handleChange(
+                              "qty",
+                              e.currentTarget.value,
+                              i,
+                              j
+                            )
+                          }
                         />
-                        <Col md="1">
-                          <Button
-                            size="sm"
-                            color="danger"
-                            onClick={e => this.handleDelete("resources", i, j)}
-                          >
-                            X
-                          </Button>
-                        </Col>
+
+                        <Button
+                          size="sm"
+                          color="danger"
+                          onClick={e => this.handleDelete("resources", i, j)}
+                        >
+                          X
+                        </Button>
                       </FormGroup>
                     </Col>
                   ))}

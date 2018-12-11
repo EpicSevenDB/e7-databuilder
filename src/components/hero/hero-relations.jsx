@@ -33,7 +33,7 @@ class HeroRelations extends Component {
 
         {relations.map((relation, i) => (
           <Form key={i} inline>
-            <FormGroup className="relation-wrapper">
+            <FormGroup className="inline-wrapper">
               <Input
                 type="text"
                 placeholder="Hero Name"

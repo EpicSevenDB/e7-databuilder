@@ -59,11 +59,19 @@
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
 }
 
-.relation-wrapper {
+.inline-wrapper {
   width: 100%;
   margin-bottom: 8px !important;
   .form-control {
     width: calc(50% - 24px);
     margin-right: 10px;
+    float: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-20 {
+    flex: 0 0 20%;
+    max-width: 20%;
   }
 }
