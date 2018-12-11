@@ -70,7 +70,13 @@ class HeroRelations extends Component {
             </FormGroup>
           </Form>
         ))}
-        <Button onClick={this.handleAdd} color="secondary" outline block>
+        <Button
+          onClick={this.handleAdd}
+          color="success"
+          size="sm"
+          outline
+          block
+        >
           Add new relation
         </Button>
       </Col>

@@ -14,7 +14,16 @@ class EpicInput extends Component {
     );
   }
   isSelectMenu() {
-    const { type, value, name, onChange, options, index } = this.props;
+    const {
+      type,
+      value,
+      name,
+      placeholder,
+      onChange,
+      options,
+      index,
+      index2
+    } = this.props;
     if (type === "select") {
       return (
         <Input
@@ -23,7 +32,7 @@ class EpicInput extends Component {
           value={value}
           name={name}
           onChange={e =>
-            onChange(e.currentTarget.name, e.currentTarget.value, index)
+            onChange(e.currentTarget.name, e.currentTarget.value, index, index2)
           }
         >
           <option disabled value="">
@@ -42,9 +51,10 @@ class EpicInput extends Component {
         type={type}
         bsSize="sm"
         value={value}
+        placeholder={placeholder}
         name={name}
         onChange={e =>
-          onChange(e.currentTarget.name, e.currentTarget.value, index)
+          onChange(e.currentTarget.name, e.currentTarget.value, index, index2)
         }
       />
     );

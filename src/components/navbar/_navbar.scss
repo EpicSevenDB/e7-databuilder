@@ -31,6 +31,7 @@
   border-bottom: none;
   position: relative;
   z-index: 99;
+  margin-left: 15px;
   .nav-link {
     opacity: 0.35;
     font-size: 0.8em;
@@ -39,13 +40,21 @@
       opacity: 1;
     }
   }
+  .add-link {
+    opacity: 1;
+    background: $green;
+    color: #fff !important;
+  }
 }
 
+.gutter-top {
+  margin-top: 15px;
+}
 .tab-pane {
   background: #fff;
   border: 1px solid $border;
   border-radius: 5px;
-  margin-top: -1px;
+  margin-top: 0px;
   padding: 12px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
 }

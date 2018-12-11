@@ -34,27 +34,31 @@ class HeroSkills extends Component {
     this.props.onChange("skills", skills);
     console.info("CHANGING", i);
   };
+  handleNew = (type, value, i) => {
+    const skills = [...this.props.skills];
+    skills[i][type] = value;
+    this.props.onChange("skills", skills);
+  };
 
   render() {
     const { skills } = this.props;
     return (
       <React.Fragment>
-        <Col md="12">
-          <Nav tabs>
-            {skills.map((skill, i) => (
-              <NavItem key={i}>
-                <NavLink
-                  className={classnames({ active: this.state.activeTab === i })}
-                  onClick={() => {
-                    this.toggle(i);
-                  }}
-                >
-                  Skill {i + 1}
-                </NavLink>
-              </NavItem>
-            ))}
-          </Nav>
-        </Col>
+        <Nav tabs>
+          {skills.map((skill, i) => (
+            <NavItem key={i}>
+              <NavLink
+                className={classnames({ active: this.state.activeTab === i })}
+                onClick={() => {
+                  this.toggle(i);
+                }}
+              >
+                Skill {i + 1}
+              </NavLink>
+            </NavItem>
+          ))}
+        </Nav>
+
         <TabContent activeTab={this.state.activeTab}>
           {skills.map((skill, i) => (
             <TabPane key={i} tabId={i}>
@@ -164,7 +168,12 @@ class HeroSkills extends Component {
                     index={i}
                     onChange={this.handleChange}
                   />
-                  <HeroSkillEnhancements enhancements={skill.enhancement} />
+                  <HeroSkillEnhancements
+                    enhancements={skill.enhancement}
+                    onChange={this.handleChange}
+                    index={i}
+                    onAdd={this.handleNew}
+                  />
                 </FormGroup>
               </Col>
             </TabPane>
