@@ -27,6 +27,9 @@ textarea {
 .custom-checkbox {
   top: 30%;
   padding: 8px 24px;
+  .custom-control-label {
+    cursor: pointer;
+  }
 }
 .custom-control-label::before,
 .custom-control-label::after {

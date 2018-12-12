@@ -88,7 +88,7 @@ class HeroSkillEnhancements extends Component {
       <React.Fragment>
         <Col md="12">
           <Label>enhancements</Label>
-          <Nav tabs>
+          <Nav tabs className="small-tabs">
             <NavItem>
               <NavLink
                 className="add-link"

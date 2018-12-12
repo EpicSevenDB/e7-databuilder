@@ -6,6 +6,8 @@ import EpicInput from "../common/epic-input";
 import HeroRelations from "./hero-relations";
 import HeroStats from "./hero-stats";
 import HeroSkills from "./hero-skills";
+import HeroSpecialtySkills from "./hero-specialty-skills";
+import HeroMemoryImprint from "./hero-memory-imprint";
 
 class HeroForm extends Component {
   render() {
@@ -81,6 +83,14 @@ class HeroForm extends Component {
           />
           <HeroStats stats={hero.stats} onChange={onChange} />
           <HeroSkills skills={hero.skills} onChange={onChange} />
+          <HeroSpecialtySkills
+            specialtySkill={hero.specialtySkill}
+            onChange={onChange}
+          />
+          <HeroMemoryImprint
+            memoryImprint={hero.memoryImprint}
+            onChange={onChange}
+          />
         </FormGroup>
       </React.Fragment>
     );

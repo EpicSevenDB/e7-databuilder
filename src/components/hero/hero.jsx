@@ -7,44 +7,49 @@ import { Row, Col } from "reactstrap";
 class Hero extends Component {
   state = {
     hero: {
-      name: "Cidd",
-      rarity: 5,
-      classType: "thief",
-      element: "earth",
-      zodiac: "aries",
+      name: "Ras",
+      rarity: 3,
+      classType: "knight",
+      element: "fire",
+      zodiac: "libra",
       specialtyChangeName: "",
       selfSkillBarName: "",
       background: [
-        "Cidd is the youngest member and mascot of the Wild Dog Company, a group of mercenaries headquartered in an old ruined fortress in Wetheric Moor. Contrary to his cheerful and carefree appearance, he will complete any task assigned to him. He cares for the Wild Dog Company as if they were family."
+        "Created to protect the world and all life within it, he is admired as the leader of the Heirs and the alter ego of the Goddess. He has a good personality and is very understanding, though he lacks some understanding of Humans"
       ],
       relations: [
-        { hero: "dingo", relationType: "trust" },
-        { hero: "otillie", relationType: "trust" },
-        { hero: "armin", relationType: "rival" }
+        { hero: "ruele-of-light", relationType: "trust" },
+        { hero: "judge-kise", relationType: "trust" },
+        { hero: "krau", relationType: "trust" },
+        { hero: "iseria", relationType: "trust" },
+        { hero: "ludwig", relationType: "trust" },
+        { hero: "aither", relationType: "trust" },
+        { hero: "mercedes", relationType: "trust" },
+        { hero: "yuna", relationType: "trust" }
       ],
       stats: {
         base: {
-          cp: 2434,
-          atk: 228,
-          hp: 675,
-          spd: 126,
-          def: 54,
-          chc: 21,
+          cp: 2222,
+          atk: 203,
+          hp: 706,
+          spd: 95,
+          def: 74,
+          chc: 15,
           chd: 150,
           eff: 0,
-          efr: 0,
+          efr: 6,
           dac: 5
         },
         max: {
-          cp: 14727,
-          atk: 990,
-          hp: 4936,
-          spd: 126,
-          def: 466,
-          chc: 21,
+          cp: 15272,
+          atk: 758,
+          hp: 5826,
+          spd: 95,
+          def: 672,
+          chc: 15,
           chd: 150,
           eff: 0,
-          efr: 0,
+          efr: 6,
           dac: 5
         }
       },
@@ -56,158 +61,165 @@ class Hero extends Component {
           soulBurnEffect: "",
           awakenUpgrade: false,
           cooldown: 0,
-          name: "Relentless Strike",
+          name: "X-Slash",
           soulAcquire: 1,
           description:
-            "Attacks with a dagger. A critical hit will increase speed of the caster for 2 turns. Damage dealt increases proportional to the caster's speed",
+            "Swing the sword and attack the enemy. Damage increases proportionally to your maximum Vitality",
           enhancement: [
             {
               description: "+5% damage dealt",
-              resources: [
-                { item: "gold", qty: 4000 },
-                { item: "molagora", qty: 1 }
-              ]
+              resources: [{ item: "molagora", qty: 1 }]
             },
             {
               description: "+5% damage dealt",
-              resources: [
-                { item: "gold", qty: 8000 },
-                { item: "molagora", qty: 2 }
-              ]
+              resources: [{ item: "molagora", qty: 1 }]
             },
             {
               description: "+5% damage dealt",
-              resources: [
-                { item: "gold", qty: 21000 },
-                { item: "path power loop", qty: 1 },
-                { item: "molagora", qty: 4 }
-              ]
+              resources: [{ item: "molagora", qty: 1 }]
+            },
+            {
+              description: "+5% damage dealt",
+              resources: [{ item: "molagora", qty: 1 }]
             },
             {
               description: "+10% damage dealt",
-              resources: [
-                { item: "gold", qty: 35000 },
-                { item: "path power loop", qty: 3 },
-                { item: "molagorago", qty: 1 }
-              ]
-            },
-            {
-              description: "+10% damage dealt",
-              resources: [
-                { item: "gold", qty: 160000 },
-                { item: "nightmare mask", qty: 2 },
-                { item: "molagoragora", qty: 1 }
-              ]
+              resources: [{ item: "molagora", qty: 1 }]
             }
           ],
-          buffs: ["stic_spd_up"],
-          debuffs: []
-        },
-        {
-          isPassive: true,
-          soulBurn: 0,
-          soulBurnEffect: "",
-          awakenUpgrade: false,
-          cooldown: 0,
-          name: "Wind's Resolve",
-          soulAcquire: 0,
-          description:
-            "Enhances Relentless Strike, increasing Damage dealt, when the caster is granted increased speed, and decreases defense of the enemy for 1 turn.",
-          enhancement: [
-            {
-              description: "+5% damage dealt by Relentless Strike",
-              resources: [
-                { item: "gold", qty: 4000 },
-                { item: "molagora", qty: 1 }
-              ]
-            },
-            {
-              description: "+5% damage dealt by Relentless Strike",
-              resources: [
-                { item: "gold", qty: 8000 },
-                { item: "molagora", qty: 2 }
-              ]
-            },
-            {
-              description: "+5% damage dealt by Relentless Strike",
-              resources: [
-                { item: "gold", qty: 21000 },
-                { item: "path power loop", qty: 1 },
-                { item: "molagora", qty: 4 }
-              ]
-            },
-            {
-              description: "+10% damage dealt by Relentless Strike",
-              resources: [
-                { item: "gold", qty: 35000 },
-                { item: "path power loop", qty: 3 },
-                { item: "molagorago", qty: 1 }
-              ]
-            },
-            {
-              description: "+15% damage dealt by Relentless Strike",
-              resources: [
-                { item: "gold", qty: 160000 },
-                { item: "nightmare mask", qty: 2 },
-                { item: "molagoragora", qty: 1 }
-              ]
-            }
-          ],
-          buffs: ["stic_spd_up"],
+          buffs: [],
           debuffs: []
         },
         {
           isPassive: false,
           soulBurn: 10,
-          soulBurnEffect: "Increases damage dealt",
-          awakenUpgrade: true,
-          cooldown: 4,
-          name: "Hack",
+          selfSkillBarValue: 0,
+          soulBurnEffect: "The skill cooldown decreases by 2 turns.",
+          awakenUpgrade: false,
+          cooldown: 3,
+          name: "Command Strike",
           soulAcquire: 2,
           description:
-            "Cuts with a dagger, granting an extra turn if they enemy is defeated. Attacks with a more powerful skill when the caster is granted increased Speed.",
+            "After successive attacks on the enemy, it will cause your strongest ally to Dual attack with you.",
           enhancement: [
             {
               description: "+5% damage dealt",
-              resources: [
-                { item: "gold", qty: 4000 },
-                { item: "molagora", qty: 1 }
-              ]
+              resources: [{ item: "molagora", qty: 1 }]
             },
             {
               description: "+5% damage dealt",
-              resources: [
-                { item: "gold", qty: 8000 },
-                { item: "molagora", qty: 2 }
-              ]
+              resources: [{ item: "molagora", qty: 1 }]
+            },
+            {
+              description: "+5% damage dealt",
+              resources: [{ item: "molagora", qty: 1 }]
+            },
+            {
+              description: "+5% damage dealt",
+              resources: [{ item: "molagora", qty: 1 }]
+            },
+            {
+              description: "+10% damage dealt",
+              resources: [{ item: "molagora", qty: 1 }]
+            }
+          ],
+          buffs: [],
+          debuffs: []
+        },
+        {
+          isPassive: false,
+          soulBurn: 10,
+          selfSkillBarValue: 0,
+          soulBurnEffect: "",
+          awakenUpgrade: true,
+          cooldown: 5,
+          name: "Sword of the Heir",
+          soulAcquire: 2,
+          description:
+            "Strongly attacks with a swordstorm, recovering Health prportional to damage dealt, and increasing Defense of the caster for 2 turns. Damage dealt increases proportional to max Health of caster.",
+          enhancement: [
+            {
+              description: "+5% damage dealt",
+              resources: [{ item: "molagora", qty: 1 }]
+            },
+            {
+              description: "+5% damage dealt",
+              resources: [{ item: "molagora", qty: 1 }]
             },
             {
               description: "-1 turn cooldown",
-              resources: [
-                { item: "gold", qty: 21000 },
-                { item: "path power loop", qty: 1 },
-                { item: "molagora", qty: 4 }
-              ]
+              resources: [{ item: "molagora", qty: 1 }]
+            },
+            {
+              description: "+5% damage dealt",
+              resources: [{ item: "molagora", qty: 1 }]
             },
             {
               description: "+10% damage dealt",
-              resources: [
-                { item: "gold", qty: 35000 },
-                { item: "path power loop", qty: 3 },
-                { item: "molagorago", qty: 1 }
-              ]
-            },
-            {
-              description: "+10% damage dealt",
-              resources: [
-                { item: "gold", qty: 160000 },
-                { item: "nightmare mask", qty: 2 },
-                { item: "molagoragora", qty: 1 }
-              ]
+              resources: [{ item: "molagora", qty: 1 }]
             }
           ],
-          buffs: ["stic_spd_up"],
+          buffs: ["stic_def_up"],
           debuffs: []
+        }
+      ],
+      specialtySkill: {
+        name: "Blessings of Covenants",
+        description:
+          "The Heir of the Covenant bears the weight of the world upon his shoulders.",
+        dispatch: ["[Security] type mission"],
+        enhancement: ["Reward bonus +6%"],
+        stats: { command: 88, charm: 76, politics: 15 }
+      },
+      memoryImprint: [
+        {
+          rank: "d",
+          status: {
+            type: "hp",
+            increase: 120
+          }
+        },
+        {
+          rank: "c",
+          status: {
+            type: "hp",
+            increase: 180
+          }
+        },
+        {
+          rank: "b",
+          status: {
+            type: "hp",
+            increase: 240
+          }
+        },
+        {
+          rank: "a",
+          status: {
+            type: "hp",
+            increase: 300
+          }
+        },
+        {
+          rank: "s",
+          status: {
+            type: "hp",
+            increase: 360
+          }
+        },
+        {
+          rank: "ss",
+          status: {
+            type: "hp",
+            increase: 420
+          }
+        },
+        {
+          rank: "sss",
+          status: {
+            type: "hp",
+            increase: 480
+          }
         }
       ]
     },

@@ -55,10 +55,17 @@
   border: 1px solid $border;
   border-radius: 5px;
   margin-top: 0px;
-  padding: 12px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+  padding: 12px 12px 24px 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  min-height: 300px;
 }
 
+.small-tabs {
+  .nav-item a {
+    font-size: 0.8em;
+    padding: 6px 12px;
+  }
+}
 .inline-wrapper {
   width: 100%;
   margin-bottom: 8px !important;
