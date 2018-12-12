@@ -89,7 +89,7 @@ class HeroSkillEnhancements extends Component {
         <Col md="12">
           <Label>enhancements</Label>
           <Nav tabs className="small-tabs">
-            <NavItem>
+            <NavItem className={enhancements.length >= 10 ? "hidden" : ""}>
               <NavLink
                 className="add-link"
                 onClick={e => this.handleAdd("enhancements", index)}
@@ -189,7 +189,12 @@ class HeroSkillEnhancements extends Component {
                       </FormGroup>
                     </Col>
                   ))}
-                  <Col>
+                  <Col
+                    md="12"
+                    className={
+                      enhancement.resources.length >= 3 ? "hidden" : ""
+                    }
+                  >
                     <Button
                       onClick={e => this.handleAdd("resources", i)}
                       color="secondary"

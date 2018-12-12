@@ -37,7 +37,12 @@ textarea {
   top: 0;
 }
 .hidden {
-  display: none;
+  display: none !important;
+}
+.disabled {
+  opacity: 0.5;
+  filter: grayscale(1);
+  pointer-events: none;
 }
 
 .btn {

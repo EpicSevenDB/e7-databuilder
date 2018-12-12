@@ -104,6 +104,25 @@ class HeroAwakening extends Component {
                       </FormGroup>
                     </Col>
                   ))}
+                  <Col
+                    className={
+                      awake.statsIncrease.length >= 3 ||
+                      (awake.skillUpgrade && awake.statsIncrease.length >= 2)
+                        ? "hidden"
+                        : ""
+                    }
+                  >
+                    <Button
+                      className="gutter-top"
+                      color="secondary"
+                      block
+                      size="sm"
+                      outline
+                      className="gutter-top btn-add"
+                    >
+                      Add new stat
+                    </Button>
+                  </Col>
 
                   <Col md="12">
                     <Label>resources</Label>

@@ -327,8 +327,8 @@ class Hero extends Component {
     return (
       <React.Fragment>
         <h1>Heroes</h1>
-        <Row>
-          <Col md="10">
+        <Row className="main-container">
+          <Col md="12">
             <HeroForm
               hero={this.state.hero}
               defaults={this.state.defaults}
