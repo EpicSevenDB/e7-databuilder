@@ -8,6 +8,7 @@ import HeroStats from "./hero-stats";
 import HeroSkills from "./hero-skills";
 import HeroSpecialtySkills from "./hero-specialty-skills";
 import HeroMemoryImprint from "./hero-memory-imprint";
+import HeroAwakening from "./hero-awakening";
 
 class HeroForm extends Component {
   render() {
@@ -91,6 +92,7 @@ class HeroForm extends Component {
             memoryImprint={hero.memoryImprint}
             onChange={onChange}
           />
+          <HeroAwakening awakening={hero.awakening} onChange={onChange} />
         </FormGroup>
       </React.Fragment>
     );

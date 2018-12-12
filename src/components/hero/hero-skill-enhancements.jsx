@@ -191,12 +191,12 @@ class HeroSkillEnhancements extends Component {
                   ))}
                   <Col>
                     <Button
-                      className="gutter-top"
                       onClick={e => this.handleAdd("resources", i)}
-                      color="success"
+                      color="secondary"
                       outline
                       block
                       size="sm"
+                      className="gutter-top btn-add"
                     >
                       Add new resource
                     </Button>

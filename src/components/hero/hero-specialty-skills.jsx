@@ -3,11 +3,10 @@ import EpicInput from "../common/epic-input";
 import { Col, Label } from "reactstrap";
 
 class HeroSpecialtySkills extends Component {
-  handleChange = (type, value) => {
-    const names = type.split(".");
+  handleChange = (type, value, i) => {
     const specialtySkill = { ...this.props.specialtySkill };
-    if (names.length > 1) {
-      specialtySkill[names[0]][names[1]] = value;
+    if (i) {
+      specialtySkill["stats"][type] = value;
     } else {
       specialtySkill[type] = value;
     }
@@ -53,21 +52,24 @@ class HeroSpecialtySkills extends Component {
         <EpicInput
           size="4"
           type="number"
-          name="stats.command"
+          name="command"
+          index={1}
           value={specialtySkill.stats.command}
           onChange={this.handleChange}
         />
         <EpicInput
           size="4"
           type="number"
-          name="stats.charm"
+          name="charm"
+          index={1}
           value={specialtySkill.stats.charm}
           onChange={this.handleChange}
         />
         <EpicInput
           size="4"
           type="number"
-          name="stats.politics"
+          name="politics"
+          index={1}
           value={specialtySkill.stats.politics}
           onChange={this.handleChange}
         />

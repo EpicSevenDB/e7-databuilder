@@ -72,10 +72,11 @@ class HeroRelations extends Component {
         ))}
         <Button
           onClick={this.handleAdd}
-          color="success"
-          size="sm"
+          color="secondary"
           outline
+          size="sm"
           block
+          className="btn-add"
         >
           Add new relation
         </Button>

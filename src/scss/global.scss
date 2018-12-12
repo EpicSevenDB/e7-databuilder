@@ -3,7 +3,8 @@ $bg: #f3f4f7;
 $border: #dee2e6;
 $grey: #888b8e;
 $blue: #2a4c80;
-$green: #13b368;
+$green: #20ad9b;
+$red: #af3838;
 
 @import "../components/navbar/navbar";
 
@@ -39,8 +40,25 @@ textarea {
   display: none;
 }
 
+.btn {
+  border: none;
+}
 .btn.btn-danger {
   float: right;
+  background: $red;
+  border: none;
+}
+
+.btn-add {
+  border: 1px dashed $grey;
+  color: $grey;
+  opacity: 0.5;
+  box-shadow: none !important;
+  &:hover {
+    background-color: $green;
+    border: 1px solid transparent;
+    opacity: 1;
+  }
 }
 
 .resource-wrapper {

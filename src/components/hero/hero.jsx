@@ -221,6 +221,53 @@ class Hero extends Component {
             increase: 480
           }
         }
+      ],
+      awakening: [
+        {
+          rank: 1,
+          skillUpgrade: false,
+          statsIncrease: [{ hp: "3%" }, { atk: 20 }, { hp: 60 }],
+          resources: [{ item: "flame-rune", qty: 5 }]
+        },
+        {
+          rank: 2,
+          skillUpgrade: false,
+          statsIncrease: [{ def: "3%" }, { atk: 20 }, { hp: 60 }],
+          resources: [{ item: "flame-rune", qty: 9 }]
+        },
+        {
+          rank: 3,
+          skillUpgrade: true,
+          statsIncrease: [{ atk: 20 }, { hp: 60 }],
+          resources: [
+            { item: "flame-rune", qty: 12 },
+            { item: "greater-flame-rune", qty: 6 }
+          ]
+        },
+        {
+          rank: 4,
+          skillUpgrade: false,
+          statsIncrease: [{ efr: "6%" }, { atk: 30 }, { hp: 80 }],
+          resources: [{ item: "greater-flame-rune", qty: 15 }]
+        },
+        {
+          rank: 5,
+          skillUpgrade: false,
+          statsIncrease: [{ hp: "6%" }, { atk: 30 }, { hp: 80 }],
+          resources: [
+            { item: "epic-flame-rune", qty: 4 },
+            { item: "dream-time-circuit", qty: 9 }
+          ]
+        },
+        {
+          rank: 6,
+          skillUpgrade: false,
+          statsIncrease: [{ def: "6%" }, { atk: 30 }, { hp: 80 }],
+          resources: [
+            { item: "epic-flame-rune", qty: 6 },
+            { item: "reingar-student-id", qty: 6 }
+          ]
+        }
       ]
     },
     defaults: {
