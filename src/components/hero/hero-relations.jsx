@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BadgeTip from "../common/badgetip";
 import { Col, Form, FormGroup, Button, Input, Label } from "reactstrap";
 
 class HeroRelations extends Component {
@@ -29,8 +30,10 @@ class HeroRelations extends Component {
 
     return (
       <Col md="12">
-        <Label>relations</Label>
-
+        <Label>
+          relations
+          <BadgeTip value="Example: martial-artist-ken" id="relations" />
+        </Label>
         {relations.map((relation, i) => (
           <Form key={i} inline>
             <FormGroup className="inline-wrapper">

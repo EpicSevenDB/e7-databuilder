@@ -18,11 +18,12 @@ class TopNavBar extends Component {
 
     return (
       <React.Fragment>
-        <Nav className="top-navbar">
-          <NavItem>
-            <h1 className="title">{title}</h1>
-          </NavItem>
-          {/* <NavItem>
+        <div className="top-navbar">
+          <Nav className="main-container">
+            <NavItem>
+              <h1 className="title">{title}</h1>
+            </NavItem>
+            {/* <NavItem>
             <div class="nav-wrapper">
               {this.state.nav.map(link => (
                 <a href={"#" + link.url} className="btn link">
@@ -32,10 +33,11 @@ class TopNavBar extends Component {
             </div>
           </NavItem> */}
 
-          <NavItem>
-            <div className="nav-wrapper">{children}</div>
-          </NavItem>
-        </Nav>
+            <NavItem>
+              <div className="nav-wrapper">{children}</div>
+            </NavItem>
+          </Nav>
+        </div>
       </React.Fragment>
     );
   }

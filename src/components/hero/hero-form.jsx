@@ -23,6 +23,8 @@ class HeroForm extends Component {
                 type="text"
                 name="name"
                 size="12"
+                tooltip="Example: Martial Artist Ken"
+                id="heroName"
                 value={hero.name}
                 onChange={onChange}
               />

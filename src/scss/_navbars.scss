@@ -43,17 +43,22 @@
 
 .top-navbar {
   background: #fff;
-  position: fixed;
-  padding: 12px 20px;
+  position: absolute;
+  padding: 12px 24px;
   top: 0;
-  left: 66px;
-  width: calc(100% - 66px);
+  left: 63px;
+  width: calc(100% - 63px);
   box-shadow: $shadows;
   border-bottom: 1px solid $border;
   z-index: 999;
-  justify-content: space-between;
+  .nav {
+    justify-content: space-between;
+    max-width: 890px;
+  }
   .title {
     font-size: 1.52em;
+    font-weight: 200;
+    margin: 0;
   }
   .nav-item {
     display: flex;

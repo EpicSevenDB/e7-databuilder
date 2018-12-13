@@ -4,10 +4,13 @@ $border: #dee2e6;
 $grey: #888b8e;
 $blue: #2a4c80;
 $green: #20ad9b;
-$red: #af3838;
+$red: #e65454;
 
 $shadows: 0 0px 6px transparentize($black, 0.92);
 $ease: all 0.3s ease;
+$str: 5;
+
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500");
 
 @import "./helpers";
 @import "./buttons";
@@ -21,11 +24,18 @@ $ease: all 0.3s ease;
 body {
   background: $bg;
   color: $grey;
+  font-family: "Quicksand", sans-serif;
+  padding-bottom: 100px;
 }
 
 label {
-  margin: 8px 0 0 0;
+  margin: 10px 0 4px 0;
   font-size: 0.75em;
+  .badge {
+    margin-left: 3px;
+    background-color: $grey;
+    cursor: help;
+  }
 }
 
 textarea {
@@ -38,4 +48,20 @@ textarea {
 .main-container {
   max-width: 960px;
   margin: 0 auto;
+}
+
+.tooltip-inner {
+  background-color: $black;
+  font-family: "Quicksand";
+  box-shadow: 0 1px 3px transparentize($black, 0.5);
+  font-size: 0.85em;
+  padding: 8px 12px;
+}
+
+.tooltip.bs-tooltip-auto[x-placement^="right"] .arrow::before,
+.tooltip.bs-tooltip-right .arrow::before {
+  margin-top: 1px;
+  content: "";
+  border-width: 5px 5px 5px 0;
+  border-right-color: $black;
 }

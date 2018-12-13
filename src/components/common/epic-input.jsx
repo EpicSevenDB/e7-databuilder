@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Col, Label, Input } from "reactstrap";
+import BadgeTip from "../common/badgetip";
 
 class EpicInput extends Component {
   render() {
-    const { name, size, noLabel, offset } = this.props;
+    const { id, name, size, noLabel, offset, tooltip } = this.props;
     return (
       <Col md={{ size: size, offset: offset }} sm="6">
         <Label className={noLabel ? "hidden" : ""} for={name}>
-          {name}
+          {name} {tooltip ? <BadgeTip value={tooltip} id={id} /> : null}
         </Label>
         {this.isSelectMenu()}
       </Col>

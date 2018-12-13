@@ -4,9 +4,11 @@
   box-shadow: $shadows;
   background: lighten($bg, 2.5);
   .card-header {
-    background: darken($bg, 5);
-    padding: 8px 12px;
+    background: #fff;
+    padding: 12px 20px;
     border-bottom: 1px solid $border;
+    font-size: 0.85em;
+    font-weight: 500;
   }
   .card-body {
     padding-top: 6px;

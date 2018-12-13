@@ -15,6 +15,9 @@
   }
   &.btn-danger {
     background: $red;
+    &:hover {
+      background-color: darken($red, 5);
+    }
   }
 }
 
