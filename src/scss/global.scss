@@ -47,6 +47,16 @@ textarea {
 
 .btn {
   border: none;
+  &.btn-success {
+    background-color: $green;
+    &:focus {
+      box-shadow: 0 0 0 0.2rem transparentize($green, 0.25);
+    }
+    &:active {
+      background-color: darken($green, 10) !important;
+      box-shadow: 0 0 0 0.2rem transparentize($green, 0.25) !important;
+    }
+  }
 }
 .btn.btn-danger {
   float: right;
@@ -54,6 +64,11 @@ textarea {
   border: none;
 }
 
+.alert-success {
+  color: #f3f4f7;
+  background-color: $green;
+  border-color: $green;
+}
 .btn-add {
   border: 1px dashed $grey;
   color: $grey;

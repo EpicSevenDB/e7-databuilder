@@ -51,13 +51,12 @@ class HeroExport extends Component {
         <Alert
           color="success"
           isOpen={this.state.visible}
-          toggle={this.onDismiss}
           className={this.state.copied ? "toaster" : "toaster hide"}
         >
-          <strong>Copied to Clipboard!</strong>
+          Copied to Clipboard!
         </Alert>
 
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+        <Modal centered={true} isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>Export</ModalHeader>
           <ModalBody>
             <Input
@@ -72,10 +71,12 @@ class HeroExport extends Component {
               text={JSON.stringify(output)}
               onCopy={this.onCopyToClipboard}
             >
-              <Button color="success">Copy to clipboard</Button>
+              <Button color="success" size="sm">
+                Copy to clipboard
+              </Button>
             </CopyToClipboard>
 
-            <Button color="secondary" onClick={this.toggle}>
+            <Button color="secondary" size="sm" onClick={this.toggle}>
               Cancel
             </Button>
           </ModalFooter>
