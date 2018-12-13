@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EpicInput from "../common/epic-input";
+
 import classnames from "classnames";
 import {
   Col,
@@ -30,10 +30,44 @@ class HeroAwakening extends Component {
       });
     }
   }
-  handleChange = (name, value, i) => {
-    console.info("Change is happening");
+  /* Need a more elegant solution in the future...*/
+  handleChange = (type, value, i, j) => {
+    const awakening = [...this.props.awakening];
+    const name = type.split(".");
+    if (name[0] === "stats") {
+      let newStat = {};
+      newStat[value] = awakening[i]["statsIncrease"][j][name[1]];
+      awakening[i]["statsIncrease"][j] = newStat;
+    } else if (type !== "qty") {
+      awakening[i]["statsIncrease"][j][type] = value;
+    } else if (j >= 0) {
+      awakening[i]["resources"][j][type] = value;
+    } else {
+      awakening[i][type] = value;
+    }
+    console.info("NEW VALUEZ: ", awakening[i]["statsIncrease"][j]);
+    this.props.onChange("awakening", awakening);
   };
-
+  handleDelete = (type, i, j) => {
+    const awakening = [...this.props.awakening];
+    awakening[i][type] = [
+      ...awakening[i][type].slice(0, j),
+      ...awakening[i][type].slice(j + 1)
+    ];
+    console.info("DELETING STATS: ", awakening);
+    this.props.onChange("awakening", awakening);
+  };
+  handleAdd = (type, i) => {
+    const awakening = [...this.props.awakening];
+    let newObj = {};
+    if (type === "statsIncrease") {
+      newObj = { "": "" };
+    } else {
+      newObj = { item: "", qty: "" };
+    }
+    awakening[i][type] = [...awakening[i][type], newObj];
+    this.props.onChange("awakening", awakening);
+  };
   render() {
     const { awakening, onChange } = this.props;
 
@@ -85,20 +119,40 @@ class HeroAwakening extends Component {
                         <Input
                           type="text"
                           bsSize="sm"
-                          name="item"
+                          name={"stats." + Object.keys(increase)}
                           placeholder="resource item"
-                          index={j}
                           value={Object.keys(increase)}
+                          onChange={e =>
+                            this.handleChange(
+                              e.currentTarget.name,
+                              e.currentTarget.value,
+                              i,
+                              j
+                            )
+                          }
                         />
                         <Input
                           type="text"
                           bsSize="sm"
-                          name="qty"
-                          index={j}
+                          name={Object.keys(increase)}
                           value={increase[Object.keys(increase)]}
+                          onChange={e =>
+                            this.handleChange(
+                              e.currentTarget.name,
+                              e.currentTarget.value,
+                              i,
+                              j
+                            )
+                          }
                         />
 
-                        <Button size="sm" color="danger">
+                        <Button
+                          size="sm"
+                          color="danger"
+                          onClick={e =>
+                            this.handleDelete("statsIncrease", i, j)
+                          }
+                        >
                           X
                         </Button>
                       </FormGroup>
@@ -119,6 +173,7 @@ class HeroAwakening extends Component {
                       size="sm"
                       outline
                       className="gutter-top btn-add"
+                      onClick={e => this.handleAdd("statsIncrease", i)}
                     >
                       Add new stat
                     </Button>
@@ -135,24 +190,42 @@ class HeroAwakening extends Component {
                           bsSize="sm"
                           name="item"
                           placeholder="resource item"
-                          index={j}
                           value={resource.item}
+                          onChange={e =>
+                            this.handleChange(
+                              e.currentTarget.name,
+                              e.currentTarget.value,
+                              i,
+                              j
+                            )
+                          }
                         />
                         <Input
                           type="number"
                           bsSize="sm"
                           name="qty"
-                          index={j}
                           value={resource.qty}
+                          onChange={e =>
+                            this.handleChange(
+                              e.currentTarget.name,
+                              e.currentTarget.value,
+                              i,
+                              j
+                            )
+                          }
                         />
 
-                        <Button size="sm" color="danger">
+                        <Button
+                          size="sm"
+                          color="danger"
+                          onClick={e => this.handleDelete("resources", i, j)}
+                        >
                           X
                         </Button>
                       </FormGroup>
                     </Col>
                   ))}
-                  <Col>
+                  <Col className={awake.resources.length >= 3 ? "hidden" : ""}>
                     <Button
                       className="gutter-top"
                       color="secondary"
@@ -160,6 +233,7 @@ class HeroAwakening extends Component {
                       size="sm"
                       outline
                       className="gutter-top btn-add"
+                      onClick={e => this.handleAdd("resources", i)}
                     >
                       Add new resource
                     </Button>
