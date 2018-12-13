@@ -122,6 +122,7 @@ class HeroSkillEnhancements extends Component {
                     <Button
                       size="sm"
                       color="danger"
+                      tabIndex="-1"
                       onClick={e => this.handleDelete("enhancements", i)}
                     >
                       Delete
@@ -182,6 +183,7 @@ class HeroSkillEnhancements extends Component {
                         <Button
                           size="sm"
                           color="danger"
+                          tabIndex="-1"
                           onClick={e => this.handleDelete("resources", i, j)}
                         >
                           X

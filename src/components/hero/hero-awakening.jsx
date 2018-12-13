@@ -149,6 +149,7 @@ class HeroAwakening extends Component {
                         <Button
                           size="sm"
                           color="danger"
+                          tabIndex="-1"
                           onClick={e =>
                             this.handleDelete("statsIncrease", i, j)
                           }
@@ -218,6 +219,7 @@ class HeroAwakening extends Component {
                         <Button
                           size="sm"
                           color="danger"
+                          tabIndex="-1"
                           onClick={e => this.handleDelete("resources", i, j)}
                         >
                           X

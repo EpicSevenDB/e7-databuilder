@@ -58,11 +58,14 @@ textarea {
   border: 1px dashed $grey;
   color: $grey;
   opacity: 0.5;
-  box-shadow: none !important;
   &:hover {
     background-color: $green;
     border: 1px solid transparent;
     opacity: 1;
+  }
+  &:focus {
+    border: 1px solid $green;
+    box-shadow: 0 0 0 0.2rem transparentize($green, 0.25);
   }
 }
 

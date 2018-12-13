@@ -63,6 +63,7 @@ class HeroRelations extends Component {
               <Button
                 size="sm"
                 color="danger"
+                tabIndex="-1"
                 onClick={e => this.handleDelete(i)}
               >
                 X
