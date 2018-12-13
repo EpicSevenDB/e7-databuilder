@@ -17,9 +17,6 @@ class HeroSpecialtySkills extends Component {
     const { specialtySkill } = this.props;
     return (
       <React.Fragment>
-        <Col md="12">
-          <Label>specialtySkills</Label>
-        </Col>
         <EpicInput
           size="12"
           type="text"

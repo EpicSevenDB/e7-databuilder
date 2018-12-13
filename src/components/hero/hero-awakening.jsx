@@ -73,9 +73,6 @@ class HeroAwakening extends Component {
 
     return (
       <React.Fragment>
-        <Col md="12">
-          <Label>awakening</Label>
-        </Col>
         <Nav tabs>
           {awakening.map((awake, i) => (
             <NavItem key={i}>

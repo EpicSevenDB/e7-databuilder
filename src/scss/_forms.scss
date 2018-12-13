@@ -1,0 +1,21 @@
+.form-group {
+  margin-bottom: 2px;
+}
+
+/* Checkboxes */
+.custom-checkbox {
+  top: 30%;
+  padding: 8px 24px;
+  .custom-control-label {
+    cursor: pointer;
+    &::before,
+    &::after {
+      top: 0;
+    }
+  }
+}
+
+/* Resources */
+.resource-wrapper {
+  margin-top: 6px;
+}

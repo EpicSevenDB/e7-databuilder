@@ -121,6 +121,7 @@ class HeroSkillEnhancements extends Component {
                   <Col offset="12">
                     <Button
                       size="sm"
+                      className="pull-right"
                       color="danger"
                       tabIndex="-1"
                       onClick={e => this.handleDelete("enhancements", i)}

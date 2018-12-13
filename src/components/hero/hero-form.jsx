@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormGroup } from "reactstrap";
+import { FormGroup, Card, CardBody, CardHeader } from "reactstrap";
 
 //Components
 import EpicInput from "../common/epic-input";
@@ -15,85 +15,135 @@ class HeroForm extends Component {
     const { hero, onChange, defaults } = this.props;
     return (
       <React.Fragment>
-        <h3>Input</h3>
-        <FormGroup row>
-          <EpicInput
-            type="text"
-            name="name"
-            size="12"
-            value={hero.name}
-            onChange={onChange}
-          />
-          <EpicInput
-            type="select"
-            name="rarity"
-            size="6"
-            value={hero.rarity}
-            options={defaults.rarity}
-            onChange={onChange}
-          />
-          <EpicInput
-            type="select"
-            name="classType"
-            size="6"
-            value={hero.classType}
-            options={defaults.classType}
-            onChange={onChange}
-          />
-          <EpicInput
-            type="select"
-            name="element"
-            size="6"
-            value={hero.element}
-            options={defaults.element}
-            onChange={onChange}
-          />
-          <EpicInput
-            type="select"
-            name="zodiac"
-            size="6"
-            value={hero.zodiac}
-            options={defaults.zodiac}
-            onChange={onChange}
-          />
-          <EpicInput
-            type="text"
-            name="specialtyChangeName"
-            size="12"
-            value={hero.specialtyChangeName}
-            onChange={onChange}
-          />
-          <EpicInput
-            type="text"
-            name="selfSkillBarName"
-            size="12"
-            value={hero.selfSkillBarName}
-            onChange={onChange}
-          />
-          <EpicInput
-            type="textarea"
-            name="background"
-            size="12"
-            value={hero.background}
-            onChange={onChange}
-          />
-          <HeroRelations
-            relations={hero.relations}
-            relationType={defaults.relationType}
-            onChange={onChange}
-          />
-          <HeroStats stats={hero.stats} onChange={onChange} />
-          <HeroSkills skills={hero.skills} onChange={onChange} />
-          <HeroSpecialtySkills
-            specialtySkill={hero.specialtySkill}
-            onChange={onChange}
-          />
-          <HeroMemoryImprint
-            memoryImprint={hero.memoryImprint}
-            onChange={onChange}
-          />
-          <HeroAwakening awakening={hero.awakening} onChange={onChange} />
-        </FormGroup>
+        <Card id="general">
+          <CardHeader>general</CardHeader>
+          <CardBody>
+            <FormGroup row>
+              <EpicInput
+                type="text"
+                name="name"
+                size="12"
+                value={hero.name}
+                onChange={onChange}
+              />
+              <EpicInput
+                type="select"
+                name="rarity"
+                size="6"
+                value={hero.rarity}
+                options={defaults.rarity}
+                onChange={onChange}
+              />
+              <EpicInput
+                type="select"
+                name="classType"
+                size="6"
+                value={hero.classType}
+                options={defaults.classType}
+                onChange={onChange}
+              />
+              <EpicInput
+                type="select"
+                name="element"
+                size="6"
+                value={hero.element}
+                options={defaults.element}
+                onChange={onChange}
+              />
+              <EpicInput
+                type="select"
+                name="zodiac"
+                size="6"
+                value={hero.zodiac}
+                options={defaults.zodiac}
+                onChange={onChange}
+              />
+              <EpicInput
+                type="text"
+                name="specialtyChangeName"
+                size="12"
+                value={hero.specialtyChangeName}
+                onChange={onChange}
+              />
+              <EpicInput
+                type="text"
+                name="selfSkillBarName"
+                size="12"
+                value={hero.selfSkillBarName}
+                onChange={onChange}
+              />
+              <EpicInput
+                type="textarea"
+                name="background"
+                size="12"
+                value={hero.background}
+                onChange={onChange}
+              />
+            </FormGroup>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader>relations</CardHeader>
+          <CardBody>
+            <FormGroup row>
+              <HeroRelations
+                relations={hero.relations}
+                relationType={defaults.relationType}
+                onChange={onChange}
+              />
+            </FormGroup>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader>stats</CardHeader>
+          <CardBody>
+            <FormGroup row>
+              <HeroStats stats={hero.stats} onChange={onChange} />
+            </FormGroup>
+          </CardBody>
+        </Card>
+
+        <Card>
+          <CardHeader>skills</CardHeader>
+          <CardBody>
+            <FormGroup className="gutter-bottom">
+              <HeroSkills skills={hero.skills} onChange={onChange} />
+            </FormGroup>
+          </CardBody>
+        </Card>
+
+        <Card>
+          <CardHeader>specialtySkills</CardHeader>
+          <CardBody>
+            <FormGroup row>
+              <HeroSpecialtySkills
+                specialtySkill={hero.specialtySkill}
+                onChange={onChange}
+              />
+            </FormGroup>
+          </CardBody>
+        </Card>
+
+        <Card>
+          <CardHeader>memoryImprint</CardHeader>
+          <CardBody>
+            <FormGroup row>
+              <HeroMemoryImprint
+                memoryImprint={hero.memoryImprint}
+                onChange={onChange}
+              />
+            </FormGroup>
+          </CardBody>
+        </Card>
+
+        <Card>
+          <CardHeader>awakening</CardHeader>
+          <CardBody>
+            <FormGroup>
+              <HeroAwakening awakening={hero.awakening} onChange={onChange} />
+            </FormGroup>
+          </CardBody>
+        </Card>
       </React.Fragment>
     );
   }

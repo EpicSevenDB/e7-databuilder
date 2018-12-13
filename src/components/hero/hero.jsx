@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import HeroForm from "./hero-form";
 import HeroExport from "./hero-export";
+import TopNavBar from "../common/top-navbar";
 
 import { Row, Col, Button } from "reactstrap";
 
@@ -361,10 +362,13 @@ class Hero extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Heroes</h1>
-        <HeroExport output={this.state.hero} />
-        <Row className="main-container">
-          <Col md="12">
+        <TopNavBar title="Heroes">
+          <HeroExport output={this.state.hero} />
+          <Button size="sm">Import</Button>
+        </TopNavBar>
+
+        <Row>
+          <Col>
             <HeroForm
               hero={this.state.hero}
               defaults={this.state.defaults}

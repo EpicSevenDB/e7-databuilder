@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 //Components
 import Hero from "./components/hero/hero";
-import NavBar from "./components/navbar/navbar";
+import NavBar from "./components/common/navbar";
 import { Container } from "reactstrap";
 
 class App extends Component {
@@ -37,9 +37,11 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavBar links={this.state.links} />
-        <Container className="m-2">
-          <Hero />
-        </Container>
+        <div className="wrapper">
+          <Container className="main-container">
+            <Hero />
+          </Container>
+        </div>
       </React.Fragment>
     );
   }

@@ -1,0 +1,14 @@
+.hidden {
+  display: none !important;
+}
+.disabled {
+  opacity: 0.5;
+  filter: grayscale(1);
+  pointer-events: none;
+}
+.gutter-top {
+  margin-top: 6px;
+}
+.gutter-bottom {
+  margin-bottom: 18px !important;
+}

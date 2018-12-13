@@ -1,0 +1,14 @@
+.card {
+  border: 1px solid $border;
+  margin-bottom: 16px;
+  box-shadow: $shadows;
+  background: lighten($bg, 2.5);
+  .card-header {
+    background: darken($bg, 5);
+    padding: 8px 12px;
+    border-bottom: 1px solid $border;
+  }
+  .card-body {
+    padding-top: 6px;
+  }
+}

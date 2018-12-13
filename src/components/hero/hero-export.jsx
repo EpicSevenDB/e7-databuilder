@@ -48,15 +48,14 @@ class HeroExport extends Component {
           Export
         </Button>
 
-        <Alert
-          color="success"
-          isOpen={this.state.visible}
-          className={this.state.copied ? "toaster" : "toaster hide"}
-        >
-          Copied to Clipboard!
-        </Alert>
-
         <Modal centered={true} isOpen={this.state.modal} toggle={this.toggle}>
+          <Alert
+            color="success"
+            isOpen={this.state.visible}
+            className={this.state.copied ? "toaster" : "toaster hide"}
+          >
+            Copied to Clipboard!
+          </Alert>
           <ModalHeader toggle={this.toggle}>Export</ModalHeader>
           <ModalBody>
             <Input

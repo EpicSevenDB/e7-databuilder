@@ -6,104 +6,36 @@ $blue: #2a4c80;
 $green: #20ad9b;
 $red: #af3838;
 
-@import "../components/navbar/navbar";
+$shadows: 0 0px 6px transparentize($black, 0.92);
+$ease: all 0.3s ease;
+
+@import "./helpers";
+@import "./buttons";
+@import "./cards";
+@import "./tabs";
+@import "./toasters";
+@import "./alerts";
+@import "./forms";
+@import "./navbars";
 
 body {
   background: $bg;
   color: $grey;
-  padding-left: 75px;
-  padding-bottom: 150px;
 }
 
 label {
-  margin: 0;
+  margin: 8px 0 0 0;
   font-size: 0.75em;
 }
-.form-group {
-  margin-bottom: 2px;
-}
+
 textarea {
   min-height: 100px;
 }
-.custom-checkbox {
-  top: 30%;
-  padding: 8px 24px;
-  .custom-control-label {
-    cursor: pointer;
-  }
+.wrapper {
+  margin-left: 65px;
+  margin-top: 85px;
 }
-.custom-control-label::before,
-.custom-control-label::after {
-  top: 0;
-}
-.hidden {
-  display: none !important;
-}
-.disabled {
-  opacity: 0.5;
-  filter: grayscale(1);
-  pointer-events: none;
-}
-
-.btn {
-  border: none;
-  &.btn-success {
-    background-color: $green;
-    &:focus {
-      box-shadow: 0 0 0 0.2rem transparentize($green, 0.25);
-    }
-    &:active {
-      background-color: darken($green, 10) !important;
-      box-shadow: 0 0 0 0.2rem transparentize($green, 0.25) !important;
-    }
-  }
-}
-.btn.btn-danger {
-  float: right;
-  background: $red;
-  border: none;
-}
-
-.alert-success {
-  color: #f3f4f7;
-  background-color: $green;
-  border-color: $green;
-}
-.btn-add {
-  border: 1px dashed $grey;
-  color: $grey;
-  opacity: 0.5;
-  &:hover {
-    background-color: $green;
-    border: 1px solid transparent;
-    opacity: 1;
-  }
-  &:focus {
-    border: 1px solid $green;
-    box-shadow: 0 0 0 0.2rem transparentize($green, 0.25);
-  }
-}
-
-.resource-wrapper {
-  margin-top: 6px;
-}
-
-.toaster {
-  position: fixed;
-  width: 90%;
-  z-index: 99999;
-  left: 0;
-  right: 0;
-  margin: 20px auto;
-  transition: all 0.6s cubic-bezier(0.86, 0.12, 0.25, 1);
-  &.show {
-    bottom: 0;
-    opacity: 1;
-    visibility: visible;
-  }
-  &.hide {
-    visibility: hidden !important;
-    opacity: 0 !important;
-    bottom: -75px !important;
-  }
+.main-container {
+  max-width: 960px;
+  margin: 0 auto;
 }

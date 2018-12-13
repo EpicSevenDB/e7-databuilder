@@ -1,0 +1,53 @@
+.nav-tabs {
+  cursor: pointer;
+  margin-top: 15px;
+  border-bottom: none;
+  position: relative;
+  z-index: 99;
+  margin-left: 15px;
+  .nav-link {
+    font-size: 0.8em;
+    border: 1px solid $border;
+    box-shadow: 0 -2px 3px transparentize($black, 0.95);
+    background-color: $bg;
+    transition: $ease;
+    &:hover {
+      border-top: 1px solid $border;
+      border-left: 1px solid $border;
+      border-right: 1px solid $border;
+      background: darken($bg, 5);
+    }
+    &.active {
+      opacity: 1;
+      background: #fff;
+      pointer-events: none;
+    }
+  }
+  .add-link {
+    opacity: 1;
+    background: $green;
+    color: #fff !important;
+    &:hover {
+      background: darken($green, 5);
+    }
+  }
+}
+.tab-content {
+  width: 100%;
+}
+.tab-pane {
+  background: #fff;
+  border: 1px solid $border;
+  border-radius: 5px;
+  margin-top: 0px;
+  padding: 12px 12px 24px 12px;
+  box-shadow: $shadows;
+  min-height: 300px;
+}
+
+.small-tabs {
+  .nav-item a {
+    font-size: 0.8em;
+    padding: 6px 12px;
+  }
+}

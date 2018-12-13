@@ -1,0 +1,76 @@
+.global-nav {
+  max-width: 75px;
+  background: $black;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  font-size: 0.7rem;
+  text-align: center;
+  .nav-link {
+    padding: 15px 8px;
+    border-radius: 0;
+    position: relative;
+    color: lighten($black, 30);
+    transition: all 0.3s ease;
+    border-bottom: 1px solid lighten($black, 8);
+    .fas {
+      font-size: 1.5em;
+    }
+    &:hover,
+    &.active {
+      color: #fff;
+      background: darken($black, 5);
+    }
+  }
+}
+.inline-wrapper {
+  width: 100%;
+  margin-bottom: 8px !important;
+  .form-control {
+    width: calc(50% - 24px);
+    margin-right: 10px;
+    float: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-20 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+.top-navbar {
+  background: #fff;
+  position: fixed;
+  padding: 12px 20px;
+  top: 0;
+  left: 66px;
+  width: calc(100% - 66px);
+  box-shadow: $shadows;
+  border-bottom: 1px solid $border;
+  z-index: 999;
+  justify-content: space-between;
+  .title {
+    font-size: 1.52em;
+  }
+  .nav-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .link {
+    font-size: 0.85em;
+    color: $grey;
+    opacity: 0.5;
+    transition: $ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .nav-wrapper > .btn {
+    margin: 0 0 0 6px;
+  }
+}
