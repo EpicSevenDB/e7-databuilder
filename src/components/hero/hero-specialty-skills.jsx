@@ -14,7 +14,7 @@ class HeroSpecialtySkills extends Component {
     this.props.onChange("specialtySkill", specialtySkill);
   };
   render() {
-    const { specialtySkill, onChange } = this.props;
+    const { specialtySkill } = this.props;
     return (
       <React.Fragment>
         <Col md="12">

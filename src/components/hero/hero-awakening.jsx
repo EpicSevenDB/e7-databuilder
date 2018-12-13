@@ -69,7 +69,7 @@ class HeroAwakening extends Component {
     this.props.onChange("awakening", awakening);
   };
   render() {
-    const { awakening, onChange } = this.props;
+    const { awakening } = this.props;
 
     return (
       <React.Fragment>
@@ -168,12 +168,11 @@ class HeroAwakening extends Component {
                     }
                   >
                     <Button
-                      className="gutter-top"
+                      className="gutter-top btn-add"
                       color="secondary"
                       block
                       size="sm"
                       outline
-                      className="gutter-top btn-add"
                       onClick={e => this.handleAdd("statsIncrease", i)}
                     >
                       Add new stat
@@ -229,12 +228,11 @@ class HeroAwakening extends Component {
                   ))}
                   <Col className={awake.resources.length >= 3 ? "hidden" : ""}>
                     <Button
-                      className="gutter-top"
+                      className="gutter-top btn-add"
                       color="secondary"
                       block
                       size="sm"
                       outline
-                      className="gutter-top btn-add"
                       onClick={e => this.handleAdd("resources", i)}
                     >
                       Add new resource

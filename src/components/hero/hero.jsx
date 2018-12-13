@@ -7,49 +7,40 @@ import { Row, Col } from "reactstrap";
 class Hero extends Component {
   state = {
     hero: {
-      name: "Ras",
-      rarity: 3,
-      classType: "knight",
-      element: "fire",
-      zodiac: "libra",
+      name: "Martial Artist Ken",
+      rarity: 5,
+      classType: "warrior",
+      element: "dark",
+      zodiac: "leo",
       specialtyChangeName: "",
       selfSkillBarName: "",
       background: [
-        "Created to protect the world and all life within it, he is admired as the leader of the Heirs and the alter ego of the Goddess. He has a good personality and is very understanding, though he lacks some understanding of Humans"
+        "In his goal of becoming the strongest in the universe, he is hunting down and challenging every martial arts master he can find. He will cross time and space, and even dimensions, to find a worthy challenger."
       ],
-      relations: [
-        { hero: "ruele-of-light", relationType: "trust" },
-        { hero: "judge-kise", relationType: "trust" },
-        { hero: "krau", relationType: "trust" },
-        { hero: "iseria", relationType: "trust" },
-        { hero: "ludwig", relationType: "trust" },
-        { hero: "aither", relationType: "trust" },
-        { hero: "mercedes", relationType: "trust" },
-        { hero: "yuna", relationType: "trust" }
-      ],
+      relations: [{ hero: "ken", relationType: "grudge" }],
       stats: {
         base: {
-          cp: 2222,
-          atk: 203,
-          hp: 706,
-          spd: 95,
-          def: 74,
-          chc: 15,
+          cp: 2557,
+          atk: 259,
+          hp: 708,
+          spd: 105,
+          def: 70,
+          chc: 21,
           chd: 150,
           eff: 0,
-          efr: 6,
+          efr: 0,
           dac: 5
         },
         max: {
-          cp: 15272,
-          atk: 758,
-          hp: 5826,
-          spd: 95,
-          def: 672,
-          chc: 15,
+          cp: 16259,
+          atk: 1252,
+          hp: 5219,
+          spd: 105,
+          def: 564,
+          chc: 21,
           chd: 150,
           eff: 0,
-          efr: 6,
+          efr: 0,
           dac: 5
         }
       },
@@ -57,168 +48,223 @@ class Hero extends Component {
         {
           isPassive: false,
           soulBurn: 0,
-          selfSkillBarValue: 0,
           soulBurnEffect: "",
           awakenUpgrade: false,
           cooldown: 0,
-          name: "X-Slash",
+          name: "Knockout",
           soulAcquire: 1,
           description:
-            "Swing the sword and attack the enemy. Damage increases proportionally to your maximum Vitality",
+            "Batters the enemy with 50% chance to decrease Attack for 1 turn.",
           enhancement: [
             {
               description: "+5% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
+              resources: [
+                { item: "molagora", qty: 1 },
+                { item: "gold", qty: 4000 }
+              ]
             },
             {
               description: "+5% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
+              resources: [
+                { item: "molagora", qty: 3 },
+                { item: "gold", qty: 12000 }
+              ]
             },
             {
-              description: "+5% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
-            },
-            {
-              description: "+5% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
+              description: "+10% effect chance",
+              resources: [
+                { item: "twisted-fang", qty: 2 },
+                { item: "molagora", qty: 4 },
+                { item: "gold", qty: 26000 }
+              ]
             },
             {
               description: "+10% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
+              resources: [
+                { item: "twisted-fang", qty: 4 },
+                { item: "molagorago", qty: 1 },
+                { item: "gold", qty: 26000 }
+              ]
+            },
+            {
+              description: "+15% effect chance",
+              resources: [
+                { item: "twisted-fang", qty: 5 },
+                { item: "molagorago", qty: 2 },
+                { item: "gold", qty: 65000 }
+              ]
+            },
+            {
+              description: "+15% damage dealt",
+              resources: [
+                { item: "blazing-soul", qty: 2 },
+                { item: "molagoragora", qty: 1 },
+                { item: "gold", qty: 160000 }
+              ]
             }
           ],
           buffs: [],
-          debuffs: []
+          debuffs: ["stic_att_dn"]
         },
         {
-          isPassive: false,
-          soulBurn: 10,
-          selfSkillBarValue: 0,
-          soulBurnEffect: "The skill cooldown decreases by 2 turns.",
-          awakenUpgrade: false,
-          cooldown: 3,
-          name: "Command Strike",
-          soulAcquire: 2,
-          description:
-            "After successive attacks on the enemy, it will cause your strongest ally to Dual attack with you.",
-          enhancement: [
-            {
-              description: "+5% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
-            },
-            {
-              description: "+5% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
-            },
-            {
-              description: "+5% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
-            },
-            {
-              description: "+5% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
-            },
-            {
-              description: "+10% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
-            }
-          ],
-          buffs: [],
-          debuffs: []
-        },
-        {
-          isPassive: false,
-          soulBurn: 10,
-          selfSkillBarValue: 0,
+          isPassive: true,
+          soulBurn: 0,
           soulBurnEffect: "",
+          awakenUpgrade: false,
+          cooldown: 0,
+          name: "Dragon Flame",
+          soulAcquire: 0,
+          description: [
+            "Has a 30% chance to couterattack when attacked, with a 100% chance to counterattack with Dragon Flame after suffering a critical hit.",
+            "Dragon Flame: Causes critical hit, and deals damage proportional to the caster's lost Health."
+          ],
+          enhancement: [
+            {
+              description: "+5% damage dealt by Dragon Flame",
+              resources: [
+                { item: "twisted-fang", qty: 3 },
+                { item: "molagora", qty: 1 },
+                { item: "gold", qty: 19000 }
+              ]
+            },
+            {
+              description: "+10% damage dealt by Dragon Flame",
+              resources: [
+                { item: "twisted-fang", qty: 5 },
+                { item: "molagorago", qty: 2 },
+                { item: "gold", qty: 65000 }
+              ]
+            },
+            {
+              description: "+15% damage dealt by Dragon Flame",
+              resources: [
+                { item: "blazing-soul", qty: 3 },
+                { item: "molagoragora", qty: 1 },
+                { item: "gold", qty: 190000 }
+              ]
+            }
+          ],
+          buffs: [],
+          debuffs: []
+        },
+        {
+          isPassive: false,
+          soulBurn: 10,
+          soulBurnEffect: "Increases damage dealt",
           awakenUpgrade: true,
           cooldown: 5,
-          name: "Sword of the Heir",
-          soulAcquire: 2,
+          name: "The Coming of Asura",
+          soulAcquire: 3,
           description:
-            "Strongly attacks with a swordstorm, recovering Health prportional to damage dealt, and increasing Defense of the caster for 2 turns. Damage dealt increases proportional to max Health of caster.",
+            "Attacks all enemies with a powerful ground pound, with a 50% chance to decrease Defense for 2 turns, and increase Attack of the caster for 2 turns.",
           enhancement: [
             {
               description: "+5% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
+              resources: [
+                { item: "molagora", qty: 1 },
+                { item: "gold", qty: 4000 }
+              ]
             },
             {
-              description: "+5% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
+              description: "+10% effect chance",
+              resources: [
+                { item: "molagora", qty: 3 },
+                { item: "gold", qty: 12000 }
+              ]
             },
             {
               description: "-1 turn cooldown",
-              resources: [{ item: "molagora", qty: 1 }]
-            },
-            {
-              description: "+5% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
+              resources: [
+                { item: "twisted-fang", qty: 2 },
+                { item: "molagora", qty: 4 },
+                { item: "gold", qty: 26000 }
+              ]
             },
             {
               description: "+10% damage dealt",
-              resources: [{ item: "molagora", qty: 1 }]
+              resources: [
+                { item: "twisted-fang", qty: 4 },
+                { item: "molagorago", qty: 1 },
+                { item: "gold", qty: 26000 }
+              ]
+            },
+            {
+              description: "+15% effect chance",
+              resources: [
+                { item: "twisted-fang", qty: 5 },
+                { item: "molagorago", qty: 2 },
+                { item: "gold", qty: 65000 }
+              ]
+            },
+            {
+              description: "+15% damage dealt",
+              resources: [
+                { item: "blazing-soul", qty: 2 },
+                { item: "molagoragora", qty: 1 },
+                { item: "gold", qty: 160000 }
+              ]
             }
           ],
-          buffs: ["stic_def_up"],
-          debuffs: []
+          buffs: ["stic_att_up"],
+          debuffs: ["stic_def_dn"]
         }
       ],
       specialtySkill: {
-        name: "Blessings of Covenants",
+        name: "Finding the Strongest",
         description:
-          "The Heir of the Covenant bears the weight of the world upon his shoulders.",
-        dispatch: ["[Security] type mission"],
+          "His desire to fight the strongest made him follow the path of Asura.",
+        dispatch: ["[Chase] type mission"],
         enhancement: ["Reward bonus +6%"],
-        stats: { command: 88, charm: 76, politics: 15 }
+        stats: { command: 28, charm: 29, politics: 18 }
       },
       memoryImprint: [
         {
           rank: "d",
           status: {
-            type: "hp",
-            increase: 120
+            type: "atk",
+            increase: "3.6%"
           }
         },
         {
           rank: "c",
           status: {
-            type: "hp",
-            increase: 180
+            type: "atk",
+            increase: 0
           }
         },
         {
           rank: "b",
           status: {
-            type: "hp",
-            increase: 240
+            type: "atk",
+            increase: 0
           }
         },
         {
           rank: "a",
           status: {
-            type: "hp",
-            increase: 300
+            type: "atk",
+            increase: 0
           }
         },
         {
           rank: "s",
           status: {
-            type: "hp",
-            increase: 360
+            type: "atk",
+            increase: 0
           }
         },
         {
           rank: "ss",
           status: {
-            type: "hp",
-            increase: 420
+            type: "atk",
+            increase: 0
           }
         },
         {
           rank: "sss",
           status: {
-            type: "hp",
-            increase: 480
+            type: "atk",
+            increase: 0
           }
         }
       ],
@@ -226,46 +272,52 @@ class Hero extends Component {
         {
           rank: 1,
           skillUpgrade: false,
-          statsIncrease: [{ hp: "3%" }, { atk: 20 }, { hp: 60 }],
-          resources: [{ item: "flame-rune", qty: 5 }]
+          statsIncrease: [{ atk: "3%" }, { atk: 20 }, { hp: 60 }],
+          resources: [{ item: "dark-rune", qty: 10 }]
         },
         {
           rank: 2,
           skillUpgrade: false,
-          statsIncrease: [{ def: "3%" }, { atk: 20 }, { hp: 60 }],
-          resources: [{ item: "flame-rune", qty: 9 }]
+          statsIncrease: [{ atk: "3%" }, { atk: 20 }, { hp: 60 }],
+          resources: [
+            { item: "dark-rune", qty: 15 },
+            { item: "greater-dark-rune", qty: 2 }
+          ]
         },
         {
           rank: 3,
           skillUpgrade: true,
           statsIncrease: [{ atk: 20 }, { hp: 60 }],
           resources: [
-            { item: "flame-rune", qty: 12 },
-            { item: "greater-flame-rune", qty: 6 }
+            { item: "dark-rune", qty: 20 },
+            { item: "greater-dark-rune", qty: 10 }
           ]
         },
         {
           rank: 4,
           skillUpgrade: false,
-          statsIncrease: [{ efr: "6%" }, { atk: 30 }, { hp: 80 }],
-          resources: [{ item: "greater-flame-rune", qty: 15 }]
+          statsIncrease: [{ chc: "6%" }, { atk: 30 }, { hp: 80 }],
+          resources: [
+            { item: "greater-dark-rune", qty: 10 },
+            { item: "epic-dark-rune", qty: 2 }
+          ]
         },
         {
           rank: 5,
           skillUpgrade: false,
-          statsIncrease: [{ hp: "6%" }, { atk: 30 }, { hp: 80 }],
+          statsIncrease: [{ atk: "6%" }, { atk: 30 }, { hp: 80 }],
           resources: [
-            { item: "epic-flame-rune", qty: 4 },
-            { item: "dream-time-circuit", qty: 9 }
+            { item: "epic-dark-rune", qty: 6 },
+            { item: "ultra-fang", qty: 15 }
           ]
         },
         {
           rank: 6,
           skillUpgrade: false,
-          statsIncrease: [{ def: "6%" }, { atk: 30 }, { hp: 80 }],
+          statsIncrease: [{ atk: "6%" }, { atk: 30 }, { hp: 80 }],
           resources: [
-            { item: "epic-flame-rune", qty: 6 },
-            { item: "reingar-student-id", qty: 6 }
+            { item: "epic-dark-rune", qty: 10 },
+            { item: "blazing-soul", qty: 10 }
           ]
         }
       ]

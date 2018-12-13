@@ -5,7 +5,6 @@ import { Col, Label, FormGroup } from "reactstrap";
 class HeroMemoryImprint extends Component {
   handleChange = (name, value, i) => {
     const memoryImprint = [...this.props.memoryImprint];
-    const type = this.props.memoryImprint[0].status.type;
     if (name === "type") {
       memoryImprint.map(imprint => (imprint.status.type = value));
       console.info("CHANGING: ", memoryImprint);

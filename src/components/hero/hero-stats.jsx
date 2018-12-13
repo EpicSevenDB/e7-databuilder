@@ -20,7 +20,6 @@ class HeroStats extends Component {
               type="number"
               size="20"
               name="base.cp"
-              size="20"
               value={stats.base.cp}
               onChange={this.handleChange}
             />
