@@ -1,22 +1,21 @@
 import React, { Component } from "react";
 
 import HeroForm from "./hero-form";
+import HeroExport from "./hero-export";
 
-import { Row, Col } from "reactstrap";
+import { Row, Col, Button } from "reactstrap";
 
 class Hero extends Component {
   state = {
     hero: {
-      name: "Martial Artist Ken",
+      name: "Martial Artist Kenny",
       rarity: 5,
       classType: "warrior",
       element: "dark",
       zodiac: "leo",
-      specialtyChangeName: "",
-      selfSkillBarName: "",
-      background: [
-        "In his goal of becoming the strongest in the universe, he is hunting down and challenging every martial arts master he can find. He will cross time and space, and even dimensions, to find a worthy challenger."
-      ],
+      specialtyChangeName: "HAHAHA",
+      selfSkillBarName: "RAGEEEE",
+      background: "nothing",
       relations: [{ hero: "ken", relationType: "grudge" }],
       stats: {
         base: {
@@ -56,13 +55,7 @@ class Hero extends Component {
           description:
             "Batters the enemy with 50% chance to decrease Attack for 1 turn.",
           enhancement: [
-            {
-              description: "+5% damage dealt",
-              resources: [
-                { item: "molagora", qty: 1 },
-                { item: "gold", qty: 4000 }
-              ]
-            },
+            { description: "+5% damage dealt", resources: [] },
             {
               description: "+5% damage dealt",
               resources: [
@@ -100,6 +93,38 @@ class Hero extends Component {
                 { item: "blazing-soul", qty: 2 },
                 { item: "molagoragora", qty: 1 },
                 { item: "gold", qty: 160000 }
+              ]
+            },
+            {
+              description: "ga",
+              resources: [
+                { item: "gold", qty: "" },
+                { item: "", qty: "" },
+                { item: "", qty: "" }
+              ]
+            },
+            {
+              description: "adf",
+              resources: [
+                { item: "gold", qty: "" },
+                { item: "", qty: "" },
+                { item: "", qty: "" }
+              ]
+            },
+            {
+              description: "asdf",
+              resources: [
+                { item: "gold", qty: "" },
+                { item: "", qty: "" },
+                { item: "", qty: "" }
+              ]
+            },
+            {
+              description: "aasdfas",
+              resources: [
+                { item: "gold", qty: "" },
+                { item: "", qty: "" },
+                { item: "", qty: "" }
               ]
             }
           ],
@@ -218,55 +243,13 @@ class Hero extends Component {
         stats: { command: 28, charm: 29, politics: 18 }
       },
       memoryImprint: [
-        {
-          rank: "d",
-          status: {
-            type: "atk",
-            increase: "3.6%"
-          }
-        },
-        {
-          rank: "c",
-          status: {
-            type: "atk",
-            increase: 0
-          }
-        },
-        {
-          rank: "b",
-          status: {
-            type: "atk",
-            increase: 0
-          }
-        },
-        {
-          rank: "a",
-          status: {
-            type: "atk",
-            increase: 0
-          }
-        },
-        {
-          rank: "s",
-          status: {
-            type: "atk",
-            increase: 0
-          }
-        },
-        {
-          rank: "ss",
-          status: {
-            type: "atk",
-            increase: 0
-          }
-        },
-        {
-          rank: "sss",
-          status: {
-            type: "atk",
-            increase: 0
-          }
-        }
+        { rank: "d", status: { type: "atk", increase: "3.6%" } },
+        { rank: "c", status: { type: "atk", increase: 0 } },
+        { rank: "b", status: { type: "atk", increase: 0 } },
+        { rank: "a", status: { type: "atk", increase: 0 } },
+        { rank: "s", status: { type: "atk", increase: 0 } },
+        { rank: "ss", status: { type: "atk", increase: 0 } },
+        { rank: "sss", status: { type: "atk", increase: 0 } }
       ],
       awakening: [
         {
@@ -379,6 +362,7 @@ class Hero extends Component {
     return (
       <React.Fragment>
         <h1>Heroes</h1>
+        <HeroExport output={this.state.hero} />
         <Row className="main-container">
           <Col md="12">
             <HeroForm

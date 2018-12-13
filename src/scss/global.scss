@@ -72,3 +72,23 @@ textarea {
 .resource-wrapper {
   margin-top: 6px;
 }
+
+.toaster {
+  position: fixed;
+  width: 90%;
+  z-index: 99999;
+  left: 0;
+  right: 0;
+  margin: 20px auto;
+  transition: all 0.6s cubic-bezier(0.86, 0.12, 0.25, 1);
+  &.show {
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+  &.hide {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    bottom: -75px !important;
+  }
+}
