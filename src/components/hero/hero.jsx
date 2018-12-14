@@ -2,42 +2,53 @@ import React, { Component } from "react";
 
 import HeroForm from "./hero-form";
 import HeroExport from "./hero-export";
+import HeroImport from "./hero-import";
 import TopNavBar from "../common/top-navbar";
 
-import { Row, Col, Button } from "reactstrap";
+import { Row, Col } from "reactstrap";
 
 class Hero extends Component {
   state = {
     hero: {
-      name: "Martial Artist Kenny",
-      rarity: 5,
-      classType: "warrior",
-      element: "dark",
-      zodiac: "leo",
-      specialtyChangeName: "HAHAHA",
-      selfSkillBarName: "RAGEEEE",
-      background: "nothing",
-      relations: [{ hero: "ken", relationType: "grudge" }],
+      name: "Aither",
+      rarity: 3,
+      classType: "soul-weaver",
+      element: "ice",
+      zodiac: "libra",
+      specialtyChangeName: "",
+      selfSkillBarName: "",
+      background: [
+        "Aither is the royal child of Ezera. He is bright and energetic, but he does not like those people who treat him as a weak boy. He desires to make his name as a brave knight one day, just like his mother."
+      ],
+      relations: [
+        { hero: "arbiter-vildred", relationType: "grudge" },
+        { hero: "angelica", relationType: "longing" },
+        { hero: "ras", relationType: "longing" },
+        { hero: "mercedes", relationType: "trust" },
+        { hero: "vildred", relationType: "longing" },
+        { hero: "iseria", relationType: "trust" },
+        { hero: "chloe", relationType: "trust" }
+      ],
       stats: {
         base: {
-          cp: 2557,
-          atk: 259,
-          hp: 708,
-          spd: 105,
-          def: 70,
-          chc: 21,
+          cp: 2064,
+          atk: 198,
+          hp: 623,
+          spd: 92,
+          def: 74,
+          chc: 15,
           chd: 150,
           eff: 0,
           efr: 0,
           dac: 5
         },
         max: {
-          cp: 16259,
-          atk: 1252,
-          hp: 5219,
-          spd: 105,
-          def: 564,
-          chc: 21,
+          cp: 13178,
+          atk: 705,
+          hp: 4248,
+          spd: 92,
+          def: 672,
+          chc: 15,
           chd: 150,
           eff: 0,
           efr: 0,
@@ -48,144 +59,17 @@ class Hero extends Component {
         {
           isPassive: false,
           soulBurn: 0,
+          selfSkillBarValue: 0,
           soulBurnEffect: "",
           awakenUpgrade: false,
           cooldown: 0,
-          name: "Knockout",
+          name: "Whispering Spirit",
           soulAcquire: 1,
           description:
-            "Batters the enemy with 50% chance to decrease Attack for 1 turn.",
+            "Attacks with spirit power, with a 25% chance to decrease Speed for 2 turns.",
           enhancement: [
-            { description: "+5% damage dealt", resources: [] },
-            {
-              description: "+5% damage dealt",
-              resources: [
-                { item: "molagora", qty: 3 },
-                { item: "gold", qty: 12000 }
-              ]
-            },
-            {
-              description: "+10% effect chance",
-              resources: [
-                { item: "twisted-fang", qty: 2 },
-                { item: "molagora", qty: 4 },
-                { item: "gold", qty: 26000 }
-              ]
-            },
             {
               description: "+10% damage dealt",
-              resources: [
-                { item: "twisted-fang", qty: 4 },
-                { item: "molagorago", qty: 1 },
-                { item: "gold", qty: 26000 }
-              ]
-            },
-            {
-              description: "+15% effect chance",
-              resources: [
-                { item: "twisted-fang", qty: 5 },
-                { item: "molagorago", qty: 2 },
-                { item: "gold", qty: 65000 }
-              ]
-            },
-            {
-              description: "+15% damage dealt",
-              resources: [
-                { item: "blazing-soul", qty: 2 },
-                { item: "molagoragora", qty: 1 },
-                { item: "gold", qty: 160000 }
-              ]
-            },
-            {
-              description: "ga",
-              resources: [
-                { item: "gold", qty: "" },
-                { item: "", qty: "" },
-                { item: "", qty: "" }
-              ]
-            },
-            {
-              description: "adf",
-              resources: [
-                { item: "gold", qty: "" },
-                { item: "", qty: "" },
-                { item: "", qty: "" }
-              ]
-            },
-            {
-              description: "asdf",
-              resources: [
-                { item: "gold", qty: "" },
-                { item: "", qty: "" },
-                { item: "", qty: "" }
-              ]
-            },
-            {
-              description: "aasdfas",
-              resources: [
-                { item: "gold", qty: "" },
-                { item: "", qty: "" },
-                { item: "", qty: "" }
-              ]
-            }
-          ],
-          buffs: [],
-          debuffs: ["stic_att_dn"]
-        },
-        {
-          isPassive: true,
-          soulBurn: 0,
-          soulBurnEffect: "",
-          awakenUpgrade: false,
-          cooldown: 0,
-          name: "Dragon Flame",
-          soulAcquire: 0,
-          description: [
-            "Has a 30% chance to couterattack when attacked, with a 100% chance to counterattack with Dragon Flame after suffering a critical hit.",
-            "Dragon Flame: Causes critical hit, and deals damage proportional to the caster's lost Health."
-          ],
-          enhancement: [
-            {
-              description: "+5% damage dealt by Dragon Flame",
-              resources: [
-                { item: "twisted-fang", qty: 3 },
-                { item: "molagora", qty: 1 },
-                { item: "gold", qty: 19000 }
-              ]
-            },
-            {
-              description: "+10% damage dealt by Dragon Flame",
-              resources: [
-                { item: "twisted-fang", qty: 5 },
-                { item: "molagorago", qty: 2 },
-                { item: "gold", qty: 65000 }
-              ]
-            },
-            {
-              description: "+15% damage dealt by Dragon Flame",
-              resources: [
-                { item: "blazing-soul", qty: 3 },
-                { item: "molagoragora", qty: 1 },
-                { item: "gold", qty: 190000 }
-              ]
-            }
-          ],
-          buffs: [],
-          debuffs: []
-        },
-        {
-          isPassive: false,
-          soulBurn: 10,
-          soulBurnEffect: "Increases damage dealt",
-          awakenUpgrade: true,
-          cooldown: 5,
-          name: "The Coming of Asura",
-          soulAcquire: 3,
-          description:
-            "Attacks all enemies with a powerful ground pound, with a 50% chance to decrease Defense for 2 turns, and increase Attack of the caster for 2 turns.",
-          enhancement: [
-            {
-              description: "+5% damage dealt",
               resources: [
                 { item: "molagora", qty: 1 },
                 { item: "gold", qty: 4000 }
@@ -195,104 +79,240 @@ class Hero extends Component {
               description: "+10% effect chance",
               resources: [
                 { item: "molagora", qty: 3 },
+                { item: "mysterious-flash", qty: 2 },
+                { item: "gold", qty: 22000 }
+              ]
+            },
+            {
+              description: "+15% effect chance",
+              resources: [
+                { item: "molagorago", qty: 1 },
+                { item: "mysterious-flash", qty: 3 },
+                { item: "gold", qty: 35000 }
+              ]
+            },
+            {
+              description: "+15% damage dealt",
+              resources: [
+                { item: "molagorago", qty: 1 },
+                { item: "mysterious-flash", qty: 4 },
+                { item: "gold", qty: 40000 }
+              ]
+            }
+          ],
+          buffs: [],
+          debuffs: ["stic_speed_dn"]
+        },
+        {
+          isPassive: false,
+          soulBurn: 10,
+          selfSkillBarValue: 0,
+          soulBurnEffect: "Increases the amount recovered.",
+          awakenUpgrade: false,
+          cooldown: 2,
+          name: "Guard",
+          soulAcquire: 1,
+          description:
+            "Recovers the ally's Health with water energy. Amount recovered is proportional to Attack.",
+          enhancement: [
+            {
+              description: "+5% healing",
+              resources: [
+                { item: "molagora", qty: 1 },
+                { item: "gold", qty: 4000 }
+              ]
+            },
+            {
+              description: "+5% healing",
+              resources: [
+                { item: "molagora", qty: 3 },
+                { item: "mysterious-flash", qty: 2 },
+                { item: "gold", qty: 22000 }
+              ]
+            },
+            {
+              description: "+10% healing",
+              resources: [
+                { item: "molagorago", qty: 1 },
+                { item: "mysterious-flash", qty: 3 },
+                { item: "gold", qty: 35000 }
+              ]
+            },
+            {
+              description: "+10% healing",
+              resources: [
+                { item: "molagorago", qty: 1 },
+                { item: "mysterious-flash", qty: 4 },
+                { item: "gold", qty: 40000 }
+              ]
+            }
+          ],
+          buffs: [],
+          debuffs: []
+        },
+        {
+          isPassive: false,
+          soulBurn: 0,
+          selfSkillBarValue: 0,
+          soulBurnEffect: "",
+          awakenUpgrade: true,
+          cooldown: 4,
+          name: "Spirit's Call",
+          soulAcquire: 2,
+          description:
+            "Recovers Health of all allies and casts a barrier for 2 turns with spirit power. Amount recovered and barrier strength is proportional to the caster's Attack.",
+          enhancement: [
+            {
+              description: "+5% healing",
+              resources: [
+                { item: "molagora", qty: 1 },
+                { item: "gold", qty: 4000 }
+              ]
+            },
+            {
+              description: "+5% healing",
+              resources: [
+                { item: "molagora", qty: 2 },
+                { item: "gold", qty: 8000 }
+              ]
+            },
+            {
+              description: "+5% healing",
+              resources: [
+                { item: "molagora", qty: 3 },
                 { item: "gold", qty: 12000 }
               ]
             },
             {
               description: "-1 turn cooldown",
               resources: [
-                { item: "twisted-fang", qty: 2 },
+                { item: "molagora", qty: 3 },
+                { item: "mysterious-flash", qty: 3 },
+                { item: "gold", qty: 27000 }
+              ]
+            },
+            {
+              description: "+5% healing",
+              resources: [
                 { item: "molagora", qty: 4 },
-                { item: "gold", qty: 26000 }
+                { item: "mysterious-flash", qty: 4 },
+                { item: "gold", qty: 36000 }
               ]
             },
             {
-              description: "+10% damage dealt",
+              description: "+10% healing",
               resources: [
-                { item: "twisted-fang", qty: 4 },
                 { item: "molagorago", qty: 1 },
-                { item: "gold", qty: 26000 }
+                { item: "mysterious-flash", qty: 5 },
+                { item: "gold", qty: 45000 }
               ]
             },
             {
-              description: "+15% effect chance",
+              description: "+10% healing",
               resources: [
-                { item: "twisted-fang", qty: 5 },
-                { item: "molagorago", qty: 2 },
-                { item: "gold", qty: 65000 }
-              ]
-            },
-            {
-              description: "+15% damage dealt",
-              resources: [
-                { item: "blazing-soul", qty: 2 },
-                { item: "molagoragora", qty: 1 },
-                { item: "gold", qty: 160000 }
+                { item: "molagorago", qty: 1 },
+                { item: "mysterious-flash", qty: 6 },
+                { item: "gold", qty: 50000 }
               ]
             }
           ],
-          buffs: ["stic_att_up"],
-          debuffs: ["stic_def_dn"]
+          buffs: ["stic_protect"],
+          debuffs: []
         }
       ],
       specialtySkill: {
-        name: "Finding the Strongest",
-        description:
-          "His desire to fight the strongest made him follow the path of Asura.",
-        dispatch: ["[Chase] type mission"],
-        enhancement: ["Reward bonus +6%"],
-        stats: { command: 28, charm: 29, politics: 18 }
+        name: "First Aid",
+        description: "With his warm touch, there's nothing he can't heal.",
+        dispatch: ["[Weakened] attribute mission"],
+        enhancement: ["Reward bonus +10%"],
+        stats: { command: 41, charm: 80, politics: 37 }
       },
       memoryImprint: [
-        { rank: "d", status: { type: "atk", increase: "3.6%" } },
-        { rank: "c", status: { type: "atk", increase: 0 } },
-        { rank: "b", status: { type: "atk", increase: 0 } },
-        { rank: "a", status: { type: "atk", increase: 0 } },
-        { rank: "s", status: { type: "atk", increase: 0 } },
-        { rank: "ss", status: { type: "atk", increase: 0 } },
-        { rank: "sss", status: { type: "atk", increase: 0 } }
+        {
+          rank: "d",
+          status: {
+            type: "atk",
+            increase: 24
+          }
+        },
+        {
+          rank: "c",
+          status: {
+            type: "atk",
+            increase: 36
+          }
+        },
+        {
+          rank: "b",
+          status: {
+            type: "atk",
+            increase: 48
+          }
+        },
+        {
+          rank: "a",
+          status: {
+            type: "atk",
+            increase: 60
+          }
+        },
+        {
+          rank: "s",
+          status: {
+            type: "atk",
+            increase: 72
+          }
+        },
+        {
+          rank: "ss",
+          status: {
+            type: "atk",
+            increase: 84
+          }
+        },
+        {
+          rank: "sss",
+          status: {
+            type: "atk",
+            increase: 96
+          }
+        }
       ],
       awakening: [
         {
           rank: 1,
           skillUpgrade: false,
           statsIncrease: [{ atk: "3%" }, { atk: 20 }, { hp: 60 }],
-          resources: [{ item: "dark-rune", qty: 10 }]
+          resources: [{ item: "frost-rune", qty: 5 }]
         },
         {
           rank: 2,
           skillUpgrade: false,
           statsIncrease: [{ atk: "3%" }, { atk: 20 }, { hp: 60 }],
-          resources: [
-            { item: "dark-rune", qty: 15 },
-            { item: "greater-dark-rune", qty: 2 }
-          ]
+          resources: [{ item: "frost-rune", qty: 9 }]
         },
         {
           rank: 3,
           skillUpgrade: true,
           statsIncrease: [{ atk: 20 }, { hp: 60 }],
           resources: [
-            { item: "dark-rune", qty: 20 },
-            { item: "greater-dark-rune", qty: 10 }
+            { item: "frost-rune", qty: 12 },
+            { item: "greater-frost-rune", qty: 6 }
           ]
         },
         {
           rank: 4,
           skillUpgrade: false,
-          statsIncrease: [{ chc: "6%" }, { atk: 30 }, { hp: 80 }],
-          resources: [
-            { item: "greater-dark-rune", qty: 10 },
-            { item: "epic-dark-rune", qty: 2 }
-          ]
+          statsIncrease: [{ def: "6%" }, { atk: 30 }, { hp: 80 }],
+          resources: [{ item: "greater-frost-rune", qty: 15 }]
         },
         {
           rank: 5,
           skillUpgrade: false,
           statsIncrease: [{ atk: "6%" }, { atk: 30 }, { hp: 80 }],
           resources: [
-            { item: "epic-dark-rune", qty: 6 },
-            { item: "ultra-fang", qty: 15 }
+            { item: "epic-frost-rune", qty: 4 },
+            { item: "dream-time-circuit", qty: 9 }
           ]
         },
         {
@@ -300,8 +320,8 @@ class Hero extends Component {
           skillUpgrade: false,
           statsIncrease: [{ atk: "6%" }, { atk: 30 }, { hp: 80 }],
           resources: [
-            { item: "epic-dark-rune", qty: 10 },
-            { item: "blazing-soul", qty: 10 }
+            { item: "epic-frost-rune", qty: 6 },
+            { item: "reingar-student-id", qty: 6 }
           ]
         }
       ]
@@ -349,22 +369,33 @@ class Hero extends Component {
         { label: "Rival", value: "rival" },
         { label: "Longing", value: "longing" }
       ]
+    },
+    alert: {
+      isOpened: false,
+      message: ""
     }
   };
 
   handleChange = (name, value) => {
-    const hero = { ...this.state.hero };
-    hero[name] = value;
+    let hero = { ...this.state.hero };
+    if (name === "hero") {
+      hero = value;
+    } else {
+      hero[name] = value;
+    }
     this.setState({ hero });
     console.info("Changed: ", hero);
   };
-
   render() {
     return (
       <React.Fragment>
         <TopNavBar title="Heroes">
           <HeroExport output={this.state.hero} />
-          <Button size="sm">Import</Button>
+          <HeroImport
+            input={this.state.hero}
+            onChange={this.handleChange}
+            alert={this.handleAlert}
+          />
         </TopNavBar>
 
         <Row>

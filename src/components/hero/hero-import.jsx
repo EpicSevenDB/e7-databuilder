@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import {
   Button,
   Modal,
@@ -7,15 +6,17 @@ import {
   ModalBody,
   ModalFooter,
   Input,
+  Label,
   Alert
 } from "reactstrap";
 
-class HeroExport extends Component {
+class HeroImport extends Component {
   constructor(props) {
     super(props);
     this.state = {
       modal: false,
-      copied: false
+      alert: false,
+      import: {}
     };
     this.onDismiss = this.onDismiss.bind(this);
     this.toggle = this.toggle.bind(this);
@@ -27,61 +28,60 @@ class HeroExport extends Component {
     });
   }
 
-  onDismiss() {
-    this.setState({ copied: false });
-  }
-
-  onCopyToClipboard = () => {
-    const copied = { ...this.state.copied };
-    this.setState({ copied: true });
+  handleImport = () => {
+    this.props.onChange("hero", JSON.parse(this.state.import));
+    this.setState({ modal: false });
+    this.setState({ alert: true });
     setTimeout(() => {
       this.setState({
-        copied: false
+        alert: false
       });
     }, 3000);
   };
+  handleChange = e => {
+    this.setState({ import: e.currentTarget.value });
+  };
+  onDismiss() {
+    this.setState({ modal: false });
+  }
+
   render() {
-    const { output } = this.props;
     return (
       <React.Fragment>
-        <Button color="success" size="sm" onClick={this.toggle}>
-          Export
+        <Button color="primary" size="sm" onClick={this.toggle}>
+          Import
         </Button>
 
         <Modal centered={true} isOpen={this.state.modal} toggle={this.toggle}>
-          <Alert
-            color="success"
-            className={this.state.copied ? "toaster" : "toaster hide"}
-          >
-            Copied to Clipboard!
-          </Alert>
           <ModalHeader toggle={this.toggle}>Export</ModalHeader>
           <ModalBody>
+            <Label>Copy and paste the json object below</Label>
             <Input
               bsSize="sm"
               type="textarea"
-              readOnly
-              value={JSON.stringify(output)}
+              name="import"
+              onChange={this.handleChange}
             />
           </ModalBody>
           <ModalFooter>
-            <CopyToClipboard
-              text={JSON.stringify(output)}
-              onCopy={this.onCopyToClipboard}
-            >
-              <Button color="success" size="sm">
-                Copy to clipboard
-              </Button>
-            </CopyToClipboard>
+            <Button color="primary" size="sm" onClick={this.handleImport}>
+              Import
+            </Button>
 
             <Button color="secondary" size="sm" onClick={this.toggle}>
               Cancel
             </Button>
           </ModalFooter>
         </Modal>
+        <Alert
+          color="success"
+          className={this.state.alert ? "toaster" : "toaster hide"}
+        >
+          {"Hero successfully imported"}
+        </Alert>
       </React.Fragment>
     );
   }
 }
 
-export default HeroExport;
+export default HeroImport;
