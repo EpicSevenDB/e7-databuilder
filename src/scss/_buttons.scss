@@ -3,20 +3,20 @@
   &.btn-success {
     background-color: $green;
     &:hover {
-      background-color: darken($green, 5);
+      background-color: darken($green, $str);
     }
     &:focus {
       box-shadow: 0 0 0 0.2rem transparentize($green, 0.25);
     }
     &:active {
-      background-color: darken($green, 10) !important;
+      background-color: darken($green, $str) !important;
       box-shadow: 0 0 0 0.2rem transparentize($green, 0.25) !important;
     }
   }
   &.btn-danger {
     background: $red;
     &:hover {
-      background-color: darken($red, 5);
+      background-color: darken($red, $str);
     }
   }
 }

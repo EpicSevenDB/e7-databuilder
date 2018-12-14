@@ -68,6 +68,8 @@ class HeroSkills extends Component {
                     type="text"
                     size="6"
                     value={skill.name}
+                    tooltip="Example: Dragon Flame"
+                    id={"skillName-" + i}
                     name="name"
                     index={i}
                     onChange={this.handleChange}
@@ -132,6 +134,8 @@ class HeroSkills extends Component {
                     type="number"
                     size="3"
                     value={skill.soulAcquire}
+                    tooltip="Example: 1/2/3"
+                    id={"soulAquire-" + i}
                     name="soulAcquire"
                     index={i}
                     onChange={this.handleChange}
@@ -140,6 +144,8 @@ class HeroSkills extends Component {
                     type="number"
                     size="3"
                     value={skill.soulBurn}
+                    tooltip="Example: 10/20"
+                    id={"soulBurn-" + i}
                     name="soulBurn"
                     index={i}
                     onChange={this.handleChange}
@@ -148,6 +154,8 @@ class HeroSkills extends Component {
                     type="text"
                     size="12"
                     value={skill.soulBurnEffect}
+                    tooltip="Example: Increases damage dealt"
+                    id={"soulBurnEffect-" + i}
                     name="soulBurnEffect"
                     index={i}
                     onChange={this.handleChange}
@@ -156,6 +164,8 @@ class HeroSkills extends Component {
                     type="text"
                     size="6"
                     value={skill.buffs}
+                    tooltip="Example: stic_att_up, stic_spd_up"
+                    id={"buffs-" + i}
                     name="buffs"
                     index={i}
                     onChange={this.handleChange}
@@ -164,6 +174,8 @@ class HeroSkills extends Component {
                     type="text"
                     size="6"
                     value={skill.debuffs}
+                    tooltip="Example: stic_att_dn, stic_spd_dn"
+                    id={"debuffs-" + i}
                     name="debuffs"
                     index={i}
                     onChange={this.handleChange}

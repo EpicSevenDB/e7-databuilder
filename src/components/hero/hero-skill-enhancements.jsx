@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import classnames from "classnames";
+import Badgetip from "../common/badgetip";
 import EpicInput from "../common/epic-input";
 import {
   Col,
@@ -133,12 +134,20 @@ class HeroSkillEnhancements extends Component {
                     type="text"
                     size="12"
                     name="description"
+                    tooltip="Example: +5% damage dealt"
+                    id={"description-" + index + "-" + i}
                     index={i}
                     value={enhancement.description}
                     onChange={this.handleChange}
                   />
                   <Col>
-                    <Label>resources</Label>
+                    <Label>
+                      resources{" "}
+                      <Badgetip
+                        value={"Example: twisted-fang"}
+                        id={"resources" + index + "-" + i}
+                      />
+                    </Label>
                   </Col>
                   {enhancement.resources.map((resource, j) => (
                     <Col

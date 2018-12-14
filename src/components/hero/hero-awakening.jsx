@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Badgetip from "../common/badgetip";
 import classnames from "classnames";
 import {
   Col,
@@ -38,10 +38,10 @@ class HeroAwakening extends Component {
       let newStat = {};
       newStat[value] = awakening[i]["statsIncrease"][j][name[1]];
       awakening[i]["statsIncrease"][j] = newStat;
-    } else if (type !== "qty") {
-      awakening[i]["statsIncrease"][j][type] = value;
-    } else if (j >= 0) {
+    } else if (type === "item" || type === "qty") {
       awakening[i]["resources"][j][type] = value;
+    } else if (j >= 0) {
+      awakening[i]["statsIncrease"][j][type] = value;
     } else {
       awakening[i][type] = value;
     }
@@ -108,7 +108,13 @@ class HeroAwakening extends Component {
                     }
                   />
                   <Col md="12">
-                    <Label>statIncreases</Label>
+                    <Label>
+                      statIncreases
+                      <Badgetip
+                        value="Example: atk/def/spd"
+                        id={"statIncrease-" + i}
+                      />
+                    </Label>
                   </Col>
                   {awake.statsIncrease.map((increase, j) => (
                     <Col key={j} md="12" className="resource-wrapper">
@@ -177,7 +183,13 @@ class HeroAwakening extends Component {
                   </Col>
 
                   <Col md="12">
-                    <Label>resources</Label>
+                    <Label>
+                      resources
+                      <Badgetip
+                        value="Example: greater-dark-rune"
+                        id={"awakeningResource-" + i}
+                      />
+                    </Label>
                   </Col>
                   {awake.resources.map((resource, j) => (
                     <Col key={j} md="12" className="resource-wrapper">

@@ -21,6 +21,8 @@ class HeroSpecialtySkills extends Component {
           size="12"
           type="text"
           name="name"
+          id="specialtySkill"
+          tooltip="Example: Finding the Strongest"
           value={specialtySkill.name}
           onChange={this.handleChange}
         />
@@ -34,12 +36,16 @@ class HeroSpecialtySkills extends Component {
         <EpicInput
           size="6"
           name="dispatch"
+          id="dispatch"
+          tooltip="Example: [Chase] type mission"
           value={specialtySkill.dispatch}
           onChange={this.handleChange}
         />
         <EpicInput
           size="6"
           name="enhancement"
+          id="specialtySkillEnhancement"
+          tooltip="Example: Reward bonus +6%"
           value={specialtySkill.enhancement}
           onChange={this.handleChange}
         />

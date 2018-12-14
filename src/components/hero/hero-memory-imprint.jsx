@@ -23,6 +23,8 @@ class HeroMemoryImprint extends Component {
         <EpicInput
           size="12"
           name="type"
+          id="memoryImprint"
+          tooltip="Example: atk/def/spd"
           value={memoryImprint[0].status.type}
           onChange={this.handleChange}
         />
@@ -32,6 +34,8 @@ class HeroMemoryImprint extends Component {
               <EpicInput
                 key={i}
                 size="3"
+                id={"memoryImprintValue-" + i}
+                tooltip="Example: 5 or 5%"
                 name={"Rank " + imprint.rank}
                 value={imprint.status.increase}
                 index={i}

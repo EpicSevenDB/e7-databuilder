@@ -63,6 +63,8 @@ class HeroForm extends Component {
               <EpicInput
                 type="text"
                 name="specialtyChangeName"
+                tooltip="Example: commander-lorina"
+                id="specialtyChangeName"
                 size="12"
                 value={hero.specialtyChangeName}
                 onChange={onChange}
@@ -70,6 +72,8 @@ class HeroForm extends Component {
               <EpicInput
                 type="text"
                 name="selfSkillBarName"
+                tooltip="Example: fighting-spirit"
+                id="selfSkillBarName"
                 size="12"
                 value={hero.selfSkillBarName}
                 onChange={onChange}
