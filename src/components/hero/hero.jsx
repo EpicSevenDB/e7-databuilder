@@ -10,46 +10,36 @@ import { Row, Col } from "reactstrap";
 class Hero extends Component {
   state = {
     hero: {
-      name: "Aither",
-      rarity: 3,
-      classType: "soul-weaver",
-      element: "ice",
-      zodiac: "libra",
+      name: "",
+      rarity: "",
+      classType: "",
+      element: "",
+      zodiac: "",
       specialtyChangeName: "",
       selfSkillBarName: "",
-      background: [
-        "Aither is the royal child of Ezera. He is bright and energetic, but he does not like those people who treat him as a weak boy. He desires to make his name as a brave knight one day, just like his mother."
-      ],
-      relations: [
-        { hero: "arbiter-vildred", relationType: "grudge" },
-        { hero: "angelica", relationType: "longing" },
-        { hero: "ras", relationType: "longing" },
-        { hero: "mercedes", relationType: "trust" },
-        { hero: "vildred", relationType: "longing" },
-        { hero: "iseria", relationType: "trust" },
-        { hero: "chloe", relationType: "trust" }
-      ],
+      background: [""],
+      relations: [{ hero: "", relationType: "" }],
       stats: {
         base: {
-          cp: 2064,
-          atk: 198,
-          hp: 623,
-          spd: 92,
-          def: 74,
-          chc: 15,
-          chd: 150,
+          cp: 0,
+          atk: 0,
+          hp: 0,
+          spd: 0,
+          def: 0,
+          chc: 0,
+          chd: 0,
           eff: 0,
           efr: 0,
-          dac: 5
+          dac: 0
         },
         max: {
-          cp: 13178,
-          atk: 705,
-          hp: 4248,
-          spd: 92,
-          def: 672,
-          chc: 15,
-          chd: 150,
+          cp: 0,
+          atk: 0,
+          hp: 0,
+          spd: 0,
+          def: 0,
+          chc: 0,
+          chd: 0,
           eff: 0,
           efr: 0,
           dac: 5
@@ -63,88 +53,21 @@ class Hero extends Component {
           soulBurnEffect: "",
           awakenUpgrade: false,
           cooldown: 0,
-          name: "Whispering Spirit",
-          soulAcquire: 1,
-          description:
-            "Attacks with spirit power, with a 25% chance to decrease Speed for 2 turns.",
+          name: "",
+          soulAcquire: 0,
+          description: "",
           enhancement: [
             {
-              description: "+10% damage dealt",
-              resources: [
-                { item: "molagora", qty: 1 },
-                { item: "gold", qty: 4000 }
-              ]
+              description: "",
+              resources: []
             },
             {
-              description: "+10% effect chance",
-              resources: [
-                { item: "molagora", qty: 3 },
-                { item: "mysterious-flash", qty: 2 },
-                { item: "gold", qty: 22000 }
-              ]
+              description: "",
+              resources: []
             },
             {
-              description: "+15% effect chance",
-              resources: [
-                { item: "molagorago", qty: 1 },
-                { item: "mysterious-flash", qty: 3 },
-                { item: "gold", qty: 35000 }
-              ]
-            },
-            {
-              description: "+15% damage dealt",
-              resources: [
-                { item: "molagorago", qty: 1 },
-                { item: "mysterious-flash", qty: 4 },
-                { item: "gold", qty: 40000 }
-              ]
-            }
-          ],
-          buffs: [],
-          debuffs: ["stic_speed_dn"]
-        },
-        {
-          isPassive: false,
-          soulBurn: 10,
-          selfSkillBarValue: 0,
-          soulBurnEffect: "Increases the amount recovered.",
-          awakenUpgrade: false,
-          cooldown: 2,
-          name: "Guard",
-          soulAcquire: 1,
-          description:
-            "Recovers the ally's Health with water energy. Amount recovered is proportional to Attack.",
-          enhancement: [
-            {
-              description: "+5% healing",
-              resources: [
-                { item: "molagora", qty: 1 },
-                { item: "gold", qty: 4000 }
-              ]
-            },
-            {
-              description: "+5% healing",
-              resources: [
-                { item: "molagora", qty: 3 },
-                { item: "mysterious-flash", qty: 2 },
-                { item: "gold", qty: 22000 }
-              ]
-            },
-            {
-              description: "+10% healing",
-              resources: [
-                { item: "molagorago", qty: 1 },
-                { item: "mysterious-flash", qty: 3 },
-                { item: "gold", qty: 35000 }
-              ]
-            },
-            {
-              description: "+10% healing",
-              resources: [
-                { item: "molagorago", qty: 1 },
-                { item: "mysterious-flash", qty: 4 },
-                { item: "gold", qty: 40000 }
-              ]
+              description: "",
+              resources: []
             }
           ],
           buffs: [],
@@ -155,126 +78,111 @@ class Hero extends Component {
           soulBurn: 0,
           selfSkillBarValue: 0,
           soulBurnEffect: "",
-          awakenUpgrade: true,
-          cooldown: 4,
-          name: "Spirit's Call",
-          soulAcquire: 2,
-          description:
-            "Recovers Health of all allies and casts a barrier for 2 turns with spirit power. Amount recovered and barrier strength is proportional to the caster's Attack.",
+          awakenUpgrade: false,
+          cooldown: 0,
+          name: "",
+          soulAcquire: 0,
+          description: "",
           enhancement: [
             {
-              description: "+5% healing",
-              resources: [
-                { item: "molagora", qty: 1 },
-                { item: "gold", qty: 4000 }
-              ]
+              description: "",
+              resources: []
             },
             {
-              description: "+5% healing",
-              resources: [
-                { item: "molagora", qty: 2 },
-                { item: "gold", qty: 8000 }
-              ]
+              description: "",
+              resources: []
             },
             {
-              description: "+5% healing",
-              resources: [
-                { item: "molagora", qty: 3 },
-                { item: "gold", qty: 12000 }
-              ]
-            },
-            {
-              description: "-1 turn cooldown",
-              resources: [
-                { item: "molagora", qty: 3 },
-                { item: "mysterious-flash", qty: 3 },
-                { item: "gold", qty: 27000 }
-              ]
-            },
-            {
-              description: "+5% healing",
-              resources: [
-                { item: "molagora", qty: 4 },
-                { item: "mysterious-flash", qty: 4 },
-                { item: "gold", qty: 36000 }
-              ]
-            },
-            {
-              description: "+10% healing",
-              resources: [
-                { item: "molagorago", qty: 1 },
-                { item: "mysterious-flash", qty: 5 },
-                { item: "gold", qty: 45000 }
-              ]
-            },
-            {
-              description: "+10% healing",
-              resources: [
-                { item: "molagorago", qty: 1 },
-                { item: "mysterious-flash", qty: 6 },
-                { item: "gold", qty: 50000 }
-              ]
+              description: "",
+              resources: []
             }
           ],
-          buffs: ["stic_protect"],
+          buffs: [],
+          debuffs: []
+        },
+        {
+          isPassive: false,
+          soulBurn: 0,
+          selfSkillBarValue: 0,
+          soulBurnEffect: "",
+          awakenUpgrade: false,
+          cooldown: 0,
+          name: "",
+          soulAcquire: 0,
+          description: "",
+          enhancement: [
+            {
+              description: "",
+              resources: []
+            },
+            {
+              description: "",
+              resources: []
+            },
+            {
+              description: "",
+              resources: []
+            }
+          ],
+          buffs: [],
           debuffs: []
         }
       ],
       specialtySkill: {
-        name: "First Aid",
-        description: "With his warm touch, there's nothing he can't heal.",
-        dispatch: ["[Weakened] attribute mission"],
-        enhancement: ["Reward bonus +10%"],
-        stats: { command: 41, charm: 80, politics: 37 }
+        name: "",
+        description: "",
+        dispatch: [],
+        enhancement: [],
+        stats: { command: 0, charm: 0, politics: 0 }
       },
       memoryImprint: [
         {
           rank: "d",
           status: {
-            type: "atk",
-            increase: 24
+            type: "",
+            increase: 0
           }
         },
         {
           rank: "c",
           status: {
-            type: "atk",
-            increase: 36
+            type: "",
+            increase: 0
           }
         },
         {
           rank: "b",
           status: {
-            type: "atk",
-            increase: 48
+            type: "",
+            increase: 0
           }
         },
         {
           rank: "a",
           status: {
-            type: "atk",
-            increase: 60
+            type: "",
+            increase: 0
           }
         },
         {
           rank: "s",
           status: {
-            type: "atk",
-            increase: 72
+            type: "",
+            increase: 0
           }
         },
         {
           rank: "ss",
           status: {
-            type: "atk",
-            increase: 84
+            type: "",
+            increase: 0
           }
         },
         {
           rank: "sss",
           status: {
-            type: "atk",
-            increase: 96
+            type: "",
+            increase: 0
           }
         }
       ],
@@ -282,47 +190,38 @@ class Hero extends Component {
         {
           rank: 1,
           skillUpgrade: false,
-          statsIncrease: [{ atk: "3%" }, { atk: 20 }, { hp: 60 }],
-          resources: [{ item: "frost-rune", qty: 5 }]
+          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+          resources: [{ item: "", qty: 0 }]
         },
         {
           rank: 2,
           skillUpgrade: false,
-          statsIncrease: [{ atk: "3%" }, { atk: 20 }, { hp: 60 }],
-          resources: [{ item: "frost-rune", qty: 9 }]
+          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+          resources: [{ item: "", qty: 0 }]
         },
         {
           rank: 3,
           skillUpgrade: true,
-          statsIncrease: [{ atk: 20 }, { hp: 60 }],
-          resources: [
-            { item: "frost-rune", qty: 12 },
-            { item: "greater-frost-rune", qty: 6 }
-          ]
+          statsIncrease: [{ "": 0 }, { "": 0 }],
+          resources: [{ item: "", qty: 0 }]
         },
         {
           rank: 4,
           skillUpgrade: false,
-          statsIncrease: [{ def: "6%" }, { atk: 30 }, { hp: 80 }],
-          resources: [{ item: "greater-frost-rune", qty: 15 }]
+          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+          resources: [{ item: "", qty: 0 }]
         },
         {
           rank: 5,
           skillUpgrade: false,
-          statsIncrease: [{ atk: "6%" }, { atk: 30 }, { hp: 80 }],
-          resources: [
-            { item: "epic-frost-rune", qty: 4 },
-            { item: "dream-time-circuit", qty: 9 }
-          ]
+          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+          resources: [{ item: "", qty: 0 }]
         },
         {
           rank: 6,
           skillUpgrade: false,
-          statsIncrease: [{ atk: "6%" }, { atk: 30 }, { hp: 80 }],
-          resources: [
-            { item: "epic-frost-rune", qty: 6 },
-            { item: "reingar-student-id", qty: 6 }
-          ]
+          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+          resources: [{ item: "", qty: 0 }]
         }
       ]
     },

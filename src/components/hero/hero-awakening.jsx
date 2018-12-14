@@ -123,7 +123,7 @@ class HeroAwakening extends Component {
                           type="text"
                           bsSize="sm"
                           name={"stats." + Object.keys(increase)}
-                          placeholder="resource item"
+                          placeholder="stat increase"
                           value={Object.keys(increase)}
                           onChange={e =>
                             this.handleChange(

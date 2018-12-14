@@ -11,6 +11,7 @@
     box-shadow: 0 -2px 3px transparentize($black, 0.95);
     background-color: $bg;
     transition: $ease;
+    margin-left: -1px;
     &:hover {
       border-top: 1px solid $border;
       border-left: 1px solid $border;
