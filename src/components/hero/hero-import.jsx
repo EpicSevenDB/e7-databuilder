@@ -6,8 +6,7 @@ import {
   ModalBody,
   ModalFooter,
   Input,
-  Label,
-  Alert
+  Label
 } from "reactstrap";
 
 class HeroImport extends Component {
@@ -15,34 +14,34 @@ class HeroImport extends Component {
     super(props);
     this.state = {
       modal: false,
-      alert: false,
       import: {}
     };
-    this.onDismiss = this.onDismiss.bind(this);
     this.toggle = this.toggle.bind(this);
   }
 
-  toggle() {
-    this.setState({
-      modal: !this.state.modal
-    });
-  }
-
   handleImport = () => {
-    this.props.onChange("hero", JSON.parse(this.state.import));
-    this.setState({ modal: false });
-    this.setState({ alert: true });
-    setTimeout(() => {
-      this.setState({
-        alert: false
-      });
-    }, 3000);
+    try {
+      this.props.onChange("hero", JSON.parse(this.state.import));
+      this.setState({ modal: false });
+      this.props.alert("success", "Hero succesfully imported!");
+    } catch (err) {
+      console.info("SHIT:", this.state.import);
+      this.props.alert(
+        "danger",
+        "Oops, please double check if your json is following the right format."
+      );
+    }
   };
+
   handleChange = e => {
     this.setState({ import: e.currentTarget.value });
   };
-  onDismiss() {
-    this.setState({ modal: false });
+
+  toggle() {
+    this.state.import = {};
+    this.setState({
+      modal: !this.state.modal
+    });
   }
 
   render() {
@@ -73,12 +72,6 @@ class HeroImport extends Component {
             </Button>
           </ModalFooter>
         </Modal>
-        <Alert
-          color="success"
-          className={this.state.alert ? "toaster" : "toaster hide"}
-        >
-          {"Hero successfully imported"}
-        </Alert>
       </React.Fragment>
     );
   }

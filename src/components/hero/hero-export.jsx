@@ -7,19 +7,24 @@ import {
   ModalBody,
   ModalFooter,
   Input,
-  Alert
+  Alert,
+  Label
 } from "reactstrap";
 
 class HeroExport extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false,
-      copied: false
+      modal: false
     };
     this.onDismiss = this.onDismiss.bind(this);
     this.toggle = this.toggle.bind(this);
   }
+
+  onCopyToClipboard = () => {
+    this.setState({ modal: false });
+    this.props.alert("success", "Copied to clipboard!");
+  };
 
   toggle() {
     this.setState({
@@ -31,14 +36,6 @@ class HeroExport extends Component {
     this.setState({ copied: false });
   }
 
-  onCopyToClipboard = () => {
-    this.setState({ copied: true });
-    setTimeout(() => {
-      this.setState({
-        copied: false
-      });
-    }, 3000);
-  };
   render() {
     const { output } = this.props;
     return (
@@ -56,6 +53,7 @@ class HeroExport extends Component {
           </Alert>
           <ModalHeader toggle={this.toggle}>Export</ModalHeader>
           <ModalBody>
+            <Label>Preview</Label>
             <Input
               bsSize="sm"
               type="textarea"

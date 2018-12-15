@@ -5,7 +5,7 @@ import HeroExport from "./hero-export";
 import HeroImport from "./hero-import";
 import TopNavBar from "../common/top-navbar";
 
-import { Row, Col } from "reactstrap";
+import { Row, Col, Alert, Button } from "reactstrap";
 
 class Hero extends Component {
   state = {
@@ -268,24 +268,47 @@ class Hero extends Component {
         { label: "Rival", value: "rival" },
         { label: "Longing", value: "longing" }
       ]
+    },
+    alert: {
+      color: "secondary",
+      message: "",
+      show: false
     }
+  };
+
+  handleAlert = (color, message) => {
+    const alert = { ...this.state.alert };
+    alert["show"] = true;
+    alert["color"] = color;
+    alert["message"] = message;
+    this.setState({ alert });
+    setTimeout(() => {
+      alert["show"] = false;
+      this.setState({
+        alert
+      });
+    }, 3000);
   };
 
   handleChange = (name, value) => {
     let hero = { ...this.state.hero };
-    if (name === "hero") {
-      hero = value;
-    } else {
-      hero[name] = value;
+    if (typeof hero[name] !== undefined) {
+      if (name === "hero") {
+        hero = value;
+      } else {
+        hero[name] = value;
+      }
+      this.setState({ hero });
+      console.info("Changed: ", hero);
     }
-    this.setState({ hero });
-    console.info("Changed: ", hero);
   };
+
   render() {
+    const { color, show, message } = this.state.alert;
     return (
       <React.Fragment>
         <TopNavBar title="Heroes">
-          <HeroExport output={this.state.hero} />
+          <HeroExport output={this.state.hero} alert={this.handleAlert} />
           <HeroImport
             input={this.state.hero}
             onChange={this.handleChange}
@@ -302,6 +325,10 @@ class Hero extends Component {
             />
           </Col>
         </Row>
+
+        <Alert color={color} className={show ? "toaster" : "toaster hide"}>
+          {message}
+        </Alert>
       </React.Fragment>
     );
   }

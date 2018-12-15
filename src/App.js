@@ -44,11 +44,13 @@ class App extends Component {
 
   defaultTheme() {
     const token = localStorage.getItem("isDark");
-    console.info("Default: ", token);
-    if (token == "true") {
-      return false;
+    if (token !== undefined) {
+      if (token === "true") {
+        return false;
+      }
+      return true;
     }
-    return true;
+    return false;
   }
 
   render() {
