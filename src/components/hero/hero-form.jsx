@@ -112,7 +112,7 @@ class HeroForm extends Component {
         <Card>
           <CardHeader>skills</CardHeader>
           <CardBody>
-            <FormGroup className="gutter-bottom">
+            <FormGroup>
               <HeroSkills skills={hero.skills} onChange={onChange} />
             </FormGroup>
           </CardBody>

@@ -30,14 +30,36 @@ class App extends Component {
         active: false
       },
       { id: 3, icon: "paw", title: "Monsters", url: "#monsters", active: false }
-    ]
+    ],
+    isDark: this.defaultTheme()
   };
+
+  handleTheme = () => {
+    this.setState({
+      isDark: !this.state.isDark
+    });
+    localStorage.setItem("isDark", this.state.isDark);
+    console.info("Default: ", this.state.isDark);
+  };
+
+  defaultTheme() {
+    const token = localStorage.getItem("isDark");
+    console.info("Default: ", token);
+    if (token == "true") {
+      return false;
+    }
+    return true;
+  }
 
   render() {
     return (
       <React.Fragment>
-        <NavBar links={this.state.links} />
-        <div className="wrapper">
+        <div className={this.state.isDark ? "wrapper dark" : "wrapper"}>
+          <NavBar
+            links={this.state.links}
+            isDark={this.state.isDark}
+            toggleTheme={this.handleTheme}
+          />
           <Container className="main-container">
             <Hero />
           </Container>

@@ -268,10 +268,6 @@ class Hero extends Component {
         { label: "Rival", value: "rival" },
         { label: "Longing", value: "longing" }
       ]
-    },
-    alert: {
-      isOpened: false,
-      message: ""
     }
   };
 

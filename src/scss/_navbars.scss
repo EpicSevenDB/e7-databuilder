@@ -1,5 +1,5 @@
 .global-nav {
-  max-width: 75px;
+  width: 60px;
   background: $black;
   position: fixed;
   height: 100vh;
@@ -7,13 +7,17 @@
   left: 0;
   font-size: 0.7rem;
   text-align: center;
+  border-right: 1px solid $dark-border;
+  z-index: 99999;
+  box-shadow: $dark-shadows;
   .nav-link {
-    padding: 15px 8px;
+    padding: 10px 6px;
+    height: 53.5px;
     border-radius: 0;
     position: relative;
-    color: lighten($black, 30);
+    color: $dark-blue;
     transition: all 0.3s ease;
-    border-bottom: 1px solid lighten($black, 8);
+    border-bottom: 1px solid $dark-border;
     pointer-events: none;
     .fas {
       font-size: 1.5em;
@@ -48,11 +52,12 @@
   position: absolute;
   padding: 12px 24px;
   top: 0;
-  left: 63px;
-  width: calc(100% - 63px);
+  left: 60px;
+  width: calc(100% - 60px);
   box-shadow: $shadows;
   border-bottom: 1px solid $border;
   z-index: 999;
+  transition: $ease;
   .nav {
     justify-content: space-between;
     max-width: 890px;
@@ -79,5 +84,34 @@
   }
   .nav-wrapper > .btn {
     margin: 0 0 0 6px;
+  }
+}
+
+.bottom-menu {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.theme-toggle {
+  border-radius: 0;
+  width: 50%;
+  background: none;
+  color: $dark-blue;
+  &:active,
+  &:focus {
+    box-shadow: none !important;
+    background: none !important;
+  }
+  &:hover {
+    background-color: $black;
+  }
+  &:first-child {
+    border-left: none;
+  }
+  &.active {
+    color: #fff !important;
+    background: none !important;
+    border-color: $dark-border !important;
+    pointer-events: none;
   }
 }

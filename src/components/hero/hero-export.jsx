@@ -32,7 +32,6 @@ class HeroExport extends Component {
   }
 
   onCopyToClipboard = () => {
-    const copied = { ...this.state.copied };
     this.setState({ copied: true });
     setTimeout(() => {
       this.setState({

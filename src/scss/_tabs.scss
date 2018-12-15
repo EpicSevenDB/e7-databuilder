@@ -12,6 +12,7 @@
     background-color: $bg;
     transition: $ease;
     margin-left: -1px;
+    border-bottom: none;
     &:hover {
       border-top: 1px solid $border;
       border-left: 1px solid $border;
@@ -26,10 +27,10 @@
   }
   .add-link {
     opacity: 1;
-    background: $green;
+    background: $green !important;
     color: #fff !important;
     &:hover {
-      background: darken($green, 5);
+      background: darken($green, 5) !important;
     }
   }
 }
@@ -44,6 +45,7 @@
   padding: 12px 12px 24px 12px;
   box-shadow: $shadows;
   min-height: 300px;
+  transition: $ease;
 }
 
 .small-tabs {

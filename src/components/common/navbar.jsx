@@ -2,17 +2,19 @@ import React from "react";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Nav, NavLink } from "reactstrap";
+import { Nav, NavLink, Button } from "reactstrap";
 
 //Icons
 import {
   faUser,
   faAddressBook,
   faBolt,
-  faPaw
+  faPaw,
+  faSun,
+  faMoon
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faUser, faAddressBook, faBolt, faPaw);
+library.add(faUser, faAddressBook, faBolt, faPaw, faSun, faMoon);
 
 //Stateless Functional Component. Note the props when wanting to use data from its parent
 const NavBar = props => {
@@ -30,6 +32,22 @@ const NavBar = props => {
           {link.title}
         </NavLink>
       ))}
+      <div className="bottom-menu">
+        <Button
+          size="sm"
+          className={props.isDark ? "theme-toggle" : "theme-toggle active"}
+          onClick={props.toggleTheme}
+        >
+          <FontAwesomeIcon icon="sun" />
+        </Button>
+        <Button
+          size="sm"
+          className={props.isDark ? "theme-toggle active" : "theme-toggle"}
+          onClick={props.toggleTheme}
+        >
+          <FontAwesomeIcon icon="moon" />
+        </Button>
+      </div>
     </Nav>
   );
 };

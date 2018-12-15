@@ -1,4 +1,5 @@
 .form-control {
+  transition: $ease;
 }
 .form-group {
   margin-bottom: 2px;
@@ -16,7 +17,9 @@
     }
   }
 }
-
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: $dark-blue;
+}
 /* Resources */
 .resource-wrapper {
   margin-top: 6px;

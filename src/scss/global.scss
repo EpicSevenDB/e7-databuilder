@@ -1,12 +1,16 @@
-$black: #273441;
+$black: #252b31;
 $bg: #f3f4f7;
 $border: #d9dfe4;
-$grey: #888b8e;
+$dark-border: lighten($black, 12);
+$grey: lighten($black, 25);
+
+$dark-blue: lighten($black, 25);
 $blue: #0b75b3;
 $green: #20ad9b;
 $red: #e65454;
 
 $shadows: 0 0px 5px transparentize($black, 0.88);
+$dark-shadows: 0 0px 8px transparentize(#000, 0.65);
 $ease: all 0.3s ease;
 $str: 8;
 
@@ -21,16 +25,86 @@ $str: 8;
 @import "./forms";
 @import "./navbars";
 
-body {
+.wrapper {
   background: $bg;
   color: $grey;
   font-family: "Quicksand", sans-serif;
   padding-bottom: 100px;
+  padding-left: 65px;
+  padding-top: 85px;
+  transition: $ease;
+  &.dark {
+    background: $black;
+    color: $dark-blue;
+    ::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: darken($dark-blue, 10);
+      opacity: 1; /* Firefox */
+    }
+
+    .top-navbar {
+      background: lighten($black, 5);
+      border-bottom: 1px solid $dark-border;
+      box-shadow: $dark-shadows;
+    }
+    .card {
+      background: lighten($black, 2.5);
+      border: 1px solid $dark-border;
+      box-shadow: $dark-shadows;
+      .card-header {
+        background: lighten($black, 5);
+        border-bottom: 1px solid $dark-border;
+      }
+    }
+    .form-control {
+      background: $black;
+      border: 1px solid $dark-border;
+      color: #fff;
+    }
+    .nav-tabs {
+      .nav-link {
+        background: lighten($black, 2.5);
+        border: 1px solid $dark-border;
+        color: $dark-blue;
+        border-bottom: none;
+        box-shadow: 0 -2px 3px transparentize(#000, 0.85);
+        &.active {
+          background: lighten($black, 5);
+          color: #fff;
+        }
+        &:hover {
+          background: $black;
+        }
+      }
+    }
+    .custom-checkbox
+      .custom-control-input:checked
+      ~ .custom-control-label::before {
+      background-color: $dark-blue;
+    }
+    .tab-pane {
+      background: lighten($black, 5);
+      border: 1px solid $dark-border;
+      box-shadow: $dark-shadows;
+    }
+    .btn-add {
+      color: $dark-blue;
+      border: 1px dashed $dark-blue;
+      &:hover {
+        color: #fff;
+        border: 1px solid transparent;
+      }
+    }
+    .badge {
+      background: $dark-blue;
+    }
+  }
 }
 
 label {
   margin: 10px 0 4px 0;
   font-size: 0.75em;
+
   .badge {
     margin-left: 3px;
     background-color: $grey;
@@ -41,10 +115,7 @@ label {
 textarea {
   min-height: 100px;
 }
-.wrapper {
-  margin-left: 65px;
-  margin-top: 85px;
-}
+
 .main-container {
   max-width: 960px;
   margin: 0 auto;

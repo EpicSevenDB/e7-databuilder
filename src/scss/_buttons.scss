@@ -37,11 +37,9 @@
 .btn-add {
   border: 1px dashed $grey;
   color: $grey;
-  opacity: 0.5;
   &:hover {
     background-color: $green;
     border: 1px solid transparent;
-    opacity: 1;
   }
   &:focus {
     border: 1px solid $green;
