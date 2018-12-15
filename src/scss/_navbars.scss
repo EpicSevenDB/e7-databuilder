@@ -50,22 +50,24 @@
 .top-navbar {
   background: #fff;
   position: absolute;
-  padding: 12px 24px;
+  padding: 12px;
   top: 0;
   left: 60px;
   width: calc(100% - 60px);
   box-shadow: $shadows;
   border-bottom: 1px solid $border;
   z-index: 999;
-  transition: $ease;
+  transition: background-color 0.3s ease;
   .nav {
     justify-content: space-between;
     max-width: 890px;
   }
   .title {
-    font-size: 1.52em;
+    font-size: 1.25em;
     font-weight: 200;
-    margin: 0;
+    margin: 0 8px 0 0;
+    line-height: 1.25em;
+    float: left;
   }
   .nav-item {
     display: flex;
@@ -86,7 +88,9 @@
     margin: 0 0 0 6px;
   }
 }
-
+.modal-open .top-navbar {
+  width: calc(100% - 75px);
+}
 .bottom-menu {
   position: absolute;
   width: 100%;

@@ -18,6 +18,13 @@
     &:hover {
       background-color: darken($red, $str);
     }
+    &:focus {
+      box-shadow: 0 0 0 0.2rem transparentize($red, 0.25);
+    }
+    &:active {
+      background-color: darken($red, $str) !important;
+      box-shadow: 0 0 0 0.2rem transparentize($red, 0.25) !important;
+    }
   }
   &.btn-primary {
     background: $blue;
@@ -30,6 +37,20 @@
     &:active {
       background-color: darken($blue, $str) !important;
       box-shadow: 0 0 0 0.2rem transparentize($blue, 0.25) !important;
+    }
+  }
+  &.btn-warning {
+    background: $orange;
+    color: #fff !important;
+    &:hover {
+      background-color: darken($orange, $str);
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.2rem transparentize($orange, 0.25);
+    }
+    &:active {
+      background-color: darken($orange, $str) !important;
+      box-shadow: 0 0 0 0.2rem transparentize($orange, 0.25) !important;
     }
   }
 }

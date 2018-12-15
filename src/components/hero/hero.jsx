@@ -5,7 +5,7 @@ import HeroExport from "./hero-export";
 import HeroImport from "./hero-import";
 import TopNavBar from "../common/top-navbar";
 
-import { Row, Col, Alert, Button } from "reactstrap";
+import { Row, Col, Alert } from "reactstrap";
 
 class Hero extends Component {
   state = {

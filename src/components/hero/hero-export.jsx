@@ -40,11 +40,11 @@ class HeroExport extends Component {
     const { output } = this.props;
     return (
       <React.Fragment>
-        <Button color="success" size="sm" onClick={this.toggle}>
+        <Button color="warning" size="sm" onClick={this.toggle}>
           Export
         </Button>
 
-        <Modal centered={true} isOpen={this.state.modal} toggle={this.toggle}>
+        <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <Alert
             color="success"
             className={this.state.copied ? "toaster" : "toaster hide"}

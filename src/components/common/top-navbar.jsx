@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Nav, NavItem } from "reactstrap";
+import { Nav, NavItem, Button } from "reactstrap";
 
 class TopNavBar extends Component {
   state = {
@@ -21,7 +21,12 @@ class TopNavBar extends Component {
         <div className="top-navbar">
           <Nav className="main-container">
             <NavItem>
-              <h1 className="title">{title}</h1>
+              <div>
+                <h1 className="title">{title}</h1>
+                <Button color="success" size="sm" className="pull-left">
+                  New
+                </Button>
+              </div>
             </NavItem>
             {/* <NavItem>
             <div class="nav-wrapper">

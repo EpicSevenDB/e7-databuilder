@@ -51,7 +51,7 @@ class HeroImport extends Component {
           Import
         </Button>
 
-        <Modal centered={true} isOpen={this.state.modal} toggle={this.toggle}>
+        <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>Export</ModalHeader>
           <ModalBody>
             <Label>Copy and paste the json object below</Label>
