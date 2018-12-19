@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Nav, NavItem, Button } from "reactstrap";
+import { Nav, NavItem } from "reactstrap";
+import HeroReset from "../hero/hero-reset";
 
 class TopNavBar extends Component {
   state = {
@@ -13,9 +14,9 @@ class TopNavBar extends Component {
       { label: "awakening", url: "awakening" }
     ]
   };
+
   render() {
     const { children, title } = this.props;
-
     return (
       <React.Fragment>
         <div className="top-navbar">
@@ -23,9 +24,11 @@ class TopNavBar extends Component {
             <NavItem>
               <div>
                 <h1 className="title">{title}</h1>
-                <Button color="success" size="sm" className="pull-left">
-                  New
-                </Button>
+                <HeroReset
+                  isDark={this.props.isDark}
+                  onReset={this.props.onReset}
+                  alert={this.props.alert}
+                />
               </div>
             </NavItem>
             {/* <NavItem>

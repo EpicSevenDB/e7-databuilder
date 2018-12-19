@@ -70,7 +70,7 @@ class HeroImport extends Component {
                   bsSize="sm"
                   type="textarea"
                   name="import"
-                  placeholder="Copy and paste the .json object here"
+                  placeholder="Copy and paste the json code here"
                   onChange={this.handleChange}
                 />
               </Col>

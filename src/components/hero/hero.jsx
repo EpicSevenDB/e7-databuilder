@@ -5,7 +5,7 @@ import HeroExport from "./hero-export";
 import HeroImport from "./hero-import";
 import TopNavBar from "../common/top-navbar";
 
-import { Row, Col, Alert } from "reactstrap";
+import { Row, Col, Alert, ButtonGroup } from "reactstrap";
 
 class Hero extends Component {
   state = {
@@ -226,6 +226,222 @@ class Hero extends Component {
       ]
     },
     defaults: {
+      hero: {
+        name: "",
+        rarity: "",
+        classType: "",
+        element: "",
+        zodiac: "",
+        specialtyChangeName: "",
+        selfSkillBarName: "",
+        background: [""],
+        relations: [{ hero: "", relationType: "" }],
+        stats: {
+          base: {
+            cp: 0,
+            atk: 0,
+            hp: 0,
+            spd: 0,
+            def: 0,
+            chc: 0,
+            chd: 0,
+            eff: 0,
+            efr: 0,
+            dac: 0
+          },
+          max: {
+            cp: 0,
+            atk: 0,
+            hp: 0,
+            spd: 0,
+            def: 0,
+            chc: 0,
+            chd: 0,
+            eff: 0,
+            efr: 0,
+            dac: 5
+          }
+        },
+        skills: [
+          {
+            isPassive: false,
+            soulBurn: 0,
+            selfSkillBarValue: 0,
+            soulBurnEffect: "",
+            awakenUpgrade: false,
+            cooldown: 0,
+            name: "",
+            soulAcquire: 0,
+            description: "",
+            enhancement: [
+              {
+                description: "",
+                resources: []
+              },
+              {
+                description: "",
+                resources: []
+              },
+              {
+                description: "",
+                resources: []
+              }
+            ],
+            buffs: [],
+            debuffs: []
+          },
+          {
+            isPassive: false,
+            soulBurn: 0,
+            selfSkillBarValue: 0,
+            soulBurnEffect: "",
+            awakenUpgrade: false,
+            cooldown: 0,
+            name: "",
+            soulAcquire: 0,
+            description: "",
+            enhancement: [
+              {
+                description: "",
+                resources: []
+              },
+              {
+                description: "",
+                resources: []
+              },
+              {
+                description: "",
+                resources: []
+              }
+            ],
+            buffs: [],
+            debuffs: []
+          },
+          {
+            isPassive: false,
+            soulBurn: 0,
+            selfSkillBarValue: 0,
+            soulBurnEffect: "",
+            awakenUpgrade: false,
+            cooldown: 0,
+            name: "",
+            soulAcquire: 0,
+            description: "",
+            enhancement: [
+              {
+                description: "",
+                resources: []
+              },
+              {
+                description: "",
+                resources: []
+              },
+              {
+                description: "",
+                resources: []
+              }
+            ],
+            buffs: [],
+            debuffs: []
+          }
+        ],
+        specialtySkill: {
+          name: "",
+          description: "",
+          dispatch: [],
+          enhancement: [],
+          stats: { command: 0, charm: 0, politics: 0 }
+        },
+        memoryImprint: [
+          {
+            rank: "d",
+            status: {
+              type: "",
+              increase: 0
+            }
+          },
+          {
+            rank: "c",
+            status: {
+              type: "",
+              increase: 0
+            }
+          },
+          {
+            rank: "b",
+            status: {
+              type: "",
+              increase: 0
+            }
+          },
+          {
+            rank: "a",
+            status: {
+              type: "",
+              increase: 0
+            }
+          },
+          {
+            rank: "s",
+            status: {
+              type: "",
+              increase: 0
+            }
+          },
+          {
+            rank: "ss",
+            status: {
+              type: "",
+              increase: 0
+            }
+          },
+          {
+            rank: "sss",
+            status: {
+              type: "",
+              increase: 0
+            }
+          }
+        ],
+        awakening: [
+          {
+            rank: 1,
+            skillUpgrade: false,
+            statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+            resources: [{ item: "", qty: 0 }]
+          },
+          {
+            rank: 2,
+            skillUpgrade: false,
+            statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+            resources: [{ item: "", qty: 0 }]
+          },
+          {
+            rank: 3,
+            skillUpgrade: true,
+            statsIncrease: [{ "": 0 }, { "": 0 }],
+            resources: [{ item: "", qty: 0 }]
+          },
+          {
+            rank: 4,
+            skillUpgrade: false,
+            statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+            resources: [{ item: "", qty: 0 }]
+          },
+          {
+            rank: 5,
+            skillUpgrade: false,
+            statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+            resources: [{ item: "", qty: 0 }]
+          },
+          {
+            rank: 6,
+            skillUpgrade: false,
+            statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+            resources: [{ item: "", qty: 0 }]
+          }
+        ]
+      },
       rarity: [
         { label: "2 ★★", value: 2 },
         { label: "3 ★★★", value: 3 },
@@ -290,6 +506,10 @@ class Hero extends Component {
     }, 3000);
   };
 
+  handleReset = () => {
+    this.setState({ hero: this.state.defaults.hero });
+  };
+
   handleChange = (name, value) => {
     let hero = { ...this.state.hero };
     if (typeof hero[name] !== undefined) {
@@ -307,18 +527,25 @@ class Hero extends Component {
     const { color, show, message } = this.state.alert;
     return (
       <React.Fragment>
-        <TopNavBar title="Heroes">
-          <HeroExport
-            output={this.state.hero}
-            alert={this.handleAlert}
-            isDark={this.props.isDark}
-          />
-          <HeroImport
-            input={this.state.hero}
-            onChange={this.handleChange}
-            alert={this.handleAlert}
-            isDark={this.props.isDark}
-          />
+        <TopNavBar
+          title="Heroes"
+          alert={this.handleAlert}
+          isDark={this.props.isDark}
+          onReset={this.handleReset}
+        >
+          <ButtonGroup>
+            <HeroExport
+              output={this.state.hero}
+              alert={this.handleAlert}
+              isDark={this.props.isDark}
+            />
+            <HeroImport
+              input={this.state.hero}
+              onChange={this.handleChange}
+              alert={this.handleAlert}
+              isDark={this.props.isDark}
+            />
+          </ButtonGroup>
         </TopNavBar>
 
         <Row>

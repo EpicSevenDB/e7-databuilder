@@ -67,7 +67,11 @@
     box-shadow: 0 0 0 0.2rem transparentize($green, 0.25);
   }
 }
-
+.btn-group {
+  .btn:first-child {
+    margin-right: 1px;
+  }
+}
 .btn-copy {
   float: right;
   margin-top: -24px;

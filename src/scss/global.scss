@@ -45,7 +45,9 @@ $str: 8;
       color: darken($dark-blue, 10);
       opacity: 1; /* Firefox */
     }
-
+    .global-nav {
+      box-shadow: $dark-shadows;
+    }
     .top-navbar {
       background: lighten($black, 5);
       border-bottom: 1px solid $dark-border;
@@ -118,7 +120,9 @@ label {
     cursor: help;
   }
 }
-
+p {
+  margin: 0;
+}
 textarea {
   min-height: 100px;
 }
