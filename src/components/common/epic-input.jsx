@@ -8,7 +8,7 @@ class EpicInput extends Component {
     return (
       <Col md={{ size: size, offset: offset }} sm="6">
         <Label className={noLabel ? "hidden" : ""} for={name}>
-          {name} {tooltip ? <BadgeTip value={tooltip} id={id} /> : null}
+          {name} {tooltip && <BadgeTip value={tooltip} id={id} />}
         </Label>
         {this.isSelectMenu()}
       </Col>

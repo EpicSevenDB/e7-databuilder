@@ -59,7 +59,7 @@ class HeroImport extends Component {
         <Modal
           isOpen={this.state.modal}
           toggle={this.toggle}
-          className={isDark ? "dark" : ""}
+          className={isDark && "dark"}
           size="lg"
         >
           <ModalHeader toggle={this.toggle}>Import</ModalHeader>

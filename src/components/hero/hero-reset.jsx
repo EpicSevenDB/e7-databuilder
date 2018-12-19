@@ -39,19 +39,20 @@ class HeroReset extends Component {
         <Modal
           isOpen={this.state.modal}
           toggle={this.toggle}
-          className={isDark ? "dark" : ""}
+          className={isDark && "dark"}
         >
           <ModalHeader toggle={this.toggle}>New Hero</ModalHeader>
           <ModalBody>
             <p>
-              Starting a new hero will reset the form and{" "}
-              <strong>wipe any existing data.</strong> Are you sure you want to
-              reset?
+              Starting a new hero will{" "}
+              <strong className="text-danger">reset</strong> the form and{" "}
+              <strong className="text-danger">wipe any existing data.</strong>{" "}
+              Are you sure you want to start a new hero?
             </p>
           </ModalBody>
           <ModalFooter>
             <Button color="success" size="sm" onClick={this.handleReset}>
-              Reset
+              New Hero
             </Button>
             <Button color="secondary" size="sm" onClick={this.toggle}>
               Cancel
