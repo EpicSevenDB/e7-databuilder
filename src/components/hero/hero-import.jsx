@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import HeroImportDropzone from "./hero-import-dropzone";
+
 import {
   Button,
   Modal,
@@ -6,7 +8,9 @@ import {
   ModalBody,
   ModalFooter,
   Input,
-  Label
+  Label,
+  Col,
+  Row
 } from "reactstrap";
 
 class HeroImport extends Component {
@@ -19,9 +23,9 @@ class HeroImport extends Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  handleImport = () => {
+  handleImport = e => {
     try {
-      this.props.onChange("hero", JSON.parse(this.state.import));
+      this.props.onChange("hero", JSON.parse(e));
       this.setState({ modal: false });
       this.props.alert("success", "Hero succesfully imported!");
     } catch (err) {
@@ -45,25 +49,49 @@ class HeroImport extends Component {
   }
 
   render() {
+    const { isDark } = this.props;
     return (
       <React.Fragment>
         <Button color="primary" size="sm" onClick={this.toggle}>
           Import
         </Button>
 
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Export</ModalHeader>
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className={isDark ? "dark" : ""}
+          size="lg"
+        >
+          <ModalHeader toggle={this.toggle}>Import</ModalHeader>
           <ModalBody>
-            <Label>Copy and paste the json object below</Label>
-            <Input
-              bsSize="sm"
-              type="textarea"
-              name="import"
-              onChange={this.handleChange}
-            />
+            <Row>
+              <Col>
+                <Input
+                  bsSize="sm"
+                  type="textarea"
+                  name="import"
+                  placeholder="Copy and paste the .json object here"
+                  onChange={this.handleChange}
+                />
+              </Col>
+              <Col md="1" className="align-center">
+                <h6>Or</h6>
+              </Col>
+              <Col>
+                <HeroImportDropzone onUpload={this.handleImport} />
+              </Col>
+            </Row>
+            <small>
+              * Note: Nothing is being uploaded to a server, this is all in the
+              browser
+            </small>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" size="sm" onClick={this.handleImport}>
+            <Button
+              color="primary"
+              size="sm"
+              onClick={e => this.handleImport(this.state.import)}
+            >
               Import
             </Button>
 

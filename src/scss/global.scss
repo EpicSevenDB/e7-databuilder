@@ -1,18 +1,18 @@
-$black: #252b31;
+$black: #272c36;
 $bg: #f3f4f7;
 $border: #d9dfe4;
-$dark-border: lighten($black, 12);
+$dark-border: lighten($black, 10);
 $grey: lighten($black, 25);
 
-$dark-blue: lighten($black, 25);
+$dark-blue: lighten($black, 40);
 $blue: #0b75b3;
 $green: #20ad9b;
 $red: #e65454;
 $orange: #e69233;
 
-$shadows: 0 0px 5px transparentize($black, 0.88);
-$dark-shadows: 0 0px 8px transparentize(#000, 0.6);
-$ease: all 0.3s ease;
+$shadows: 0 0 3px transparentize($black, 0.88);
+$dark-shadows: 0 0 3px 0 black;
+$ease: all 0.2s linear;
 $str: 8;
 
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,500");
@@ -31,10 +31,12 @@ $str: 8;
   background: $bg;
   color: $grey;
   font-family: "Quicksand", sans-serif;
+  letter-spacing: 0.05em;
   padding-bottom: 100px;
   padding-left: 65px;
   padding-top: 85px;
   transition: $ease;
+
   &.dark {
     background: $black;
     color: $dark-blue;
@@ -62,6 +64,9 @@ $str: 8;
       background: $black;
       border: 1px solid $dark-border;
       color: #fff;
+      &:focus {
+        border: 1px solid $blue;
+      }
     }
     .nav-tabs {
       .nav-link {
@@ -69,7 +74,7 @@ $str: 8;
         border: 1px solid $dark-border;
         color: $dark-blue;
         border-bottom: none;
-        box-shadow: 0 -2px 3px transparentize(#000, 0.85);
+        box-shadow: 0 -1px 2px 0 transparentize(black, 0.5);
         &.active {
           background: lighten($black, 5);
           color: #fff;
@@ -124,17 +129,7 @@ textarea {
 }
 
 .tooltip-inner {
-  background-color: $black;
   font-family: "Quicksand";
-  box-shadow: 0 1px 3px transparentize($black, 0.5);
   font-size: 0.85em;
   padding: 8px 12px;
-}
-
-.tooltip.bs-tooltip-auto[x-placement^="right"] .arrow::before,
-.tooltip.bs-tooltip-right .arrow::before {
-  margin-top: 1px;
-  content: "";
-  border-width: 5px 5px 5px 0;
-  border-right-color: $black;
 }

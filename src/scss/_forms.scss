@@ -25,3 +25,58 @@
 .resource-wrapper {
   margin-top: 6px;
 }
+
+.dark {
+  .drag-and-drop {
+    border: 1px dashed $dark-blue;
+    &:hover {
+      background: lighten($black, 6);
+    }
+  }
+}
+.drag-and-drop {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px dashed $border;
+  color: $grey;
+  height: 100%;
+  min-height: 100px;
+  transition: $ease;
+  padding: 12px;
+  outline: none;
+  &:hover {
+    background: lighten($border, 8);
+  }
+  &.active {
+    background-color: $blue;
+    border: 1px solid $blue;
+    color: #fff;
+
+    p.on-deactive {
+      display: none;
+    }
+    p.on-active {
+      display: flex;
+    }
+  }
+  p {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+    font-size: 0.85em;
+
+    &.on-active {
+      display: none;
+    }
+    &.on-deactive {
+      display: flex;
+    }
+  }
+}
+
+.preview {
+  min-height: 150px;
+}

@@ -5,7 +5,8 @@
   height: 100vh;
   top: 0;
   left: 0;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
+  letter-spacing: 0;
   text-align: center;
   border-right: 1px solid $dark-border;
   z-index: 999;
@@ -56,8 +57,9 @@
   width: calc(100% - 60px);
   box-shadow: $shadows;
   border-bottom: 1px solid $border;
-  z-index: 999;
-  transition: background-color 0.3s ease;
+  z-index: 998;
+  transition: background-color 0.3s linear, border-color 0.3s linear,
+    box-shadow 0.3s ease;
   .nav {
     justify-content: space-between;
     max-width: 890px;

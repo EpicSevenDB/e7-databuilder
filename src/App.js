@@ -50,7 +50,7 @@ class App extends Component {
       }
       return true;
     }
-    return false;
+    return true;
   }
 
   render() {
@@ -63,7 +63,7 @@ class App extends Component {
             toggleTheme={this.handleTheme}
           />
           <Container className="main-container">
-            <Hero />
+            <Hero isDark={this.state.isDark} />
           </Container>
         </div>
       </React.Fragment>

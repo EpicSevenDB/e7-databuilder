@@ -308,11 +308,16 @@ class Hero extends Component {
     return (
       <React.Fragment>
         <TopNavBar title="Heroes">
-          <HeroExport output={this.state.hero} alert={this.handleAlert} />
+          <HeroExport
+            output={this.state.hero}
+            alert={this.handleAlert}
+            isDark={this.props.isDark}
+          />
           <HeroImport
             input={this.state.hero}
             onChange={this.handleChange}
             alert={this.handleAlert}
+            isDark={this.props.isDark}
           />
         </TopNavBar>
 

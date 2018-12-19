@@ -8,9 +8,10 @@
     background: #fff;
     padding: 12px 20px;
     border-bottom: 1px solid $border;
-    font-size: 0.85em;
-    font-weight: 500;
+    font-size: 0.7em;
+    font-weight: bold;
     transition: $ease;
+    text-transform: uppercase;
   }
   .card-body {
     padding-top: 6px;

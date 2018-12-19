@@ -1,0 +1,324 @@
+{
+  "name": "Alexa",
+  "rarity": 3,
+  "classType": "thief",
+  "element": "ice",
+  "zodiac": "leo",
+  "specialtyChangeName": "",
+  "selfSkillBarName": "",
+  "background": [
+    "Despite her young age, Alexa has managed to become a formally appointed knight of the Order of the Sword trusted with all kinds of duties. She greatly admires Iseria, who taught her how to use a sword."
+  ],
+  "relations": [
+    {
+      "hero": "iseria",
+      "relationType": "longing"
+    },
+    {
+      "hero": "jena",
+      "relationType": "trust"
+    },
+    {
+      "hero": "angelica",
+      "relationType": "longing"
+    },
+    {
+      "hero": "elson",
+      "relationType": "trust"
+    }
+  ],
+  "stats": {
+    "base": {
+      "cp": 2274,
+      "atk": 232,
+      "hp": 640,
+      "spd": 111,
+      "def": 54,
+      "chc": 21,
+      "chd": 150,
+      "eff": 0,
+      "efr": 0,
+      "dac": 5
+    },
+    "max": {
+      "cp": 14442,
+      "atk": 1081,
+      "hp": 4572,
+      "spd": 111,
+      "def": 494,
+      "chc": 21,
+      "chd": 150,
+      "eff": 0,
+      "efr": 0,
+      "dac": 5
+    }
+  },
+  "skills": [
+    {
+      "isPassive": false,
+      "soulBurn": 0,
+      "selfSkillBarValue": 0,
+      "soulBurnEffect": "",
+      "awakenUpgrade": true,
+      "cooldown": 0,
+      "name": "Fell",
+      "soulAcquire": 1,
+      "description": "Cuts the enemy with dual-wielded swords. A critical hit will grant an extra attack. Can only be activated once per turn",
+      "enhancement": [
+        {
+          "description": "+5% damage dealt",
+          "resources": [
+            { "item": "molagora", "qty": 1 },
+            { "item": "twisted-fang", "qty": 2 },
+            { "item": "gold", "qty": 14000 }
+          ]
+        },
+        {
+          "description": "+10% effect chance",
+          "resources": [
+            { "item": "molagora", "qty": 3 },
+            { "item": "twisted-fang", "qty": 3 },
+            { "item": "gold", "qty": 27000 }
+          ]
+        },
+        {
+          "description": "+15% damage dealt",
+          "resources": [
+            { "item": "molagorago", "qty": 1 },
+            { "item": "twisted-fang", "qty": 5 },
+            { "item": "gold", "qty": 45000 }
+          ]
+        }
+      ],
+      "buffs": [],
+      "debuffs": []
+    },
+    {
+      "isPassive": false,
+      "soulBurn": 20,
+      "selfSkillBarValue": 0,
+      "soulBurnEffect": "Ignores effect resistance.",
+      "awakenUpgrade": false,
+      "cooldown": 3,
+      "name": "Cold Edge",
+      "soulAcquire": 2,
+      "description": "Attacks with a cold blade with a 80% chance to inflict two poison effects for 2 turns, and increases the caster's Combat Readiness by 30%.",
+      "enhancement": [
+        {
+          "description": "+5% damage dealt",
+          "resources": [
+            { "item": "molagora", "qty": 1 },
+            { "item": "gold", "qty": 4000 }
+          ]
+        },
+        {
+          "description": "+5% effect chance",
+          "resources": [
+            { "item": "molagora", "qty": 2 },
+            { "item": "gold", "qty": 8000 }
+          ]
+        },
+        {
+          "description": "+5% effect chance",
+          "resources": [
+            { "item": "molagora", "qty": 3 },
+            { "item": "twisted-fang", "qty": 1 },
+            { "item": "gold", "qty": 17000 }
+          ]
+        },
+        {
+          "description": "+10% damage dealt",
+          "resources": [
+            { "item": "molagora", "qty": 5 },
+            { "item": "twisted-fang", "qty": 2 },
+            { "item": "gold", "qty": 30000 }
+          ]
+        },
+        {
+          "description": "+10% effect chance",
+          "resources": [
+            { "item": "molagorago", "qty": 1 },
+            { "item": "twisted-fang", "qty": 4 },
+            { "item": "gold", "qty": 40000 }
+          ]
+        },
+        {
+          "description": "+15% damage dealt",
+          "resources": [
+            { "item": "molagorago", "qty": 1 },
+            { "item": "twisted-fang", "qty": 6 },
+            { "item": "gold", "qty": 50000 }
+          ]
+        }
+      ],
+      "buffs": [],
+      "debuffs": ["stic_dot"]
+    },
+    {
+      "isPassive": false,
+      "soulBurn": 0,
+      "selfSkillBarValue": 0,
+      "soulBurnEffect": "",
+      "awakenUpgrade": false,
+      "cooldown": 5,
+      "name": "Crushing Blow",
+      "soulAcquire": 2,
+      "description": "Attacks the enemy continuously, dealing damage proportional to the number of debuffs inflicted on the enemy.",
+      "enhancement": [
+        {
+          "description": "+5% damage dealt",
+          "resources": [
+            { "item": "molagora", "qty": 1 },
+            { "item": "gold", "qty": 4000 }
+          ]
+        },
+        {
+          "description": "+5% damage dealt",
+          "resources": [
+            { "item": "molagora", "qty": 2 },
+            { "item": "gold", "qty": 8000 }
+          ]
+        },
+        {
+          "description": "-1 turn cooldown",
+          "resources": [
+            { "item": "molagora", "qty": 3 },
+            { "item": "twisted-fang", "qty": 1 },
+            { "item": "gold", "qty": 17000 }
+          ]
+        },
+        {
+          "description": "+10% damage dealt",
+          "resources": [
+            { "item": "molagorago", "qty": 1 },
+            { "item": "twisted-fang", "qty": 4 },
+            { "item": "gold", "qty": 40000 }
+          ]
+        },
+        {
+          "description": "+10% damage dealt",
+          "resources": [
+            { "item": "molagora", "qty": 5 },
+            { "item": "twisted-fang", "qty": 2 },
+            { "item": "gold", "qty": 30000 }
+          ]
+        },
+        {
+          "description": "+10% damage dealt",
+          "resources": [
+            { "item": "molagorago", "qty": 1 },
+            { "item": "twisted-fang", "qty": 4 },
+            { "item": "gold", "qty": 40000 }
+          ]
+        }
+      ],
+      "buffs": [],
+      "debuffs": []
+    }
+  ],
+  "specialtySkill": {
+    "name": "Excellent Instructor",
+    "description": "She's contributed greatly to helping knights in their development.",
+    "dispatch": ["All missions"],
+    "enhancement": ["EXP Bonus +6%"],
+    "stats": { "command": 85, "charm": 25, "politics": 35 }
+  },
+  "memoryImprint": [
+    {
+      "rank": "d",
+      "status": {
+        "type": "atk",
+        "increase": 24
+      }
+    },
+    {
+      "rank": "c",
+      "status": {
+        "type": "atk",
+        "increase": 36
+      }
+    },
+    {
+      "rank": "b",
+      "status": {
+        "type": "atk",
+        "increase": 48
+      }
+    },
+    {
+      "rank": "a",
+      "status": {
+        "type": "atk",
+        "increase": 60
+      }
+    },
+    {
+      "rank": "s",
+      "status": {
+        "type": "atk",
+        "increase": 72
+      }
+    },
+    {
+      "rank": "ss",
+      "status": {
+        "type": "atk",
+        "increase": 84
+      }
+    },
+    {
+      "rank": "sss",
+      "status": {
+        "type": "atk",
+        "increase": 96
+      }
+    }
+  ],
+  "awakening": [
+    {
+      "rank": 1,
+      "skillUpgrade": false,
+      "statsIncrease": [{ "atk": "3%" }, { "atk": 20 }, { "hp": 60 }],
+      "resources": [{ "item": "frost-rune", "qty": 5 }]
+    },
+    {
+      "rank": 2,
+      "skillUpgrade": false,
+      "statsIncrease": [{ "atk": "3%" }, { "atk": 20 }, { "hp": 60 }],
+      "resources": [{ "item": "frost-rune", "qty": 9 }]
+    },
+    {
+      "rank": 3,
+      "skillUpgrade": true,
+      "statsIncrease": [{ "atk": 20 }, { "hp": 60 }],
+      "resources": [
+        { "item": "frost-rune", "qty": 12 },
+        { "item": "greater-frost-rune", "qty": 6 }
+      ]
+    },
+    {
+      "rank": 4,
+      "skillUpgrade": false,
+      "statsIncrease": [{ "chc": "6%" }, { "atk": 30 }, { "hp": 80 }],
+      "resources": [{ "item": "greater-frost-rune", "qty": 15 }]
+    },
+    {
+      "rank": 5,
+      "skillUpgrade": false,
+      "statsIncrease": [{ "atk": "6%" }, { "atk": 30 }, { "hp": 80 }],
+      "resources": [
+        { "item": "epic-frost-rune", "qty": 4 },
+        { "item": "ultra-fang", "qty": 9 }
+      ]
+    },
+    {
+      "rank": 6,
+      "skillUpgrade": false,
+      "statsIncrease": [{ "atk": "6%" }, { "atk": 30 }, { "hp": 80 }],
+      "resources": [
+        { "item": "epic-frost-rune", "qty": 6 },
+        { "item": "blazing-soul", "qty": 6 }
+      ]
+    }
+  ]
+}

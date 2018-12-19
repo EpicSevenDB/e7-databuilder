@@ -67,3 +67,16 @@
     box-shadow: 0 0 0 0.2rem transparentize($green, 0.25);
   }
 }
+
+.btn-copy {
+  float: right;
+  margin-top: -24px;
+  margin-right: 1px;
+  position: relative;
+  z-index: 99;
+  cursor: pointer;
+  border-bottom-right-radius: 0;
+  font-size: 0.65em;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}

@@ -2,8 +2,8 @@
   display: none !important;
 }
 .disabled {
-  opacity: 0.5;
-  filter: grayscale(1);
+  opacity: 0.25 !important;
+  filter: none !important;
   pointer-events: none;
 }
 .gutter-top {
@@ -11,4 +11,14 @@
 }
 .gutter-bottom {
   margin-bottom: 18px !important;
+}
+.align-center {
+  display: flex;
+  justify-content: center;
+  > * {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 16px;
+  }
 }
