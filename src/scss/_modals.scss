@@ -10,13 +10,16 @@
     opacity: 0.75;
   }
 }
-
+.modal-title {
+  text-transform: capitalize;
+}
 .dark.modal-dialog {
   color: $dark-blue;
   .modal-header {
     border-bottom: 1px solid $dark-border;
     font-family: "Quicksand", sans-serif;
   }
+
   .modal-footer {
     border-top: 1px solid $dark-border;
   }

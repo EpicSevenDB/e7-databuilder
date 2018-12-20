@@ -35,11 +35,7 @@ class HeroSkillEnhancements extends Component {
     } else {
       const newEnhancement = {
         description: "",
-        resources: [
-          { item: "gold", qty: "" },
-          { item: "", qty: "" },
-          { item: "", qty: "" }
-        ]
+        resources: [{ item: "gold", qty: "" }, { item: "", qty: "" }]
       };
       const enhancements = [...this.props.enhancements, newEnhancement];
       this.props.onAdd("enhancement", enhancements, this.props.index);

@@ -7,7 +7,7 @@
   margin: 20px auto;
   max-width: 960px;
   text-align: center;
-  transition: all 0.6s cubic-bezier(0.86, 0.12, 0.25, 1);
+  transition: all 0.8s cubic-bezier(0.86, 0.12, 0.25, 1);
   &.show {
     bottom: 0;
     opacity: 1;
@@ -16,9 +16,12 @@
   &.hide {
     visibility: hidden !important;
     opacity: 0 !important;
-    bottom: -75px !important;
+    bottom: -135px !important;
   }
 }
 
-.main-container > .toaster {
+@media (min-width: 768px) {
+  .toaster {
+    left: 65px !important;
+  }
 }

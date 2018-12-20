@@ -8,7 +8,6 @@ import {
   ModalBody,
   ModalFooter,
   Input,
-  Label,
   Col,
   Row
 } from "reactstrap";
@@ -59,8 +58,9 @@ class HeroImport extends Component {
         <Modal
           isOpen={this.state.modal}
           toggle={this.toggle}
-          className={isDark && "dark"}
+          className={isDark ? "dark" : ""}
           size="lg"
+          fade={false}
         >
           <ModalHeader toggle={this.toggle}>Import</ModalHeader>
           <ModalBody>

@@ -39,7 +39,8 @@ class HeroReset extends Component {
         <Modal
           isOpen={this.state.modal}
           toggle={this.toggle}
-          className={isDark && "dark"}
+          className={isDark ? "dark" : ""}
+          fade={false}
         >
           <ModalHeader toggle={this.toggle}>New Hero</ModalHeader>
           <ModalBody>

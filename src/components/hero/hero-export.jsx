@@ -49,7 +49,8 @@ class HeroExport extends Component {
         <Modal
           isOpen={this.state.modal}
           toggle={this.toggle}
-          className={isDark && "dark"}
+          className={isDark ? "dark" : ""}
+          fade={false}
         >
           <Alert
             color="success"
@@ -78,7 +79,7 @@ class HeroExport extends Component {
             </CopyToClipboard>
           </ModalBody>
           <ModalFooter>
-            <small className={!isBlank && "hidden"}>
+            <small className={isBlank ? null : "hidden"}>
               Hero's name cannot be blank to download
             </small>
             <HeroDownload output={output} />

@@ -1,5 +1,30 @@
 .form-control {
   transition: $ease;
+  letter-spacing: 0.05em;
+}
+
+.form-control.readonly {
+  pointer-events: none;
+  background: lighten($border, 7.5);
+}
+.dark .form-control.readonly {
+  background: lighten($black, 5) !important;
+}
+
+.input-group-append {
+  .btn-sm {
+    height: 31px;
+  }
+}
+.epic-input {
+  .form-control {
+    margin-bottom: 10px;
+  }
+  &.error {
+    .form-control {
+      border-color: $red;
+    }
+  }
 }
 
 .form-group {
@@ -7,14 +32,68 @@
 }
 
 /* Checkboxes */
+.empty-label {
+  margin-top: 21px;
+}
 .custom-checkbox {
-  top: 30%;
-  padding: 8px 24px;
+  top: 15%;
+  padding: 0;
+
   .custom-control-label {
     cursor: pointer;
-    &::before,
+    border: 1px solid $border;
+    padding: 6px 6px 6px 35px;
+    border-radius: 3px;
+    min-width: 150px;
+    transition: $ease;
+    margin: 0 0 15px 0;
+    &::before {
+      left: 7px;
+      border-radius: 2px;
+      width: 20px;
+      height: 20px;
+      top: 5px;
+      outline: none !important;
+      box-shadow: none !important;
+    }
     &::after {
-      top: 0;
+      top: 7px;
+      left: 10px;
+    }
+    &:hover {
+      background-color: lighten($border, 10);
+    }
+  }
+  &.block {
+    .custom-control-label {
+      width: 100%;
+      padding: 6px;
+      text-align: center;
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+  }
+  &.checked {
+    &.buffs .custom-control-label {
+      background-color: $blue !important;
+      border-color: $blue;
+      color: #fff !important;
+    }
+    &.debuffs .custom-control-label {
+      background-color: $red !important;
+      border-color: $red;
+      color: #fff !important;
+    }
+  }
+}
+
+.dark {
+  .custom-checkbox .custom-control-label {
+    border: 1px solid $dark-border;
+    &:hover {
+      background: $dark-border;
     }
   }
 }
@@ -79,4 +158,14 @@
 
 .preview {
   min-height: 150px;
+}
+
+.error-message {
+  color: $red;
+  margin: 0;
+  position: absolute;
+  letter-spacing: 0;
+  bottom: 0;
+  right: 15px;
+  line-height: 0;
 }

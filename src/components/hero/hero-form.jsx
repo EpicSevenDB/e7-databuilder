@@ -113,7 +113,13 @@ class HeroForm extends Component {
           <CardHeader>skills</CardHeader>
           <CardBody>
             <FormGroup>
-              <HeroSkills skills={hero.skills} onChange={onChange} />
+              <HeroSkills
+                skills={hero.skills}
+                onChange={onChange}
+                buffs={defaults.buffs}
+                debuffs={defaults.debuffs}
+                isDark={this.props.isDark}
+              />
             </FormGroup>
           </CardBody>
         </Card>

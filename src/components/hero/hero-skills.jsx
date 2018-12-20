@@ -12,6 +12,7 @@ import {
 } from "reactstrap";
 import EpicInput from "../common/epic-input";
 import HeroSkillEnhancements from "./hero-skill-enhancements";
+import HeroBuffsDebuffs from "./hero-buffs-debuffs";
 
 class HeroSkills extends Component {
   constructor(props) {
@@ -74,7 +75,7 @@ class HeroSkills extends Component {
                     index={i}
                     onChange={this.handleChange}
                   />
-                  <Col md="3">
+                  <Col md="3" className="empty-label">
                     <CustomInput
                       id={"isPassive-" + i} //Id needs to be unique when using customInput
                       type="checkbox"
@@ -90,7 +91,7 @@ class HeroSkills extends Component {
                       }
                     />
                   </Col>
-                  <Col md="3">
+                  <Col md="3" className="empty-label">
                     <CustomInput
                       id={"awakenUpgrade-" + i}
                       type="checkbox"
@@ -169,7 +170,17 @@ class HeroSkills extends Component {
                     name="buffs"
                     index={i}
                     onChange={this.handleChange}
-                  />
+                    readonly={true}
+                  >
+                    <HeroBuffsDebuffs
+                      value={skill.buffs}
+                      type="buffs"
+                      isDark={this.props.isDark}
+                      index={i}
+                      defaults={this.props.buffs}
+                      onChange={this.handleChange}
+                    />
+                  </EpicInput>
                   <EpicInput
                     type="text"
                     size="6"
@@ -179,7 +190,17 @@ class HeroSkills extends Component {
                     name="debuffs"
                     index={i}
                     onChange={this.handleChange}
-                  />
+                    readonly={true}
+                  >
+                    <HeroBuffsDebuffs
+                      value={skill.debuffs}
+                      type="debuffs"
+                      isDark={this.props.isDark}
+                      index={i}
+                      defaults={this.props.debuffs}
+                      onChange={this.handleChange}
+                    />
+                  </EpicInput>
                   <HeroSkillEnhancements
                     enhancements={skill.enhancement}
                     onChange={this.handleChange}
