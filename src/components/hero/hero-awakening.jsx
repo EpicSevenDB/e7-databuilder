@@ -208,7 +208,7 @@ class HeroAwakening extends Component {
                     </Label>
                   </Col>
                   {awake.resources.map((resource, j) => (
-                    <Col key={j} md="12" className="resource-wrapper">
+                    <Col key={j} md="12">
                       <FormGroup className="inline-wrapper">
                         <Input
                           type="text"
