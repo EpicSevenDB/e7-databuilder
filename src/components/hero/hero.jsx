@@ -652,13 +652,13 @@ class Hero extends Component {
   handleChange = (name, value) => {
     let hero = { ...this.state.hero };
     if (typeof hero[name] !== undefined) {
-      if (name === "hero") {
-        hero = value;
-      } else {
+      if (name !== "hero") {
         hero[name] = value;
+        console.info("hero change", hero[name]);
+      } else {
+        hero = value;
       }
       this.setState({ hero });
-      console.info("Changed: ", hero);
     }
   };
 

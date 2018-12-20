@@ -3,6 +3,18 @@ import { Col, Label, Input, InputGroup, InputGroupAddon } from "reactstrap";
 import BadgeTip from "../common/badgetip";
 
 class EpicInput extends Component {
+  state = {
+    value: this.props.value
+  };
+  componentDidUpdate(prevProps) {
+    if (this.props.value !== prevProps.value) {
+      this.handleChange(this.props.value);
+    }
+  }
+  handleChange(input) {
+    this.setState({ value: input });
+  }
+
   render() {
     const { id, name, size, noLabel, offset, tooltip, validate } = this.props;
     return (
@@ -31,7 +43,6 @@ class EpicInput extends Component {
   isSelectMenu() {
     const {
       type,
-      value,
       name,
       placeholder,
       onChange,
@@ -40,6 +51,7 @@ class EpicInput extends Component {
       index2,
       readonly
     } = this.props;
+    const { value } = this.state;
     if (type === "select") {
       return (
         <Input
@@ -48,9 +60,10 @@ class EpicInput extends Component {
           value={value}
           name={name}
           className={readonly ? "readonly" : null}
-          onChange={e =>
-            onChange(e.currentTarget.name, e.currentTarget.value, index, index2)
+          onBlur={e =>
+            onChange(e.currentTarget.name, this.state.value, index, index2)
           }
+          onChange={e => this.handleChange(e.currentTarget.value)}
         >
           <option disabled value="">
             Select {name}
@@ -71,9 +84,10 @@ class EpicInput extends Component {
         value={value}
         placeholder={placeholder}
         name={name}
-        onChange={e =>
-          onChange(e.currentTarget.name, e.currentTarget.value, index, index2)
+        onBlur={e =>
+          onChange(e.currentTarget.name, this.state.value, index, index2)
         }
+        onChange={e => this.handleChange(e.currentTarget.value)}
       />
     );
   }

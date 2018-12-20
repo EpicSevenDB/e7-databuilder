@@ -15,34 +15,31 @@ import HeroSkillEnhancements from "./hero-skill-enhancements";
 import HeroBuffsDebuffs from "./hero-buffs-debuffs";
 
 class HeroSkills extends Component {
-  constructor(props) {
-    super(props);
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      activeTab: 0
-    };
+  state = {
+    activeTab: 0,
+    skills: this.props.skills
+  };
+  componentDidUpdate(prevProps) {
+    const skills = [...this.props.skills];
+    if (this.props.skills !== prevProps.skills) {
+      this.setState({ skills });
+    }
   }
-  toggle(tab) {
+  toggle = tab => {
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab
       });
     }
-  }
-  handleChange = (type, value, i) => {
-    const skills = [...this.props.skills];
-    skills[i][type] = value;
-    this.props.onChange("skills", skills);
-    console.info("CHANGING", i);
   };
-  handleNew = (type, value, i) => {
-    const skills = [...this.props.skills];
+  handleChange = (type, value, i) => {
+    const skills = [...this.state.skills];
     skills[i][type] = value;
     this.props.onChange("skills", skills);
   };
 
   render() {
-    const { skills } = this.props;
+    const { skills } = this.state;
     return (
       <React.Fragment>
         <Nav tabs>
@@ -205,7 +202,6 @@ class HeroSkills extends Component {
                     enhancements={skill.enhancement}
                     onChange={this.handleChange}
                     index={i}
-                    onAdd={this.handleNew}
                   />
                 </FormGroup>
               </Col>

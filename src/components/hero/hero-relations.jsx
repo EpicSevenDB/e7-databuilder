@@ -3,18 +3,27 @@ import BadgeTip from "../common/badgetip";
 import { Col, Form, FormGroup, Button, Input, Label } from "reactstrap";
 
 class HeroRelations extends Component {
-  handleChange = (type, value, i) => {
+  state = {
+    relations: this.props.relations
+  };
+  componentDidUpdate(prevProps) {
     const relations = [...this.props.relations];
+    if (this.props.relations !== prevProps.relations) {
+      this.setState({ relations });
+    }
+  }
+  handleChange = (type, value, i) => {
+    const relations = [...this.state.relations];
     relations[i][type] = value;
-    this.props.onChange("relations", relations);
+    this.setState({ relations });
   };
 
   handleDelete = i => {
     const relations = [
-      ...this.props.relations.slice(0, i),
-      ...this.props.relations.slice(i + 1)
+      ...this.state.relations.slice(0, i),
+      ...this.state.relations.slice(i + 1)
     ];
-    this.props.onChange("relations", relations);
+    this.setState({ relations });
   };
 
   handleAdd = () => {
@@ -22,11 +31,17 @@ class HeroRelations extends Component {
       hero: "",
       relationType: ""
     };
-    const relations = [...this.props.relations, newRelation];
-    this.props.onChange("relations", relations);
+    const relations = [...this.state.relations, newRelation];
+    this.setState({ relations });
   };
+
+  onBlur = () => {
+    this.props.onChange("relations", this.state.relations);
+  };
+
   render() {
-    const { relations, relationType } = this.props;
+    const { relationType } = this.props;
+    const { relations } = this.state;
 
     return (
       <Col md="12">
@@ -45,6 +60,7 @@ class HeroRelations extends Component {
                 onChange={e =>
                   this.handleChange("hero", e.currentTarget.value, i)
                 }
+                onBlur={this.onBlur}
               />
               <Input
                 type="select"
@@ -53,6 +69,7 @@ class HeroRelations extends Component {
                 onChange={e =>
                   this.handleChange("relationType", e.currentTarget.value, i)
                 }
+                onBlur={this.onBlur}
               >
                 <option value="" disabled>
                   Select Relation
@@ -63,14 +80,17 @@ class HeroRelations extends Component {
                   </option>
                 ))}
               </Input>
-              <Button
-                size="sm"
-                color="danger"
-                tabIndex="-1"
-                onClick={e => this.handleDelete(i)}
-              >
-                X
-              </Button>
+              {i !== 0 ? (
+                <Button
+                  size="sm"
+                  color="danger"
+                  tabIndex="-1"
+                  onClick={e => this.handleDelete(i)}
+                  onBlur={this.onBlur}
+                >
+                  X
+                </Button>
+              ) : null}
             </FormGroup>
           </Form>
         ))}
@@ -81,6 +101,7 @@ class HeroRelations extends Component {
           size="sm"
           block
           className="btn-add"
+          onBlur={this.onBlur}
         >
           Add new relation
         </Button>

@@ -11,6 +11,12 @@ import HeroMemoryImprint from "./hero-memory-imprint";
 import HeroAwakening from "./hero-awakening";
 
 class HeroForm extends Component {
+  componentDidUpdate(prevProps) {
+    const hero = { ...this.props.hero };
+    if (this.props.hero !== prevProps.hero) {
+      this.setState({ hero });
+    }
+  }
   render() {
     const { hero, onChange, defaults } = this.props;
     return (

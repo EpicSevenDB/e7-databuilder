@@ -13,13 +13,15 @@ import {
 } from "reactstrap";
 
 class HeroExport extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false
-    };
-    this.onDismiss = this.onDismiss.bind(this);
-    this.toggle = this.toggle.bind(this);
+  state = {
+    modal: false,
+    output: this.props.output
+  };
+  componentDidUpdate(prevProps) {
+    const output = { ...this.props.output };
+    if (this.props.output !== prevProps.output) {
+      this.setState({ output });
+    }
   }
 
   onCopyToClipboard = () => {
@@ -27,18 +29,19 @@ class HeroExport extends Component {
     this.props.alert("success", "Copied to clipboard!");
   };
 
-  toggle() {
+  toggle = () => {
     this.setState({
       modal: !this.state.modal
     });
-  }
+  };
 
-  onDismiss() {
+  onDismiss = () => {
     this.setState({ copied: false });
-  }
+  };
 
   render() {
-    const { output, isDark } = this.props;
+    const { isDark } = this.props;
+    const { output } = this.state;
     const isBlank = output.name.length !== 0 ? false : true;
     return (
       <React.Fragment>

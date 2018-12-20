@@ -30,7 +30,15 @@
 .form-group {
   margin-bottom: 2px;
 }
-
+.inline-wrapper {
+  width: 100%;
+  margin-bottom: 8px !important;
+  .form-control {
+    width: calc(50% - 24px);
+    margin-right: 11px;
+    float: left;
+  }
+}
 /* Checkboxes */
 .empty-label {
   margin-top: 21px;

@@ -28,6 +28,9 @@
   .add-link {
     opacity: 1;
     background: $green !important;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-top: 1px;
     color: #fff !important;
     &:hover {
       background: darken($green, 5) !important;

@@ -16,83 +16,98 @@ import {
 } from "reactstrap";
 
 class HeroSkillEnhancements extends Component {
-  constructor(props) {
-    super(props);
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      activeTab: 0
-    };
+  state = {
+    enhancements: this.props.enhancements,
+    activeTab: 0
+  };
+
+  componentDidUpdate(prevProps) {
+    const enhancements = [...this.props.enhancements];
+    if (this.props.enhancements !== prevProps.enhancements) {
+      this.setState({ enhancements });
+    }
   }
+
   handleAdd = (type, i) => {
+    let enhancements = [...this.state.enhancements];
     if (type === "resources") {
       const newResource = { item: "", qty: "" };
-      const enhancements = [...this.props.enhancements];
       enhancements[i]["resources"] = [
         ...enhancements[i]["resources"],
         newResource
       ];
-      this.props.onAdd("enhancement", enhancements, this.props.index);
     } else {
       const newEnhancement = {
         description: "",
         resources: [{ item: "gold", qty: "" }, { item: "", qty: "" }]
       };
-      const enhancements = [...this.props.enhancements, newEnhancement];
-      this.props.onAdd("enhancement", enhancements, this.props.index);
+      enhancements = [...enhancements, newEnhancement];
       this.toggle(enhancements.length - 1);
     }
+    this.setState({ enhancements });
   };
   handleChange = (type, value, i, j) => {
-    const enhancements = [...this.props.enhancements];
+    const enhancements = [...this.state.enhancements];
     if (j !== undefined) {
       enhancements[i]["resources"][j][type] = value;
     } else {
       enhancements[i][type] = value;
     }
-    this.props.onChange("enhancement", enhancements, this.props.index);
+    this.setState({ enhancements });
   };
   handleDelete = (type, i, j) => {
+    let enhancements = [...this.state.enhancements];
     if (type === "resources") {
-      const enhancements = [...this.props.enhancements];
       enhancements[i]["resources"] = [
         ...enhancements[i]["resources"].slice(0, j),
         ...enhancements[i]["resources"].slice(j + 1)
       ];
-      this.props.onChange("enhancement", enhancements, this.props.index);
     } else {
-      const enhancements = [
-        ...this.props.enhancements.slice(0, i),
-        ...this.props.enhancements.slice(i + 1)
+      enhancements = [
+        ...enhancements.slice(0, i),
+        ...enhancements.slice(i + 1)
       ];
-      this.props.onChange("enhancement", enhancements, this.props.index);
       if (i === enhancements.length) {
         this.toggle(enhancements.length - 1);
       } else {
         this.toggle(i);
       }
     }
+    this.props.onChange("enhancement", enhancements, this.props.index);
   };
-  toggle(tab) {
+
+  onBlur = () => {
+    this.props.onChange(
+      "enhancement",
+      this.state.enhancements,
+      this.props.index
+    );
+  };
+
+  toggle = tab => {
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab
       });
     }
-  }
+  };
   render() {
-    const { enhancements, index } = this.props;
+    const { index } = this.props;
+    const { enhancements } = this.state;
     return (
       <React.Fragment>
         <Col md="12">
           <Label>enhancements</Label>
           <Nav tabs className="small-tabs">
             <NavItem className={enhancements.length >= 10 ? "hidden" : ""}>
-              <NavLink
+              <Button
                 className="add-link"
-                onClick={e => this.handleAdd("enhancements", index)}
+                size="sm"
+                onClick={e => this.handleAdd("enhancement", index)}
+                onBlur={this.onBlur}
               >
                 Add
-              </NavLink>
+              </Button>
             </NavItem>
             {enhancements.map((enhancement, i) => (
               <NavItem key={i}>
@@ -118,10 +133,11 @@ class HeroSkillEnhancements extends Component {
                   <Col offset="12">
                     <Button
                       size="sm"
-                      className="pull-right"
+                      className={i !== 0 ? "pull-right" : "pull-right stealth"}
                       color="danger"
                       tabIndex="-1"
-                      onClick={e => this.handleDelete("enhancements", i)}
+                      onClick={e => this.handleDelete("enhancement", i)}
+                      onBlur={this.onBlur}
                     >
                       Delete
                     </Button>
@@ -135,6 +151,7 @@ class HeroSkillEnhancements extends Component {
                     index={i}
                     value={enhancement.description}
                     onChange={this.handleChange}
+                    onBlur={this.onBlur}
                   />
                   <Col>
                     <Label>
@@ -168,6 +185,7 @@ class HeroSkillEnhancements extends Component {
                               j
                             )
                           }
+                          onBlur={this.onBlur}
                         />
                         <Input
                           type="number"
@@ -184,6 +202,7 @@ class HeroSkillEnhancements extends Component {
                               j
                             )
                           }
+                          onBlur={this.onBlur}
                         />
 
                         <Button
@@ -191,6 +210,7 @@ class HeroSkillEnhancements extends Component {
                           color="danger"
                           tabIndex="-1"
                           onClick={e => this.handleDelete("resources", i, j)}
+                          onBlur={this.onBlur}
                         >
                           X
                         </Button>
@@ -210,6 +230,7 @@ class HeroSkillEnhancements extends Component {
                       block
                       size="sm"
                       className="gutter-top btn-add"
+                      onBlur={this.onBlur}
                     >
                       Add new resource
                     </Button>

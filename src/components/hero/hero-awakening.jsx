@@ -16,20 +16,18 @@ import {
 } from "reactstrap";
 
 class HeroAwakening extends Component {
-  constructor(props) {
-    super(props);
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      activeTab: 0
-    };
-  }
-  toggle(tab) {
-    if (this.state.activeTab !== tab) {
-      this.setState({
-        activeTab: tab
-      });
+  state = {
+    awakening: this.props.awakening,
+    activeTab: 0
+  };
+
+  componentDidUpdate(prevProps) {
+    const awakening = [...this.props.awakening];
+    if (this.props.awakening !== prevProps.awakening) {
+      this.setState({ awakening });
     }
   }
+
   /* Need a more elegant solution in the future...*/
   handleChange = (type, value, i, j) => {
     const awakening = [...this.props.awakening];
@@ -45,18 +43,18 @@ class HeroAwakening extends Component {
     } else {
       awakening[i][type] = value;
     }
-    console.info("NEW VALUEZ: ", awakening[i]["statsIncrease"][j]);
-    this.props.onChange("awakening", awakening);
+    this.setState({ awakening });
   };
+
   handleDelete = (type, i, j) => {
     const awakening = [...this.props.awakening];
     awakening[i][type] = [
       ...awakening[i][type].slice(0, j),
       ...awakening[i][type].slice(j + 1)
     ];
-    console.info("DELETING STATS: ", awakening);
     this.props.onChange("awakening", awakening);
   };
+
   handleAdd = (type, i) => {
     const awakening = [...this.props.awakening];
     let newObj = {};
@@ -66,10 +64,23 @@ class HeroAwakening extends Component {
       newObj = { item: "", qty: "" };
     }
     awakening[i][type] = [...awakening[i][type], newObj];
-    this.props.onChange("awakening", awakening);
+    this.setState({ awakening });
   };
+
+  toggle = tab => {
+    if (this.state.activeTab !== tab) {
+      this.setState({
+        activeTab: tab
+      });
+    }
+  };
+
+  onBlur = () => {
+    this.props.onChange("awakening", this.state.awakening);
+  };
+
   render() {
-    const { awakening } = this.props;
+    const { awakening } = this.state;
 
     return (
       <React.Fragment>
@@ -100,6 +111,7 @@ class HeroAwakening extends Component {
                     label="skillUpgrade"
                     className="margin-10"
                     checked={awake.skillUpgrade}
+                    onBlur={this.onBlur}
                     onChange={e =>
                       this.handleChange(
                         e.currentTarget.name,
@@ -126,6 +138,7 @@ class HeroAwakening extends Component {
                           name={"stats." + Object.keys(increase)}
                           placeholder="stat increase"
                           value={Object.keys(increase)}
+                          onBlur={this.onBlur}
                           onChange={e =>
                             this.handleChange(
                               e.currentTarget.name,
@@ -140,6 +153,7 @@ class HeroAwakening extends Component {
                           bsSize="sm"
                           name={Object.keys(increase)}
                           value={increase[Object.keys(increase)]}
+                          onBlur={this.onBlur}
                           onChange={e =>
                             this.handleChange(
                               e.currentTarget.name,
@@ -168,7 +182,7 @@ class HeroAwakening extends Component {
                       awake.statsIncrease.length >= 3 ||
                       (awake.skillUpgrade && awake.statsIncrease.length >= 2)
                         ? "hidden"
-                        : ""
+                        : null
                     }
                   >
                     <Button
@@ -178,6 +192,7 @@ class HeroAwakening extends Component {
                       size="sm"
                       outline
                       onClick={e => this.handleAdd("statsIncrease", i)}
+                      onBlur={this.onBlur}
                     >
                       Add new stat
                     </Button>
@@ -201,6 +216,7 @@ class HeroAwakening extends Component {
                           name="item"
                           placeholder="resource item"
                           value={resource.item}
+                          onBlur={this.onBlur}
                           onChange={e =>
                             this.handleChange(
                               e.currentTarget.name,
@@ -215,6 +231,7 @@ class HeroAwakening extends Component {
                           bsSize="sm"
                           name="qty"
                           value={resource.qty}
+                          onBlur={this.onBlur}
                           onChange={e =>
                             this.handleChange(
                               e.currentTarget.name,
@@ -243,6 +260,7 @@ class HeroAwakening extends Component {
                       block
                       size="sm"
                       outline
+                      onBlur={this.onBlur}
                       onClick={e => this.handleAdd("resources", i)}
                     >
                       Add new resource
