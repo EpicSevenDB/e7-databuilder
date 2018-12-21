@@ -11,9 +11,25 @@
     font-size: 0.7em;
     font-weight: 500;
     transition: $ease;
+    position: relative;
     text-transform: uppercase;
   }
   .card-body {
     padding-top: 6px;
   }
+}
+
+.btn-collapse {
+  background: transparent !important;
+  line-height: 0;
+  font-size: 2em;
+  box-shadow: none !important;
+  padding: 7px 0;
+  color: $dark-blue;
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
 }

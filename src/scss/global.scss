@@ -29,6 +29,7 @@ $str: 8;
 
 .wrapper {
   background: $bg;
+  min-height: 100vh;
   color: $grey;
   font-family: "Quicksand", sans-serif;
   letter-spacing: 0.05em;
