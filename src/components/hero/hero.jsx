@@ -654,7 +654,7 @@ class Hero extends Component {
     if (typeof hero[name] !== undefined) {
       if (name !== "hero") {
         hero[name] = value;
-        console.info("hero change", hero[name]);
+        console.info("Change: ", hero[name]);
       } else {
         hero = value;
       }

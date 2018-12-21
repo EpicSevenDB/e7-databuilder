@@ -41,9 +41,9 @@ class HeroImport extends Component {
   };
 
   toggle() {
-    this.state.import = {};
     this.setState({
-      modal: !this.state.modal
+      modal: !this.state.modal,
+      import: {}
     });
   }
 

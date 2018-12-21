@@ -18,6 +18,7 @@ $str: 8;
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,500");
 
 @import "./helpers";
+@import "./mixins";
 @import "./buttons";
 @import "./cards";
 @import "./tabs";
@@ -37,6 +38,10 @@ $str: 8;
   padding-left: 65px;
   padding-top: 85px;
   transition: $ease;
+  @include tablet {
+    padding-left: 0;
+    padding-top: 125px;
+  }
 
   &.dark {
     background: $black;
@@ -75,12 +80,12 @@ $str: 8;
       .nav-link {
         background: lighten($black, 2.5);
         border: 1px solid $dark-border;
-        color: $dark-blue;
+        color: $dark-blue !important;
         border-bottom: none;
         box-shadow: 0 -1px 2px 0 transparentize(black, 0.5);
         &.active {
           background: lighten($black, 5);
-          color: #fff;
+          color: #fff !important;
         }
         &:hover {
           background: $black;

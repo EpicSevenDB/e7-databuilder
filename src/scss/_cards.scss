@@ -32,4 +32,15 @@
   top: 0;
   right: 0;
   text-align: center;
+  &:hover,
+  &:active {
+    color: lighten($dark-blue, 15) !important;
+  }
+}
+
+.dark .btn-collapse {
+  &:hover,
+  &:active {
+    color: #fff !important;
+  }
 }

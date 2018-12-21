@@ -26,6 +26,7 @@ class HeroSkillEnhancements extends Component {
     if (this.props.enhancements !== prevProps.enhancements) {
       this.setState({ enhancements });
     }
+    console.info("Hello");
   }
 
   handleAdd = (type, i) => {

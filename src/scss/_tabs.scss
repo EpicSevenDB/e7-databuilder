@@ -13,6 +13,7 @@
     transition: $ease;
     margin-left: -1px;
     border-bottom: none;
+    color: transparentize($grey, 0.5) !important;
     &:hover {
       border-top: 1px solid $border;
       border-left: 1px solid $border;
@@ -23,6 +24,7 @@
       opacity: 1;
       background: #fff;
       pointer-events: none;
+      color: $grey !important;
     }
   }
   .add-link {
@@ -30,7 +32,7 @@
     background: $green !important;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    margin-top: 1px;
+    margin-top: 2px;
     color: #fff !important;
     &:hover {
       background: darken($green, 5) !important;

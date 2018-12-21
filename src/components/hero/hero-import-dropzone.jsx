@@ -8,21 +8,19 @@ class HeroImportDropzone extends Component {
     this.state = {
       isUploaded: false,
       file: [],
-      fileReader: {},
       onEnter: false
     };
   }
-  handleFileRead = e => {
-    const result = this.state.fileReader.result;
-    this.props.onUpload(result);
-  };
 
   onDrop(file) {
     this.setState({ file });
     if (file.length !== 0) {
-      this.state.fileReader = new FileReader();
-      this.state.fileReader.onloadend = this.handleFileRead;
-      this.state.fileReader.readAsText(file[0]);
+      let fileReader = new FileReader();
+      fileReader.onloadend = e => {
+        const result = fileReader.result;
+        this.props.onUpload(result);
+      };
+      fileReader.readAsText(file[0]);
     }
   }
 
