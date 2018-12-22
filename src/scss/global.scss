@@ -15,7 +15,7 @@ $dark-shadows: 0 0 3px 0 black;
 $ease: all 0.15s linear;
 $str: 8;
 
-@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600");
 
 @import "./helpers";
 @import "./mixins";
@@ -32,12 +32,13 @@ $str: 8;
   background: $bg;
   min-height: 100vh;
   color: $grey;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 0.05em;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
   padding-left: 65px;
   padding-top: 85px;
   transition: $ease;
+  font-weight: 300;
   @include tablet {
     padding-left: 0;
     padding-top: 125px;
@@ -139,7 +140,14 @@ textarea {
 }
 
 .tooltip-inner {
-  font-family: "Quicksand";
+  font-family: "Montserrat";
   font-size: 0.85em;
   padding: 8px 12px;
+}
+
+footer {
+  margin-top: 75px;
+  text-align: center;
+  font-size: 0.75em;
+  opacity: 0.5;
 }

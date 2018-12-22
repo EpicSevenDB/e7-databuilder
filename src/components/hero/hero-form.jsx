@@ -95,6 +95,7 @@ class HeroForm extends Component {
                   name="specialtyChangeName"
                   tooltip="Example: commander-lorina"
                   id="specialtyChangeName"
+                  reformat={true}
                   size="12"
                   value={hero.specialtyChangeName}
                   onChange={onChange}
@@ -104,6 +105,7 @@ class HeroForm extends Component {
                   name="selfSkillBarName"
                   tooltip="Example: fighting-spirit"
                   id="selfSkillBarName"
+                  reformat={true}
                   size="12"
                   value={hero.selfSkillBarName}
                   onChange={onChange}

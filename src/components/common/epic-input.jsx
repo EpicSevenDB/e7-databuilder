@@ -12,17 +12,28 @@ class EpicInput extends Component {
     }
   }
   handleChange(input) {
-    this.setState({ value: input });
+    if (this.props.reformat) {
+      this.setState({ value: this.friendlyString(input) });
+    } else {
+      this.setState({ value: input });
+    }
+  }
+
+  friendlyString(str) {
+    if (str && typeof str === "string") {
+      return str
+        .toLowerCase()
+        .replace(/[^a-z0-9/-\s]+/gi, "")
+        .replace(/\s/gi, "-");
+    } else {
+      return "";
+    }
   }
 
   render() {
-    const { id, name, size, noLabel, offset, tooltip, validate } = this.props;
+    const { id, name, size, noLabel, offset, tooltip } = this.props;
     return (
-      <Col
-        md={{ size: size, offset: offset }}
-        sm="6"
-        className={validate ? "epic-input error" : "epic-input"}
-      >
+      <Col md={{ size: size, offset: offset }} sm="6" className="epic-input">
         <Label className={noLabel ? "hidden" : ""} for={name}>
           {name} {tooltip && <BadgeTip value={tooltip} id={id} />}
         </Label>
@@ -34,9 +45,6 @@ class EpicInput extends Component {
             </InputGroupAddon>
           ) : null}
         </InputGroup>
-        {validate ? (
-          <Label className="error-message">This field cannot be empty</Label>
-        ) : null}
       </Col>
     );
   }
@@ -80,7 +88,7 @@ class EpicInput extends Component {
       <Input
         type={type}
         bsSize="sm"
-        className={readonly ? "readonly" : null}
+        readOnly={readonly ? true : false}
         value={value}
         placeholder={placeholder}
         name={name}

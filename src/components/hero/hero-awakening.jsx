@@ -37,7 +37,7 @@ class HeroAwakening extends Component {
       newStat[value] = awakening[i]["statsIncrease"][j][name[1]];
       awakening[i]["statsIncrease"][j] = newStat;
     } else if (type === "item" || type === "qty") {
-      awakening[i]["resources"][j][type] = value;
+      awakening[i]["resources"][j][type] = this.friendlyString(value);
     } else if (j >= 0) {
       awakening[i]["statsIncrease"][j][type] = value;
     } else {
@@ -61,12 +61,22 @@ class HeroAwakening extends Component {
     if (type === "statsIncrease") {
       newObj = { "": "" };
     } else {
-      newObj = { item: "", qty: "" };
+      newObj = { item: "", qty: 0 };
     }
     awakening[i][type] = [...awakening[i][type], newObj];
     this.setState({ awakening });
   };
 
+  friendlyString(str) {
+    if (str && typeof str === "string") {
+      return str
+        .toLowerCase()
+        .replace(/[^a-z0-9/-\s]+/gi, "")
+        .replace(/\s/gi, "-");
+    } else {
+      return "";
+    }
+  }
   toggle = tab => {
     if (this.state.activeTab !== tab) {
       this.setState({

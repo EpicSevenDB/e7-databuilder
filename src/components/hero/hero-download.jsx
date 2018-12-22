@@ -20,7 +20,7 @@ class HeroDownload extends Component {
           }
           href={
             "data:text/plain;charset=utf-8," +
-            encodeURIComponent(JSON.stringify(output))
+            encodeURIComponent(JSON.stringify(output, null, 2))
           }
           onClick={this.handleDownload}
           download={name + ".json"}

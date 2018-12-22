@@ -39,6 +39,17 @@ class HeroRelations extends Component {
     this.props.onChange("relations", this.state.relations);
   };
 
+  friendlyString(str) {
+    if (str && typeof str === "string") {
+      return str
+        .toLowerCase()
+        .replace(/[^a-z0-9/-\s]+/gi, "")
+        .replace(/\s/gi, "-");
+    } else {
+      return "";
+    }
+  }
+
   render() {
     const { relationType } = this.props;
     const { relations } = this.state;
@@ -58,7 +69,11 @@ class HeroRelations extends Component {
                 bsSize="sm"
                 value={relation.hero}
                 onChange={e =>
-                  this.handleChange("hero", e.currentTarget.value, i)
+                  this.handleChange(
+                    "hero",
+                    this.friendlyString(e.currentTarget.value),
+                    i
+                  )
                 }
                 onBlur={this.onBlur}
               />

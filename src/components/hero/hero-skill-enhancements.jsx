@@ -26,13 +26,23 @@ class HeroSkillEnhancements extends Component {
     if (this.props.enhancements !== prevProps.enhancements) {
       this.setState({ enhancements });
     }
-    console.info("Hello");
+  }
+
+  friendlyString(str) {
+    if (str && typeof str === "string") {
+      return str
+        .toLowerCase()
+        .replace(/[^a-z0-9/-\s]+/gi, "")
+        .replace(/\s/gi, "-");
+    } else {
+      return "";
+    }
   }
 
   handleAdd = (type, i) => {
     let enhancements = [...this.state.enhancements];
     if (type === "resources") {
-      const newResource = { item: "", qty: "" };
+      const newResource = { item: "", qty: 0 };
       enhancements[i]["resources"] = [
         ...enhancements[i]["resources"],
         newResource
@@ -40,7 +50,7 @@ class HeroSkillEnhancements extends Component {
     } else {
       const newEnhancement = {
         description: "",
-        resources: [{ item: "gold", qty: "" }, { item: "", qty: "" }]
+        resources: [{ item: "gold", qty: 0 }, { item: "", qty: 0 }]
       };
       enhancements = [...enhancements, newEnhancement];
       this.toggle(enhancements.length - 1);
@@ -50,7 +60,7 @@ class HeroSkillEnhancements extends Component {
   handleChange = (type, value, i, j) => {
     const enhancements = [...this.state.enhancements];
     if (j !== undefined) {
-      enhancements[i]["resources"][j][type] = value;
+      enhancements[i]["resources"][j][type] = this.friendlyString(value);
     } else {
       enhancements[i][type] = value;
     }

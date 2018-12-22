@@ -69,10 +69,10 @@ class HeroExport extends Component {
               className="preview"
               type="textarea"
               readOnly
-              value={JSON.stringify(output)}
+              value={JSON.stringify(output, null, 2)}
             />
             <CopyToClipboard
-              text={JSON.stringify(output)}
+              text={JSON.stringify(output, null, 2)}
               onCopy={this.onCopyToClipboard}
               className="btn-copy"
             >

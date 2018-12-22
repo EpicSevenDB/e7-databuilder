@@ -10,48 +10,38 @@ import { Row, Col, Alert, ButtonGroup } from "reactstrap";
 class Hero extends Component {
   state = {
     hero: {
-      name: "Diene",
-      rarity: 5,
-      classType: "soul-weaver",
-      element: "ice",
-      zodiac: "gemini",
+      name: "",
+      rarity: "",
+      classType: "",
+      element: "",
+      zodiac: "",
       specialtyChangeName: "",
       selfSkillBarName: "",
-      background: [
-        "Diene, Saint of Ezera, received the Goddess's divine revelation and fearlessly led the world to victory against the Archdemon, even without the Heir of the Covenant. Later, she became Ezera's queen."
-      ],
-      relations: [
-        { hero: "bask", relationType: "love" },
-        { hero: "nilgal", relationType: "grudge" },
-        { hero: "angelica", relationType: "longing" },
-        { hero: "specter-tenebria", relationType: "grudge" },
-        { hero: "kayron", relationType: "grudge" },
-        { hero: "krau", relationType: "trust" },
-        { hero: "gunther", relationType: "trust" }
-      ],
+      background: [""],
+      relations: [{ hero: "", relationType: "" }],
       stats: {
         base: {
-          cp: 2330,
-          atk: 195,
-          hp: 691,
-          spd: 103,
-          def: 82,
-          chc: 15,
-          chd: 150,
+          cp: 0,
+          atk: 0,
+          hp: 0,
+          spd: 0,
+          def: 0,
+          chc: 0,
+          chd: 0,
           eff: 0,
-          efr: 9,
-          dac: 5
+          efr: 0,
+          dac: 0
         },
         max: {
-          cp: 13961,
-          atk: 603,
-          hp: 4945,
-          spd: 103,
-          def: 662,
-          chc: 15,
-          chd: 150,
+          cp: 0,
+          atk: 0,
+          hp: 0,
+          spd: 0,
+          def: 0,
+          chc: 0,
+          chd: 0,
           eff: 0,
-          efr: 9,
+          efr: 0,
           dac: 5
         }
       },
@@ -63,41 +53,21 @@ class Hero extends Component {
           soulBurnEffect: "",
           awakenUpgrade: false,
           cooldown: 0,
-          name: "Light of Judgement",
-          soulAcquire: 1,
-          description:
-            "Emits a ray of brilliant light, increasing the caster's Combat Readiness by 10%. Effect doubles when caster is buffed.",
+          name: "",
+          soulAcquire: 0,
+          description: "",
           enhancement: [
             {
-              description: "+5% damage dealt",
-              resources: [
-                { item: "molagora", qty: 1 },
-                { item: "gold", qty: 4000 }
-              ]
+              description: "",
+              resources: []
             },
             {
-              description: "+2% combat readiness",
-              resources: [{ item: "", qty: 0 }, { item: "gold", qty: 0 }]
+              description: "",
+              resources: []
             },
             {
-              description: "+5% damage dealt",
-              resources: [{ item: "", qty: 0 }, { item: "gold", qty: 0 }]
-            },
-            {
-              description: "+5% damage dealt",
-              resources: [{ item: "", qty: 0 }, { item: "gold", qty: 0 }]
-            },
-            {
-              description: "+3% combat readiness",
-              resources: [{ item: "", qty: 0 }, { item: "gold", qty: 0 }]
-            },
-            {
-              description: "+10% damage dealt",
-              resources: [{ item: "", qty: 0 }, { item: "gold", qty: 0 }]
-            },
-            {
-              description: "+10% damage dealt",
-              resources: [{ item: "", qty: 0 }, { item: "gold", qty: 0 }]
+              description: "",
+              resources: []
             }
           ],
           buffs: [],
@@ -109,134 +79,109 @@ class Hero extends Component {
           selfSkillBarValue: 0,
           soulBurnEffect: "",
           awakenUpgrade: false,
-          cooldown: 4,
-          name: "Blessings of the Goddess",
-          soulAcquire: 2,
-          description:
-            "With the Blessings of the Goddess, covers all allies with a barrier for 2 turns before dispelling one debuff. Barrier strength increases proportional to the target's max Health.",
+          cooldown: 0,
+          name: "",
+          soulAcquire: 0,
+          description: "",
           enhancement: [
             {
-              description: "+5% barrier strength",
-              resources: [
-                { item: "molagora", qty: 1 },
-                { item: "gold", qty: 4000 }
-              ]
+              description: "",
+              resources: []
             },
             {
-              description: "+5% barrier strength",
-              resources: [
-                { item: "molagora", qty: 3 },
-                { item: "gold", qty: 0 }
-              ]
+              description: "",
+              resources: []
             },
             {
-              description: "-1 turn cooldown",
-              resources: [{ item: "", qty: 0 }, { item: "gold", qty: 0 }]
-            },
-            {
-              description: "+10% barrier strength",
-              resources: [{ item: "", qty: 0 }, { item: "gold", qty: 0 }]
-            },
-            {
-              description: "+15% barrier strength",
-              resources: [{ item: "", qty: 0 }, { item: "gold", qty: 0 }]
-            },
-            {
-              description: "+15% barrier strength",
-              resources: [{ item: "", qty: 0 }, { item: "gold", qty: 0 }]
+              description: "",
+              resources: []
             }
           ],
-          buffs: ["stic_protect"],
+          buffs: [],
           debuffs: []
         },
         {
           isPassive: false,
-          soulBurn: 20,
+          soulBurn: 0,
           selfSkillBarValue: 0,
-          soulBurnEffect: "Skill cooldown decreased by 2 turns.",
-          awakenUpgrade: true,
-          cooldown: 5,
-          name: "Saint's Prayer",
-          soulAcquire: 2,
-          description:
-            "A miracle of the Goddess manifests, increasing Attack and Critical Hit Resistance of all allies for 3 turns, before increasing the caster's Combat Readiness by 50%.",
+          soulBurnEffect: "",
+          awakenUpgrade: false,
+          cooldown: 0,
+          name: "",
+          soulAcquire: 0,
+          description: "",
           enhancement: [
             {
-              description: "Acquire +1 soul",
-              resources: [
-                { item: "molagora", qty: 3 },
-                { item: "ring-of-glory", qty: 5 },
-                { item: "gold", qty: 37000 }
-              ]
+              description: "",
+              resources: []
             },
             {
-              description: "-1 turn cooldown",
-              resources: [
-                { item: "", qty: 0 },
-                { item: "", qty: 0 },
-                { item: "gold", qty: 0 }
-              ]
+              description: "",
+              resources: []
+            },
+            {
+              description: "",
+              resources: []
             }
           ],
-          buffs: ["stic_att_up", "stic_cri_res_up"],
+          buffs: [],
           debuffs: []
         }
       ],
       specialtySkill: {
-        name: "Saint of Ezera",
-        description:
-          "She overcomes the hardship through her deeply pious faith.",
-        dispatch: ["[Support] Type"],
-        enhancement: ["Reward bonus +6%"],
-        stats: { command: 78, charm: 86, politics: 90 }
+        name: "",
+        description: "",
+        dispatch: [],
+        enhancement: [],
+        stats: { command: 0, charm: 0, politics: 0 }
       },
       memoryImprint: [
         {
           rank: "d",
           status: {
-            type: "atk",
-            increase: "3.6%"
+            type: "",
+            increase: 0
           }
         },
         {
           rank: "c",
           status: {
-            type: "atk",
+            type: "",
             increase: 0
           }
         },
         {
           rank: "b",
           status: {
-            type: "atk",
+            type: "",
             increase: 0
           }
         },
         {
           rank: "a",
           status: {
-            type: "atk",
+            type: "",
             increase: 0
           }
         },
         {
           rank: "s",
           status: {
-            type: "atk",
+            type: "",
             increase: 0
           }
         },
         {
           rank: "ss",
           status: {
-            type: "atk",
+            type: "",
             increase: 0
           }
         },
         {
           rank: "sss",
           status: {
-            type: "atk",
+            type: "",
             increase: 0
           }
         }
@@ -245,53 +190,38 @@ class Hero extends Component {
         {
           rank: 1,
           skillUpgrade: false,
-          statsIncrease: [{ afr: "3%" }, { atk: 20 }, { hp: 60 }],
-          resources: [{ item: "frost-rune", qty: 10 }]
+          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+          resources: [{ item: "", qty: 0 }]
         },
         {
           rank: 2,
           skillUpgrade: false,
-          statsIncrease: [{ hp: "3%" }, { atk: 20 }, { hp: 60 }],
-          resources: [
-            { item: "frost-rune", qty: 15 },
-            { item: "greater-frost-rune", qty: 2 }
-          ]
+          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+          resources: [{ item: "", qty: 0 }]
         },
         {
           rank: 3,
           skillUpgrade: true,
-          statsIncrease: [{ atk: 20 }, { hp: 60 }],
-          resources: [
-            { item: "frost-rune", qty: 20 },
-            { item: "greater-frost-rune", qty: 10 }
-          ]
+          statsIncrease: [{ "": 0 }, { "": 0 }],
+          resources: [{ item: "", qty: 0 }]
         },
         {
           rank: 4,
           skillUpgrade: false,
-          statsIncrease: [{ spd: 4 }, { atk: 30 }, { hp: 80 }],
-          resources: [
-            { item: "greater-frost-rune", qty: 10 },
-            { item: "epic-frost-rune", qty: 2 }
-          ]
+          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+          resources: [{ item: "", qty: 0 }]
         },
         {
           rank: 5,
           skillUpgrade: false,
-          statsIncrease: [{ afr: "6%" }, { atk: 30 }, { hp: 80 }],
-          resources: [
-            { item: "epic-frost-rune", qty: 6 },
-            { item: "small-sun-badge", qty: 15 }
-          ]
+          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+          resources: [{ item: "", qty: 0 }]
         },
         {
           rank: 6,
           skillUpgrade: false,
-          statsIncrease: [{ hp: "6%" }, { atk: 30 }, { hp: 80 }],
-          resources: [
-            { item: "epic-frost-rune", qty: 10 },
-            { item: "fused-nerve", qty: 10 }
-          ]
+          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+          resources: [{ item: "", qty: 0 }]
         }
       ]
     },
@@ -654,7 +584,6 @@ class Hero extends Component {
     if (typeof hero[name] !== undefined) {
       if (name !== "hero") {
         hero[name] = value;
-        console.info("Change: ", hero[name]);
       } else {
         hero = value;
       }
@@ -701,6 +630,10 @@ class Hero extends Component {
         <Alert color={color} className={show ? "toaster" : "toaster hide"}>
           {message}
         </Alert>
+        <footer>
+          Kevin Quach - EpicSeven DataBuilder -{" "}
+          <span>{new Date().getFullYear()}</span>
+        </footer>
       </React.Fragment>
     );
   }

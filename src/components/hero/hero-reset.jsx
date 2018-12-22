@@ -48,7 +48,8 @@ class HeroReset extends Component {
               Starting a new hero will{" "}
               <strong className="text-danger">reset</strong> the form and{" "}
               <strong className="text-danger">wipe any existing data.</strong>{" "}
-              Are you sure you want to start a new hero?
+              Make sure to download the json file or copy and paste it somewhere
+              before you start a new hero.
             </p>
           </ModalBody>
           <ModalFooter>

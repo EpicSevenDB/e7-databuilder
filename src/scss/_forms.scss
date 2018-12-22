@@ -1,13 +1,13 @@
 .form-control {
   transition: $ease;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  font-weight: 200;
 }
 
-.form-control.readonly {
-  pointer-events: none;
+.form-control[readonly] {
   background: lighten($border, 7.5);
 }
-.dark .form-control.readonly {
+.dark .form-control[readonly] {
   background: lighten($black, 5) !important;
 }
 
@@ -145,7 +145,7 @@
     background: lighten($border, 8);
   }
   &.active {
-    background-color: $blue;
+    background-color: $blue !important;
     border: 1px solid $blue;
     color: #fff;
 

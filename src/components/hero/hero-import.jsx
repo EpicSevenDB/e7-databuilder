@@ -81,10 +81,6 @@ class HeroImport extends Component {
                 <HeroImportDropzone onUpload={this.handleImport} />
               </Col>
             </Row>
-            <small>
-              * Note: Nothing is being uploaded to a server, this is all in the
-              browser
-            </small>
           </ModalBody>
           <ModalFooter>
             <Button
