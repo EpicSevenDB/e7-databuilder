@@ -479,6 +479,7 @@ class Hero extends Component {
         { label: "Pisces", value: "pisces" }
       ],
       relationType: [
+        { label: "Love", value: "love" },
         { label: "Trust", value: "trust" },
         { label: "Grudge", value: "grudge" },
         { label: "Rival", value: "rival" },
@@ -584,6 +585,7 @@ class Hero extends Component {
     if (typeof hero[name] !== undefined) {
       if (name !== "hero") {
         hero[name] = value;
+        console.info("Changed: ", hero[name]);
       } else {
         hero = value;
       }

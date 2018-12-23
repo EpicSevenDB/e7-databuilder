@@ -35,11 +35,12 @@ class HeroMemoryImprint extends Component {
                 key={i}
                 size="3"
                 id={"memoryImprintValue-" + i}
-                tooltip="Example: 5 or 5%"
+                tooltip="Percents are converted to decimal. Example: 5% -> 0.05"
                 name={"Rank " + imprint.rank}
                 value={imprint.status.increase}
                 index={i}
                 onChange={this.handleChange}
+                hasPercent={true}
               />
             ))}
           </FormGroup>

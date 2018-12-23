@@ -17,6 +17,9 @@
     border-bottom: 1px solid $dark-border;
     border-right: none;
   }
+  .nav-thumbnail {
+    max-width: 32px;
+  }
   .nav-link {
     padding: 10px 6px;
     height: 53.5px;
@@ -25,7 +28,14 @@
     color: darken($dark-blue, 15);
     transition: all 0.3s ease;
     border-bottom: 1px solid $dark-border;
-    cursor: not-allowed;
+    &:first-child {
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $blue;
+      border-bottom: 1px solid $blue;
+    }
     @include tablet {
       width: auto;
       height: 100%;

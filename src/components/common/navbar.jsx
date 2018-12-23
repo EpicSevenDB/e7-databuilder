@@ -20,6 +20,9 @@ library.add(faUser, faAddressBook, faBolt, faPaw, faSun, faMoon);
 const NavBar = props => {
   return (
     <Nav className="global-nav" vertical pills>
+      <NavLink>
+        <img className="nav-thumbnail img" src="/img/icon.png" alt="arky" />
+      </NavLink>
       {props.links.map(link => (
         <NavLink
           key={link.id}

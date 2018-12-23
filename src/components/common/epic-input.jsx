@@ -30,6 +30,18 @@ class EpicInput extends Component {
     }
   }
 
+  onBlur(name, value, index, index2) {
+    if (
+      this.props.hasPercent &&
+      typeof value === "string" &&
+      value.indexOf("%") >= 0
+    ) {
+      this.props.onChange(name, parseFloat(value) / 100, index, index2);
+    } else {
+      this.props.onChange(name, value, index, index2);
+    }
+  }
+
   render() {
     const { id, name, size, noLabel, offset, tooltip } = this.props;
     return (
@@ -93,7 +105,7 @@ class EpicInput extends Component {
         placeholder={placeholder}
         name={name}
         onBlur={e =>
-          onChange(e.currentTarget.name, this.state.value, index, index2)
+          this.onBlur(e.currentTarget.name, this.state.value, index, index2)
         }
         onChange={e => this.handleChange(e.currentTarget.value)}
       />

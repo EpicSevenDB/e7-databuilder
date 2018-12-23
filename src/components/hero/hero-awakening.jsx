@@ -89,6 +89,14 @@ class HeroAwakening extends Component {
     this.props.onChange("awakening", this.state.awakening);
   };
 
+  onPercentBlur = (type, value, i, j) => {
+    const awakening = [...this.state.awakening];
+    if (value.indexOf("%") >= 0) {
+      awakening[i]["statsIncrease"][j][type] = parseFloat(value) / 100;
+    }
+    this.props.onChange("awakening", this.state.awakening);
+  };
+
   render() {
     const { awakening } = this.state;
 
@@ -134,7 +142,7 @@ class HeroAwakening extends Component {
                     <Label>
                       statIncreases
                       <Badgetip
-                        value="Example: atk/def/spd"
+                        value="Percents are converted to decimal. Example: 5% -> 0.05"
                         id={"statIncrease-" + i}
                       />
                     </Label>
@@ -163,7 +171,14 @@ class HeroAwakening extends Component {
                           bsSize="sm"
                           name={Object.keys(increase)}
                           value={increase[Object.keys(increase)]}
-                          onBlur={this.onBlur}
+                          onBlur={e =>
+                            this.onPercentBlur(
+                              e.currentTarget.name,
+                              e.currentTarget.value,
+                              i,
+                              j
+                            )
+                          }
                           onChange={e =>
                             this.handleChange(
                               e.currentTarget.name,

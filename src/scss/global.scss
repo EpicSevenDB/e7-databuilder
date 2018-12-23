@@ -143,6 +143,7 @@ textarea {
   font-family: "Montserrat";
   font-size: 0.85em;
   padding: 8px 12px;
+  text-align: left;
 }
 
 footer {
@@ -150,4 +151,8 @@ footer {
   text-align: center;
   font-size: 0.75em;
   opacity: 0.5;
+}
+
+.img {
+  width: 100%;
 }
