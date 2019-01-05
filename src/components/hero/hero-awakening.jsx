@@ -8,23 +8,33 @@ import {
   TabContent,
   TabPane,
   Input,
-  Button,
   Nav,
   NavItem,
-  NavLink,
-  CustomInput
+  NavLink
 } from "reactstrap";
 
 class HeroAwakening extends Component {
   state = {
     awakening: this.props.awakening,
+    rarity: this.props.rarity,
+    zodiac: this.props.zodiac,
+    element: this.props.element,
     activeTab: 0
   };
 
   componentDidUpdate(prevProps) {
     const awakening = [...this.props.awakening];
-    if (this.props.awakening !== prevProps.awakening) {
-      this.setState({ awakening });
+    const rarity = this.props.rarity;
+    const element = this.props.element;
+    const zodiac = this.props.zodiac;
+
+    if (
+      this.props.awakening !== prevProps.awakening ||
+      this.props.rarity !== prevProps.rarity ||
+      this.props.element !== prevProps.element ||
+      this.props.zodiac !== prevProps.zodiac
+    ) {
+      this.setState({ awakening, rarity, element, zodiac });
     }
   }
 
@@ -46,27 +56,6 @@ class HeroAwakening extends Component {
     this.setState({ awakening });
   };
 
-  handleDelete = (type, i, j) => {
-    const awakening = [...this.props.awakening];
-    awakening[i][type] = [
-      ...awakening[i][type].slice(0, j),
-      ...awakening[i][type].slice(j + 1)
-    ];
-    this.props.onChange("awakening", awakening);
-  };
-
-  handleAdd = (type, i) => {
-    const awakening = [...this.props.awakening];
-    let newObj = {};
-    if (type === "statsIncrease") {
-      newObj = { "": "" };
-    } else {
-      newObj = { item: "", qty: 0 };
-    }
-    awakening[i][type] = [...awakening[i][type], newObj];
-    this.setState({ awakening });
-  };
-
   friendlyString(str) {
     if (str && typeof str === "string") {
       return str
@@ -85,6 +74,30 @@ class HeroAwakening extends Component {
     }
   };
 
+  awakeningMaterial(rank, index) {
+    const { awakeningCosts, rarity, element, zodiac } = this.props;
+    if (rarity !== "" && element !== "" && zodiac !== "") {
+      if (rank >= 4 && index > 0) {
+        return this.findZodiacResource(zodiac, rank);
+      } else {
+        return (
+          awakeningCosts[rarity - 3][rank][index]["prefix"] + element + "-rune"
+        );
+      }
+    }
+    return "";
+  }
+
+  findZodiacResource(zodiac, rank) {
+    if (zodiac !== "") {
+      const { resources } = this.props;
+      const obj = resources.find(element => {
+        return element.value === zodiac;
+      });
+      return rank === 4 ? obj.normalAwakening : obj.worldAwakening;
+    }
+    return "";
+  }
   onBlur = () => {
     this.props.onChange("awakening", this.state.awakening);
   };
@@ -98,12 +111,13 @@ class HeroAwakening extends Component {
   };
 
   render() {
-    const { awakening } = this.state;
+    const { awakening, rarity, element } = this.state;
+    const { awakeningCosts } = this.props;
 
     return (
       <React.Fragment>
         <Nav tabs>
-          {awakening.map((awake, i) => (
+          {awakeningCosts[rarity - 3].map((awake, i) => (
             <NavItem key={i}>
               <NavLink
                 className={classnames({ active: this.state.activeTab === i })}
@@ -118,26 +132,10 @@ class HeroAwakening extends Component {
         </Nav>
 
         <TabContent activeTab={this.state.activeTab}>
-          {awakening.map((awake, i) => (
+          {awakeningCosts[rarity - 3].map((awakeningCost, i) => (
             <TabPane key={i} tabId={i}>
               <Col md="12">
                 <FormGroup row>
-                  <CustomInput
-                    id={"skillUpgrade-" + i} //Id needs to be unique when using customInput
-                    type="checkbox"
-                    name="skillUpgrade"
-                    label="skillUpgrade"
-                    className="margin-10"
-                    checked={awake.skillUpgrade}
-                    onBlur={this.onBlur}
-                    onChange={e =>
-                      this.handleChange(
-                        e.currentTarget.name,
-                        e.currentTarget.checked,
-                        i
-                      )
-                    }
-                  />
                   <Col md="12">
                     <Label>
                       statIncreases
@@ -147,151 +145,104 @@ class HeroAwakening extends Component {
                       />
                     </Label>
                   </Col>
-                  {awake.statsIncrease.map((increase, j) => (
-                    <Col key={j} md="12">
-                      <FormGroup className="inline-wrapper">
-                        <Input
-                          type="text"
-                          bsSize="sm"
-                          name={"stats." + Object.keys(increase)}
-                          placeholder="stat increase"
-                          value={Object.keys(increase)}
-                          onBlur={this.onBlur}
-                          onChange={e =>
-                            this.handleChange(
-                              e.currentTarget.name,
-                              e.currentTarget.value,
-                              i,
-                              j
-                            )
-                          }
-                        />
-                        <Input
-                          type="text"
-                          bsSize="sm"
-                          name={Object.keys(increase)}
-                          value={increase[Object.keys(increase)]}
-                          onBlur={e =>
-                            this.onPercentBlur(
-                              e.currentTarget.name,
-                              e.currentTarget.value,
-                              i,
-                              j
-                            )
-                          }
-                          onChange={e =>
-                            this.handleChange(
-                              e.currentTarget.name,
-                              e.currentTarget.value,
-                              i,
-                              j
-                            )
-                          }
-                        />
-
-                        <Button
-                          size="sm"
-                          color="danger"
-                          tabIndex="-1"
-                          onClick={e =>
-                            this.handleDelete("statsIncrease", i, j)
-                          }
-                        >
-                          X
-                        </Button>
-                      </FormGroup>
-                    </Col>
-                  ))}
-                  <Col
-                    className={
-                      awake.statsIncrease.length >= 3 ||
-                      (awake.skillUpgrade && awake.statsIncrease.length >= 2)
-                        ? "hidden"
-                        : null
-                    }
-                  >
-                    <Button
-                      className="gutter-top btn-add"
-                      color="secondary"
-                      block
-                      size="sm"
-                      outline
-                      onClick={e => this.handleAdd("statsIncrease", i)}
-                      onBlur={this.onBlur}
-                    >
-                      Add new stat
-                    </Button>
-                  </Col>
-
-                  <Col md="12">
-                    <Label>
-                      resources
-                      <Badgetip
-                        value="Example: greater-dark-rune"
-                        id={"awakeningResource-" + i}
-                      />
-                    </Label>
-                  </Col>
-                  {awake.resources.map((resource, j) => (
-                    <Col key={j} md="12">
-                      <FormGroup className="inline-wrapper">
-                        <Input
-                          type="text"
-                          bsSize="sm"
-                          name="item"
-                          placeholder="resource item"
-                          value={resource.item}
-                          onBlur={this.onBlur}
-                          onChange={e =>
-                            this.handleChange(
-                              e.currentTarget.name,
-                              e.currentTarget.value,
-                              i,
-                              j
-                            )
-                          }
-                        />
-                        <Input
-                          type="number"
-                          bsSize="sm"
-                          name="qty"
-                          value={resource.qty}
-                          onBlur={this.onBlur}
-                          onChange={e =>
-                            this.handleChange(
-                              e.currentTarget.name,
-                              e.currentTarget.value,
-                              i,
-                              j
-                            )
-                          }
-                        />
-
-                        <Button
-                          size="sm"
-                          color="danger"
-                          tabIndex="-1"
-                          onClick={e => this.handleDelete("resources", i, j)}
-                        >
-                          X
-                        </Button>
-                      </FormGroup>
-                    </Col>
-                  ))}
-                  <Col className={awake.resources.length >= 3 ? "hidden" : ""}>
-                    <Button
-                      className="gutter-top btn-add"
-                      color="secondary"
-                      block
-                      size="sm"
-                      outline
-                      onBlur={this.onBlur}
-                      onClick={e => this.handleAdd("resources", i)}
-                    >
-                      Add new resource
-                    </Button>
-                  </Col>
                 </FormGroup>
+
+                {awakening[i].statsIncrease.map((increase, j) => (
+                  <Col key={j} md="12">
+                    <FormGroup className="inline-wrapper awakening">
+                      <Input
+                        type="text"
+                        bsSize="sm"
+                        readOnly={j !== 0 || i === 2}
+                        name={"stats." + Object.keys(increase)}
+                        placeholder="stat increase"
+                        value={Object.keys(increase)}
+                        onBlur={this.onBlur}
+                        onChange={e =>
+                          this.handleChange(
+                            e.currentTarget.name,
+                            e.currentTarget.value,
+                            i,
+                            j
+                          )
+                        }
+                      />
+                      <Input
+                        type="text"
+                        bsSize="sm"
+                        readOnly={j !== 0 || i === 2}
+                        name={Object.keys(increase)}
+                        value={increase[Object.keys(increase)]}
+                        onBlur={e =>
+                          this.onPercentBlur(
+                            e.currentTarget.name,
+                            e.currentTarget.value,
+                            i,
+                            j
+                          )
+                        }
+                        onChange={e =>
+                          this.handleChange(
+                            e.currentTarget.name,
+                            e.currentTarget.value,
+                            i,
+                            j
+                          )
+                        }
+                      />
+                    </FormGroup>
+                  </Col>
+                ))}
+
+                <Col md="12">
+                  <Label>
+                    resources
+                    <Badgetip
+                      value="Resources are automatically calculated based on the hero's element, rarity, and zodiac sign."
+                      id={"awakeningResource-" + i}
+                    />
+                  </Label>
+                </Col>
+
+                {awakeningCost.map((resource, j) => (
+                  <Col key={j} md="12">
+                    <FormGroup className="inline-wrapper awakening">
+                      <Input
+                        type="text"
+                        bsSize="sm"
+                        name="item"
+                        readOnly
+                        placeholder="resource item"
+                        value={this.awakeningMaterial(i, j)}
+                        onBlur={this.onBlur}
+                        onChange={e =>
+                          this.handleChange(
+                            e.currentTarget.name,
+                            e.currentTarget.value,
+                            i,
+                            j
+                          )
+                        }
+                      />
+                      <Input
+                        type="number"
+                        bsSize="sm"
+                        name="qty"
+                        readOnly
+                        value={resource["qty"]}
+                        onBlur={this.onBlur}
+                        onChange={e =>
+                          this.handleChange(
+                            e.currentTarget.name,
+                            e.currentTarget.value,
+                            i,
+                            j
+                          )
+                        }
+                      />
+                    </FormGroup>
+                  </Col>
+                ))}
               </Col>
             </TabPane>
           ))}

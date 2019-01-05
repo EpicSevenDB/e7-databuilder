@@ -209,6 +209,7 @@ class HeroForm extends Component {
               <FormGroup row>
                 <HeroMemoryImprint
                   memoryImprint={hero.memoryImprint}
+                  memoryImprintFormation={hero.memoryImprintFormation}
                   onChange={onChange}
                 />
               </FormGroup>
@@ -226,7 +227,15 @@ class HeroForm extends Component {
           <Collapse isOpen={!collapse[6]}>
             <CardBody>
               <FormGroup>
-                <HeroAwakening awakening={hero.awakening} onChange={onChange} />
+                <HeroAwakening
+                  awakening={hero.awakening}
+                  onChange={onChange}
+                  element={hero.element}
+                  zodiac={hero.zodiac}
+                  resources={defaults.zodiac}
+                  rarity={hero.rarity}
+                  awakeningCosts={defaults.awakeningCosts}
+                />
               </FormGroup>
             </CardBody>
           </Collapse>

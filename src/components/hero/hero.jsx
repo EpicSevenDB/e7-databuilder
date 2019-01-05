@@ -11,7 +11,7 @@ class Hero extends Component {
   state = {
     hero: {
       name: "",
-      rarity: "",
+      rarity: 3,
       classType: "",
       element: "",
       zodiac: "",
@@ -135,6 +135,12 @@ class Hero extends Component {
         enhancement: [],
         stats: { command: 0, charm: 0, politics: 0 }
       },
+      memoryImprintFormation: {
+        north: false,
+        south: false,
+        east: false,
+        west: false
+      },
       memoryImprint: [
         {
           rank: "d",
@@ -190,45 +196,51 @@ class Hero extends Component {
         {
           rank: 1,
           skillUpgrade: false,
-          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
-          resources: [{ item: "", qty: 0 }]
+          statsIncrease: [{ "": 0 }, { atk: 20 }, { hp: 60 }],
+          resources: [{ item: "-rune", qty: 10 }]
         },
         {
           rank: 2,
           skillUpgrade: false,
-          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
-          resources: [{ item: "", qty: 0 }]
+          statsIncrease: [{ "": 0 }, { atk: 20 }, { hp: 60 }],
+          resources: [{ item: "-rune", qty: 15 }]
         },
         {
           rank: 3,
           skillUpgrade: true,
-          statsIncrease: [{ "": 0 }, { "": 0 }],
-          resources: [{ item: "", qty: 0 }]
+          statsIncrease: [{ atk: 20 }, { hp: 60 }],
+          resources: [
+            { item: "-rune", qty: 20 },
+            { item: "greater--rune", qty: 10 }
+          ]
         },
         {
           rank: 4,
           skillUpgrade: false,
-          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
-          resources: [{ item: "", qty: 0 }]
+          statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
+          resources: [
+            { item: "greater--rune", qty: 10 },
+            { item: "epic--rune", qty: 2 }
+          ]
         },
         {
           rank: 5,
           skillUpgrade: false,
-          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
-          resources: [{ item: "", qty: 0 }]
+          statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
+          resources: [{ item: "epic--rune", qty: 6 }, { item: "", qty: 15 }]
         },
         {
           rank: 6,
           skillUpgrade: false,
-          statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
-          resources: [{ item: "", qty: 0 }]
+          statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
+          resources: [{ item: "epic--rune", qty: 10 }, { item: "", qty: 10 }]
         }
       ]
     },
     defaults: {
       hero: {
         name: "",
-        rarity: "",
+        rarity: 3,
         classType: "",
         element: "",
         zodiac: "",
@@ -352,6 +364,12 @@ class Hero extends Component {
           enhancement: [],
           stats: { command: 0, charm: 0, politics: 0 }
         },
+        memoryImprintFormation: {
+          north: false,
+          south: false,
+          east: false,
+          west: false
+        },
         memoryImprint: [
           {
             rank: "d",
@@ -407,43 +425,68 @@ class Hero extends Component {
           {
             rank: 1,
             skillUpgrade: false,
-            statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+            statsIncrease: [{ "": 0 }, { atk: 20 }, { hp: 60 }],
             resources: [{ item: "", qty: 0 }]
           },
           {
             rank: 2,
             skillUpgrade: false,
-            statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
+            statsIncrease: [{ "": 0 }, { atk: 20 }, { hp: 60 }],
             resources: [{ item: "", qty: 0 }]
           },
           {
             rank: 3,
             skillUpgrade: true,
-            statsIncrease: [{ "": 0 }, { "": 0 }],
-            resources: [{ item: "", qty: 0 }]
+            statsIncrease: [{ atk: 20 }, { hp: 60 }],
+            resources: [{ item: "", qty: 0 }, { item: "", qty: 0 }]
           },
           {
             rank: 4,
             skillUpgrade: false,
-            statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
-            resources: [{ item: "", qty: 0 }]
+            statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
+            resources: [{ item: "", qty: 0 }, { item: "", qty: 0 }]
           },
           {
             rank: 5,
             skillUpgrade: false,
-            statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
-            resources: [{ item: "", qty: 0 }]
+            statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
+            resources: [{ item: "", qty: 0 }, { item: "", qty: 0 }]
           },
           {
             rank: 6,
             skillUpgrade: false,
-            statsIncrease: [{ "": 0 }, { "": 0 }, { "": 0 }],
-            resources: [{ item: "", qty: 0 }]
+            statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
+            resources: [{ item: "", qty: 0 }, { item: "", qty: 0 }]
           }
         ]
       },
+      awakeningCosts: [
+        [
+          [{ prefix: "", qty: 5 }],
+          [{ prefix: "", qty: 9 }],
+          [{ prefix: "", qty: 12 }, { prefix: "greater-", qty: 6 }],
+          [{ prefix: "greater-", qty: 15 }],
+          [{ prefix: "epic-", qty: 4 }, { prefix: "", qty: 9 }],
+          [{ prefix: "epic-", qty: 6 }, { prefix: "", qty: 6 }]
+        ],
+        [
+          [{ prefix: "", qty: 8 }],
+          [{ prefix: "", qty: 12 }, { prefix: "greater-", qty: 2 }],
+          [{ prefix: "", qty: 17 }, { prefix: "greater-", qty: 8 }],
+          [{ prefix: "greater-", qty: 8 }, { prefix: "epic-", qty: 2 }],
+          [{ prefix: "epic-", qty: 5 }, { prefix: "", qty: 12 }],
+          [{ prefix: "epic-", qty: 8 }, { prefix: "", qty: 8 }]
+        ],
+        [
+          [{ prefix: "", qty: 10 }],
+          [{ prefix: "", qty: 15 }, { prefix: "greater-", qty: 2 }],
+          [{ prefix: "", qty: 20 }, { prefix: "greater-", qty: 10 }],
+          [{ prefix: "greater-", qty: 10 }, { prefix: "epic-", qty: 2 }],
+          [{ prefix: "epic-", qty: 6 }, { prefix: "", qty: 15 }],
+          [{ prefix: "epic-", qty: 10 }, { prefix: "", qty: 10 }]
+        ]
+      ],
       rarity: [
-        { label: "2 ★★", value: 2 },
         { label: "3 ★★★", value: 3 },
         { label: "4 ★★★★", value: 4 },
         { label: "5 ★★★★★", value: 5 }
@@ -454,29 +497,89 @@ class Hero extends Component {
         { label: "Thief", value: "thief" },
         { label: "Ranger", value: "ranger" },
         { label: "Mage", value: "mage" },
-        { label: "Soul Weaver", value: "soul-weaver" }
+        { label: "Soul Weaver", value: "soul-weaver" },
+        { label: "Material", value: "material" }
       ],
       element: [
         { label: "Fire", value: "fire" },
         { label: "Earth", value: "earth" },
         { label: "Ice", value: "ice" },
         { label: "Light", value: "light" },
-        { label: "Dark", value: "dark" },
-        { label: "Material", value: "material" }
+        { label: "Dark", value: "dark" }
       ],
       zodiac: [
-        { label: "Aries", value: "aries" },
-        { label: "Taurus", value: "taurus" },
-        { label: "Gemini", value: "gemini" },
-        { label: "Cancer", value: "cancer" },
-        { label: "Leo", value: "leo" },
-        { label: "Virgo", value: "virgo" },
-        { label: "Libra", value: "libra" },
-        { label: "Scorpio", value: "scorpio" },
-        { label: "Sagittarius", value: "sagittarius" },
-        { label: "Capricorn", value: "capricorn" },
-        { label: "Aquarius", value: "aquarius" },
-        { label: "Pisces", value: "pisces" }
+        {
+          label: "Aries",
+          value: "aries",
+          normalAwakening: "blessing-of-orbis",
+          worldAwakening: "nightmare-mask"
+        },
+        {
+          label: "Taurus",
+          value: "taurus",
+          normalAwakening: "blazing-rage",
+          worldAwakening: "horn-of-desire"
+        },
+        {
+          label: "Gemini",
+          value: "gemini",
+          normalAwakening: "small-sun-badge",
+          worldAwakening: "fused-nerve"
+        },
+        {
+          label: "Cancer",
+          value: "cancer",
+          normalAwakening: "special-alarm-loop",
+          worldAwakening: "the-heart-of-hypocrisy"
+        },
+        {
+          label: "Leo",
+          value: "leo",
+          normalAwakening: "ultra-fang",
+          worldAwakening: "blazing-soul"
+        },
+        {
+          label: "Virgo",
+          value: "virgo",
+          normalAwakening: "eternal-forest-dust",
+          worldAwakening: "demon-blood-gem"
+        },
+        {
+          label: "Libra",
+          value: "libra",
+          normalAwakening: "dream-time-circuit",
+          worldAwakening: "reingar-student-id"
+        },
+        {
+          label: "Scorpio",
+          value: "scorpio",
+          normalAwakening: "erikion-carapace",
+          worldAwakening: "black-cursed-powder"
+        },
+        {
+          label: "Sagittarius",
+          value: "sagittarius",
+          normalAwakening: "cold-look",
+          worldAwakening: "mercenarys-medicine"
+        },
+        {
+          label: "Capricorn",
+          value: "capricorn",
+          normalAwakening: "cursed-ashes",
+          worldAwakening: "dragons-wrath"
+        },
+        {
+          label: "Aquarius",
+          value: "aquarius",
+          normalAwakening: "order-of-the-shield-insignia",
+          worldAwakening: "fighter-medal"
+        },
+        {
+          label: "Pisces",
+          value: "pisces",
+          normalAwakening: "blood-flaked-bone",
+          worldAwakening: "ancient-creature-nucleus"
+        }
       ],
       relationType: [
         { label: "Love", value: "love" },
@@ -535,7 +638,7 @@ class Hero extends Component {
         { title: "Decrease Hit Chance", slug: "stic_blind", checked: false },
         { title: "Poison", slug: "stic_dot", checked: false },
         { title: "Bleed", slug: "stic_blood", checked: false },
-        { title: "Burn", slug: "stic_burn", checked: false },
+        { title: "Burn", slug: "stic_blaze", checked: false },
         { title: "Provoke", slug: "stic_provoke", checked: false },
         { title: "Stun", slug: "stic_stun", checked: false },
         { title: "Curse", slug: "stic_curse", checked: false },

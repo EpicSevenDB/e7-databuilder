@@ -7,7 +7,7 @@ class EpicInput extends Component {
     value: this.props.value
   };
   componentDidUpdate(prevProps) {
-    if (this.props.value !== prevProps.value) {
+    if (this.props.value !== prevProps.value && this.props.value) {
       this.handleChange(this.props.value);
     }
   }
@@ -31,12 +31,8 @@ class EpicInput extends Component {
   }
 
   onBlur(name, value, index, index2) {
-    if (
-      this.props.hasPercent &&
-      typeof value === "string" &&
-      value.indexOf("%") >= 0
-    ) {
-      this.props.onChange(name, parseFloat(value) / 100, index, index2);
+    if (!isNaN(value) && value !== "") {
+      this.props.onChange(name, parseInt(value), index, index2);
     } else {
       this.props.onChange(name, value, index, index2);
     }
@@ -81,7 +77,7 @@ class EpicInput extends Component {
           name={name}
           className={readonly ? "readonly" : null}
           onBlur={e =>
-            onChange(e.currentTarget.name, this.state.value, index, index2)
+            this.onBlur(e.currentTarget.name, this.state.value, index, index2)
           }
           onChange={e => this.handleChange(e.currentTarget.value)}
         >

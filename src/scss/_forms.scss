@@ -38,6 +38,15 @@
     margin-right: 11px;
     float: left;
   }
+  &.awakening {
+    .form-control {
+      width: calc(50% - 11px);
+      margin-bottom: 8px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
 /* Checkboxes */
 .empty-label {
