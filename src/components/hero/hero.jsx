@@ -480,6 +480,446 @@ class Hero extends Component {
           [{ prefix: "epic-", qty: 10 }, { prefix: "", qty: 10 }]
         ]
       ],
+      // enhanceCosts[rarity - 3][maxlevel][level][index]
+      enhanceCosts: [
+        [ // 3-star
+          [ // max +1
+	    [ // +1
+	    ]
+	  ],
+          [ // max +2
+	    [ // +1
+	      { item: "rare", qty: 2 },
+	      { item: "molagora", qty: 2 },
+	      { item: "gold", qty: 18000 },
+	    ],
+	    [ // +2
+	      { item: "rare", qty: 3 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 35000 },
+	    ]
+	  ],
+          [ // max +3
+	    [ // +1
+	      { item: "rare", qty: 2 },
+	      { item: "molagora", qty: 2 },
+	      { item: "gold", qty: 14000 },
+	    ],
+	    [ // +2
+	      { item: "rare", qty: 3 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 27000 },
+	    ],
+	    [ // +3
+	      { item: "rare", qty: 5 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 45000 },
+	    ]
+	  ],
+          [ // max +4
+	    [ // +1
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 4000 },
+	    ],
+	    [ // +2
+	      { item: "rare", qty: 2 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 22000 },
+	    ],
+	    [ // +3
+	      { item: "rare", qty: 3 },
+	      { item: "molagora", qty: 5 },
+	      { item: "gold", qty: 35000 },
+	    ],
+	    [ // +4
+	      { item: "rare", qty: 4 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 40000 },
+	    ]
+	  ],
+          [ // max +5
+	    [ // +1
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 4000 },
+	    ],
+	    [ // +2
+	      { item: "molagora", qty: 2 },
+	      { item: "gold", qty: 8000 },
+	    ],
+	    [ // +3
+	      { item: "rare", qty: 3 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 27000 },
+	    ],
+	    [ // +4
+	      { item: "rare", qty: 4 },
+	      { item: "molagora", qty: 6 },
+	      { item: "gold", qty: 44000 },
+	    ],
+	    [ // +5
+	      { item: "rare", qty: 5 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 45000 },
+	    ]
+	  ],
+          [ // max +6
+	    [ // +1
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 4000 },
+	    ],
+	    [ // +2
+	      { item: "molagora", qty: 2 },
+	      { item: "gold", qty: 8000 },
+	    ],
+	    [ // +3
+	      { item: "rare", qty: 1 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 17000 },
+	    ],
+	    [ // +4
+	      { item: "rare", qty: 2 },
+	      { item: "molagora", qty: 5 },
+	      { item: "gold", qty: 30000 },
+	    ],
+	    [ // +5
+	      { item: "rare", qty: 4 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 40000 },
+	    ],
+	    [ // +6
+	      { item: "rare", qty: 6 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 50000 },
+	    ]
+	  ],
+          [ // max +7
+	    [ // +1
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 4000 },
+	    ],
+	    [ // +2
+	      { item: "molagora", qty: 2 },
+	      { item: "gold", qty: 8000 },
+	    ],
+	    [ // +3
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 12000 },
+	    ],
+	    [ // +4
+	      { item: "rare", qty: 3 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 27000 },
+	    ],
+	    [ // +5
+	      { item: "rare", qty: 4 },
+	      { item: "molagora", qty: 4 },
+	      { item: "gold", qty: 36000 },
+	    ],
+	    [ // +6
+	      { item: "rare", qty: 5 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 45000 },
+	    ],
+	    [ // +7
+	      { item: "rare", qty: 6 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 50000 },
+	    ]
+	  ]
+        ],
+
+        [ // 4-star
+          [ // max +1
+	    [ // +1
+	    ]
+	  ],
+          [ // max +2
+	    [ // +1
+	      { item: "rare", qty: 3 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 27000 },
+	    ],
+	    [ // +2
+	      { item: "epic", qty: 1 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 50000 },
+	    ]
+	  ],
+          [ // max +3
+	    [ // +1
+	      { item: "rare", qty: 1 },
+	      { item: "molagora", qty: 2 },
+	      { item: "gold", qty: 9000 },
+	    ],
+	    [ // +2
+	      { item: "rare", qty: 3 },
+	      { item: "molagora", qty: 5 },
+	      { item: "gold", qty: 35000 },
+	    ],
+	    [ // +3
+	      { item: "epic", qty: 1 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 50000 },
+	    ]
+	  ],
+          [ // max +4
+	    [ // +1
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 4000 },
+	    ],
+	    [ // +2
+	      { item: "rare", qty: 1 },
+	      { item: "molagora", qty: 4 },
+	      { item: "gold", qty: 21000 },
+	    ],
+	    [ // +3
+	      { item: "rare", qty: 1 },
+	      { item: "molagora", qty: 7 },
+	      { item: "gold", qty: 33000 },
+	    ],
+	    [ // +4
+	      { item: "epic", qty: 2 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 80000 },
+	    ]
+	  ],
+          [ // max +5
+	    [ // +1
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 4000 },
+	    ],
+	    [ // +2
+	      { item: "molagora", qty: 2 },
+	      { item: "gold", qty: 8000 },
+	    ],
+	    [ // +3
+	      { item: "rare", qty: 1 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 17000 },
+	    ],
+	    [ // +4
+	      { item: "rare", qty: 3 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 35000 },
+	    ],
+	    [ // +5
+	      { item: "epic", qty: 2 },
+	      { item: "molagorago", qty: 2 },
+	      { item: "gold", qty: 100000 },
+	    ]
+	  ],
+          [ // max +6
+	    [ // +1
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 4000 },
+	    ],
+	    [ // +2
+	      { item: "molagora", qty: 2 },
+	      { item: "gold", qty: 8000 },
+	    ],
+	    [ // +3
+	      { item: "rare", qty: 1 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 17000 },
+	    ],
+	    [ // +4
+	      { item: "rare", qty: 2 },
+	      { item: "molagora", qty: 5 },
+	      { item: "gold", qty: 30000 },
+	    ],
+	    [ // +5
+	      { item: "rare", qty: 4 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 40000 },
+	    ],
+	    [ // +6
+	      { item: "epic", qty: 2 },
+	      { item: "molagorago", qty: 2 },
+	      { item: "gold", qty: 100000 },
+	    ]
+	  ],
+          [ // max +7
+	    [ // +1
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 4000 },
+	    ],
+	    [ // +2
+	      { item: "molagora", qty: 2 },
+	      { item: "gold", qty: 8000 },
+	    ],
+	    [ // +3
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 12000 },
+	    ],
+	    [ // +4
+	      { item: "rare", qty: 1 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 17000 },
+	    ],
+	    [ // +5
+	      { item: "rare", qty: 2 },
+	      { item: "molagora", qty: 5 },
+	      { item: "gold", qty: 30000 },
+	    ],
+	    [ // +6
+	      { item: "rare", qty: 5 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 45000 },
+	    ],
+	    [ // +7
+	      { item: "epic", qty: 2 },
+	      { item: "molagorago", qty: 2 },
+	      { item: "gold", qty: 100000 },
+	    ]
+	  ]
+        ],
+
+        [ // 5-star
+          [ // max +1
+	    [ // +1
+	    ]
+	  ],
+          [ // max +2
+	    [ // +1
+	      { item: "rare", qty: 5 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 37000 },
+	    ],
+	    [ // +2
+	      { item: "epic", qty: 2 },
+	      { item: "molagorago", qty: 2 },
+	      { item: "gold", qty: 100000 },
+	    ]
+	  ],
+          [ // max +3
+	    [ // +1
+	      { item: "rare", qty: 3 },
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 19000 },
+	    ],
+	    [ // +2
+	      { item: "rare", qty: 5 },
+	      { item: "molagora", qty: 5 },
+	      { item: "gold", qty: 45000 },
+	    ],
+	    [ // +3
+	      { item: "epic", qty: 3 },
+	      { item: "molagorago", qty: 2 },
+	      { item: "gold", qty: 130000 },
+	    ]
+	  ],
+          [ // max +4
+	    [ // +1
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 4000 },
+	    ],
+	    [ // +2
+	      { item: "rare", qty: 3 },
+	      { item: "molagora", qty: 4 },
+	      { item: "gold", qty: 31000 },
+	    ],
+	    [ // +3
+	      { item: "rare", qty: 5 },
+	      { item: "molagora", qty: 7 },
+	      { item: "gold", qty: 53000 },
+	    ],
+	    [ // +4
+	      { item: "epic", qty: 2 },
+	      { item: "molagorago", qty: 2 },
+	      { item: "gold", qty: 100000 },
+	    ]
+	  ],
+          [ // max +5
+	    [ // +1
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 4000 },
+	    ],
+	    [ // +2
+	      { item: "molagora", qty: 2 },
+	      { item: "gold", qty: 8000 },
+	    ],
+	    [ // +3
+	      { item: "rare", qty: 5 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 37000 },
+	    ],
+	    [ // +4
+	      { item: "rare", qty: 7 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 55000 },
+	    ],
+	    [ // +5
+	      { item: "epic", qty: 2 },
+	      { item: "molagorago", qty: 3 },
+	      { item: "gold", qty: 120000 },
+	    ]
+	  ],
+          [ // max +6
+	    [ // +1
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 4000 },
+	    ],
+	    [ // +2
+	      { item: "molagora", qty: 2 },
+	      { item: "gold", qty: 8000 },
+	    ],
+	    [ // +3
+	      { item: "rare", qty: 2 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 22000 },
+	    ],
+	    [ // +4
+	      { item: "rare", qty: 4 },
+	      { item: "molagora", qty: 5 },
+	      { item: "gold", qty: 40000 },
+	    ],
+	    [ // +5
+	      { item: "rare", qty: 5 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 45000 },
+	    ],
+	    [ // +6
+	      { item: "epic", qty: 2 },
+	      { item: "molagorago", qty: 3 },
+	      { item: "gold", qty: 120000 },
+	    ]
+	  ],
+          [ // max +7
+	    [ // +1
+	      { item: "molagora", qty: 1 },
+	      { item: "gold", qty: 4000 },
+	    ],
+	    [ // +2
+	      { item: "molagora", qty: 2 },
+	      { item: "gold", qty: 8000 },
+	    ],
+	    [ // +3
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 12000 },
+	    ],
+	    [ // +4
+	      { item: "rare", qty: 3 },
+	      { item: "molagora", qty: 3 },
+	      { item: "gold", qty: 27000 },
+	    ],
+	    [ // +5
+	      { item: "rare", qty: 4 },
+	      { item: "molagora", qty: 5 },
+	      { item: "gold", qty: 40000 },
+	    ],
+	    [ // +6
+	      { item: "rare", qty: 7 },
+	      { item: "molagorago", qty: 1 },
+	      { item: "gold", qty: 55000 },
+	    ],
+	    [ // +7
+	      { item: "epic", qty: 3 },
+	      { item: "molagorago", qty: 3 },
+	      { item: "gold", qty: 150000 },
+	    ]
+	  ]
+        ]
+      ],
       rarity: [
         { label: "3 ★★★", value: 3 },
         { label: "4 ★★★★", value: 4 },
@@ -660,7 +1100,7 @@ class Hero extends Component {
         { label: "Critical Hit Damage", value: "chd" },
         { label: "Effectiveness", value: "eff" },
         { label: "Effect Resistance", value: "efr" },
-        { label: "Double Attack Chance", value: "dac" }
+        { label: "Dual Attack Chance", value: "dac" }
       ]
     },
     alert: {
