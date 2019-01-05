@@ -2,9 +2,9 @@
 
 Because Smilegate doesn't have an API to access data within the game, we currently have to manually extract the data ourselves and into the format needed to work in epicsevendb.com. This tool is a simple form that takes inputs and exports it as a json in the correct format.
 
-## Available Scripts
+## How to run
 
-In the project directory, you can run:
+This project is built using React using `create-react-app`.
 
 ### `npm start`
 
