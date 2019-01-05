@@ -11,12 +11,20 @@ class HeroMemoryImprint extends Component {
 
   componentDidUpdate(prevProps) {
     const memoryImprint = [...this.props.memoryImprint];
-    const memoryImprintFormation = { ...this.props.memoryImprintFormation };
+
     if (
       this.props.memoryImprint !== prevProps.memoryImprint &&
       this.props.memoryImprintFormation !== prevProps.memoryImprintFormation
     ) {
-      this.setState({ memoryImprint, memoryImprintFormation });
+      if (this.props.memoryImprintFormation) {
+        const memoryImprintFormation = { ...this.props.memoryImprintFormation };
+        this.setState({ memoryImprint, memoryImprintFormation });
+      } else {
+        const memoryImprintFormation = {
+          ...this.props.defaultMemoryImprintFormation
+        };
+        this.setState({ memoryImprint, memoryImprintFormation });
+      }
     }
   }
 
@@ -34,6 +42,7 @@ class HeroMemoryImprint extends Component {
   handleChange = (name, value, i) => {
     const memoryImprint = [...this.state.memoryImprint];
     const memoryImprintFormation = { ...this.state.memoryImprintFormation };
+
     if (name === "type") {
       memoryImprint.map(imprint => (imprint.status.type = value));
     } else if (
@@ -50,17 +59,20 @@ class HeroMemoryImprint extends Component {
   };
   render() {
     const { memoryImprint, memoryImprintFormation } = this.state;
+    const { defaultMemoryImprintFormation, stats } = this.props;
     return (
       <React.Fragment>
         <EpicInput
           size="12"
+          type="select"
           name="type"
           id="memoryImprint"
-          tooltip="Example: atk/def/spd"
           value={memoryImprint[0].status.type}
+          options={stats}
           onChange={this.handleChange}
           onBlur={this.onBlur}
         />
+
         <Col md="12">
           <label>
             memoryImprintFormation
@@ -70,16 +82,16 @@ class HeroMemoryImprint extends Component {
             />
           </label>
           <FormGroup row>
-            {Object.keys(memoryImprintFormation).map((formation, i) => (
+            {Object.keys(defaultMemoryImprintFormation).map((formation, i) => (
               <Col key={i}>
                 <CustomInput
                   id={"memoryImprintFormation-" + i}
                   type="checkbox"
-                  name={Object.keys(memoryImprintFormation)[i]}
-                  label={Object.keys(memoryImprintFormation)[i]}
+                  name={Object.keys(defaultMemoryImprintFormation)[i]}
+                  label={Object.keys(defaultMemoryImprintFormation)[i]}
                   checked={
                     memoryImprintFormation[
-                      Object.keys(memoryImprintFormation)[i]
+                      Object.keys(defaultMemoryImprintFormation)[i]
                     ]
                   }
                   onChange={e =>

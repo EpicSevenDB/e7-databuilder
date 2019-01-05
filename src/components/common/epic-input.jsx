@@ -14,6 +14,8 @@ class EpicInput extends Component {
   handleChange(input) {
     if (this.props.reformat) {
       this.setState({ value: this.friendlyString(input) });
+    } else if (this.props.hasPercent) {
+      this.setState({ value: this.convertPercent(input) });
     } else {
       this.setState({ value: input });
     }
@@ -36,6 +38,15 @@ class EpicInput extends Component {
     } else {
       this.props.onChange(name, value, index, index2);
     }
+  }
+
+  convertPercent(value) {
+    if (isNaN(value)) {
+      if (value.indexOf("%") >= 0) {
+        return parseFloat(value) / 100;
+      }
+    }
+    return value;
   }
 
   render() {

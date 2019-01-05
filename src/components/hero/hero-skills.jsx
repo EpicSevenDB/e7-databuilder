@@ -113,10 +113,25 @@ class HeroSkills extends Component {
                     onChange={this.handleChange}
                   />
                   <EpicInput
-                    type="number"
+                    type="select"
                     size="3"
                     value={skill.cooldown}
                     name="cooldown"
+                    options={[
+                      { label: 0, value: 0 },
+                      { label: 1, value: 1 },
+                      { label: 2, value: 2 },
+                      { label: 3, value: 3 },
+                      { label: 4, value: 4 },
+                      { label: 5, value: 5 },
+                      { label: 6, value: 6 },
+                      { label: 7, value: 7 },
+                      { label: 8, value: 8 },
+                      { label: 9, value: 9 },
+                      { label: 10, value: 10 },
+                      { label: 11, value: 11 },
+                      { label: 12, value: 12 }
+                    ]}
                     index={i}
                     onChange={this.handleChange}
                   />
@@ -129,22 +144,31 @@ class HeroSkills extends Component {
                     onChange={this.handleChange}
                   />
                   <EpicInput
-                    type="number"
+                    type="select"
                     size="3"
                     value={skill.soulAcquire}
                     tooltip="Example: 1/2/3"
                     id={"soulAquire-" + i}
                     name="soulAcquire"
+                    options={[
+                      { label: 1, value: 1 },
+                      { label: 2, value: 2 },
+                      { label: 3, value: 3 }
+                    ]}
                     index={i}
                     onChange={this.handleChange}
                   />
                   <EpicInput
-                    type="number"
+                    type="select"
                     size="3"
                     value={skill.soulBurn}
                     tooltip="Example: 10/20"
                     id={"soulBurn-" + i}
                     name="soulBurn"
+                    options={[
+                      { label: 10, value: 10 },
+                      { label: 20, value: 20 }
+                    ]}
                     index={i}
                     onChange={this.handleChange}
                   />

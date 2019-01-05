@@ -49,7 +49,7 @@ class HeroAwakening extends Component {
     } else if (type === "item" || type === "qty") {
       awakening[i]["resources"][j][type] = this.friendlyString(value);
     } else if (j >= 0) {
-      awakening[i]["statsIncrease"][j][type] = value;
+      awakening[i]["statsIncrease"][j][type] = this.convertPercent(value);
     } else {
       awakening[i][type] = value;
     }
@@ -102,17 +102,18 @@ class HeroAwakening extends Component {
     this.props.onChange("awakening", this.state.awakening);
   };
 
-  onPercentBlur = (type, value, i, j) => {
-    const awakening = [...this.state.awakening];
-    if (value.indexOf("%") >= 0) {
-      awakening[i]["statsIncrease"][j][type] = parseFloat(value) / 100;
+  convertPercent(value) {
+    if (isNaN(value)) {
+      if (value.indexOf("%") >= 0) {
+        return parseFloat(value) / 100;
+      }
     }
-    this.props.onChange("awakening", this.state.awakening);
-  };
+    return value;
+  }
 
   render() {
-    const { awakening, rarity, element } = this.state;
-    const { awakeningCosts } = this.props;
+    const { awakening, rarity } = this.state;
+    const { awakeningCosts, stats } = this.props;
 
     return (
       <React.Fragment>
@@ -150,37 +151,59 @@ class HeroAwakening extends Component {
                 {awakening[i].statsIncrease.map((increase, j) => (
                   <Col key={j} md="12">
                     <FormGroup className="inline-wrapper awakening">
-                      <Input
-                        type="text"
-                        bsSize="sm"
-                        readOnly={j !== 0 || i === 2}
-                        name={"stats." + Object.keys(increase)}
-                        placeholder="stat increase"
-                        value={Object.keys(increase)}
-                        onBlur={this.onBlur}
-                        onChange={e =>
-                          this.handleChange(
-                            e.currentTarget.name,
-                            e.currentTarget.value,
-                            i,
-                            j
-                          )
-                        }
-                      />
+                      {j !== 0 || i === 2 ? (
+                        <Input
+                          type="text"
+                          bsSize="sm"
+                          readOnly
+                          name={"stats." + Object.keys(increase)}
+                          placeholder="stat increase"
+                          value={Object.keys(increase)}
+                          onBlur={this.onBlur}
+                          onChange={e =>
+                            this.handleChange(
+                              e.currentTarget.name,
+                              e.currentTarget.value,
+                              i,
+                              j
+                            )
+                          }
+                        />
+                      ) : (
+                        <Input
+                          type="select"
+                          bsSize="sm"
+                          name={"stats." + Object.keys(increase)}
+                          value={Object.keys(increase)[0]}
+                          onBlur={this.onBlur}
+                          onChange={e =>
+                            this.handleChange(
+                              e.currentTarget.name,
+                              e.currentTarget.value,
+                              i,
+                              j
+                            )
+                          }
+                        >
+                          <option disabled value="">
+                            Select stat
+                          </option>
+                          {stats.map((option, i) => (
+                            <option key={i} value={option.value}>
+                              {option.label}
+                            </option>
+                          ))}
+                        </Input>
+                      )}
                       <Input
                         type="text"
                         bsSize="sm"
                         readOnly={j !== 0 || i === 2}
                         name={Object.keys(increase)}
-                        value={increase[Object.keys(increase)]}
-                        onBlur={e =>
-                          this.onPercentBlur(
-                            e.currentTarget.name,
-                            e.currentTarget.value,
-                            i,
-                            j
-                          )
-                        }
+                        value={this.convertPercent(
+                          increase[Object.keys(increase)]
+                        )}
+                        onBlur={this.onBlur}
                         onChange={e =>
                           this.handleChange(
                             e.currentTarget.name,

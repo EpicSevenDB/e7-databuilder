@@ -197,43 +197,37 @@ class Hero extends Component {
           rank: 1,
           skillUpgrade: false,
           statsIncrease: [{ "": 0 }, { atk: 20 }, { hp: 60 }],
-          resources: [{ item: "-rune", qty: 10 }]
+          resources: [{ item: "", qty: 10 }]
         },
         {
           rank: 2,
           skillUpgrade: false,
           statsIncrease: [{ "": 0 }, { atk: 20 }, { hp: 60 }],
-          resources: [{ item: "-rune", qty: 15 }]
+          resources: [{ item: "", qty: 15 }]
         },
         {
           rank: 3,
           skillUpgrade: true,
           statsIncrease: [{ atk: 20 }, { hp: 60 }],
-          resources: [
-            { item: "-rune", qty: 20 },
-            { item: "greater--rune", qty: 10 }
-          ]
+          resources: [{ item: "", qty: 20 }, { item: "", qty: 10 }]
         },
         {
           rank: 4,
           skillUpgrade: false,
           statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
-          resources: [
-            { item: "greater--rune", qty: 10 },
-            { item: "epic--rune", qty: 2 }
-          ]
+          resources: [{ item: "", qty: 10 }, { item: "", qty: 2 }]
         },
         {
           rank: 5,
           skillUpgrade: false,
           statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
-          resources: [{ item: "epic--rune", qty: 6 }, { item: "", qty: 15 }]
+          resources: [{ item: "", qty: 6 }, { item: "", qty: 15 }]
         },
         {
           rank: 6,
           skillUpgrade: false,
           statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
-          resources: [{ item: "epic--rune", qty: 10 }, { item: "", qty: 10 }]
+          resources: [{ item: "", qty: 10 }, { item: "", qty: 10 }]
         }
       ]
     },
@@ -656,6 +650,17 @@ class Hero extends Component {
           slug: "stic_cridmg_dn",
           checked: false
         }
+      ],
+      stats: [
+        { label: "Attack", value: "atk" },
+        { label: "Health", value: "hp" },
+        { label: "Speed", value: "spd" },
+        { label: "Defense", value: "def" },
+        { label: "Critical Hit Chance", value: "chc" },
+        { label: "Critical Hit Damage", value: "chd" },
+        { label: "Effectiveness", value: "eff" },
+        { label: "Effect Resistance", value: "efr" },
+        { label: "Double Attack Chance", value: "dac" }
       ]
     },
     alert: {

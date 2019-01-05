@@ -210,6 +210,10 @@ class HeroForm extends Component {
                 <HeroMemoryImprint
                   memoryImprint={hero.memoryImprint}
                   memoryImprintFormation={hero.memoryImprintFormation}
+                  defaultMemoryImprintFormation={
+                    defaults.hero.memoryImprintFormation
+                  }
+                  stats={defaults.stats}
                   onChange={onChange}
                 />
               </FormGroup>
@@ -235,6 +239,7 @@ class HeroForm extends Component {
                   resources={defaults.zodiac}
                   rarity={hero.rarity}
                   awakeningCosts={defaults.awakeningCosts}
+                  stats={defaults.stats}
                 />
               </FormGroup>
             </CardBody>
