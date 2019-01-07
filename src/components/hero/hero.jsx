@@ -777,6 +777,9 @@ class Hero extends Component {
         [ // 5-star
           [ // max +1
 	    [ // +1
+	      { item: "rare", qty: 8 },
+	      { item: "molagorago", qty: 2 },
+	      { item: "gold", qty: 80000 },
 	    ]
 	  ],
           [ // max +2
