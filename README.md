@@ -1,6 +1,6 @@
 # EpicSevenDB DataBuilder
 
-Because Smilegate doesn't have an API to access data within the game, we currently have to manually extract the data ourselves and into the format needed to work in epicsevendb.com. This tool is a simple form that takes inputs and exports it as a json in the correct format.
+http://databuilder.epicsevendb.com. Smilegate doesn't have an API to access data within the game so we currently have to manually extract the data ourselves and into the format needed to work in epicsevendb.com. This tool is a simple form that takes inputs and exports it as a json in the correct format. Export the data by either downloading the file or copying and pasting it into your own json file and send it to RaphaelDDL#5150 on discord.
 
 ## How to run
 
