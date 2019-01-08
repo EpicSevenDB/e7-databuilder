@@ -1033,7 +1033,7 @@ class Hero extends Component {
       ],
        // imprintIncreases[index][numDirections-1][rarity-3]
       imprintIncreases: [
-        [ // index 0 - ATK DEF HP - Flat
+        [ // index 0 - ATK - Flat
           [], // 1 direction
           [], // 2 directions
           [], // 3 directions
@@ -1043,7 +1043,27 @@ class Hero extends Component {
             [{}]
           ]
         ],
-        [ // index 1 - ATK DEF HP - Percent
+        [ // index 1 - DEF - Flat
+          [], // 1 direction
+          [], // 2 directions
+          [], // 3 directions
+          [ // all(4) directions
+            [{d:12, c:18, b:24, a:30, s:36, ss:42, sss:48}],
+            [{}],
+            [{}]
+          ]
+        ],
+        [ // index 2 - HP - Flat
+          [], // 1 direction
+          [], // 2 directions
+          [], // 3 directions
+          [ // all(4) directions
+            [{d:120, c:180, b:240, a:300, s:360, ss:420, sss:480}],
+            [{}],
+            [{}]
+          ]
+        ],
+        [ // index 3 - ATK DEF HP - Percent
           [], // 1 direction
           [ // 2 directions
             [{}],
@@ -1057,7 +1077,7 @@ class Hero extends Component {
             [{d:0, c:0, b:"3.6%", a:"5.4%", s:"7.2%", ss:"9%", sss:"10.8%"}]
           ]
         ],
-        [ // index 2 - SPD - Flat
+        [ // index 4 - SPD - Flat
           [], // 1 direction
           [ // 2 directions
             [{}],
@@ -1071,7 +1091,7 @@ class Hero extends Component {
             [{d:0, c:0, b:4, a:6, s:8, ss:10, sss:12}]
           ]
         ],
-        [ // index 3 - CHC EFF EFR - Percent
+        [ // index 5 - CHC EFF EFR - Percent
           [], // 1 direction
           [ // 2 directions
             [{}],
@@ -1085,7 +1105,7 @@ class Hero extends Component {
             [{d:0, c:0, b:"4.8%", a:"7.2%", s:"9.6%", ss:"12%", sss:"14.4%"}]
           ]
         ],
-        [ // index 3 - DAC - Percent
+        [ // index 6 - DAC - Percent
           [], // 1 direction
           [ // 2 directions
             [{}],
@@ -1102,15 +1122,15 @@ class Hero extends Component {
       ],
       // imprintIncreasesIndex[stat][flatOrPercent]
       imprintIncreasesIndex: [
-          [{index: 0}, {index: 1}], // Attack
-          [{index: 0}, {index: 1}], // Defense
-          [{index: 0}, {index: 1}], // Health
-          [{index: 2}, {}        ], // Speed
-          [{},         {index: 3}], // Critical Hit Chance
+          [{index: 0}, {index: 3}], // Attack
+          [{index: 1}, {index: 3}], // Defense
+          [{index: 2}, {index: 3}], // Health
+          [{index: 4}, {}        ], // Speed
+          [{},         {index: 5}], // Critical Hit Chance
           [{},         {}        ], // Critical Hit Damage
-          [{},         {index: 3}], // Effectiveness
-          [{},         {index: 3}], // Effect Resistance
-          [{},         {index: 4}]  // Dual Attack Chance
+          [{},         {index: 5}], // Effectiveness
+          [{},         {index: 5}], // Effect Resistance
+          [{},         {index: 6}]  // Dual Attack Chance
       ],
       rarity: [
         { label: "3 ★★★", value: 3 },
