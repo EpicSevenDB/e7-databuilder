@@ -510,7 +510,7 @@ class Hero extends Component {
             [
               // +1
               { item: "rare", qty: 2 },
-              { item: "molagora", qty: 2 },
+              { item: "molagora", qty: 1 },
               { item: "gold", qty: 14000 }
             ],
             [
@@ -692,7 +692,7 @@ class Hero extends Component {
             [
               // +1
               { item: "rare", qty: 1 },
-              { item: "molagora", qty: 2 },
+              { item: "molagora", qty: 1 },
               { item: "gold", qty: 9000 }
             ],
             [
