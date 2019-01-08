@@ -13,6 +13,8 @@
     transition: $ease;
     margin-left: -1px;
     border-bottom: none;
+    min-width: 55px;
+    text-align: center;
     color: transparentize($grey, 0.5) !important;
     &:hover {
       border-top: 1px solid $border;

@@ -105,7 +105,7 @@ class HeroAwakening extends Component {
   convertPercent(value) {
     if (isNaN(value)) {
       if (value.indexOf("%") >= 0) {
-        return parseFloat(value) / 100;
+        return (parseFloat(value) / 100).toFixed(3);
       }
     }
     return value;
@@ -150,7 +150,7 @@ class HeroAwakening extends Component {
 
                 {awakening[i].statsIncrease.map((increase, j) => (
                   <Col key={j} md="12">
-                    <FormGroup className="inline-wrapper awakening">
+                    <FormGroup className="inline-wrapper full">
                       {j !== 0 || i === 2 ? (
                         <Input
                           type="text"
@@ -229,7 +229,7 @@ class HeroAwakening extends Component {
 
                 {awakeningCost.map((resource, j) => (
                   <Col key={j} md="12">
-                    <FormGroup className="inline-wrapper awakening">
+                    <FormGroup className="inline-wrapper full">
                       <Input
                         type="text"
                         bsSize="sm"

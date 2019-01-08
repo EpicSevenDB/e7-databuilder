@@ -18,13 +18,23 @@ import {
 class HeroSkillEnhancements extends Component {
   state = {
     enhancements: this.props.enhancements,
+    index: this.props.index,
+    rarity: this.props.rarity,
+    zodiac: this.props.zodiac,
+    enhanceCosts: this.props.enhanceCosts,
     activeTab: 0
   };
 
   componentDidUpdate(prevProps) {
     const enhancements = [...this.props.enhancements];
-    if (this.props.enhancements !== prevProps.enhancements) {
-      this.setState({ enhancements });
+    const zodiac = this.props.zodiac;
+    const rarity = this.props.rarity;
+    if (
+      this.props.enhancements !== prevProps.enhancements ||
+      this.props.zodiac !== prevProps.zodiac ||
+      this.props.rarity !== prevProps.rarity
+    ) {
+      this.setState({ enhancements, zodiac, rarity });
     }
   }
 
@@ -57,6 +67,7 @@ class HeroSkillEnhancements extends Component {
     }
     this.setState({ enhancements });
   };
+
   handleChange = (type, value, i, j) => {
     const enhancements = [...this.state.enhancements];
     if (j !== undefined) {
@@ -66,6 +77,7 @@ class HeroSkillEnhancements extends Component {
     }
     this.setState({ enhancements });
   };
+
   handleDelete = (type, i, j) => {
     let enhancements = [...this.state.enhancements];
     if (type === "resources") {
@@ -95,6 +107,20 @@ class HeroSkillEnhancements extends Component {
     );
   };
 
+  findZodiacResource(name) {
+    const { zodiac } = this.state;
+    if (name === "rare" || name === "epic") {
+      const { defaultZodiacs } = this.props;
+      const obj = defaultZodiacs.find(element => {
+        return element.value === zodiac;
+      });
+      if (obj !== undefined) {
+        return name == "rare" ? obj.normalSkill : obj.worldSkill;
+      }
+    }
+    return name;
+  }
+
   toggle = tab => {
     if (this.state.activeTab !== tab) {
       this.setState({
@@ -102,15 +128,16 @@ class HeroSkillEnhancements extends Component {
       });
     }
   };
+
   render() {
-    const { index } = this.props;
-    const { enhancements } = this.state;
+    const { enhancements, index, enhanceCosts, rarity } = this.state;
+
     return (
       <React.Fragment>
         <Col md="12">
           <Label>enhancements</Label>
           <Nav tabs className="small-tabs">
-            <NavItem className={enhancements.length >= 10 ? "hidden" : ""}>
+            <NavItem className={enhancements.length >= 7 ? "hidden" : ""}>
               <Button
                 className="add-link"
                 size="sm"
@@ -144,7 +171,7 @@ class HeroSkillEnhancements extends Component {
                   <Col offset="12">
                     <Button
                       size="sm"
-                      className={i !== 0 ? "pull-right" : "pull-right stealth"}
+                      className={i !== 1 ? "pull-right" : "pull-right stealth"}
                       color="danger"
                       tabIndex="-1"
                       onClick={e => this.handleDelete("enhancement", i)}
@@ -168,84 +195,56 @@ class HeroSkillEnhancements extends Component {
                     <Label>
                       resources{" "}
                       <Badgetip
-                        value={"Example: twisted-fang"}
+                        value={
+                          "Resources are automatically calculated based on rarity, zodiac, and max skill level"
+                        }
                         id={"resources" + index + "-" + i}
                       />
                     </Label>
                   </Col>
-                  {enhancement.resources.map((resource, j) => (
-                    <Col
-                      key={"resources-" + j + "-" + index}
-                      md="12"
-                      className="resource-wrapper"
-                    >
-                      <FormGroup className="inline-wrapper">
-                        <Input
-                          type="text"
-                          bsSize="sm"
-                          name="item"
-                          placeholder="resource item"
-                          index={i}
-                          index2={j}
-                          value={resource.item}
-                          onChange={e =>
-                            this.handleChange(
-                              "item",
-                              e.currentTarget.value,
-                              i,
-                              j
-                            )
-                          }
-                          onBlur={this.onBlur}
-                        />
-                        <Input
-                          type="number"
-                          bsSize="sm"
-                          name="qty"
-                          index={i}
-                          index2={j}
-                          value={resource.qty}
-                          onChange={e =>
-                            this.handleChange(
-                              "qty",
-                              e.currentTarget.value,
-                              i,
-                              j
-                            )
-                          }
-                          onBlur={this.onBlur}
-                        />
 
-                        <Button
-                          size="sm"
-                          color="danger"
-                          tabIndex="-1"
-                          onClick={e => this.handleDelete("resources", i, j)}
-                          onBlur={this.onBlur}
-                        >
-                          X
-                        </Button>
-                      </FormGroup>
-                    </Col>
-                  ))}
-                  <Col
-                    md="12"
-                    className={
-                      enhancement.resources.length >= 3 ? "hidden" : ""
-                    }
-                  >
-                    <Button
-                      onClick={e => this.handleAdd("resources", i)}
-                      color="secondary"
-                      outline
-                      block
-                      size="sm"
-                      className="gutter-top btn-add"
-                      onBlur={this.onBlur}
-                    >
-                      Add new resource
-                    </Button>
-                  </Col>
+                  {enhanceCosts[rarity - 3][enhancements.length - 1][i].map(
+                    (resource, j) => (
+                      <Col
+                        key={"resources-" + j + "-" + index}
+                        md="12"
+                        className="resource-wrapper"
+                      >
+                        <FormGroup className="inline-wrapper full">
+                          <Input
+                            type="text"
+                            readOnly
+                            bsSize="sm"
+                            name="item"
+                            placeholder="resource item"
+                            value={this.findZodiacResource(resource.item)}
+                            onChange={e =>
+                              this.handleChange(
+                                "item",
+                                e.currentTarget.value,
+                                i,
+                                j
+                              )
+                            }
+                          />
+                          <Input
+                            type="number"
+                            bsSize="sm"
+                            name="qty"
+                            value={resource.qty}
+                            onChange={e =>
+                              this.handleChange(
+                                "qty",
+                                e.currentTarget.value,
+                                i,
+                                j
+                              )
+                            }
+                          />
+                        </FormGroup>
+                      </Col>
+                    )
+                  )}
                 </FormGroup>
               </TabPane>
             ))}

@@ -172,6 +172,10 @@ class HeroForm extends Component {
                   buffs={defaults.buffs}
                   debuffs={defaults.debuffs}
                   isDark={this.props.isDark}
+                  rarity={hero.rarity}
+                  zodiac={hero.zodiac}
+                  defaultZodiacs={defaults.zodiac}
+                  enhanceCosts={defaults.enhanceCosts}
                 />
               </FormGroup>
             </CardBody>

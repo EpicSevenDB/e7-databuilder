@@ -35,15 +35,18 @@
   margin-bottom: 8px !important;
   .form-control {
     width: calc(50% - 24px);
-    margin-right: 11px;
     float: left;
+    margin-right: 12px;
   }
-  &.awakening {
+  &.full {
     .form-control {
-      width: calc(50% - 11px);
+      width: calc(50% - 12px);
       margin-bottom: 8px;
+      &:first-child {
+        margin-right: 24px;
+      }
       &:last-child {
-        margin-right: 0;
+        margin-right: 0 !important;
       }
     }
   }

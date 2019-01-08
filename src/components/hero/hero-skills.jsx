@@ -166,6 +166,7 @@ class HeroSkills extends Component {
                     id={"soulBurn-" + i}
                     name="soulBurn"
                     options={[
+                      { label: 0, value: 0 },
                       { label: 10, value: 10 },
                       { label: 20, value: 20 }
                     ]}
@@ -226,6 +227,10 @@ class HeroSkills extends Component {
                     enhancements={skill.enhancement}
                     onChange={this.handleChange}
                     index={i}
+                    rarity={this.props.rarity}
+                    zodiac={this.props.zodiac}
+                    defaultZodiacs={this.props.defaultZodiacs}
+                    enhanceCosts={this.props.enhanceCosts}
                   />
                 </FormGroup>
               </Col>
