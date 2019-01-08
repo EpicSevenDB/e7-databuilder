@@ -230,6 +230,7 @@ class HeroSkillEnhancements extends Component {
                           <Input
                             type="number"
                             bsSize="sm"
+                            readOnly
                             name="qty"
                             value={resource.qty}
                             onChange={e =>
