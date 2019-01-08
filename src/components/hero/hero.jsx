@@ -1031,6 +1031,87 @@ class Hero extends Component {
           ]
         ]
       ],
+       // imprintIncreases[index][numDirections-1][rarity-3]
+      imprintIncreases: [
+        [ // index 0 - ATK DEF HP - Flat
+          [], // 1 direction
+          [], // 2 directions
+          [], // 3 directions
+          [ // all(4) directions
+            [{d:24, c:36, b:48, a:60, s:72, ss:84, sss:96}],
+            [{}],
+            [{}]
+          ]
+        ],
+        [ // index 1 - ATK DEF HP - Percent
+          [], // 1 direction
+          [ // 2 directions
+            [{}],
+            [{d:0, c:"2.9%", b:"3.6%", a:"5.8%", s:"7.2%", ss:"8.7%", sss:"10.2%"}],
+            [{d:0, c:0, b:"4.3%", a:"6.4%", s:"8.6%", ss:"10.7%", sss:"12.9%"}]
+          ]
+          [], // 3 directions
+          [ // all(4) directions
+            [{}],
+            [{d:0, c:"2.4%", b:"3.6%", a:"4.8%", s:"6%", ss:"6.2%", sss:"7.4%"}],
+            [{d:0, c:0, b:"3.6%", a:"5.4%", s:"7.2%", ss:"9%", sss:"10.8%"}]
+          ]
+        ],
+        [ // index 2 - SPD - Flat
+          [], // 1 direction
+          [ // 2 directions
+            [{}],
+            [{d:0, c:4, b:6, a:8, s:10, ss:12, sss:14}],
+            [{}]
+          ]
+          [], // 3 directions
+          [ // all(4) directions
+            [{d:2, c:3, b:4, a:5, s:6, ss:7, sss:8}],
+            [{d:0, c:3, b:4, a:6, s:7, ss:9, sss:10}],
+            [{d:0, c:0, b:4, a:6, s:8, ss:10, sss:12}]
+          ]
+        ],
+        [ // index 3 - CHC EFF EFR - Percent
+          [], // 1 direction
+          [ // 2 directions
+            [{}],
+            [{d:0, c:"4.3%", b:"6.5%", a:"8.6%", s:"10.7%", ss:"12.9%", sss:"15%"}],
+            [{d:0, c:0, b:"5.8%", a:"8.7%", s:"11.6%", ss:"14.5%", sss:"17.4%"}]
+          ]
+          [], // 3 directions
+          [ // all(4) directions
+            [{}],
+            [{d:0, c:"3.6%", b:"5.4%", a:"7.2%", s:"9%", ss:"10.8%", sss:"12.6%"}],
+            [{d:0, c:0, b:"4.8%", a:"7.2%", s:"9.6%", ss:"12%", sss:"14.4%"}]
+          ]
+        ],
+        [ // index 3 - DAC - Percent
+          [], // 1 direction
+          [ // 2 directions
+            [{}],
+            [{d:0, c:"0.9%", b:"1.3%", a:"1.8%", s:"2.2%", ss:"2.7%", sss:"3.1%"}],
+            [{}]
+          ]
+          [], // 3 directions
+          [ // all(4) directions
+            [{}],
+            [{d:0, c:"0.7%", b:"1.0%", a:"1.4%", s:"1.7%", ss:"2.1%", sss:"2.4%"}],
+            [{}]
+          ]
+        ],
+      ],
+      // imprintIncreasesIndex[stat][flatOrPercent]
+      imprintIncreasesIndex: [
+          [{index: 0}, {index: 1}], // Attack
+          [{index: 0}, {index: 1}], // Defense
+          [{index: 0}, {index: 1}], // Health
+          [{index: 2}, {}        ], // Speed
+          [{},         {index: 3}], // Critical Hit Chance
+          [{},         {}        ], // Critical Hit Damage
+          [{},         {index: 3}], // Effectiveness
+          [{},         {index: 3}], // Effect Resistance
+          [{},         {index: 4}]  // Dual Attack Chance
+      ],
       rarity: [
         { label: "3 ★★★", value: 3 },
         { label: "4 ★★★★", value: 4 },
