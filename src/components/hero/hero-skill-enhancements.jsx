@@ -195,7 +195,9 @@ class HeroSkillEnhancements extends Component {
                     <Label>
                       resources{" "}
                       <Badgetip
-                        value={"Example: twisted-fang"}
+                        value={
+                          "Resources are automatically calculated based on rarity, zodiac, and max skill level"
+                        }
                         id={"resources" + index + "-" + i}
                       />
                     </Label>
@@ -208,9 +210,10 @@ class HeroSkillEnhancements extends Component {
                         md="12"
                         className="resource-wrapper"
                       >
-                        <FormGroup className="inline-wrapper">
+                        <FormGroup className="inline-wrapper full">
                           <Input
                             type="text"
+                            readOnly
                             bsSize="sm"
                             name="item"
                             placeholder="resource item"
@@ -225,7 +228,7 @@ class HeroSkillEnhancements extends Component {
                             }
                           />
                           <Input
-                            type="text"
+                            type="number"
                             bsSize="sm"
                             name="qty"
                             value={resource.qty}
