@@ -227,6 +227,10 @@ class HeroSkills extends Component {
                     enhancements={skill.enhancement}
                     onChange={this.handleChange}
                     index={i}
+                    rarity={this.props.rarity}
+                    zodiac={this.props.zodiac}
+                    defaultZodiacs={this.props.defaultZodiacs}
+                    enhanceCosts={this.props.enhanceCosts}
                   />
                 </FormGroup>
               </Col>
