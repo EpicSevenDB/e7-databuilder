@@ -43,7 +43,7 @@ class EpicInput extends Component {
   convertPercent(value) {
     if (isNaN(value)) {
       if (value.indexOf("%") >= 0) {
-        return parseFloat(value) / 100;
+        return (parseFloat(value) / 100).toFixed(3);
       }
     }
     return value;
