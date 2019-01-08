@@ -1,6 +1,6 @@
 # EpicSevenDB DataBuilder
 
-[http://databuilder.epicsevendb.com](DataBuilder) is a simple form that takes inputs and exports it as a json in the correct format. Export the data by either downloading the file or copying and pasting it into your own json file and send it to RaphaelDDL#5150 on discord. 
+[http://databuilder.epicsevendb.com](DataBuilder) is a simple form that takes inputs and exports it as a json in the correct format. Export the data by either downloading the file or copying and pasting it into your own json file and send it to `RaphaelDDL#5150` on discord. 
 
 ## How to run
 
