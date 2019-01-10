@@ -16,17 +16,22 @@ import {
 class HeroAwakening extends Component {
   state = {
     awakening: this.props.awakening,
+    defaultAwakening: this.props.defaultAwakening,
+    stats: this.props.stats,
     rarity: this.props.rarity,
     zodiac: this.props.zodiac,
     element: this.props.element,
     activeTab: 0
   };
-
+  constructor(props) {
+    super(props);
+    this.update();
+  }
   componentDidUpdate(prevProps) {
-    const awakening = [...this.props.awakening];
-    const rarity = this.props.rarity;
-    const element = this.props.element;
-    const zodiac = this.props.zodiac;
+    const awakening = this.props.awakening,
+      rarity = this.props.rarity,
+      element = this.props.element,
+      zodiac = this.props.zodiac;
 
     if (
       this.props.awakening !== prevProps.awakening ||
@@ -34,20 +39,37 @@ class HeroAwakening extends Component {
       this.props.element !== prevProps.element ||
       this.props.zodiac !== prevProps.zodiac
     ) {
+      this.update();
       this.setState({ awakening, rarity, element, zodiac });
+      this.props.onChange("awakening", this.state.awakening);
     }
   }
 
+  update = () => {
+    const { awakening, awakeningCosts, rarity, element } = this.props;
+
+    for (let i = 0; i < awakening.length; i++) {
+      const defaultResources = awakeningCosts[rarity - 3][i];
+      awakening[i]["resources"] = [...defaultResources];
+      for (let j = 0; j < defaultResources.length; j++) {
+        const resource = { ...defaultResources[j] };
+        resource["item"] =
+          resource["item"] === "rare" || resource["item"] === "epic"
+            ? this.findZodiacResource(resource["item"])
+            : resource["item"] + element + "-rune";
+        awakening[i]["resources"][j] = resource;
+      }
+    }
+  };
+
   /* Need a more elegant solution in the future...*/
   handleChange = (type, value, i, j) => {
-    const awakening = [...this.props.awakening];
+    const awakening = [...this.state.awakening];
     const name = type.split(".");
     if (name[0] === "stats") {
       let newStat = {};
       newStat[value] = awakening[i]["statsIncrease"][j][name[1]];
       awakening[i]["statsIncrease"][j] = newStat;
-    } else if (type === "item" || type === "qty") {
-      awakening[i]["resources"][j][type] = this.friendlyString(value);
     } else if (j >= 0) {
       awakening[i]["statsIncrease"][j][type] = this.convertPercent(value);
     } else {
@@ -66,6 +88,7 @@ class HeroAwakening extends Component {
       return "";
     }
   }
+
   toggle = tab => {
     if (this.state.activeTab !== tab) {
       this.setState({
@@ -74,51 +97,34 @@ class HeroAwakening extends Component {
     }
   };
 
-  awakeningMaterial(rank, index) {
-    const { awakeningCosts, rarity, element, zodiac } = this.props;
-    if (rarity !== "" && element !== "" && zodiac !== "") {
-      if (rank >= 4 && index > 0) {
-        return this.findZodiacResource(zodiac, rank);
-      } else {
-        return (
-          awakeningCosts[rarity - 3][rank][index]["prefix"] + element + "-rune"
-        );
-      }
+  findZodiacResource(type) {
+    const { resources, zodiac } = this.props;
+    if (zodiac !== "") {
+      const obj = resources.find(element => {
+        return element.value === zodiac;
+      });
+      return type === "rare" ? obj.normalAwakening : obj.worldAwakening;
     }
     return "";
   }
 
-  findZodiacResource(zodiac, rank) {
-    if (zodiac !== "") {
-      const { resources } = this.props;
-      const obj = resources.find(element => {
-        return element.value === zodiac;
-      });
-      return rank === 4 ? obj.normalAwakening : obj.worldAwakening;
-    }
-    return "";
-  }
   onBlur = () => {
     this.props.onChange("awakening", this.state.awakening);
   };
 
   convertPercent(value) {
-    if (isNaN(value)) {
-      if (value.indexOf("%") >= 0) {
-        return (parseFloat(value) / 100).toFixed(3);
-      }
+    if (isNaN(value) && value.indexOf("%") >= 0) {
+      return parseFloat(parseFloat(value) / 100).toFixed(3);
     }
     return value;
   }
 
   render() {
-    const { awakening, rarity } = this.state;
-    const { awakeningCosts, stats } = this.props;
-
+    const { awakening, stats } = this.state;
     return (
       <React.Fragment>
         <Nav tabs>
-          {awakeningCosts[rarity - 3].map((awake, i) => (
+          {awakening.map((awake, i) => (
             <NavItem key={i}>
               <NavLink
                 className={classnames({ active: this.state.activeTab === i })}
@@ -133,7 +139,7 @@ class HeroAwakening extends Component {
         </Nav>
 
         <TabContent activeTab={this.state.activeTab}>
-          {awakeningCosts[rarity - 3].map((awakeningCost, i) => (
+          {awakening.map((awake, i) => (
             <TabPane key={i} tabId={i}>
               <Col md="12">
                 <FormGroup row>
@@ -148,7 +154,7 @@ class HeroAwakening extends Component {
                   </Col>
                 </FormGroup>
 
-                {awakening[i].statsIncrease.map((increase, j) => (
+                {awake["statsIncrease"].map((increase, j) => (
                   <Col key={j} md="12">
                     <FormGroup className="inline-wrapper full">
                       {j !== 0 || i === 2 ? (
@@ -159,7 +165,6 @@ class HeroAwakening extends Component {
                           name={"stats." + Object.keys(increase)}
                           placeholder="stat increase"
                           value={Object.keys(increase)}
-                          onBlur={this.onBlur}
                           onChange={e =>
                             this.handleChange(
                               e.currentTarget.name,
@@ -227,7 +232,7 @@ class HeroAwakening extends Component {
                   </Label>
                 </Col>
 
-                {awakeningCost.map((resource, j) => (
+                {awake["resources"].map((resource, j) => (
                   <Col key={j} md="12">
                     <FormGroup className="inline-wrapper full">
                       <Input
@@ -235,17 +240,8 @@ class HeroAwakening extends Component {
                         bsSize="sm"
                         name="item"
                         readOnly
-                        placeholder="resource item"
-                        value={this.awakeningMaterial(i, j)}
-                        onBlur={this.onBlur}
-                        onChange={e =>
-                          this.handleChange(
-                            e.currentTarget.name,
-                            e.currentTarget.value,
-                            i,
-                            j
-                          )
-                        }
+                        placeholder="catalyst"
+                        value={resource["item"]}
                       />
                       <Input
                         type="number"
@@ -253,15 +249,6 @@ class HeroAwakening extends Component {
                         name="qty"
                         readOnly
                         value={resource["qty"]}
-                        onBlur={this.onBlur}
-                        onChange={e =>
-                          this.handleChange(
-                            e.currentTarget.name,
-                            e.currentTarget.value,
-                            i,
-                            j
-                          )
-                        }
                       />
                     </FormGroup>
                   </Col>

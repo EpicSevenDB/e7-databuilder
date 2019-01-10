@@ -242,6 +242,7 @@ class HeroForm extends Component {
                   zodiac={hero.zodiac}
                   resources={defaults.zodiac}
                   rarity={hero.rarity}
+                  defaultAwakening={defaults.hero.awakening}
                   awakeningCosts={defaults.awakeningCosts}
                   stats={defaults.stats}
                 />

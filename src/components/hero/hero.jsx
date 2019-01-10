@@ -197,37 +197,37 @@ class Hero extends Component {
           rank: 1,
           skillUpgrade: false,
           statsIncrease: [{ "": 0 }, { atk: 20 }, { hp: 60 }],
-          resources: [{ item: "", qty: 10 }]
+          resources: []
         },
         {
           rank: 2,
           skillUpgrade: false,
           statsIncrease: [{ "": 0 }, { atk: 20 }, { hp: 60 }],
-          resources: [{ item: "", qty: 15 }]
+          resources: []
         },
         {
           rank: 3,
           skillUpgrade: true,
           statsIncrease: [{ atk: 20 }, { hp: 60 }],
-          resources: [{ item: "", qty: 20 }, { item: "", qty: 10 }]
+          resources: []
         },
         {
           rank: 4,
           skillUpgrade: false,
           statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
-          resources: [{ item: "", qty: 10 }, { item: "", qty: 2 }]
+          resources: []
         },
         {
           rank: 5,
           skillUpgrade: false,
           statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
-          resources: [{ item: "", qty: 6 }, { item: "", qty: 15 }]
+          resources: []
         },
         {
           rank: 6,
           skillUpgrade: false,
           statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
-          resources: [{ item: "", qty: 10 }, { item: "", qty: 10 }]
+          resources: []
         }
       ]
     },
@@ -420,64 +420,64 @@ class Hero extends Component {
             rank: 1,
             skillUpgrade: false,
             statsIncrease: [{ "": 0 }, { atk: 20 }, { hp: 60 }],
-            resources: [{ item: "", qty: 0 }]
+            resources: []
           },
           {
             rank: 2,
             skillUpgrade: false,
             statsIncrease: [{ "": 0 }, { atk: 20 }, { hp: 60 }],
-            resources: [{ item: "", qty: 0 }]
+            resources: []
           },
           {
             rank: 3,
             skillUpgrade: true,
             statsIncrease: [{ atk: 20 }, { hp: 60 }],
-            resources: [{ item: "", qty: 0 }, { item: "", qty: 0 }]
+            resources: []
           },
           {
             rank: 4,
             skillUpgrade: false,
             statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
-            resources: [{ item: "", qty: 0 }, { item: "", qty: 0 }]
+            resources: []
           },
           {
             rank: 5,
             skillUpgrade: false,
             statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
-            resources: [{ item: "", qty: 0 }, { item: "", qty: 0 }]
+            resources: []
           },
           {
             rank: 6,
             skillUpgrade: false,
             statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
-            resources: [{ item: "", qty: 0 }, { item: "", qty: 0 }]
+            resources: []
           }
         ]
       },
       awakeningCosts: [
         [
-          [{ prefix: "", qty: 5 }],
-          [{ prefix: "", qty: 9 }],
-          [{ prefix: "", qty: 12 }, { prefix: "greater-", qty: 6 }],
-          [{ prefix: "greater-", qty: 15 }],
-          [{ prefix: "epic-", qty: 4 }, { prefix: "", qty: 9 }],
-          [{ prefix: "epic-", qty: 6 }, { prefix: "", qty: 6 }]
+          [{ item: "", qty: 5 }],
+          [{ item: "", qty: 9 }],
+          [{ item: "", qty: 12 }, { item: "greater-", qty: 6 }],
+          [{ item: "greater-", qty: 15 }],
+          [{ item: "epic-", qty: 4 }, { item: "rare", qty: 9 }],
+          [{ item: "epic-", qty: 6 }, { item: "epic", qty: 6 }]
         ],
         [
-          [{ prefix: "", qty: 8 }],
-          [{ prefix: "", qty: 12 }, { prefix: "greater-", qty: 2 }],
-          [{ prefix: "", qty: 17 }, { prefix: "greater-", qty: 8 }],
-          [{ prefix: "greater-", qty: 8 }, { prefix: "epic-", qty: 2 }],
-          [{ prefix: "epic-", qty: 5 }, { prefix: "", qty: 12 }],
-          [{ prefix: "epic-", qty: 8 }, { prefix: "", qty: 8 }]
+          [{ item: "", qty: 8 }],
+          [{ item: "", qty: 12 }, { item: "greater-", qty: 2 }],
+          [{ item: "", qty: 17 }, { item: "greater-", qty: 8 }],
+          [{ item: "greater-", qty: 8 }, { item: "epic-", qty: 2 }],
+          [{ item: "epic-", qty: 5 }, { item: "rare", qty: 12 }],
+          [{ item: "epic-", qty: 8 }, { item: "epic", qty: 8 }]
         ],
         [
-          [{ prefix: "", qty: 10 }],
-          [{ prefix: "", qty: 15 }, { prefix: "greater-", qty: 2 }],
-          [{ prefix: "", qty: 20 }, { prefix: "greater-", qty: 10 }],
-          [{ prefix: "greater-", qty: 10 }, { prefix: "epic-", qty: 2 }],
-          [{ prefix: "epic-", qty: 6 }, { prefix: "", qty: 15 }],
-          [{ prefix: "epic-", qty: 10 }, { prefix: "", qty: 10 }]
+          [{ item: "", qty: 10 }],
+          [{ item: "", qty: 15 }, { item: "greater-", qty: 2 }],
+          [{ item: "", qty: 20 }, { item: "greater-", qty: 10 }],
+          [{ item: "greater-", qty: 10 }, { item: "epic-", qty: 2 }],
+          [{ item: "epic-", qty: 6 }, { item: "rare", qty: 15 }],
+          [{ item: "epic-", qty: 10 }, { item: "epic", qty: 10 }]
         ]
       ],
       // enhanceCosts[rarity - 3][maxlevel][level][index]
