@@ -224,7 +224,7 @@ class HeroSkills extends Component {
                     />
                   </EpicInput>
                   <HeroSkillEnhancements
-                    enhancements={skill.enhancement}
+                    enhancement={skill.enhancement}
                     onChange={this.handleChange}
                     index={i}
                     rarity={this.props.rarity}

@@ -56,20 +56,7 @@ class Hero extends Component {
           name: "",
           soulAcquire: 0,
           description: "",
-          enhancement: [
-            {
-              description: "",
-              resources: []
-            },
-            {
-              description: "",
-              resources: []
-            },
-            {
-              description: "",
-              resources: []
-            }
-          ],
+          enhancement: [{ description: "", resources: [] }],
           buffs: [],
           debuffs: []
         },
@@ -83,20 +70,7 @@ class Hero extends Component {
           name: "",
           soulAcquire: 0,
           description: "",
-          enhancement: [
-            {
-              description: "",
-              resources: []
-            },
-            {
-              description: "",
-              resources: []
-            },
-            {
-              description: "",
-              resources: []
-            }
-          ],
+          enhancement: [{ description: "", resources: [] }],
           buffs: [],
           debuffs: []
         },
@@ -110,20 +84,7 @@ class Hero extends Component {
           name: "",
           soulAcquire: 0,
           description: "",
-          enhancement: [
-            {
-              description: "",
-              resources: []
-            },
-            {
-              description: "",
-              resources: []
-            },
-            {
-              description: "",
-              resources: []
-            }
-          ],
+          enhancement: [{ description: "", resources: [] }],
           buffs: [],
           debuffs: []
         }
@@ -279,20 +240,7 @@ class Hero extends Component {
             name: "",
             soulAcquire: 0,
             description: "",
-            enhancement: [
-              {
-                description: "",
-                resources: []
-              },
-              {
-                description: "",
-                resources: []
-              },
-              {
-                description: "",
-                resources: []
-              }
-            ],
+            enhancement: [{ description: "", resources: [] }],
             buffs: [],
             debuffs: []
           },
@@ -306,20 +254,7 @@ class Hero extends Component {
             name: "",
             soulAcquire: 0,
             description: "",
-            enhancement: [
-              {
-                description: "",
-                resources: []
-              },
-              {
-                description: "",
-                resources: []
-              },
-              {
-                description: "",
-                resources: []
-              }
-            ],
+            enhancement: [{ description: "", resources: [] }],
             buffs: [],
             debuffs: []
           },
@@ -333,20 +268,7 @@ class Hero extends Component {
             name: "",
             soulAcquire: 0,
             description: "",
-            enhancement: [
-              {
-                description: "",
-                resources: []
-              },
-              {
-                description: "",
-                resources: []
-              },
-              {
-                description: "",
-                resources: []
-              }
-            ],
+            enhancement: [{ description: "", resources: [] }],
             buffs: [],
             debuffs: []
           }
@@ -1271,6 +1193,7 @@ class Hero extends Component {
         console.info("Changed: ", hero[name]);
       } else {
         hero = value;
+        console.info("Hero Import: ", hero);
       }
       this.setState({ hero });
     }

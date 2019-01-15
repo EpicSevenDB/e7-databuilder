@@ -27,23 +27,23 @@ class HeroAwakening extends Component {
     super(props);
     this.update();
   }
-  componentDidUpdate(prevProps) {
-    const awakening = this.props.awakening,
-      rarity = this.props.rarity,
-      element = this.props.element,
-      zodiac = this.props.zodiac;
+  // componentDidUpdate(prevProps) {
+  //   const awakening = this.props.awakening,
+  //     rarity = this.props.rarity,
+  //     element = this.props.element,
+  //     zodiac = this.props.zodiac;
 
-    if (
-      this.props.awakening !== prevProps.awakening ||
-      this.props.rarity !== prevProps.rarity ||
-      this.props.element !== prevProps.element ||
-      this.props.zodiac !== prevProps.zodiac
-    ) {
-      this.update();
-      this.setState({ awakening, rarity, element, zodiac });
-      this.props.onChange("awakening", this.state.awakening);
-    }
-  }
+  //   if (
+  //     this.props.awakening !== prevProps.awakening ||
+  //     this.props.rarity !== prevProps.rarity ||
+  //     this.props.element !== prevProps.element ||
+  //     this.props.zodiac !== prevProps.zodiac
+  //   ) {
+  //     this.update();
+  //     this.setState({ awakening, rarity, element, zodiac });
+  //     this.props.onChange("awakening", this.state.awakening);
+  //   }
+  // }
 
   update = () => {
     const { awakening, awakeningCosts, rarity, element } = this.props;
@@ -108,8 +108,12 @@ class HeroAwakening extends Component {
     return "";
   }
 
-  onBlur = () => {
-    this.props.onChange("awakening", this.state.awakening);
+  onBlur = (value, name, index, index2) => {
+    const awakening = [...this.state.awakening];
+    awakening[index]["statsIncrease"][index2][name] =
+      value % 1 === 0 ? parseInt(value) : parseFloat(value);
+    console.info(awakening[index]["statsIncrease"][index2][name]);
+    this.setState({ awakening });
   };
 
   convertPercent(value) {
@@ -180,7 +184,7 @@ class HeroAwakening extends Component {
                           bsSize="sm"
                           name={"stats." + Object.keys(increase)}
                           value={Object.keys(increase)[0]}
-                          onBlur={this.onBlur}
+                          onBlur={e => this.onBlur(e.currentTarget.value, i, j)}
                           onChange={e =>
                             this.handleChange(
                               e.currentTarget.name,
@@ -208,7 +212,14 @@ class HeroAwakening extends Component {
                         value={this.convertPercent(
                           increase[Object.keys(increase)]
                         )}
-                        onBlur={this.onBlur}
+                        onBlur={e =>
+                          this.onBlur(
+                            e.currentTarget.value,
+                            e.currentTarget.name,
+                            i,
+                            j
+                          )
+                        }
                         onChange={e =>
                           this.handleChange(
                             e.currentTarget.name,

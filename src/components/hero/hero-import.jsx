@@ -28,7 +28,6 @@ class HeroImport extends Component {
       this.setState({ modal: false });
       this.props.alert("success", "Hero succesfully imported!");
     } catch (err) {
-      console.info("SHIT:", this.state.import);
       this.props.alert(
         "danger",
         "Oops, please double check if your json is following the right format."

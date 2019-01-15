@@ -197,3 +197,20 @@
   right: 15px;
   line-height: 0;
 }
+
+.input-group-text {
+  font-size: 0.75em;
+  padding: 6px 12px;
+}
+.input-group-append {
+  .btn {
+    padding: 6px 16px;
+  }
+}
+.dark {
+  .input-group-text {
+    border: 1px solid $dark-border;
+    background-color: lighten($black, 5);
+    color: $grey;
+  }
+}

@@ -88,7 +88,12 @@ class EpicInput extends Component {
           name={name}
           className={readonly ? "readonly" : null}
           onBlur={e =>
-            this.onBlur(e.currentTarget.name, this.state.value, index, index2)
+            this.onBlur(
+              e.currentTarget.name,
+              e.currentTarget.value,
+              index,
+              index2
+            )
           }
           onChange={e => this.handleChange(e.currentTarget.value)}
         >
@@ -112,7 +117,12 @@ class EpicInput extends Component {
         placeholder={placeholder}
         name={name}
         onBlur={e =>
-          this.onBlur(e.currentTarget.name, this.state.value, index, index2)
+          this.onBlur(
+            e.currentTarget.name,
+            e.currentTarget.value,
+            index,
+            index2
+          )
         }
         onChange={e => this.handleChange(e.currentTarget.value)}
       />
