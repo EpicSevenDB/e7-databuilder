@@ -33,13 +33,15 @@
 .inline-wrapper {
   width: 100%;
   margin-bottom: 8px !important;
-  .form-control {
+  .form-control,
+  .input-group {
     width: calc(50% - 24px);
     float: left;
     margin-right: 11px;
   }
   &.full {
-    .form-control {
+    .form-control,
+    .input-group {
       width: calc(50% - 12px);
       margin-bottom: 8px;
       &:first-child {
@@ -201,6 +203,12 @@
 .input-group-text {
   font-size: 0.75em;
   padding: 6px 12px;
+}
+.input-group-prepend {
+  display: block;
+  select {
+    padding-left: 20px;
+  }
 }
 .input-group-append {
   .btn {

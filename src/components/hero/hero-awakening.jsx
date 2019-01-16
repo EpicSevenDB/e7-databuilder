@@ -8,6 +8,8 @@ import {
   TabContent,
   TabPane,
   Input,
+  InputGroupAddon,
+  InputGroup,
   Nav,
   NavItem,
   NavLink
@@ -69,10 +71,8 @@ class HeroAwakening extends Component {
       let newStat = {};
       newStat[value] = awakening[i]["statsIncrease"][j][name[1]];
       awakening[i]["statsIncrease"][j] = newStat;
-    } else if (j >= 0) {
-      awakening[i]["statsIncrease"][j][type] = this.convertPercent(value);
     } else {
-      awakening[i][type] = value;
+      awakening[i]["statsIncrease"][j][type] = this.convertPercent(value);
     }
     this.setState({ awakening });
   };
@@ -135,156 +135,81 @@ class HeroAwakening extends Component {
 
   render() {
     const { awakening, stats } = this.state;
+    console.info(awakening);
     return (
       <React.Fragment>
-        <Nav tabs>
-          {awakening.map((awake, i) => (
-            <NavItem key={i}>
-              <NavLink
-                className={classnames({ active: this.state.activeTab === i })}
-                onClick={() => {
-                  this.toggle(i);
-                }}
-              >
-                Rank {i + 1}
-              </NavLink>
-            </NavItem>
-          ))}
-        </Nav>
+        <label>awakening</label>
+        {awakening.map((increase, i) => (
+          <FormGroup key={i} className="inline-wrapper full">
+            {i !== 2 ? (
+              <React.Fragment>
+                <InputGroup>
+                  <InputGroupAddon addonType="prepend">
+                    {"Rank " + (i + 1)}
+                  </InputGroupAddon>
+                  <Input
+                    type="select"
+                    bsSize="sm"
+                    name={"stats." + Object.keys(increase["statsIncrease"][0])}
+                    value={Object.keys(increase["statsIncrease"][0])}
+                    onBlur={e =>
+                      this.onBlur(
+                        e.currentTarget.name,
+                        e.currentTarget.value,
+                        i,
+                        0
+                      )
+                    }
+                    onChange={e =>
+                      this.handleChange(
+                        e.currentTarget.name,
+                        e.currentTarget.value,
+                        i,
+                        0
+                      )
+                    }
+                  >
+                    <option disabled value="">
+                      Select stat
+                    </option>
+                    {stats.map((option, i) => (
+                      <option key={i} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </Input>
+                </InputGroup>
 
-        <TabContent activeTab={this.state.activeTab}>
-          {awakening.map((awake, i) => (
-            <TabPane key={i} tabId={i}>
-              <Col md="12">
-                <FormGroup row>
-                  <Col md="12">
-                    <Label>
-                      statIncreases
-                      <Badgetip
-                        value="Percents are converted to decimal. Example: 5% -> 0.05"
-                        id={"statIncrease-" + i}
-                      />
-                    </Label>
-                  </Col>
-                </FormGroup>
-
-                {awake["statsIncrease"].map((increase, j) => (
-                  <Col key={j} md="12">
-                    <FormGroup className="inline-wrapper full">
-                      {j !== 0 || i === 2 ? (
-                        <Input
-                          type="text"
-                          bsSize="sm"
-                          readOnly
-                          name={"stats." + Object.keys(increase)}
-                          placeholder="stat increase"
-                          value={Object.keys(increase)}
-                          onChange={e =>
-                            this.handleChange(
-                              e.currentTarget.name,
-                              e.currentTarget.value,
-                              i,
-                              j
-                            )
-                          }
-                        />
-                      ) : (
-                        <Input
-                          type="select"
-                          bsSize="sm"
-                          name={"stats." + Object.keys(increase)}
-                          value={Object.keys(increase)[0]}
-                          onBlur={e =>
-                            this.onBlur(
-                              e.currentTarget.name,
-                              e.currentTarget.value,
-                              i,
-                              j
-                            )
-                          }
-                          onChange={e =>
-                            this.handleChange(
-                              e.currentTarget.name,
-                              e.currentTarget.value,
-                              i,
-                              j
-                            )
-                          }
-                        >
-                          <option disabled value="">
-                            Select stat
-                          </option>
-                          {stats.map((option, i) => (
-                            <option key={i} value={option.value}>
-                              {option.label}
-                            </option>
-                          ))}
-                        </Input>
-                      )}
-                      <Input
-                        type="text"
-                        bsSize="sm"
-                        readOnly={j !== 0 || i === 2}
-                        name={Object.keys(increase)}
-                        value={this.convertPercent(
-                          increase[Object.keys(increase)]
-                        )}
-                        onBlur={e =>
-                          this.onBlur(
-                            e.currentTarget.name,
-                            e.currentTarget.value,
-                            i,
-                            j
-                          )
-                        }
-                        onChange={e =>
-                          this.handleChange(
-                            e.currentTarget.name,
-                            e.currentTarget.value,
-                            i,
-                            j
-                          )
-                        }
-                      />
-                    </FormGroup>
-                  </Col>
-                ))}
-
-                <Col md="12">
-                  <Label>
-                    resources
-                    <Badgetip
-                      value="Resources are automatically calculated based on the hero's element, rarity, and zodiac sign."
-                      id={"awakeningResource-" + i}
-                    />
-                  </Label>
-                </Col>
-
-                {awake["resources"].map((resource, j) => (
-                  <Col key={j} md="12">
-                    <FormGroup className="inline-wrapper full">
-                      <Input
-                        type="text"
-                        bsSize="sm"
-                        name="item"
-                        readOnly
-                        placeholder="catalyst"
-                        value={resource["item"]}
-                      />
-                      <Input
-                        type="number"
-                        bsSize="sm"
-                        name="qty"
-                        readOnly
-                        value={resource["qty"]}
-                      />
-                    </FormGroup>
-                  </Col>
-                ))}
-              </Col>
-            </TabPane>
-          ))}
-        </TabContent>
+                <Input
+                  type="text"
+                  bsSize="sm"
+                  name={Object.keys(increase["statsIncrease"][0])}
+                  value={
+                    increase["statsIncrease"][0][
+                      Object.keys(increase["statsIncrease"][0])
+                    ]
+                  }
+                  onBlur={e =>
+                    this.onBlur(
+                      e.currentTarget.name,
+                      e.currentTarget.value,
+                      i,
+                      0
+                    )
+                  }
+                  onChange={e =>
+                    this.handleChange(
+                      e.currentTarget.name,
+                      e.currentTarget.value,
+                      i,
+                      0
+                    )
+                  }
+                />
+              </React.Fragment>
+            ) : null}
+          </FormGroup>
+        ))}
       </React.Fragment>
     );
   }
