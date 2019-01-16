@@ -57,6 +57,10 @@
 .empty-label {
   margin-top: 21px;
   padding: 0;
+  .custom-checkbox {
+    width: 90%;
+    margin: 0;
+  }
 }
 .custom-checkbox {
   top: 15%;
@@ -67,11 +71,10 @@
     border: 1px solid $border;
     padding: 6px 6px 6px 35px;
     border-radius: 3px;
-    min-width: 150px;
+    width: 100%;
     transition: $ease;
     margin: 0 0 15px 0;
     @include tablet {
-      margin-left: 15px;
       width: 100%;
       max-width: 275px;
     }
