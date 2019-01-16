@@ -27,23 +27,22 @@ class HeroAwakening extends Component {
     super(props);
     this.update();
   }
-  // componentDidUpdate(prevProps) {
-  //   const awakening = this.props.awakening,
-  //     rarity = this.props.rarity,
-  //     element = this.props.element,
-  //     zodiac = this.props.zodiac;
+  componentDidUpdate(prevProps) {
+    const awakening = this.props.awakening,
+      rarity = this.props.rarity,
+      element = this.props.element,
+      zodiac = this.props.zodiac;
 
-  //   if (
-  //     this.props.awakening !== prevProps.awakening ||
-  //     this.props.rarity !== prevProps.rarity ||
-  //     this.props.element !== prevProps.element ||
-  //     this.props.zodiac !== prevProps.zodiac
-  //   ) {
-  //     this.update();
-  //     this.setState({ awakening, rarity, element, zodiac });
-  //     this.props.onChange("awakening", this.state.awakening);
-  //   }
-  // }
+    if (
+      this.props.awakening !== prevProps.awakening ||
+      this.props.rarity !== prevProps.rarity ||
+      this.props.element !== prevProps.element ||
+      this.props.zodiac !== prevProps.zodiac
+    ) {
+      this.update();
+      this.setState({ awakening, rarity, element, zodiac });
+    }
+  }
 
   update = () => {
     const { awakening, awakeningCosts, rarity, element } = this.props;
@@ -108,12 +107,23 @@ class HeroAwakening extends Component {
     return "";
   }
 
-  onBlur = (value, name, index, index2) => {
+  onBlur = (type, value, i, j) => {
     const awakening = [...this.state.awakening];
-    awakening[index]["statsIncrease"][index2][name] =
-      value % 1 === 0 ? parseInt(value) : parseFloat(value);
-    console.info(awakening[index]["statsIncrease"][index2][name]);
+    const name = type.split(".");
+
+    if (name[0] === "stats") {
+      let newStat = {};
+      newStat[value] = awakening[i]["statsIncrease"][j][name[1]];
+      awakening[i]["statsIncrease"][j] = newStat;
+    } else if (j >= 0) {
+      awakening[i]["statsIncrease"][j][type] =
+        value % 1 === 0 ? parseInt(value) : parseFloat(value);
+    } else {
+      awakening[i][type] = value;
+    }
+
     this.setState({ awakening });
+    this.props.onChange("awakening", this.state.awakening);
   };
 
   convertPercent(value) {
@@ -184,7 +194,14 @@ class HeroAwakening extends Component {
                           bsSize="sm"
                           name={"stats." + Object.keys(increase)}
                           value={Object.keys(increase)[0]}
-                          onBlur={e => this.onBlur(e.currentTarget.value, i, j)}
+                          onBlur={e =>
+                            this.onBlur(
+                              e.currentTarget.name,
+                              e.currentTarget.value,
+                              i,
+                              j
+                            )
+                          }
                           onChange={e =>
                             this.handleChange(
                               e.currentTarget.name,
@@ -214,8 +231,8 @@ class HeroAwakening extends Component {
                         )}
                         onBlur={e =>
                           this.onBlur(
-                            e.currentTarget.value,
                             e.currentTarget.name,
+                            e.currentTarget.value,
                             i,
                             j
                           )
