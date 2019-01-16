@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import Badgetip from "../common/badgetip";
-import EpicInput from "../common/epic-input";
 
 import {
   Col,
-  Row,
   FormGroup,
   Label,
   Input,
@@ -23,9 +21,6 @@ class HeroSkillEnhancements extends Component {
   };
 
   componentDidUpdate(prevProps) {
-    const zodiac = this.props.zodiac;
-    const rarity = this.props.rarity;
-    const enhancement = this.props.enhancement;
     if (this.props.enhancement.length !== prevProps.enhancement.length) {
       this.handleMaxLevel(this.props.enhancement.length);
     } else if (
@@ -38,21 +33,40 @@ class HeroSkillEnhancements extends Component {
   }
 
   handleUpdate = value => {
-    let { enhanceCosts, rarity, zodiac } = this.props;
+    let { enhanceCosts, rarity } = this.props;
     let enhancement = [...this.props.enhancement];
     let maxLevel = value;
 
-    console.info("OBJ:", enhancement);
     enhancement.splice(maxLevel, enhancement.length - maxLevel);
 
     for (let i = 0; i < maxLevel; i++) {
       let newEnhancement = { description: "", resources: [] };
       newEnhancement["description"] =
         enhancement[i] !== undefined ? enhancement[i]["description"] : "";
-      newEnhancement["resources"] = enhanceCosts[rarity - 3][maxLevel - 1][i];
+      newEnhancement["resources"] = this.handleZodiac(
+        enhanceCosts[rarity - 3][maxLevel - 1][i]
+      );
       enhancement[i] = newEnhancement;
     }
     return enhancement;
+  };
+
+  handleZodiac = resources => {
+    const { zodiac, defaultZodiacs } = this.props;
+
+    for (let i = 0; i < resources.length; i++) {
+      if (zodiac !== undefined || zodiac !== "") {
+        const zodiacObj = defaultZodiacs.find(element => {
+          return element.value === zodiac;
+        });
+        if (resources[i]["item"] === "rare") {
+          resources[i]["item"] = zodiacObj.normalSkill;
+        } else if (resources[i]["item"] === "epic") {
+          resources[i]["item"] = zodiacObj.worldSkill;
+        }
+      }
+    }
+    return resources;
   };
 
   handleChange(name, value, index, index2) {
@@ -64,7 +78,6 @@ class HeroSkillEnhancements extends Component {
 
   handleMaxLevel = value => {
     const enhancement = this.handleUpdate(value);
-    console.info("DIS IS IT", enhancement);
     this.setState({ enhancement });
     this.props.onChange("enhancement", enhancement, this.state.index);
   };
