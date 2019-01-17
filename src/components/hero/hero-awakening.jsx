@@ -1,19 +1,6 @@
 import React, { Component } from "react";
-import Badgetip from "../common/badgetip";
-import classnames from "classnames";
-import {
-  Col,
-  Label,
-  FormGroup,
-  TabContent,
-  TabPane,
-  Input,
-  InputGroupAddon,
-  InputGroup,
-  Nav,
-  NavItem,
-  NavLink
-} from "reactstrap";
+
+import { FormGroup, Input, InputGroupAddon, InputGroup } from "reactstrap";
 
 class HeroAwakening extends Component {
   state = {
@@ -57,9 +44,24 @@ class HeroAwakening extends Component {
         resource["item"] =
           resource["item"] === "rare" || resource["item"] === "epic"
             ? this.findZodiacResource(resource["item"])
-            : resource["item"] + element + "-rune";
+            : resource["item"] + this.handleElement(element) + "-rune";
         awakening[i]["resources"][j] = resource;
       }
+    }
+  };
+
+  handleElement = value => {
+    switch (value) {
+      case "fire":
+        return "flame";
+      case "ice":
+        return "frost";
+      case "earth":
+        return "life";
+      case "dark":
+        return "dark";
+      default:
+        return "light";
     }
   };
 
@@ -151,7 +153,7 @@ class HeroAwakening extends Component {
                     type="select"
                     bsSize="sm"
                     name={"stats." + Object.keys(increase["statsIncrease"][0])}
-                    value={Object.keys(increase["statsIncrease"][0])}
+                    value={Object.keys(increase["statsIncrease"][0])[0]}
                     onBlur={e =>
                       this.onBlur(
                         e.currentTarget.name,

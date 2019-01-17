@@ -1190,7 +1190,7 @@ class Hero extends Component {
     if (typeof hero[name] !== undefined) {
       if (name !== "hero") {
         hero[name] = value;
-        console.info("Changed: ", hero[name]);
+        // console.info("Changed: ", hero[name]);
       } else {
         hero = value;
         console.info("Hero Import: ", hero);
@@ -1239,7 +1239,9 @@ class Hero extends Component {
           {message}
         </Alert>
         <footer>
-          Kevin Quach - EpicSeven DataBuilder -{" "}
+          {" Version: 1.0.4 - Last Updated: 01/15/2019"}
+          <br />
+          Kevin Quach - EpicSeven DataBuilder{" "}
           <span>{new Date().getFullYear()}</span>
         </footer>
       </React.Fragment>

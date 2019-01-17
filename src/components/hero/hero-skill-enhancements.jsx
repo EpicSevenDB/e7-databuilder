@@ -53,12 +53,12 @@ class HeroSkillEnhancements extends Component {
 
   handleZodiac = resources => {
     const { zodiac, defaultZodiacs } = this.props;
-
     for (let i = 0; i < resources.length; i++) {
-      if (zodiac !== undefined || zodiac !== "") {
+      if (zodiac !== undefined && zodiac !== "") {
         const zodiacObj = defaultZodiacs.find(element => {
           return element.value === zodiac;
         });
+
         if (resources[i]["item"] === "rare") {
           resources[i]["item"] = zodiacObj.normalSkill;
         } else if (resources[i]["item"] === "epic") {
@@ -73,7 +73,6 @@ class HeroSkillEnhancements extends Component {
     const enhancement = [...this.state.enhancement];
     enhancement[index2]["description"] = value;
     this.setState({ enhancement });
-    console.info(enhancement[index2]);
   }
 
   handleMaxLevel = value => {
