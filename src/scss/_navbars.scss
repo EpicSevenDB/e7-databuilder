@@ -1,150 +1,149 @@
 .global-nav {
-  width: 60px;
-  background: $black;
-  position: fixed;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  font-size: 0.7rem;
-  letter-spacing: 0;
-  text-align: center;
-  border-right: 1px solid $dark-border;
-  z-index: 999;
-  box-shadow: $shadows;
-  @include tablet {
-    width: 100%;
-    height: 50px;
-    border-bottom: 1px solid $dark-border;
-    border-right: none;
-  }
-  .nav-thumbnail {
-    max-width: 32px;
-  }
-  .nav-link {
-    padding: 10px 6px;
-    height: 53.5px;
-    border-radius: 0;
-    position: relative;
-    color: darken($dark-blue, 15);
-    transition: all 0.3s ease;
-    border-bottom: 1px solid $dark-border;
-    &:first-child {
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: $blue;
-      border-bottom: 1px solid $blue;
-    }
+    width: 60px;
+    background: $black;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    font-size: 0.7rem;
+    letter-spacing: 0;
+    text-align: center;
+    border-right: 1px solid $dark-border;
+    z-index: 999;
+    box-shadow: $shadows;
     @include tablet {
-      width: auto;
-      height: 100%;
-      border-right: 1px solid $dark-border;
-      border-bottom: none;
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid $dark-border;
+        border-right: none;
     }
-    .fas {
-      font-size: 1.5em;
+    .nav-thumbnail {
+        max-width: 32px;
     }
-    &.active {
-      color: #fff;
-      background: darken($black, 5);
-      pointer-events: none;
+    .nav-link {
+        padding: 10px 6px;
+        height: 53.5px;
+        border-radius: 0;
+        position: relative;
+        color: darken($dark-blue, 15);
+        transition: all 0.3s ease;
+        border-bottom: 1px solid $dark-border;
+        &:first-child {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $blue;
+            border-bottom: 1px solid $blue;
+        }
+        @include tablet {
+            width: auto;
+            height: 100%;
+            border-right: 1px solid $dark-border;
+            border-bottom: none;
+        }
+        .fas {
+            font-size: 1.5em;
+        }
+        &.active {
+            color: #fff;
+            background: darken($black, 5);
+            pointer-events: none;
+        }
     }
-  }
 }
 
 @media (min-width: 768px) {
-  .col-md-20 {
-    flex: 0 0 20%;
-    max-width: 20%;
-  }
+    .col-md-20 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
 }
 
 .top-navbar {
-  background: #fff;
-  position: absolute;
-  padding: 12px;
-  top: 0;
-  left: 60px;
-  width: calc(100% - 60px);
-  box-shadow: $shadows;
-  border-bottom: 1px solid $border;
-  z-index: 998;
-  transition: background-color 0.3s linear, border-color 0.3s linear,
-    box-shadow 0.3s ease;
-  @include tablet {
-    left: 0;
-    top: 50px;
-    width: 100%;
-  }
-  .nav {
-    justify-content: space-between;
-    max-width: 890px;
-  }
-  .title {
-    font-size: 1.25em;
-    font-weight: 300;
-    margin: 0 8px 0 0;
-    line-height: 1.25em;
-    float: left;
-  }
-  .nav-item {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-  }
-  .link {
-    font-size: 0.85em;
-    color: $grey;
-    opacity: 0.5;
-    transition: $ease;
-    &:hover {
-      opacity: 1;
+    background: #fff;
+    position: absolute;
+    padding: 12px;
+    top: 0;
+    left: 60px;
+    width: calc(100% - 60px);
+    box-shadow: $shadows;
+    border-bottom: 1px solid $border;
+    z-index: 998;
+    transition: background-color 0.3s linear, border-color 0.3s linear, box-shadow 0.3s ease;
+    @include tablet {
+        left: 0;
+        top: 50px;
+        width: 100%;
     }
-  }
-  .nav-wrapper > .btn {
-    margin: 0 0 0 6px;
-  }
+    .nav {
+        justify-content: space-between;
+        max-width: 890px;
+    }
+    .title {
+        font-size: 1.25em;
+        font-weight: 300;
+        margin: 0 8px 0 0;
+        line-height: 1.25em;
+        float: left;
+    }
+    .nav-item {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .link {
+        font-size: 0.85em;
+        color: $grey;
+        opacity: 0.5;
+        transition: $ease;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .nav-wrapper > .btn {
+        margin: 0 0 0 6px;
+    }
 }
 .modal-open .top-navbar {
-  width: calc(100% - 75px);
+    width: calc(100% - 75px);
 }
 .bottom-menu {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  @include tablet {
-    width: auto;
-    height: 100%;
-    right: 0;
-    position: relative;
-  }
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    @include tablet {
+        width: auto;
+        height: 100%;
+        right: 0;
+        position: relative;
+    }
 }
 .theme-toggle {
-  border-radius: 0;
-  width: 50%;
-  background: none;
-  color: $dark-blue;
-  @include tablet {
+    border-radius: 0;
     width: 50%;
-    height: 100%;
-  }
-  &:active,
-  &:focus {
-    box-shadow: none !important;
-    background: none !important;
-  }
-  &:hover {
-    background-color: $black;
-  }
-  &:first-child {
-    border-left: none;
-  }
-  &.active {
-    color: #fff !important;
-    background: none !important;
-    border-color: $dark-border !important;
-    pointer-events: none;
-  }
+    background: none;
+    color: $dark-blue;
+    @include tablet {
+        width: 50%;
+        height: 100%;
+    }
+    &:active,
+    &:focus {
+        box-shadow: none !important;
+        background: none !important;
+    }
+    &:hover {
+        background-color: $black;
+    }
+    &:first-child {
+        border-left: none;
+    }
+    &.active {
+        color: #fff !important;
+        background: none !important;
+        border-color: $dark-border !important;
+        pointer-events: none;
+    }
 }

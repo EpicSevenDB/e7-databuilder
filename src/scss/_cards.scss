@@ -1,46 +1,46 @@
 .card {
-  border: 1px solid $border;
-  margin-bottom: 16px;
-  box-shadow: $shadows;
-  background: lighten($bg, 2.5);
-  transition: $ease;
-  .card-header {
-    background: #fff;
-    padding: 12px 20px;
-    border-bottom: 1px solid $border;
-    font-size: 0.7em;
-    font-weight: 600;
+    border: 1px solid $border;
+    margin-bottom: 16px;
+    box-shadow: $shadows;
+    background: lighten($bg, 2.5);
     transition: $ease;
-    position: relative;
-    text-transform: uppercase;
-  }
-  .card-body {
-    padding-top: 6px;
-  }
+    .card-header {
+        background: #fff;
+        padding: 12px 20px;
+        border-bottom: 1px solid $border;
+        font-size: 0.7em;
+        font-weight: 600;
+        transition: $ease;
+        position: relative;
+        text-transform: uppercase;
+    }
+    .card-body {
+        padding-top: 6px;
+    }
 }
 
 .btn-collapse {
-  background: transparent !important;
-  line-height: 0;
-  font-size: 2em;
-  box-shadow: none !important;
-  padding: 7px 0;
-  color: $dark-blue;
-  width: 50px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-align: center;
-  &:hover,
-  &:active {
-    color: lighten($dark-blue, 15) !important;
-  }
+    background: transparent !important;
+    line-height: 0;
+    font-size: 2em;
+    box-shadow: none !important;
+    padding: 7px 0;
+    color: $dark-blue;
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    &:hover,
+    &:active {
+        color: lighten($dark-blue, 15) !important;
+    }
 }
 
 .dark .btn-collapse {
-  &:hover,
-  &:active {
-    color: #fff !important;
-  }
+    &:hover,
+    &:active {
+        color: #fff !important;
+    }
 }

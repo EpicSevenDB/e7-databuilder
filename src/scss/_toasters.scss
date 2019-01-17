@@ -1,27 +1,27 @@
 .toaster {
-  position: fixed;
-  width: calc(100% - 40px);
-  z-index: 9999;
-  left: 0;
-  right: 0;
-  margin: 20px auto;
-  max-width: 960px;
-  text-align: center;
-  transition: all 0.8s cubic-bezier(0.86, 0.12, 0.25, 1);
-  &.show {
-    bottom: 0;
-    opacity: 1;
-    visibility: visible;
-  }
-  &.hide {
-    visibility: hidden !important;
-    opacity: 0 !important;
-    bottom: -135px !important;
-  }
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 9999;
+    left: 0;
+    right: 0;
+    margin: 20px auto;
+    max-width: 960px;
+    text-align: center;
+    transition: all 0.8s cubic-bezier(0.86, 0.12, 0.25, 1);
+    &.show {
+        bottom: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+    &.hide {
+        visibility: hidden !important;
+        opacity: 0 !important;
+        bottom: -135px !important;
+    }
 }
 
 @media (min-width: 768px) {
-  .toaster {
-    left: 65px !important;
-  }
+    .toaster {
+        left: 65px !important;
+    }
 }

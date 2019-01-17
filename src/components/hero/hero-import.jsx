@@ -1,103 +1,87 @@
 import React, { Component } from "react";
 import HeroImportDropzone from "./hero-import-dropzone";
 
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Input,
-  Col,
-  Row
-} from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Col, Row } from "reactstrap";
 
 class HeroImport extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false,
-      import: {}
-    };
-    this.toggle = this.toggle.bind(this);
-  }
-
-  handleImport = e => {
-    try {
-      this.props.onChange("hero", JSON.parse(e));
-      this.setState({ modal: false });
-      this.props.alert("success", "Hero succesfully imported!");
-    } catch (err) {
-      this.props.alert(
-        "danger",
-        "Oops, please double check if your json is following the right format."
-      );
+    constructor(props) {
+        super(props);
+        this.state = {
+            modal: false,
+            import: {}
+        };
+        this.toggle = this.toggle.bind(this);
     }
-  };
 
-  handleChange = e => {
-    this.setState({ import: e.currentTarget.value });
-  };
+    handleImport = e => {
+        try {
+            this.props.onChange("hero", JSON.parse(e));
+            this.setState({ modal: false });
+            this.props.alert("success", "Hero succesfully imported!");
+        } catch (err) {
+            this.props.alert("danger", "Oops, please double check if your json is following the right format.");
+        }
+    };
 
-  toggle() {
-    this.setState({
-      modal: !this.state.modal,
-      import: {}
-    });
-  }
+    handleChange = e => {
+        this.setState({ import: e.currentTarget.value });
+    };
 
-  render() {
-    const { isDark } = this.props;
-    return (
-      <React.Fragment>
-        <Button color="primary" size="sm" onClick={this.toggle}>
-          Import
-        </Button>
+    toggle() {
+        this.setState({
+            modal: !this.state.modal,
+            import: {}
+        });
+    }
 
-        <Modal
-          isOpen={this.state.modal}
-          toggle={this.toggle}
-          className={isDark ? "dark" : ""}
-          size="lg"
-          fade={false}
-        >
-          <ModalHeader toggle={this.toggle}>Import</ModalHeader>
-          <ModalBody>
-            <Row>
-              <Col>
-                <Input
-                  bsSize="sm"
-                  type="textarea"
-                  name="import"
-                  placeholder="Copy and paste the json code here"
-                  onChange={this.handleChange}
-                />
-              </Col>
-              <Col md="1" className="align-center">
-                <h6>Or</h6>
-              </Col>
-              <Col>
-                <HeroImportDropzone onUpload={this.handleImport} />
-              </Col>
-            </Row>
-          </ModalBody>
-          <ModalFooter>
-            <Button
-              color="primary"
-              size="sm"
-              onClick={e => this.handleImport(this.state.import)}
-            >
-              Import
-            </Button>
+    render() {
+        const { isDark } = this.props;
+        return (
+            <React.Fragment>
+                <Button color="primary" size="sm" onClick={this.toggle}>
+                    Import
+                </Button>
 
-            <Button color="secondary" size="sm" onClick={this.toggle}>
-              Cancel
-            </Button>
-          </ModalFooter>
-        </Modal>
-      </React.Fragment>
-    );
-  }
+                <Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={isDark ? "dark" : ""}
+                    size="lg"
+                    fade={false}
+                >
+                    <ModalHeader toggle={this.toggle}>Import</ModalHeader>
+                    <ModalBody>
+                        <Row>
+                            <Col>
+                                <Input
+                                    bsSize="sm"
+                                    type="textarea"
+                                    name="import"
+                                    placeholder="Copy and paste the json code here"
+                                    onChange={this.handleChange}
+                                />
+                            </Col>
+                            <Col md="1" className="align-center">
+                                <h6>Or</h6>
+                            </Col>
+                            <Col>
+                                <HeroImportDropzone onUpload={this.handleImport} />
+                            </Col>
+                        </Row>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button color="primary" size="sm" onClick={e => this.handleImport(this.state.import)}>
+                            Import
+                        </Button>
+
+                        <Button color="secondary" size="sm" onClick={this.toggle}>
+                            Cancel
+                        </Button>
+                    </ModalFooter>
+                </Modal>
+            </React.Fragment>
+        );
+    }
 }
 
 export default HeroImport;

@@ -1,48 +1,48 @@
 .modal {
-  color: $grey;
-  h6 {
-    text-align: center;
-  }
+    color: $grey;
+    h6 {
+        text-align: center;
+    }
 }
 
 .modal-backdrop {
-  &.show {
-    opacity: 0.75;
-  }
+    &.show {
+        opacity: 0.75;
+    }
 }
 .modal-title {
-  text-transform: capitalize;
+    text-transform: capitalize;
 }
 .dark.modal-dialog {
-  color: $dark-blue;
-  .modal-header {
-    border-bottom: 1px solid $dark-border;
-    font-family: "Montserrat", sans-serif;
-  }
+    color: $dark-blue;
+    .modal-header {
+        border-bottom: 1px solid $dark-border;
+        font-family: "Montserrat", sans-serif;
+    }
 
-  .modal-footer {
-    border-top: 1px solid $dark-border;
-  }
-  .modal-content {
-    background: lighten($black, 2.5);
-    box-shadow: $dark-shadows;
-    border: 1px solid $dark-border;
-  }
-  .form-control {
-    background: $black;
-    border: 1px solid $dark-border;
-    color: #fff;
-    &:focus {
-      border: 1px solid $blue;
+    .modal-footer {
+        border-top: 1px solid $dark-border;
     }
-    &[readonly] {
-      background: lighten($black, 2.5);
-      color: rgba(255, 255, 255, 0.5);
+    .modal-content {
+        background: lighten($black, 2.5);
+        box-shadow: $dark-shadows;
+        border: 1px solid $dark-border;
     }
-  }
+    .form-control {
+        background: $black;
+        border: 1px solid $dark-border;
+        color: #fff;
+        &:focus {
+            border: 1px solid $blue;
+        }
+        &[readonly] {
+            background: lighten($black, 2.5);
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
 }
 
 .close {
-  text-shadow: none;
-  color: $grey;
+    text-shadow: none;
+    color: $grey;
 }

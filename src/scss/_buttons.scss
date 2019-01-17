@@ -1,86 +1,86 @@
 .btn {
-  border: none;
-  &.btn-success {
-    background-color: $green;
-    &:hover {
-      background-color: darken($green, $str);
+    border: none;
+    &.btn-success {
+        background-color: $green;
+        &:hover {
+            background-color: darken($green, $str);
+        }
+        &:focus {
+            box-shadow: 0 0 0 0.2rem transparentize($green, 0.25);
+        }
+        &:active {
+            background-color: darken($green, $str) !important;
+            box-shadow: 0 0 0 0.2rem transparentize($green, 0.25) !important;
+        }
     }
-    &:focus {
-      box-shadow: 0 0 0 0.2rem transparentize($green, 0.25);
+    &.btn-danger {
+        background: $red;
+        &:hover {
+            background-color: darken($red, $str);
+        }
+        &:focus {
+            box-shadow: 0 0 0 0.2rem transparentize($red, 0.25);
+        }
+        &:active {
+            background-color: darken($red, $str) !important;
+            box-shadow: 0 0 0 0.2rem transparentize($red, 0.25) !important;
+        }
     }
-    &:active {
-      background-color: darken($green, $str) !important;
-      box-shadow: 0 0 0 0.2rem transparentize($green, 0.25) !important;
+    &.btn-primary {
+        background: $blue;
+        &:hover {
+            background-color: darken($blue, $str);
+        }
+        &:focus {
+            box-shadow: 0 0 0 0.2rem transparentize($blue, 0.25);
+        }
+        &:active {
+            background-color: darken($blue, $str) !important;
+            box-shadow: 0 0 0 0.2rem transparentize($blue, 0.25) !important;
+        }
     }
-  }
-  &.btn-danger {
-    background: $red;
-    &:hover {
-      background-color: darken($red, $str);
+    &.btn-warning {
+        background: $orange;
+        color: #fff !important;
+        &:hover {
+            background-color: darken($orange, $str);
+        }
+        &:focus {
+            box-shadow: 0 0 0 0.2rem transparentize($orange, 0.25);
+        }
+        &:active {
+            background-color: darken($orange, $str) !important;
+            box-shadow: 0 0 0 0.2rem transparentize($orange, 0.25) !important;
+        }
     }
-    &:focus {
-      box-shadow: 0 0 0 0.2rem transparentize($red, 0.25);
-    }
-    &:active {
-      background-color: darken($red, $str) !important;
-      box-shadow: 0 0 0 0.2rem transparentize($red, 0.25) !important;
-    }
-  }
-  &.btn-primary {
-    background: $blue;
-    &:hover {
-      background-color: darken($blue, $str);
-    }
-    &:focus {
-      box-shadow: 0 0 0 0.2rem transparentize($blue, 0.25);
-    }
-    &:active {
-      background-color: darken($blue, $str) !important;
-      box-shadow: 0 0 0 0.2rem transparentize($blue, 0.25) !important;
-    }
-  }
-  &.btn-warning {
-    background: $orange;
-    color: #fff !important;
-    &:hover {
-      background-color: darken($orange, $str);
-    }
-    &:focus {
-      box-shadow: 0 0 0 0.2rem transparentize($orange, 0.25);
-    }
-    &:active {
-      background-color: darken($orange, $str) !important;
-      box-shadow: 0 0 0 0.2rem transparentize($orange, 0.25) !important;
-    }
-  }
 }
 
 .btn-add {
-  border: 1px dashed $grey;
-  color: $grey;
-  &:hover {
-    background-color: $green;
-    border: 1px solid transparent;
-  }
-  &:focus {
-    border: 1px solid $green;
-    box-shadow: 0 0 0 0.2rem transparentize($green, 0.25);
-  }
+    border: 1px dashed $grey;
+    color: $grey;
+    &:hover {
+        background-color: $green;
+        border: 1px solid transparent;
+    }
+    &:focus {
+        border: 1px solid $green;
+        box-shadow: 0 0 0 0.2rem transparentize($green, 0.25);
+    }
 }
 .btn-group {
-  .btn:first-child {
-    margin-right: 1px;
-  }
+    .btn:first-child {
+        margin-right: 1px;
+    }
 }
 .btn-copy {
-  float: right;
-  margin-top: -24px;
-  margin-right: 1px;
-  position: relative;
-  z-index: 99;
-  cursor: pointer;
-  border-bottom-right-radius: 0;
-  font-size: 0.65em;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
+    float: right;
+    margin-top: -24px;
+    margin-right: 1px;
+    position: relative;
+    z-index: 99;
+    cursor: pointer;
+    border-bottom-right-radius: 0;
+    font-size: 0.65em;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
 }

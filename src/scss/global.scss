@@ -29,130 +29,128 @@ $str: 8;
 @import "./navbars";
 
 .wrapper {
-  background: $bg;
-  min-height: 100vh;
-  color: $grey;
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 0.05em;
-  padding-bottom: 20px;
-  padding-left: 65px;
-  padding-top: 85px;
-  transition: $ease;
-  font-weight: 300;
-  @include tablet {
-    padding-left: 0;
-    padding-top: 125px;
-  }
+    background: $bg;
+    min-height: 100vh;
+    color: $grey;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.05em;
+    padding-bottom: 20px;
+    padding-left: 65px;
+    padding-top: 85px;
+    transition: $ease;
+    font-weight: 300;
+    @include tablet {
+        padding-left: 0;
+        padding-top: 125px;
+    }
 
-  &.dark {
-    background: $black;
-    color: $dark-blue;
-    ::placeholder {
-      /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: darken($dark-blue, 10);
-      opacity: 1; /* Firefox */
-    }
-    .global-nav {
-      box-shadow: $dark-shadows;
-    }
-    .top-navbar {
-      background: lighten($black, 5);
-      border-bottom: 1px solid $dark-border;
-      box-shadow: $dark-shadows;
-    }
-    .card {
-      background: lighten($black, 2.5);
-      border: 1px solid $dark-border;
-      box-shadow: $dark-shadows;
-      .card-header {
-        background: lighten($black, 5);
-        border-bottom: 1px solid $dark-border;
-      }
-    }
-    .form-control {
-      background: $black;
-      border: 1px solid $dark-border;
-      color: #fff;
-      &:focus {
-        border: 1px solid $blue;
-      }
-    }
-    .nav-tabs {
-      .nav-link {
-        background: lighten($black, 2.5);
-        border: 1px solid $dark-border;
-        color: $dark-blue !important;
-        border-bottom: none;
-        box-shadow: 0 -1px 2px 0 transparentize(black, 0.5);
-        &.active {
-          background: lighten($black, 5);
-          color: #fff !important;
+    &.dark {
+        background: $black;
+        color: $dark-blue;
+        ::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: darken($dark-blue, 10);
+            opacity: 1; /* Firefox */
         }
-        &:hover {
-          background: $black;
+        .global-nav {
+            box-shadow: $dark-shadows;
         }
-      }
+        .top-navbar {
+            background: lighten($black, 5);
+            border-bottom: 1px solid $dark-border;
+            box-shadow: $dark-shadows;
+        }
+        .card {
+            background: lighten($black, 2.5);
+            border: 1px solid $dark-border;
+            box-shadow: $dark-shadows;
+            .card-header {
+                background: lighten($black, 5);
+                border-bottom: 1px solid $dark-border;
+            }
+        }
+        .form-control {
+            background: $black;
+            border: 1px solid $dark-border;
+            color: #fff;
+            &:focus {
+                border: 1px solid $blue;
+            }
+        }
+        .nav-tabs {
+            .nav-link {
+                background: lighten($black, 2.5);
+                border: 1px solid $dark-border;
+                color: $dark-blue !important;
+                border-bottom: none;
+                box-shadow: 0 -1px 2px 0 transparentize(black, 0.5);
+                &.active {
+                    background: lighten($black, 5);
+                    color: #fff !important;
+                }
+                &:hover {
+                    background: $black;
+                }
+            }
+        }
+        .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+            background-color: $dark-blue;
+        }
+        .tab-pane {
+            background: lighten($black, 5);
+            border: 1px solid $dark-border;
+            box-shadow: $dark-shadows;
+        }
+        .btn-add {
+            color: $dark-blue;
+            border: 1px dashed $dark-blue;
+            &:hover {
+                color: #fff;
+                border: 1px solid transparent;
+            }
+        }
+        .badge {
+            background: $dark-blue;
+        }
     }
-    .custom-checkbox
-      .custom-control-input:checked
-      ~ .custom-control-label::before {
-      background-color: $dark-blue;
-    }
-    .tab-pane {
-      background: lighten($black, 5);
-      border: 1px solid $dark-border;
-      box-shadow: $dark-shadows;
-    }
-    .btn-add {
-      color: $dark-blue;
-      border: 1px dashed $dark-blue;
-      &:hover {
-        color: #fff;
-        border: 1px solid transparent;
-      }
-    }
-    .badge {
-      background: $dark-blue;
-    }
-  }
 }
 
 label {
-  margin: 10px 0 0 0;
-  font-size: 0.75em;
+    margin: 10px 0 0 0;
+    font-size: 0.75em;
 
-  .badge {
-    margin-left: 3px;
-    background-color: $grey;
-    cursor: help;
-  }
+    .badge {
+        margin-left: 3px;
+        background-color: $grey;
+        cursor: help;
+    }
 }
 p {
-  margin: 0;
+    margin: 0;
 }
 textarea {
-  min-height: 100px;
+    min-height: 100px;
 }
 
 .main-container {
-  max-width: 768px;
-  margin: 0 auto;
+    max-width: 768px;
+    margin: 0 auto;
 }
 
 .tooltip-inner {
-  font-family: "Montserrat";
-  font-size: 0.85em;
-  padding: 8px 12px;
-  text-align: left;
+    font-family: "Montserrat";
+    font-size: 0.85em;
+    padding: 8px 12px;
+    text-align: left;
 }
 
 footer {
-  margin-top: 75px;
-  text-align: center;
-  font-size: 0.75em;
-  opacity: 0.5;
+    margin-top: 75px;
+    text-align: center;
+    font-size: 0.75em;
+    opacity: 0.5;
 }
 
 .img {
-  width: 100%;
+    width: 100%;
 }

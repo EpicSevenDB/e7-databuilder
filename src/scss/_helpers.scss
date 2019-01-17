@@ -1,40 +1,40 @@
 .hidden {
-  display: none !important;
+    display: none !important;
 }
 .stealth {
-  opacity: 0;
-  pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 }
 .disabled {
-  opacity: 0.25 !important;
-  filter: none !important;
-  pointer-events: none;
+    opacity: 0.25 !important;
+    filter: none !important;
+    pointer-events: none;
 }
 .gutter-top {
-  margin-top: 6px;
+    margin-top: 6px;
 }
 .gutter-bottom {
-  margin-bottom: 18px !important;
+    margin-bottom: 18px !important;
 }
 
 .gutter-bottom-sm {
-  margin-bottom: 9px !important;
+    margin-bottom: 9px !important;
 }
 .align-center {
-  display: flex;
-  justify-content: center;
-  > * {
     display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 16px;
-  }
+    justify-content: center;
+    > * {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 16px;
+    }
 }
 
 .text-danger {
-  color: $red;
+    color: $red;
 }
 
 .margin-10 {
-  margin: 15px 15px 0 15px;
+    margin: 15px 15px 0 15px;
 }

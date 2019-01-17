@@ -1,63 +1,63 @@
 .nav-tabs {
-  cursor: pointer;
-  margin-top: 15px;
-  border-bottom: none;
-  position: relative;
-  z-index: 99;
-  margin-left: 15px;
-  .nav-link {
-    font-size: 0.8em;
-    border: 1px solid $border;
-    box-shadow: 0 -2px 3px transparentize($black, 0.95);
-    background-color: $bg;
-    transition: $ease;
-    margin-left: -1px;
+    cursor: pointer;
+    margin-top: 15px;
     border-bottom: none;
-    min-width: 55px;
-    text-align: center;
-    color: transparentize($grey, 0.5) !important;
-    &:hover {
-      border-top: 1px solid $border;
-      border-left: 1px solid $border;
-      border-right: 1px solid $border;
-      background: darken($bg, 5);
+    position: relative;
+    z-index: 99;
+    margin-left: 15px;
+    .nav-link {
+        font-size: 0.8em;
+        border: 1px solid $border;
+        box-shadow: 0 -2px 3px transparentize($black, 0.95);
+        background-color: $bg;
+        transition: $ease;
+        margin-left: -1px;
+        border-bottom: none;
+        min-width: 55px;
+        text-align: center;
+        color: transparentize($grey, 0.5) !important;
+        &:hover {
+            border-top: 1px solid $border;
+            border-left: 1px solid $border;
+            border-right: 1px solid $border;
+            background: darken($bg, 5);
+        }
+        &.active {
+            opacity: 1;
+            background: #fff;
+            pointer-events: none;
+            color: $grey !important;
+        }
     }
-    &.active {
-      opacity: 1;
-      background: #fff;
-      pointer-events: none;
-      color: $grey !important;
+    .add-link {
+        opacity: 1;
+        background: $green !important;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-top: 2px;
+        color: #fff !important;
+        &:hover {
+            background: darken($green, 5) !important;
+        }
     }
-  }
-  .add-link {
-    opacity: 1;
-    background: $green !important;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    margin-top: 2px;
-    color: #fff !important;
-    &:hover {
-      background: darken($green, 5) !important;
-    }
-  }
 }
 .tab-content {
-  width: 100%;
+    width: 100%;
 }
 .tab-pane {
-  background: #fff;
-  border: 1px solid $border;
-  border-radius: 5px;
-  margin-top: 0px;
-  padding: 12px 12px 24px 12px;
-  box-shadow: $shadows;
-  min-height: 300px;
-  transition: $ease;
+    background: #fff;
+    border: 1px solid $border;
+    border-radius: 5px;
+    margin-top: 0px;
+    padding: 12px 12px 24px 12px;
+    box-shadow: $shadows;
+    min-height: 300px;
+    transition: $ease;
 }
 
 .small-tabs {
-  .nav-item a {
-    font-size: 0.8em;
-    padding: 6px 12px;
-  }
+    .nav-item a {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
 }
