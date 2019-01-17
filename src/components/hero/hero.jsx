@@ -1035,9 +1035,9 @@ class Hero extends Component {
           label: "Scorpio",
           value: "scorpio",
           normalAwakening: "erikion-carapace",
-          worldAwakening: "black-cursed-powder",
+          worldAwakening: "black-curse-powder",
           normalSkill: "sharp-spearhead",
-          worldSkill: "black-cursed-powder"
+          worldSkill: "black-curse-powder"
         },
         {
           label: "Sagittarius",
