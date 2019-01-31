@@ -43,6 +43,30 @@ class Hero extends Component {
                     eff: 0,
                     efr: 0,
                     dac: 5
+                },
+                max5: {
+                    cp: 0,
+                    atk: 0,
+                    hp: 0,
+                    spd: 0,
+                    def: 0,
+                    chc: 0,
+                    chd: 0,
+                    eff: 0,
+                    efr: 0,
+                    dac: 5
+                },
+                max6: {
+                    cp: 0,
+                    atk: 0,
+                    hp: 0,
+                    spd: 0,
+                    def: 0,
+                    chc: 0,
+                    chd: 0,
+                    eff: 0,
+                    efr: 0,
+                    dac: 5
                 }
             },
             skills: [
@@ -218,6 +242,30 @@ class Hero extends Component {
                         dac: 0
                     },
                     max: {
+                        cp: 0,
+                        atk: 0,
+                        hp: 0,
+                        spd: 0,
+                        def: 0,
+                        chc: 0,
+                        chd: 0,
+                        eff: 0,
+                        efr: 0,
+                        dac: 5
+                    },
+                    max5: {
+                        cp: 0,
+                        atk: 0,
+                        hp: 0,
+                        spd: 0,
+                        def: 0,
+                        chc: 0,
+                        chd: 0,
+                        eff: 0,
+                        efr: 0,
+                        dac: 5
+                    },
+                    max6: {
                         cp: 0,
                         atk: 0,
                         hp: 0,
