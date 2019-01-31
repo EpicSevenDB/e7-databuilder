@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import EpicInput from "../common/epic-input";
-import { Col, CustomInput, FormGroup } from "reactstrap";
+import { Col, CustomInput, FormGroup, Button } from "reactstrap";
 import BadgeTip from "../common/badgetip";
 
 class HeroMemoryImprint extends Component {
@@ -28,27 +28,47 @@ class HeroMemoryImprint extends Component {
         }
     }
 
-    onBlur = () => {
-        this.props.onChange("memoryImprint", this.state.memoryImprint);
-    };
-
     onFormationBlur = () => {
         this.props.onChange("memoryImprintFormation", this.state.memoryImprintFormation);
+    };
+
+    onAutoCalculate = () => {
+        const memoryImprint = [...this.state.memoryImprint];
+        let base = { value: 0, index: 0 };
+        let baseFound = false;
+        for (let i = 0; i < memoryImprint.length; i++) {
+            if (
+                (memoryImprint[i].status.increase === 0 || memoryImprint[i].status.increase === "") &&
+                baseFound === false
+            ) {
+                continue;
+            } else if (baseFound === false) {
+                base.value = parseFloat(memoryImprint[i].status.increase);
+                base.index = i;
+                baseFound = true;
+                memoryImprint[i].status.increase = base.value;
+            } else {
+                const tmp = parseFloat((base.value + base.value * 0.5 * (i - base.index)).toFixed(3));
+                memoryImprint[i].status.increase = tmp;
+            }
+        }
+        this.setState({ memoryImprint });
     };
 
     handleChange = (name, value, i) => {
         const memoryImprint = [...this.state.memoryImprint];
         const memoryImprintFormation = { ...this.state.memoryImprintFormation };
-
-        if (name === "type") {
+        if (name === "formationType") {
             memoryImprint.map(imprint => (imprint.status.type = value));
         } else if (name === "north" || name === "south" || name === "east" || name === "west") {
             memoryImprintFormation[name] = value;
+            this.setState({ memoryImprintFormation });
         } else {
-            memoryImprint[i].status.increase = value;
+            memoryImprint[i].status.increase = parseFloat(value);
         }
-        this.setState({ memoryImprint, memoryImprintFormation });
+        this.props.onChange("memoryImprint", this.state.memoryImprint);
     };
+
     render() {
         const { memoryImprint, memoryImprintFormation } = this.state;
         const { defaultMemoryImprintFormation, stats } = this.props;
@@ -57,12 +77,11 @@ class HeroMemoryImprint extends Component {
                 <EpicInput
                     size="12"
                     type="select"
-                    name="type"
+                    name="formationType"
                     id="memoryImprint"
                     value={memoryImprint[0].status.type}
                     options={stats}
                     onChange={this.handleChange}
-                    onBlur={this.onBlur}
                 />
 
                 <Col md="12">
@@ -95,17 +114,27 @@ class HeroMemoryImprint extends Component {
                             <EpicInput
                                 key={i}
                                 size="3"
+                                type="text"
                                 id={"memoryImprintValue-" + i}
-                                tooltip="Percents are converted to decimal. Example: 5% -> 0.05"
                                 name={"Rank " + imprint.rank}
                                 value={imprint.status.increase}
                                 index={i}
                                 onChange={this.handleChange}
                                 hasPercent={true}
-                                onBlur={this.onBlur}
                             />
                         ))}
                     </FormGroup>
+                </Col>
+                <Col md="9">
+                    <small>
+                        Due to some inconsistent rounding on game's values, please double check the auto-calculated
+                        values and adjust accordingly.
+                    </small>
+                </Col>
+                <Col md="3">
+                    <Button size="sm" block color="success" onClick={this.onAutoCalculate}>
+                        Auto-Calculate
+                    </Button>
                 </Col>
             </React.Fragment>
         );
