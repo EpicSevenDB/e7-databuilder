@@ -33,7 +33,11 @@ class EpicInput extends Component {
     }
 
     onBlur(name, value, index, index2) {
-        this.props.onChange(name, value, index, index2);
+        this.props.onChange(name, this.checkForInt(value), index, index2);
+    }
+
+    checkForInt(value) {
+        return isNaN(value * 1) ? value : parseFloat(value);
     }
 
     convertPercent(value) {
