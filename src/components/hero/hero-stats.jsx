@@ -170,7 +170,7 @@ class HeroStats extends Component {
                                         type="number"
                                         onChange={this.handleChange}
                                         size="20"
-                                        name="base.hp"
+                                        name="max5.hp"
                                         value={stats.max5.hp}
                                     />
                                     <EpicInput
