@@ -1156,7 +1156,7 @@ class Hero extends Component {
                 { title: "Counter", slug: "stic_counter", checked: false },
                 { title: "Invincible", slug: "stic_invincible", checked: false },
                 { title: "Stealth", slug: "stic_hide", checked: false },
-                { title: "Immortal", slug: "stic_immortal", checked: false },
+                { title: "Immortal", slug: "stic_immortality", checked: false },
                 { title: "Continous Heal", slug: "stic_heal", checked: false },
                 { title: "Enraged", slug: "stic_madness", checked: false },
                 { title: "Reflect", slug: "stic_reflect", checked: false },
