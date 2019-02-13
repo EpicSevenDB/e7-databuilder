@@ -241,7 +241,7 @@ class Hero extends Component {
                 background: [""],
                 relations: [{ hero: "", relationType: "" }],
                 stats: {
-                    base: {
+                    lv1BaseStarNoAwaken: {
                         cp: 0,
                         atk: 0,
                         hp: 0,
@@ -253,7 +253,7 @@ class Hero extends Component {
                         efr: 0,
                         dac: 0
                     },
-                    max: {
+                    lv50FiveStarNoAwaken: {
                         cp: 0,
                         atk: 0,
                         hp: 0,
@@ -265,7 +265,7 @@ class Hero extends Component {
                         efr: 0,
                         dac: 5
                     },
-                    max5: {
+                    lv50FiveStarFullyAwaken: {
                         cp: 0,
                         atk: 0,
                         hp: 0,
@@ -277,7 +277,19 @@ class Hero extends Component {
                         efr: 0,
                         dac: 5
                     },
-                    max6: {
+                    lv60SixStarNoAwaken: {
+                        cp: 0,
+                        atk: 0,
+                        hp: 0,
+                        spd: 0,
+                        def: 0,
+                        chc: 0,
+                        chd: 0,
+                        eff: 0,
+                        efr: 0,
+                        dac: 5
+                    },
+                    lv60SixStarFullyAwakened: {
                         cp: 0,
                         atk: 0,
                         hp: 0,
