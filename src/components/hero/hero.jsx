@@ -1290,7 +1290,7 @@ class Hero extends Component {
                     {message}
                 </Alert>
                 <footer>
-                    {" Version: 1.0.5 - Last Updated: 01/30/2019"}
+                    {" Version: 1.0.6 - Last Updated: 02/12/2019"}
                     <br />
                     Kevin Quach - EpicSeven DataBuilder <span>{new Date().getFullYear()}</span>
                 </footer>
