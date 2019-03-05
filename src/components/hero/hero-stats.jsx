@@ -262,8 +262,8 @@ class HeroStats extends Component {
                                         type="number"
                                         size="20"
                                         name="cp"
-                                        index="lv50FiveStarFullyAwaken"
-                                        value={stats.lv50FiveStarFullyAwaken.cp}
+                                        index="lv50FiveStarFullyAwakened"
+                                        value={stats.lv50FiveStarFullyAwakened.cp}
                                         onChange={this.handleChange}
                                     />
                                     <EpicInput
@@ -271,72 +271,72 @@ class HeroStats extends Component {
                                         onChange={this.handleChange}
                                         size="20"
                                         name="atk"
-                                        index="lv50FiveStarFullyAwaken"
-                                        value={stats.lv50FiveStarFullyAwaken.atk}
+                                        index="lv50FiveStarFullyAwakened"
+                                        value={stats.lv50FiveStarFullyAwakened.atk}
                                     />
                                     <EpicInput
                                         type="number"
                                         onChange={this.handleChange}
                                         size="20"
                                         name="hp"
-                                        index="lv50FiveStarFullyAwaken"
-                                        value={stats.lv50FiveStarFullyAwaken.hp}
+                                        index="lv50FiveStarFullyAwakened"
+                                        value={stats.lv50FiveStarFullyAwakened.hp}
                                     />
                                     <EpicInput
                                         type="number"
                                         onChange={this.handleChange}
                                         size="20"
                                         name="spd"
-                                        index="lv50FiveStarFullyAwaken"
-                                        value={stats.lv50FiveStarFullyAwaken.spd}
+                                        index="lv50FiveStarFullyAwakened"
+                                        value={stats.lv50FiveStarFullyAwakened.spd}
                                     />
                                     <EpicInput
                                         type="number"
                                         onChange={this.handleChange}
                                         size="20"
                                         name="def"
-                                        index="lv50FiveStarFullyAwaken"
-                                        value={stats.lv50FiveStarFullyAwaken.def}
+                                        index="lv50FiveStarFullyAwakened"
+                                        value={stats.lv50FiveStarFullyAwakened.def}
                                     />
                                     <EpicInput
                                         type="number"
                                         onChange={this.handleChange}
                                         size="20"
                                         name="chc"
-                                        index="lv50FiveStarFullyAwaken"
-                                        value={stats.lv50FiveStarFullyAwaken.chc}
+                                        index="lv50FiveStarFullyAwakened"
+                                        value={stats.lv50FiveStarFullyAwakened.chc}
                                     />
                                     <EpicInput
                                         type="number"
                                         onChange={this.handleChange}
                                         size="20"
                                         name="chd"
-                                        index="lv50FiveStarFullyAwaken"
-                                        value={stats.lv50FiveStarFullyAwaken.chd}
+                                        index="lv50FiveStarFullyAwakened"
+                                        value={stats.lv50FiveStarFullyAwakened.chd}
                                     />
                                     <EpicInput
                                         type="number"
                                         onChange={this.handleChange}
                                         size="20"
                                         name="eff"
-                                        index="lv50FiveStarFullyAwaken"
-                                        value={stats.lv50FiveStarFullyAwaken.eff}
+                                        index="lv50FiveStarFullyAwakened"
+                                        value={stats.lv50FiveStarFullyAwakened.eff}
                                     />
                                     <EpicInput
                                         type="number"
                                         onChange={this.handleChange}
                                         size="20"
                                         name="efr"
-                                        index="lv50FiveStarFullyAwaken"
-                                        value={stats.lv50FiveStarFullyAwaken.efr}
+                                        index="lv50FiveStarFullyAwakened"
+                                        value={stats.lv50FiveStarFullyAwakened.efr}
                                     />
                                     <EpicInput
                                         type="number"
                                         onChange={this.handleChange}
                                         size="20"
                                         name="dac"
-                                        index="lv50FiveStarFullyAwaken"
-                                        value={stats.lv50FiveStarFullyAwaken.dac}
+                                        index="lv50FiveStarFullyAwakened"
+                                        value={stats.lv50FiveStarFullyAwakened.dac}
                                     />
                                 </FormGroup>
                             </Col>
