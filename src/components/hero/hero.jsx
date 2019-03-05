@@ -44,7 +44,7 @@ class Hero extends Component {
                     efr: 0,
                     dac: 5
                 },
-                lv50FiveStarFullyAwaken: {
+                lv50FiveStarFullyAwakened: {
                     cp: 0,
                     atk: 0,
                     hp: 0,
@@ -265,7 +265,7 @@ class Hero extends Component {
                         efr: 0,
                         dac: 5
                     },
-                    lv50FiveStarFullyAwaken: {
+                    lv50FiveStarFullyAwakened: {
                         cp: 0,
                         atk: 0,
                         hp: 0,
