@@ -1112,7 +1112,7 @@ class Hero extends Component {
                     normalAwakening: "cold-look",
                     worldAwakening: "mercenarys-medicine",
                     normalSkill: "archers-vision",
-                    worldSkill: "mercendarys-medicine"
+                    worldSkill: "mercenarys-medicine"
                 },
                 {
                     label: "Capricorn",
