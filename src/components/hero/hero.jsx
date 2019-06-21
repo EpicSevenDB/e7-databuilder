@@ -489,172 +489,172 @@ class Hero extends Component {
                         // max +2
                         [
                             // +1
-                            { item: "rare", qty: 2 },
+                            { item: "gold", qty: 14000 },
                             { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 14000 }
+                            { item: "rare", qty: 2 }
                         ],
                         [
                             // +2
-                            { item: "rare", qty: 3 },
+                            { item: "gold", qty: 35000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 35000 }
+                            { item: "rare", qty: 3 }
                         ]
                     ],
                     [
                         // max +3
                         [
                             // +1
-                            { item: "rare", qty: 2 },
+                            { item: "gold", qty: 14000 },
                             { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 14000 }
+                            { item: "rare", qty: 2 }
                         ],
                         [
                             // +2
-                            { item: "rare", qty: 3 },
+                            { item: "gold", qty: 23000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 23000 }
+                            { item: "rare", qty: 3 }
                         ],
                         [
                             // +3
-                            { item: "rare", qty: 5 },
+                            { item: "gold", qty: 45000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 45000 }
+                            { item: "rare", qty: 5 }
                         ]
                     ],
                     [
                         // max +4
                         [
                             // +1
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "rare", qty: 2 },
+                            { item: "gold", qty: 18000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 18000 }
+                            { item: "rare", qty: 2 }
                         ],
                         [
                             // +3
-                            { item: "rare", qty: 3 },
+                            { item: "gold", qty: 23000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 23000 }
+                            { item: "rare", qty: 3 }
                         ],
                         [
                             // +4
-                            { item: "rare", qty: 4 },
+                            { item: "gold", qty: 40000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 40000 }
+                            { item: "rare", qty: 4 }
                         ]
                     ],
                     [
                         // max +5
                         [
                             // +1
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +3
-                            { item: "rare", qty: 3 },
+                            { item: "gold", qty: 23000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 23000 }
+                            { item: "rare", qty: 3 }
                         ],
                         [
                             // +4
-                            { item: "rare", qty: 4 },
+                            { item: "gold", qty: 32000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 32000 }
+                            { item: "rare", qty: 4 }
                         ],
                         [
                             // +5
-                            { item: "rare", qty: 5 },
+                            { item: "gold", qty: 45000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 45000 }
+                            { item: "rare", qty: 5 }
                         ]
                     ],
                     [
                         // max +6
                         [
                             // +1
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +3
-                            { item: "rare", qty: 1 },
+                            { item: "gold", qty: 13000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 13000 }
+                            { item: "rare", qty: 1 }
                         ],
                         [
                             // +4
-                            { item: "rare", qty: 2 },
+                            { item: "gold", qty: 18000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 18000 }
+                            { item: "rare", qty: 2 }
                         ],
                         [
                             // +5
-                            { item: "rare", qty: 4 },
+                            { item: "gold", qty: 32000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 32000 }
+                            { item: "rare", qty: 4 }
                         ],
                         [
                             // +6
-                            { item: "rare", qty: 6 },
+                            { item: "gold", qty: 50000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 50000 }
+                            { item: "rare", qty: 6 }
                         ]
                     ],
                     [
                         // max +7
                         [
                             // +1
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +3
-                            { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 8000 }
+                            { item: "gold", qty: 8000 },
+                            { item: "molagora", qty: 2 }
                         ],
                         [
                             // +4
-                            { item: "rare", qty: 3 },
+                            { item: "gold", qty: 23000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 23000 }
+                            { item: "rare", qty: 3 }
                         ],
                         [
                             // +5
-                            { item: "rare", qty: 4 },
+                            { item: "gold", qty: 28000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 28000 }
+                            { item: "rare", qty: 4 }
                         ],
                         [
                             // +6
-                            { item: "rare", qty: 5 },
+                            { item: "gold", qty: 37000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 37000 }
+                            { item: "rare", qty: 5 }
                         ],
                         [
                             // +7
-                            { item: "rare", qty: 6 },
+                            { item: "gold", qty: 50000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 50000 }
+                            { item: "rare", qty: 6 }
                         ]
                     ]
                 ],
@@ -663,178 +663,178 @@ class Hero extends Component {
                     // 4-star
                     [
                         // max +1
-                        [{ item: "rare", qty: 8 }, { item: "molagora", qty: 5 }, { item: "gold", qty: 60000 }]
+                        [{ item: "gold", qty: 60000 }, { item: "molagora", qty: 5 }, { item: "rare", qty: 8 } ]
                     ],
                     [
                         // max +2
                         [
                             // +1
-                            { item: "rare", qty: 3 },
+                            { item: "gold", qty: 27000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 27000 }
+                            { item: "rare", qty: 3 }
                         ],
                         [
                             // +2
-                            { item: "epic", qty: 1 },
+                            { item: "gold", qty: 50000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 50000 }
+                            { item: "epic", qty: 1 }
                         ]
                     ],
                     [
                         // max +3
                         [
                             // +1
-                            { item: "rare", qty: 1 },
+                            { item: "gold", qty: 9000 },
                             { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 9000 }
+                            { item: "rare", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "rare", qty: 3 },
+                            { item: "gold", qty: 31000 },
                             { item: "molagora", qty: 4 },
-                            { item: "gold", qty: 31000 }
+                            { item: "rare", qty: 3 }
                         ],
                         [
                             // +3
-                            { item: "epic", qty: 1 },
+                            { item: "gold", qty: 50000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 50000 }
+                            { item: "epic", qty: 1 }
                         ]
                     ],
                     [
                         // max +4
                         [
                             // +1
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "rare", qty: 1 },
+                            { item: "gold", qty: 13000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 13000 }
+                            { item: "rare", qty: 1 }
                         ],
                         [
                             // +3
-                            { item: "rare", qty: 1 },
+                            { item: "gold", qty: 21000 },
                             { item: "molagora", qty: 4 },
-                            { item: "gold", qty: 21000 }
+                            { item: "rare", qty: 1 }
                         ],
                         [
                             // +4
-                            { item: "epic", qty: 2 },
+                            { item: "gold", qty: 80000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 80000 }
+                            { item: "epic", qty: 2 }
                         ]
                     ],
                     [
                         // max +5
                         [
                             // +1
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 8000 }
+                            { item: "gold", qty: 8000 },
+                            { item: "molagora", qty: 2 }
                         ],
                         [
                             // +3
-                            { item: "rare", qty: 1 },
+                            { item: "gold", qty: 17000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 17000 }
+                            { item: "rare", qty: 1 },
                         ],
                         [
                             // +4
-                            { item: "rare", qty: 3 },
+                            { item: "gold", qty: 27000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 27000 }
+                            { item: "rare", qty: 3 }
                         ],
                         [
                             // +5
-                            { item: "epic", qty: 2 },
+                            { item: "gold", qty: 80000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 80000 }
+                            { item: "epic", qty: 2 }
                         ]
                     ],
                     [
                         // max +6
                         [
                             // +1
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 8000 }
+                            { item: "gold", qty: 8000 },
+                            { item: "molagora", qty: 2 }
                         ],
                         [
                             // +3
-                            { item: "rare", qty: 1 },
+                            { item: "gold", qty: 13000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 13000 }
+                            { item: "rare", qty: 1 }
                         ],
                         [
                             // +4
-                            { item: "rare", qty: 2 },
+                            { item: "gold", qty: 22000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 22000 }
+                            { item: "rare", qty: 2 }
                         ],
                         [
                             // +5
-                            { item: "rare", qty: 4 },
+                            { item: "gold", qty: 32000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 32000 }
+                            { item: "rare", qty: 4 }
                         ],
                         [
                             // +6
-                            { item: "epic", qty: 2 },
+                            { item: "gold", qty: 80000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 80000 }
+                            { item: "epic", qty: 2 }
                         ]
                     ],
                     [
                         // max +7
                         [
                             // +1
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +3
-                            { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 8000 }
+                            { item: "gold", qty: 8000 },
+                            { item: "molagora", qty: 2 }
                         ],
                         [
                             // +4
-                            { item: "rare", qty: 1 },
+                            { item: "gold", qty: 13000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 13000 }
+                            { item: "rare", qty: 1 }
                         ],
                         [
                             // +5
-                            { item: "rare", qty: 2 },
+                            { item: "gold", qty: 22000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 22000 }
+                            { item: "rare", qty: 2 }
                         ],
                         [
                             // +6
-                            { item: "rare", qty: 5 },
+                            { item: "gold", qty: 45000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 45000 }
+                            { item: "rare", qty: 5 }
                         ],
                         [
                             // +7
-                            { item: "epic", qty: 2 },
+                            { item: "gold", qty: 80000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 80000 }
+                            { item: "epic", qty: 2 }
                         ]
                     ]
                 ],
@@ -845,181 +845,181 @@ class Hero extends Component {
                         // max +1
                         [
                             // +1
-                            { item: "rare", qty: 8 },
+                            { item: "gold", qty: 80000 },
                             { item: "molagorago", qty: 2 },
-                            { item: "gold", qty: 80000 }
+                            { item: "rare", qty: 8 }
                         ]
                     ],
                     [
                         // max +2
                         [
                             // +1
-                            { item: "rare", qty: 5 },
+                            { item: "gold", qty: 33000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 33000 }
+                            { item: "rare", qty: 5 }
                         ],
                         [
                             // +2
-                            { item: "epic", qty: 2 },
+                            { item: "gold", qty: 100000 },
                             { item: "molagorago", qty: 2 },
-                            { item: "gold", qty: 100000 }
+                            { item: "epic", qty: 2 }
                         ]
                     ],
                     [
                         // max +3
                         [
                             // +1
-                            { item: "rare", qty: 3 },
+                            { item: "gold", qty: 19000 },
                             { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 19000 }
+                            { item: "rare", qty: 3 }
                         ],
                         [
                             // +2
-                            { item: "rare", qty: 5 },
+                            { item: "gold", qty: 37000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 37000 }
+                            { item: "rare", qty: 5 }
                         ],
                         [
                             // +3
-                            { item: "epic", qty: 3 },
+                            { item: "gold", qty: 130000 },
                             { item: "molagorago", qty: 2 },
-                            { item: "gold", qty: 130000 }
+                            { item: "epic", qty: 3 },
                         ]
                     ],
                     [
                         // max +4
                         [
                             // +1
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "rare", qty: 3 },
+                            { item: "gold", qty: 27000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 27000 }
+                            { item: "rare", qty: 3 }
                         ],
                         [
                             // +3
-                            { item: "rare", qty: 5 },
+                            { item: "gold", qty: 49000 },
                             { item: "molagora", qty: 6 },
-                            { item: "gold", qty: 49000 }
+                            { item: "rare", qty: 5 }
                         ],
                         [
                             // +4
-                            { item: "epic", qty: 2 },
+                            { item: "gold", qty: 80000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 80000 }
+                            { item: "epic", qty: 2 }
                         ]
                     ],
                     [
                         // max +5
                         [
                             // +1
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 8000 }
+                            { item: "gold", qty: 8000 },
+                            { item: "molagora", qty: 2 }
                         ],
                         [
                             // +3
-                            { item: "rare", qty: 5 },
+                            { item: "gold", qty: 33000 },
                             { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 33000 }
+                            { item: "rare", qty: 5 }
                         ],
                         [
                             // +4
-                            { item: "rare", qty: 7 },
+                            { item: "gold", qty: 47000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 47000 }
+                            { item: "rare", qty: 7 }
                         ],
                         [
                             // +5
-                            { item: "epic", qty: 2 },
+                            { item: "gold", qty: 100000 },
                             { item: "molagorago", qty: 2 },
-                            { item: "gold", qty: 100000 }
+                            { item: "epic", qty: 2 }
                         ]
                     ],
                     [
                         // max +6
                         [
                             // +1
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 8000 }
+                            { item: "gold", qty: 8000 },
+                            { item: "molagora", qty: 2 }
                         ],
                         [
                             // +3
-                            { item: "rare", qty: 2 },
+                            { item: "gold", qty: 22000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 22000 }
+                            { item: "rare", qty: 2 }
                         ],
                         [
                             // +4
-                            { item: "rare", qty: 4 },
+                            { item: "gold", qty: 36000 },
                             { item: "molagora", qty: 4 },
-                            { item: "gold", qty: 36000 }
+                            { item: "rare", qty: 4 }
                         ],
                         [
                             // +5
-                            { item: "rare", qty: 5 },
+                            { item: "gold", qty: 45000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 45000 }
+                            { item: "rare", qty: 5 }
                         ],
                         [
                             // +6
-                            { item: "epic", qty: 2 },
+                            { item: "gold", qty: 80000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 80000 }
+                            { item: "epic", qty: 2 }
                         ]
                     ],
                     [
                         // max +7
                         [
                             // +1
-                            { item: "molagora", qty: 1 },
-                            { item: "gold", qty: 4000 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +2
-                            { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 8000 }
+                            { item: "gold", qty: 8000 },
+                            { item: "molagora", qty: 2 }
                         ],
                         [
                             // +3
-                            { item: "molagora", qty: 2 },
-                            { item: "gold", qty: 8000 }
+                            { item: "gold", qty: 8000 },
+                            { item: "molagora", qty: 2 }
                         ],
                         [
                             // +4
-                            { item: "rare", qty: 3 },
+                            { item: "gold", qty: 27000 },
                             { item: "molagora", qty: 3 },
-                            { item: "gold", qty: 27000 }
+                            { item: "rare", qty: 3 }
                         ],
                         [
                             // +5
-                            { item: "rare", qty: 4 },
+                            { item: "gold", qty: 40000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 40000 }
+                            { item: "rare", qty: 4 }
                         ],
                         [
                             // +6
-                            { item: "rare", qty: 7 },
+                            { item: "gold", qty: 55000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 55000 }
+                            { item: "rare", qty: 7 }
                         ],
                         [
                             // +7
-                            { item: "epic", qty: 3 },
+                            { item: "gold", qty: 110000 },
                             { item: "molagorago", qty: 1 },
-                            { item: "gold", qty: 110000 }
+                            { item: "epic", qty: 3 }
                         ]
                     ]
                 ]
