@@ -10,6 +10,7 @@ import { Row, Col, Alert, ButtonGroup } from "reactstrap";
 class Hero extends Component {
     state = {
         hero: {
+            gameId: "",
             name: "",
             rarity: 3,
             classType: "",
@@ -26,11 +27,11 @@ class Hero extends Component {
                     hp: 0,
                     spd: 0,
                     def: 0,
-                    chc: 0,
-                    chd: 0,
+                    chc: 0.15,
+                    chd: 1.5,
                     eff: 0,
                     efr: 0,
-                    dac: 0
+                    dac: 0.05
                 },
                 lv50FiveStarNoAwaken: {
                     cp: 0,
@@ -38,11 +39,11 @@ class Hero extends Component {
                     hp: 0,
                     spd: 0,
                     def: 0,
-                    chc: 0,
-                    chd: 0,
+                    chc: 0.15,
+                    chd: 1.5,
                     eff: 0,
                     efr: 0,
-                    dac: 5
+                    dac: 0.05
                 },
                 lv50FiveStarFullyAwakened: {
                     cp: 0,
@@ -50,11 +51,11 @@ class Hero extends Component {
                     hp: 0,
                     spd: 0,
                     def: 0,
-                    chc: 0,
-                    chd: 0,
+                    chc: 0.15,
+                    chd: 1.5,
                     eff: 0,
                     efr: 0,
-                    dac: 5
+                    dac: 0.05
                 },
                 lv60SixStarNoAwaken: {
                     cp: 0,
@@ -62,11 +63,11 @@ class Hero extends Component {
                     hp: 0,
                     spd: 0,
                     def: 0,
-                    chc: 0,
-                    chd: 0,
+                    chc: 0.15,
+                    chd: 1.5,
                     eff: 0,
                     efr: 0,
-                    dac: 5
+                    dac: 0.05
                 },
                 lv60SixStarFullyAwakened: {
                     cp: 0,
@@ -74,11 +75,11 @@ class Hero extends Component {
                     hp: 0,
                     spd: 0,
                     def: 0,
-                    chc: 0,
-                    chd: 0,
+                    chc: 0.15,
+                    chd: 1.5,
                     eff: 0,
                     efr: 0,
-                    dac: 5
+                    dac: 0.05
                 }
             },
             skills: [
@@ -94,7 +95,25 @@ class Hero extends Component {
                     description: "",
                     enhancement: [{ description: "", resources: [] }],
                     buffs: [],
-                    debuffs: []
+                    debuffs: [],
+                    damageModifiers: [
+                        {
+                            name: "pow",
+                            section: "pow",
+                            value: 1.0,
+                            soulburn: 1.0
+                        },
+                        {
+                            name: "statModifier",
+                            description: "",
+                            section: "additive",
+                            stat: "atk",
+                            type: "multiplier",
+                            target: "self",
+                            value: 1.0,
+                            soulburn: 1.0
+                        }
+                    ]
                 },
                 {
                     isPassive: false,
@@ -108,7 +127,25 @@ class Hero extends Component {
                     description: "",
                     enhancement: [{ description: "", resources: [] }],
                     buffs: [],
-                    debuffs: []
+                    debuffs: [],
+                    damageModifiers: [
+                        {
+                            name: "pow",
+                            section: "pow",
+                            value: 1.0,
+                            soulburn: 1.0
+                        },
+                        {
+                            name: "statModifier",
+                            description: "",
+                            section: "additive",
+                            stat: "atk",
+                            type: "multiplier",
+                            target: "self",
+                            value: 1.0,
+                            soulburn: 1.0
+                        }
+                    ]
                 },
                 {
                     isPassive: false,
@@ -122,7 +159,25 @@ class Hero extends Component {
                     description: "",
                     enhancement: [{ description: "", resources: [] }],
                     buffs: [],
-                    debuffs: []
+                    debuffs: [],
+                    damageModifiers: [
+                        {
+                            name: "pow",
+                            section: "pow",
+                            value: 1.0,
+                            soulburn: 1.0
+                        },
+                        {
+                            name: "statModifier",
+                            description: "",
+                            section: "additive",
+                            stat: "atk",
+                            type: "multiplier",
+                            target: "self",
+                            value: 1.0,
+                            soulburn: 1.0
+                        }
+                    ]
                 }
             ],
             specialtySkill: {
@@ -132,12 +187,43 @@ class Hero extends Component {
                 enhancement: [],
                 stats: { command: 0, charm: 0, politics: 0 }
             },
+            camping: {
+                options": [
+                    "Option1",
+                    "Option2"
+                ],
+                reactions: {
+                    advice: 0,
+                    belief: 0,
+                    bizarre-story: 0,
+                    comforting-cheer: 0,
+                    complain: 0,
+                    criticism: 0,
+                    cute-cheer: 0,
+                    dream: 0,
+                    food-story: 0,
+                    gossip: 0,
+                    happy-memory: 0,
+                    heroic-cheer: 0,
+                    heroic-tale: 0,
+                    horror-story: 0,
+                    interesting-story: 0,
+                    joyful-memory: 0,
+                    myth: 0,
+                    occult: 0,
+                    reality-check: 0,
+                    sad-memory: 0,
+                    self-indulgent: 0,
+                    unique-comment: 0
+                }
+            },
             memoryImprintFormation: {
                 north: false,
                 south: false,
                 east: false,
                 west: false
             },
+            memoryImprintAttribute: "",
             memoryImprint: [
                 {
                     rank: "d",
@@ -231,6 +317,7 @@ class Hero extends Component {
         import: {},
         defaults: {
             hero: {
+                gameId: "",
                 name: "",
                 rarity: 3,
                 classType: "",
@@ -247,11 +334,11 @@ class Hero extends Component {
                         hp: 0,
                         spd: 0,
                         def: 0,
-                        chc: 0,
-                        chd: 0,
+                        chc: 0.15,
+                        chd: 1.5,
                         eff: 0,
                         efr: 0,
-                        dac: 0
+                        dac: 0.05
                     },
                     lv50FiveStarNoAwaken: {
                         cp: 0,
@@ -259,11 +346,11 @@ class Hero extends Component {
                         hp: 0,
                         spd: 0,
                         def: 0,
-                        chc: 0,
-                        chd: 0,
+                        chc: 0.15,
+                        chd: 1.5,
                         eff: 0,
                         efr: 0,
-                        dac: 5
+                        dac: 0.05
                     },
                     lv50FiveStarFullyAwakened: {
                         cp: 0,
@@ -271,11 +358,11 @@ class Hero extends Component {
                         hp: 0,
                         spd: 0,
                         def: 0,
-                        chc: 0,
-                        chd: 0,
+                        chc: 0.15,
+                        chd: 1.5,
                         eff: 0,
                         efr: 0,
-                        dac: 5
+                        dac: 0.05
                     },
                     lv60SixStarNoAwaken: {
                         cp: 0,
@@ -283,11 +370,11 @@ class Hero extends Component {
                         hp: 0,
                         spd: 0,
                         def: 0,
-                        chc: 0,
-                        chd: 0,
+                        chc: 0.15,
+                        chd: 1.5,
                         eff: 0,
                         efr: 0,
-                        dac: 5
+                        dac: 0.05
                     },
                     lv60SixStarFullyAwakened: {
                         cp: 0,
@@ -295,11 +382,11 @@ class Hero extends Component {
                         hp: 0,
                         spd: 0,
                         def: 0,
-                        chc: 0,
-                        chd: 0,
+                        chc: 0.15,
+                        chd: 1.5,
                         eff: 0,
                         efr: 0,
-                        dac: 5
+                        dac: 0.05
                     }
                 },
                 skills: [
@@ -315,7 +402,25 @@ class Hero extends Component {
                         description: "",
                         enhancement: [{ description: "", resources: [] }],
                         buffs: [],
-                        debuffs: []
+                        debuffs: [],
+                        damageModifiers: [
+                            {
+                                name: "pow",
+                                section: "pow",
+                                value: 1.0,
+                                soulburn: 1.0
+                            },
+                            {
+                                name: "statModifier",
+                                description: "",
+                                section: "additive",
+                                stat: "atk",
+                                type: "multiplier",
+                                target: "self",
+                                value: 1.0,
+                                soulburn: 1.0
+                            }
+                        ]
                     },
                     {
                         isPassive: false,
@@ -329,7 +434,25 @@ class Hero extends Component {
                         description: "",
                         enhancement: [{ description: "", resources: [] }],
                         buffs: [],
-                        debuffs: []
+                        debuffs: [],
+                        damageModifiers: [
+                            {
+                                name: "pow",
+                                section: "pow",
+                                value: 1.0,
+                                soulburn: 1.0
+                            },
+                            {
+                                name: "statModifier",
+                                description: "",
+                                section: "additive",
+                                stat: "atk",
+                                type: "multiplier",
+                                target: "self",
+                                value: 1.0,
+                                soulburn: 1.0
+                            }
+                        ]
                     },
                     {
                         isPassive: false,
@@ -343,7 +466,25 @@ class Hero extends Component {
                         description: "",
                         enhancement: [{ description: "", resources: [] }],
                         buffs: [],
-                        debuffs: []
+                        debuffs: [],
+                        damageModifiers: [
+                            {
+                                name: "pow",
+                                section: "pow",
+                                value: 1.0,
+                                soulburn: 1.0
+                            },
+                            {
+                                name: "statModifier",
+                                description: "",
+                                section: "additive",
+                                stat: "atk",
+                                type: "multiplier",
+                                target: "self",
+                                value: 1.0,
+                                soulburn: 1.0
+                            }
+                        ]
                     }
                 ],
                 specialtySkill: {
@@ -353,12 +494,43 @@ class Hero extends Component {
                     enhancement: [],
                     stats: { command: 0, charm: 0, politics: 0 }
                 },
+                camping: {
+                    options": [
+                        "Option1",
+                        "Option2"
+                    ],
+                    reactions: {
+                        advice: 0,
+                        belief: 0,
+                        bizarre-story: 0,
+                        comforting-cheer: 0,
+                        complain: 0,
+                        criticism: 0,
+                        cute-cheer: 0,
+                        dream: 0,
+                        food-story: 0,
+                        gossip: 0,
+                        happy-memory: 0,
+                        heroic-cheer: 0,
+                        heroic-tale: 0,
+                        horror-story: 0,
+                        interesting-story: 0,
+                        joyful-memory: 0,
+                        myth: 0,
+                        occult: 0,
+                        reality-check: 0,
+                        sad-memory: 0,
+                        self-indulgent: 0,
+                        unique-comment: 0
+                    }
+                },
                 memoryImprintFormation: {
                     north: false,
                     south: false,
                     east: false,
                     west: false
                 },
+                memoryImprintAttribute: "",
                 memoryImprint: [
                     {
                         rank: "d",
