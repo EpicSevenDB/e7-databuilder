@@ -174,6 +174,7 @@ class HeroForm extends Component {
                                     onChange={onChange}
                                     buffs={defaults.buffs}
                                     debuffs={defaults.debuffs}
+                                    effects={defaults.effects}
                                     isDark={this.props.isDark}
                                     rarity={hero.rarity}
                                     zodiac={hero.zodiac}

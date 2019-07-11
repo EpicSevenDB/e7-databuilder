@@ -96,20 +96,15 @@ class Hero extends Component {
                     enhancement: [{ description: "", resources: [] }],
                     buffs: [],
                     debuffs: [],
+                    effects: [],
                     damageModifiers: [
                         {
                             name: "pow",
-                            section: "pow",
                             value: 1.0,
                             soulburn: 1.0
                         },
                         {
-                            name: "statModifier",
-                            description: "",
-                            section: "additive",
-                            stat: "atk",
-                            type: "multiplier",
-                            target: "self",
+                            name: "atk_rate",
                             value: 1.0,
                             soulburn: 1.0
                         }
@@ -128,20 +123,15 @@ class Hero extends Component {
                     enhancement: [{ description: "", resources: [] }],
                     buffs: [],
                     debuffs: [],
+                    effects: [],
                     damageModifiers: [
                         {
                             name: "pow",
-                            section: "pow",
                             value: 1.0,
                             soulburn: 1.0
                         },
                         {
-                            name: "statModifier",
-                            description: "",
-                            section: "additive",
-                            stat: "atk",
-                            type: "multiplier",
-                            target: "self",
+                            name: "atk_rate",
                             value: 1.0,
                             soulburn: 1.0
                         }
@@ -160,20 +150,15 @@ class Hero extends Component {
                     enhancement: [{ description: "", resources: [] }],
                     buffs: [],
                     debuffs: [],
+                    effects: [],
                     damageModifiers: [
                         {
                             name: "pow",
-                            section: "pow",
                             value: 1.0,
                             soulburn: 1.0
                         },
                         {
-                            name: "statModifier",
-                            description: "",
-                            section: "additive",
-                            stat: "atk",
-                            type: "multiplier",
-                            target: "self",
+                            name: "atk_rate",
                             value: 1.0,
                             soulburn: 1.0
                         }
@@ -312,7 +297,9 @@ class Hero extends Component {
                     statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
                     resources: []
                 }
-            ]
+            ],
+	    summonQuote: "",
+	    description: ""
         },
         import: {},
         defaults: {
@@ -403,20 +390,15 @@ class Hero extends Component {
                         enhancement: [{ description: "", resources: [] }],
                         buffs: [],
                         debuffs: [],
+			effects: [],
                         damageModifiers: [
                             {
                                 name: "pow",
-                                section: "pow",
                                 value: 1.0,
                                 soulburn: 1.0
                             },
                             {
-                                name: "statModifier",
-                                description: "",
-                                section: "additive",
-                                stat: "atk",
-                                type: "multiplier",
-                                target: "self",
+                                name: "atk_rate",
                                 value: 1.0,
                                 soulburn: 1.0
                             }
@@ -435,20 +417,15 @@ class Hero extends Component {
                         enhancement: [{ description: "", resources: [] }],
                         buffs: [],
                         debuffs: [],
+			effects: [],
                         damageModifiers: [
                             {
                                 name: "pow",
-                                section: "pow",
                                 value: 1.0,
                                 soulburn: 1.0
                             },
                             {
-                                name: "statModifier",
-                                description: "",
-                                section: "additive",
-                                stat: "atk",
-                                type: "multiplier",
-                                target: "self",
+                                name: "atk_rate",
                                 value: 1.0,
                                 soulburn: 1.0
                             }
@@ -467,20 +444,15 @@ class Hero extends Component {
                         enhancement: [{ description: "", resources: [] }],
                         buffs: [],
                         debuffs: [],
+			effects: [],
                         damageModifiers: [
                             {
                                 name: "pow",
-                                section: "pow",
                                 value: 1.0,
                                 soulburn: 1.0
                             },
                             {
-                                name: "statModifier",
-                                description: "",
-                                section: "additive",
-                                stat: "atk",
-                                type: "multiplier",
-                                target: "self",
+                                name: "atk_rate",
                                 value: 1.0,
                                 soulburn: 1.0
                             }
@@ -619,7 +591,9 @@ class Hero extends Component {
                         statsIncrease: [{ "": 0 }, { atk: 30 }, { hp: 80 }],
                         resources: []
                     }
-                ]
+                ],
+		summonQuote: "",
+		description: ""
             },
             awakeningCosts: [
                 [
@@ -1365,17 +1339,7 @@ class Hero extends Component {
                 { title: "Vigor", slug: "stic_vigor", checked: false },
                 { title: "Loveliness", slug: "stic_love", checked: false },
                 { title: "Enraged", slug: "stic_enrage", checked: false },
-                { title: "Rage", slug: "stic_rage", checked: false },
-                {
-                    title: "Increase Combat Readiness",
-                    slug: "efct_cr_up",
-                    checked: false
-                },
-                { title: "Cleanse", slug: "efct_cleanse", checked: false },
-                { title: "Decrease Cooldown", slug: "efct_cd_dn", checked: false },
-                { title: "Extra Turn", slug: "efct_ex_turn", checked: false },
-                { title: "Dual Attack", slug: "efct_dual_att", checked: false },
-                { title: "Steal Buff", slug: "efct_steal", checked: false }
+                { title: "Rage", slug: "stic_rage", checked: false }
             ],
             debuffs: [
                 { title: "Decrease Attack", slug: "stic_att_dn", checked: false },
@@ -1404,19 +1368,33 @@ class Hero extends Component {
                     checked: false
                 },
                 { title: "Random Debuff", slug: "stic_rnd_debuf", checked: false },
-                { title: "Bomb", slug: "stic_bomb", checked: false },
+                { title: "Bomb", slug: "stic_bomb", checked: false }
+            ],
+	    effects: [
+                {
+                    title: "Increase Combat Readiness",
+                    slug: "efct_cr_up",
+                    checked: false
+                },
                 {
                     title: "Decrease Combat Readiness",
                     slug: "efct_cr_dn",
                     checked: false
                 },
+                { title: "Cleanse", slug: "efct_cleanse", checked: false },
+                { title: "Decrease Cooldown", slug: "efct_cd_dn", checked: false },
+                { title: "Extra Turn", slug: "efct_ex_turn", checked: false },
+                { title: "Dual Attack", slug: "efct_dual_att", checked: false },
+                { title: "Steal Buff", slug: "efct_steal", checked: false },
+                { title: "Extinction", slug: "efct_extinct", checked: false },
+                { title: "Detonate", slug: "efct_detonate", checked: false },
                 { title: "Penetrate Defense", slug: "efct_def_pen", checked: false },
                 { title: "Dispel", slug: "efct_dispel", checked: false },
                 { title: "Increase Cooldown", slug: "efct_cd_up", checked: false },
                 { title: "Transfer", slug: "efct_trans", checked: false },
                 { title: "Extinction", slug: "efct_extinct", checked: false },
                 { title: "Detonate", slug: "efct_detonate", checked: false }
-            ],
+	    ],
             stats: [
                 { label: "Attack", value: "atk" },
                 { label: "Health", value: "hp" },
