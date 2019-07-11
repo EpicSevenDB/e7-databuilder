@@ -66,7 +66,7 @@ class EpicInput extends Component {
         );
     }
     isSelectMenu() {
-        const { type, name, placeholder, onChange, options, index, index2, readonly } = this.props;
+        const { type, name, placeholder, options, index, index2, readonly } = this.props;
         const { value } = this.state;
         if (type === "select") {
             return (

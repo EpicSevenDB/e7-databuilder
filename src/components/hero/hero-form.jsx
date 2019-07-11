@@ -9,10 +9,11 @@ import HeroSkills from "./hero-skills";
 import HeroSpecialtySkills from "./hero-specialty-skills";
 import HeroMemoryImprint from "./hero-memory-imprint";
 import HeroAwakening from "./hero-awakening";
+import HeroCamping from "./hero-camping";
 
 class HeroForm extends Component {
     state = {
-        collapse: [false, false, false, false, false, false, false]
+        collapse: [false, false, false, false, false, false, false, false]
     };
     componentDidUpdate(prevProps) {
         const hero = { ...this.props.hero };
@@ -42,6 +43,15 @@ class HeroForm extends Component {
                     <Collapse isOpen={!collapse[0]}>
                         <CardBody>
                             <FormGroup row>
+                                <EpicInput
+                                    type="text"
+                                    name="gameId"
+                                    size="12"
+                                    tooltip="Example: c1019"
+                                    id="heroGameId"
+                                    value={hero.gameId}
+                                    onChange={onChange}
+                                />
                                 <EpicInput
                                     type="text"
                                     name="name"
@@ -193,12 +203,32 @@ class HeroForm extends Component {
 
                 <Card>
                     <CardHeader>
-                        memoryImprint
+                        Camping
                         <Button onClick={e => this.toggle(5)} className="btn-collapse">
                             {collapse[5] ? "+" : "-"}
                         </Button>
                     </CardHeader>
                     <Collapse isOpen={!collapse[5]}>
+                        <CardBody>
+                            <FormGroup row>
+                              <HeroCamping
+                                camping={hero.camping}
+                                campOpts={defaults.campOpts}
+                                onChange={onChange}
+				/>
+                            </FormGroup>
+                        </CardBody>
+                    </Collapse>
+                </Card>
+
+                <Card>
+                    <CardHeader>
+                        memoryImprint
+                        <Button onClick={e => this.toggle(6)} className="btn-collapse">
+                            {collapse[6] ? "+" : "-"}
+                        </Button>
+                    </CardHeader>
+                    <Collapse isOpen={!collapse[6]}>
                         <CardBody>
                             <FormGroup row>
                                 <HeroMemoryImprint
@@ -216,11 +246,11 @@ class HeroForm extends Component {
                 <Card>
                     <CardHeader>
                         awakening
-                        <Button onClick={e => this.toggle(6)} className="btn-collapse">
-                            {collapse[6] ? "+" : "-"}
+                        <Button onClick={e => this.toggle(7)} className="btn-collapse">
+                            {collapse[7] ? "+" : "-"}
                         </Button>
                     </CardHeader>
-                    <Collapse isOpen={!collapse[6]}>
+                    <Collapse isOpen={!collapse[7]}>
                         <CardBody>
                             <FormGroup>
                                 <HeroAwakening

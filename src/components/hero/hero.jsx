@@ -189,8 +189,8 @@ class Hero extends Component {
             },
             camping: {
                 options: [
-                    "Option1",
-                    "Option2"
+                    "",
+                    ""
                 ],
                 reactions: {
                     "advice": 0,
@@ -496,8 +496,8 @@ class Hero extends Component {
                 },
                 camping: {
                     options: [
-                        "Option1",
-                        "Option2"
+                        "",
+                        ""
                     ],
                     reactions: {
 			"advice": 0,
@@ -1313,8 +1313,8 @@ class Hero extends Component {
             ],
             relationType: [
                 { label: "Love", value: "love" },
-                { label: "Trust", value: "trust" },
-                { label: "Grudge", value: "grudge" },
+                { label: "Friendly", value: "friendly" },
+                { label: "Hostile", value: "hostile" },
                 { label: "Rival", value: "rival" },
                 { label: "Longing", value: "longing" }
             ],
@@ -1397,6 +1397,30 @@ class Hero extends Component {
                 { label: "Effectiveness", value: "eff" },
                 { label: "Effect Resistance", value: "efr" },
                 { label: "Dual Attack Chance", value: "dac" }
+            ],
+            campOpts: [
+                { label: "Advice", value: "advice" },
+                { label: "Belief", value: "belief" },
+                { label: "Bizarre Story", value: "bizarre-story" },
+                { label: "Comforting Cheer", value: "comforting-cheer" },
+                { label: "Complain", value: "complain" },
+                { label: "Criticism", value: "criticism" },
+                { label: "Cute Cheer", value: "cute-cheer" },
+                { label: "Dream", value: "dream" },
+                { label: "Food Story", value: "food-story" },
+                { label: "Gossip", value: "gossip" },
+                { label: "Happy Memory", value: "happy-memory" },
+                { label: "Heroic Cheer", value: "heroic-cheer" },
+                { label: "Heroic Tale", value: "heroic-tale" },
+                { label: "Horror Story", value: "horror-story" },
+                { label: "Interesting Story", value: "interesting-story" },
+                { label: "Joyful Memory", value: "joyful-memory" },
+                { label: "Myth", value: "myth" },
+                { label: "Occult", value: "occult" },
+                { label: "Reality Check", value: "reality-check" },
+                { label: "Sad Memory", value: "sad-memory" },
+                { label: "Self-Indulgent", value: "self-indulgent" },
+                { label: "Unique Comment", value: "unique-comment" }
             ]
         },
         alert: {
