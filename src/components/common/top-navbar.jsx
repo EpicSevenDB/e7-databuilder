@@ -10,6 +10,7 @@ class TopNavBar extends Component {
             { label: "stats", url: "stats" },
             { label: "skills", url: "skills" },
             { label: "specialtySkill", url: "specialtySkill" },
+            { label: "camping", url: "camping" },
             { label: "memoryImprint", url: "memoryImprint" },
             { label: "awakening", url: "awakening" }
         ]
