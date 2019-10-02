@@ -662,13 +662,13 @@ class Hero extends Component {
                         [
                             // +1
                             { item: "gold", qty: 14000 },
-                            { item: "molagora", qty: 1 },
+                            { item: "stigma", qty: 250 },
                             { item: "rare", qty: 2 }
                         ],
                         [
                             // +2
-                            { item: "gold", qty: 23000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 24000 },
+                            { item: "stigma", qty: 650 },
                             { item: "rare", qty: 3 }
                         ]
                     ],
@@ -676,20 +676,20 @@ class Hero extends Component {
                         // max +3
                         [
                             // +1
-                            { item: "gold", qty: 14000 },
-                            { item: "molagora", qty: 1 },
+                            { item: "gold", qty: 13000 },
+                            { item: "stigma", qty: 200 },
                             { item: "rare", qty: 2 }
                         ],
                         [
                             // +2
-                            { item: "gold", qty: 23000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 21000 },
+                            { item: "stigma", qty: 450 },
                             { item: "rare", qty: 3 }
                         ],
                         [
                             // +3
-                            { item: "gold", qty: 33000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 37000 },
+                            { item: "stigma", qty: 850 },
                             { item: "rare", qty: 5 }
                         ]
                     ],
@@ -697,25 +697,25 @@ class Hero extends Component {
                         // max +4
                         [
                             // +1
-                            { item: "gold", qty: 4000 },
-                            { item: "molagora", qty: 1 }
+                            { item: "gold", qty: 2000 },
+                            { item: "stigma", qty: 150 }
                         ],
                         [
                             // +2
                             { item: "gold", qty: 14000 },
-                            { item: "molagora", qty: 1 },
+                            { item: "stigma", qty: 300 },
                             { item: "rare", qty: 2 }
                         ],
                         [
                             // +3
                             { item: "gold", qty: 23000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "stigma", qty: 550 },
                             { item: "rare", qty: 3 }
                         ],
                         [
                             // +4
-                            { item: "gold", qty: 32000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty: 35000 },
+                            { item: "stigma", qty: 1100 },
                             { item: "rare", qty: 4 }
                         ]
                     ],
@@ -723,30 +723,30 @@ class Hero extends Component {
                         // max +5
                         [
                             // +1
-                            { item: "gold", qty: 4000 },
-                            { item: "molagora", qty: 1 }
+                            { item: "gold", qty: 2000 },
+                            { item: "stigma", qty: 120 }
                         ],
                         [
                             // +2
                             { item: "gold", qty: 4000 },
-                            { item: "molagora", qty: 1 }
+                            { item: "stigma", qty: 270 }
                         ],
                         [
                             // +3
-                            { item: "gold", qty: 23000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 22000 },
+                            { item: "stigma", qty: 470 },
                             { item: "rare", qty: 3 }
                         ],
                         [
                             // +4
-                            { item: "gold", qty: 28000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 30000 },
+                            { item: "stigma", qty: 740 },
                             { item: "rare", qty: 4 }
                         ],
                         [
                             // +5
-                            { item: "gold", qty: 37000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty: 40000 },
+                            { item: "stigma", qty: 1100 },
                             { item: "rare", qty: 5 }
                         ]
                     ],
@@ -754,36 +754,36 @@ class Hero extends Component {
                         // max +6
                         [
                             // +1
-                            { item: "gold", qty: 4000 },
-                            { item: "molagora", qty: 1 }
+                            { item: "gold", qty: 2000 },
+                            { item: "stigma", qty: 80 }
                         ],
                         [
                             // +2
-                            { item: "gold", qty: 4000 },
-                            { item: "molagora", qty: 1 }
+                            { item: "gold", qty: 3000 },
+                            { item: "stigma", qty: 180 }
                         ],
                         [
                             // +3
-                            { item: "gold", qty: 13000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 10000 },
+                            { item: "stigma", qty: 320 },
                             { item: "rare", qty: 1 }
                         ],
                         [
                             // +4
                             { item: "gold", qty: 18000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "stigma", qty: 530 },
                             { item: "rare", qty: 2 }
                         ],
                         [
                             // +5
-                            { item: "gold", qty: 28000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 32000 },
+                            { item: "stigma", qty: 850 },
                             { item: "rare", qty: 4 }
                         ],
                         [
                             // +6
-                            { item: "gold", qty: 42000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty: 48000 },
+                            { item: "stigma", qty: 1340 },
                             { item: "rare", qty: 6 }
                         ]
                     ],
@@ -791,41 +791,41 @@ class Hero extends Component {
                         // max +7
                         [
                             // +1
-                            { item: "gold", qty: 4000 },
-                            { item: "molagora", qty: 1 }
+                            { item: "gold", qty: 1000 },
+                            { item: "stigma", qty: 50 }
                         ],
                         [
                             // +2
-                            { item: "gold", qty: 4000 },
-                            { item: "molagora", qty: 1 }
+                            { item: "gold", qty: 2000 },
+                            { item: "stigma", qty: 120 }
                         ],
                         [
                             // +3
                             { item: "gold", qty: 4000 },
-                            { item: "molagora", qty: 1 }
+                            { item: "stigma", qty: 230 }
                         ],
                         [
                             // +4
-                            { item: "gold", qty: 23000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 21000 },
+                            { item: "stigma", qty: 400 },
                             { item: "rare", qty: 3 }
                         ],
                         [
                             // +5
-                            { item: "gold", qty: 28000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 29000 },
+                            { item: "stigma", qty: 650 },
                             { item: "rare", qty: 4 }
                         ],
                         [
                             // +6
-                            { item: "gold", qty: 37000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty: 39000 },
+                            { item: "stigma", qty: 1000 },
                             { item: "rare", qty: 5 }
                         ],
                         [
                             // +7
-                            { item: "gold", qty: 42000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty: 50000 },
+                            { item: "stigma", qty: 1450 },
                             { item: "rare", qty: 6 }
                         ]
                     ]
@@ -835,20 +835,20 @@ class Hero extends Component {
                     // 4-star
                     [
                         // max +1
-                        [{ item: "gold", qty: 52000 }, { item: "molagora", qty: 3 }, { item: "rare", qty: 8 } ]
+                        [{ item: "gold", qty: 44000 }, { item: "molagora", qty: 1 }, { item: "rare", qty: 8 } ]
                     ],
                     [
                         // max +2
                         [
                             // +1
-                            { item: "gold", qty: 23000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 19000 },
+                            { item: "molagora", qty: 1 },
                             { item: "rare", qty: 3 }
                         ],
                         [
                             // +2
-                            { item: "gold", qty: 42000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty:38000 },
+                            { item: "molagora", qty: 2 },
                             { item: "epic", qty: 1 }
                         ]
                     ],
@@ -862,14 +862,14 @@ class Hero extends Component {
                         ],
                         [
                             // +2
-                            { item: "gold", qty: 23000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 19000 },
+                            { item: "molagora", qty: 1 },
                             { item: "rare", qty: 3 }
                         ],
                         [
                             // +3
-                            { item: "gold", qty: 50000 },
-                            { item: "molagorago", qty: 1 },
+                            { item: "gold", qty: 42000 },
+                            { item: "molagora", qty: 3 },
                             { item: "epic", qty: 1 }
                         ]
                     ],
@@ -882,14 +882,14 @@ class Hero extends Component {
                         ],
                         [
                             // +2
-                            { item: "gold", qty: 13000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 9000 },
+                            { item: "molagora", qty: 1 },
                             { item: "rare", qty: 1 }
                         ],
                         [
                             // +3
-                            { item: "gold", qty: 13000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 9000 },
+                            { item: "molagora", qty: 1 },
                             { item: "rare", qty: 1 }
                         ],
                         [
@@ -913,14 +913,14 @@ class Hero extends Component {
                         ],
                         [
                             // +3
-                            { item: "gold", qty: 13000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 9000 },
+                            { item: "molagora", qty: 1 },
                             { item: "rare", qty: 1 },
                         ],
                         [
                             // +4
-                            { item: "gold", qty: 27000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty: 23000 },
+                            { item: "molagora", qty: 2 },
                             { item: "rare", qty: 3 }
                         ],
                         [
@@ -944,8 +944,8 @@ class Hero extends Component {
                         ],
                         [
                             // +3
-                            { item: "gold", qty: 13000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 9000 },
+                            { item: "molagora", qty: 1 },
                             { item: "rare", qty: 1 }
                         ],
                         [
@@ -956,8 +956,8 @@ class Hero extends Component {
                         ],
                         [
                             // +5
-                            { item: "gold", qty: 32000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty: 28000 },
+                            { item: "molagora", qty: 2 },
                             { item: "rare", qty: 4 }
                         ],
                         [
@@ -986,14 +986,14 @@ class Hero extends Component {
                         ],
                         [
                             // +4
-                            { item: "gold", qty: 13000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 9000 },
+                            { item: "molagora", qty: 1 },
                             { item: "rare", qty: 1 }
                         ],
                         [
                             // +5
-                            { item: "gold", qty: 22000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty: 18000 },
+                            { item: "molagora", qty: 2 },
                             { item: "rare", qty: 2 }
                         ],
                         [
@@ -1017,8 +1017,8 @@ class Hero extends Component {
                         // max +1
                         [
                             // +1
-                            { item: "gold", qty: 64000 },
-                            { item: "molagora", qty: 6 },
+                            { item: "gold", qty: 52000 },
+                            { item: "molagora", qty: 3 },
                             { item: "rare", qty: 8 }
                         ]
                     ],
@@ -1026,14 +1026,14 @@ class Hero extends Component {
                         // max +2
                         [
                             // +1
-                            { item: "gold", qty: 33000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 29000 },
+                            { item: "molagora", qty: 1 },
                             { item: "rare", qty: 5 }
                         ],
                         [
                             // +2
-                            { item: "gold", qty: 84000 },
-                            { item: "molagora", qty: 6 },
+                            { item: "gold", qty: 80000 },
+                            { item: "molagorago", qty: 1 },
                             { item: "epic", qty: 2 }
                         ]
                     ],
@@ -1047,14 +1047,14 @@ class Hero extends Component {
                         ],
                         [
                             // +2
-                            { item: "gold", qty: 37000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty: 33000 },
+                            { item: "molagora", qty: 2 },
                             { item: "rare", qty: 5 }
                         ],
                         [
                             // +3
-                            { item: "gold", qty: 114000 },
-                            { item: "molagora", qty: 6 },
+                            { item: "gold", qty: 110000 },
+                            { item: "molagorago", qty: 1 },
                             { item: "epic", qty: 3 },
                         ]
                     ],
@@ -1067,14 +1067,14 @@ class Hero extends Component {
                         ],
                         [
                             // +2
-                            { item: "gold", qty: 27000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty: 19000 },
+                            { item: "molagora", qty: 1 },
                             { item: "rare", qty: 3 }
                         ],
                         [
                             // +3
-                            { item: "gold", qty: 45000 },
-                            { item: "molagorago", qty: 1 },
+                            { item: "gold", qty: 37000 },
+                            { item: "molagora", qty: 3 },
                             { item: "rare", qty: 5 }
                         ],
                         [
@@ -1093,13 +1093,13 @@ class Hero extends Component {
                         ],
                         [
                             // +2
-                            { item: "gold", qty: 8000 },
-                            { item: "molagora", qty: 2 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +3
-                            { item: "gold", qty: 33000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 29000 },
+                            { item: "molagora", qty: 1 },
                             { item: "rare", qty: 5 }
                         ],
                         [
@@ -1110,8 +1110,8 @@ class Hero extends Component {
                         ],
                         [
                             // +5
-                            { item: "gold", qty: 84000 },
-                            { item: "molagora", qty: 6 },
+                            { item: "gold", qty: 80000 },
+                            { item: "molagora", qty: 5 },
                             { item: "epic", qty: 2 }
                         ]
                     ],
@@ -1124,19 +1124,19 @@ class Hero extends Component {
                         ],
                         [
                             // +2
-                            { item: "gold", qty: 8000 },
-                            { item: "molagora", qty: 2 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +3
-                            { item: "gold", qty: 18000 },
-                            { item: "molagora", qty: 2 },
+                            { item: "gold", qty: 14000 },
+                            { item: "molagora", qty: 1 },
                             { item: "rare", qty: 2 }
                         ],
                         [
                             // +4
-                            { item: "gold", qty: 32000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty: 28000 },
+                            { item: "molagora", qty: 2 },
                             { item: "rare", qty: 4 }
                         ],
                         [
@@ -1166,13 +1166,13 @@ class Hero extends Component {
                         ],
                         [
                             // +3
-                            { item: "gold", qty: 8000 },
-                            { item: "molagora", qty: 2 }
+                            { item: "gold", qty: 4000 },
+                            { item: "molagora", qty: 1 }
                         ],
                         [
                             // +4
-                            { item: "gold", qty: 27000 },
-                            { item: "molagora", qty: 3 },
+                            { item: "gold", qty: 19000 },
+                            { item: "molagora", qty: 1 },
                             { item: "rare", qty: 3 }
                         ],
                         [
