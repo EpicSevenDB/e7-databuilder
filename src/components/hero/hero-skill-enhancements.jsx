@@ -77,7 +77,7 @@ class HeroSkillEnhancements extends Component {
                     return element.value === zodiac;
                 });
                 const item = resources[i]["item"];
-                if (item !== "molagora" && item !== "molagorago" && item !== "gold") {
+                if (item !== "molagora" && item !== "molagorago" && item !== "gold" && item !== "stigma") {
                     if (rarity === 3) {
                         resources[i]["item"] = zodiacObj.normalSkill; //It will always use a normal skill catalyst when it's a 3*
                     } else if (enhanceIndex < maxLevel - 1) {
