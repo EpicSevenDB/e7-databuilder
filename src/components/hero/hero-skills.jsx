@@ -207,26 +207,6 @@ class HeroSkills extends Component {
                                             onChange={this.handleChange}
                                         />
                                     </EpicInput>
-                                    <EpicInput
-                                        type="text"
-                                        size="6"
-                                        value={skill.effects}
-                                        tooltip="Example: efct_dual_att, efct_dispel"
-                                        id={"effects-" + i}
-                                        name="effects"
-                                        index={i}
-                                        onChange={this.handleChange}
-                                        readonly={true}
-                                    >
-                                        <HeroBuffsDebuffs
-                                            value={skill.effects}
-                                            type="effects"
-                                            isDark={this.props.isDark}
-                                            index={i}
-                                            defaults={this.props.effects}
-                                            onChange={this.handleChange}
-                                        />
-                                    </EpicInput>
                                     <HeroSkillEnhancements
                                         enhancement={skill.enhancement}
                                         skill={skill}
