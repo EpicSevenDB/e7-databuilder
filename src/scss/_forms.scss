@@ -119,6 +119,11 @@
             border-color: $red;
             color: #fff !important;
         }
+        &.effects .custom-control-label {
+            background-color: $brown !important;
+            border-color: $brown;
+            color: #fff !important;
+        }
     }
 }
 
