@@ -623,6 +623,8 @@ class Hero extends Component {
                         // max +1
                         [
                             // +1
+                            { item: "gold", qty: 4000 },
+                            { item: "stigma", qty: 300 }
                         ]
                     ],
                     [
